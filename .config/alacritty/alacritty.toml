@@ -1,0 +1,15 @@
+import = [
+  # uncomment the flavour you want below:
+  "~/.config/alacritty/midnight.toml"
+]
+
+[window]
+padding = { x = 8, y = 8 }
+title = 'Terminal'
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control", action = "Copy" },
+  { key = "V", mods = "Control", action = "Paste" },
+  { key = "K", mods = "Control", chars = "\u0003" },
+]

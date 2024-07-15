@@ -3,7 +3,10 @@ My dotfiles, organized using the git bare repository method:
 - https://www.atlassian.com/git/tutorials/dotfiles
 - https://www.youtube.com/watch?v=tBoLDpTWVOM
 
-## Installations and manual setup
+## Manual Installations and Setup
+### Alacritty
+- https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+
 ### Firefox
 To apply the firefox theme
 1. Install Firefox Color Extension
