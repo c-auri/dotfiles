@@ -26,6 +26,10 @@ The files are organized using the git bare repository method. For explanations, 
     ```bash
     cfg config --local status.showUntrackedFiles no
     ```
+1. Populate the `remote.origin.fetch` property
+```bash
+git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+```
 
 ## Installations
 Install apt packages:
