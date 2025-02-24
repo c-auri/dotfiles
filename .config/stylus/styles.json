@@ -4,10 +4,10 @@
       "openEditInWindow": true,
       "openEditInWindow.popup": false,
       "windowPosition": {
-        "left": 2885,
-        "top": 535,
-        "width": 943,
-        "height": 1138
+        "left": 1930,
+        "top": 522,
+        "width": 1900,
+        "height": 1140
       },
       "show-badge": true,
       "disableAll": false,
@@ -266,7 +266,7 @@
         "code": ""
       }
     ],
-    "sourceCode": "/* ==UserStyle==\n@name           www.theodinproject.com/ - Jul 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document url-prefix(\"https://www.theodinproject.com/\") {\n    body,\n    body nav,\n    body > div,\n    .page-heading-title ~ div,\n    body footer {\n        background-color: black !important;\n    }\n    \n    \n    .page-container > div > div.shadow,\n    .lesson-content__panel {\n        background-color: black !important;\n        border: 1px solid #374151;\n    }\n}",
+    "sourceCode": "/* ==UserStyle==\n@name           www.theodinproject.com/ - Jul 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document url-prefix(\"https://www.theodinproject.com/\") {\n    .dark\\:bg-gray-900,\n    .dark\\:bg-gray-800,\n    .lesson-content__panel {\n        background-color: rgb(0 0 0 / 1) !important;\n    }\n    \n    .lesson-content__panel {\n        border: 1px solid #374151;\n    }\n}",
     "usercssData": {
       "name": "www.theodinproject.com/ - Jul 2024",
       "namespace": "github.com/openstyles/stylus",
@@ -277,9 +277,9 @@
     "author": "Me",
     "description": "A new userstyle",
     "name": "www.theodinproject.com/ - Jul 2024",
-    "updateDate": 1721679934626,
+    "updateDate": 1722763171760,
     "_id": "7fcc69f8-26b4-43c2-acd3-2ff0f416b544",
-    "_rev": 1721679934626,
+    "_rev": 1722763171760,
     "id": 21
   }
 ]
