@@ -1,7 +1,7 @@
-format = '$username $directory[(\[$git_branch$git_state\])](bold dimmed bright-yellow)$line_break$character'
+format = '$username[:](bold dimmed white) $directory[(\[$git_branch$git_state\])](bold dimmed bright-yellow)$line_break$character'
 
 [username]
-format = '[$user]($style):'
+format = '[$user]($style)'
 style_user = "bold dimmed bright-cyan"
 style_root = "bold red"
 show_always = true
@@ -19,3 +19,7 @@ style = 'bold dimmed yellow'
 [git_state]
 format = '[ | $state( $progress_current/$progress_total)]($style)'
 style = 'bold dimmed yellow'
+
+[character]
+success_symbol = '[❯](bold dimmed white)'
+error_symbol = '[❯](bold red)'
