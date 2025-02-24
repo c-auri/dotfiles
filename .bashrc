@@ -21,9 +21,6 @@ fi
 
 source ~/.bash_completion/alacritty
 
-alias f='fzf'
-alias v='nvim'
-
 mcd () {
     mkdir -p $1
     cd $1
@@ -47,13 +44,6 @@ swp () {
     mv temp $2
 }
 
-function set_win_title(){
-    echo -ne "\033]0; $(basename "$PWD") \007"
-}
-
-starship_precmd_user_func="set_win_title"
-
-alias ..='cd ..'
 alias mv='mv -i'
 
 alias ls='eza'
@@ -76,8 +66,9 @@ alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
+alias v='nvim'
+
 alias t='tmux'
-alias ta='tmux attach'
 alias tat='tmux attach -t'
 
 alias dnr='dotnet run'
@@ -108,6 +99,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source ~/.bash_completion/alacritty
+
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+
+starship_precmd_user_func="set_win_title"
 
 eval "$(zoxide init --cmd cd bash)"
 eval "$(starship init bash)"
