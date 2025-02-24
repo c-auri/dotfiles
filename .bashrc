@@ -40,6 +40,47 @@ wifi () {
     fi
 
     nmcli radio wifi ${1}
+    return $?
+}
+
+bt () {
+    if [ $# -gt 1 ]
+    then
+        echo "Too many arguments."
+        return 1
+    fi
+
+    case $1 in
+
+        "")
+            cmd="paired-devices"
+            ;;
+
+        "sw")
+            cmd="connect 6C:47:60:DD:F1:63"
+            ;;
+
+        "wh")
+            cmd="connect 14:3F:A6:F0:69:D7"
+            ;;
+
+        "or")
+            cmd="connect 20:74:CF:95:54:D2"
+            ;;
+
+        "dc")
+            cmd="disconnect"
+            ;;
+
+        *)
+            echo "Invalid argument. Options are: sw, wh, or or dc."
+            return 1
+            ;;
+
+    esac
+
+    bluetoothctl ${cmd}
+    return $?
 }
 
 mcd () {
