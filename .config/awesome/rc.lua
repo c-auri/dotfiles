@@ -306,17 +306,6 @@ for i = 1, 5 do
 					client.focus:move_to_tag(tag)
 				end
 			end
-		end, { description = "move focused window to workspace #" .. i, group = "awesome: workspaces" }),
-
-		-- Move window to workspace and focus that workspace
-		awful.key({ meta, ctrl }, hotkey, function()
-			if client.focus then
-				local tag = client.focus.screen.tags[i + 1]
-				if tag then
-					client.focus:move_to_tag(tag)
-					awful.tag.viewonly(tag)
-				end
-			end
 		end, { description = "move focused window to workspace #" .. i, group = "awesome: workspaces" })
 	)
 end
