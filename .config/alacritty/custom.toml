@@ -1,12 +1,12 @@
 # inspired by moonfly theme
 [colors]
-draw_bold_text_with_bright_colors = true
+draw_bold_text_with_bright_colors = true 
 
 [colors.bright]
 black = "#949494"
 blue = "#74b2ff"
-cyan = "#85dc85"
-green = "#36c692"
+cyan = "#36c692"
+green = "#85dc85"
 magenta = "#ae81ff"
 red = "#ff5189"
 white = "#e4e4e4"
