@@ -355,6 +355,17 @@ awful.rules.rules = {
 			tag = "5",
 		},
 	},
+	{
+		rule_any = {
+			class = {
+				"outlook-for-linux",
+			},
+		},
+		properties = {
+			screen = awful.screen.primary,
+			tag = "5",
+		},
+	},
 }
 -- }}}
 
