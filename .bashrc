@@ -96,7 +96,7 @@ LESS="-R -i"
 echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
 echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 
-PATH=$PATH:/home/cauri/.local/bin
+PATH=$PATH:$HOME/.local/bin
 
 # programming tools 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
