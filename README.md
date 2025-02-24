@@ -6,7 +6,7 @@ My dotfiles and other configurations, organized using the git bare repository me
 ## Installations 
 Install apt packages: 
 ```
-apt install arandr awesome fzf lxappearance lxsession lxpolkit ripgrep rofi xterm
+apt install arandr awesome fzf mpv lxappearance lxsession lxpolkit ripgrep rofi vlc xterm
 ```
 
 Install manually:
