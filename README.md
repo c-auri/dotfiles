@@ -34,7 +34,7 @@ apt install arandr awesome fzf mpv lxappearance lxsession lxpolkit ripgrep rofi 
 ```
 
 Install manually:
-- [Alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+- [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
