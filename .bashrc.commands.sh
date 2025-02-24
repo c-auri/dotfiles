@@ -89,10 +89,10 @@ scrn () {
         return 1
     fi
 
-    inbuilt=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail)
+    inbuilt=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -n 1)
     xrandr --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
 
-    external=$(xrandr | grep -oP "(DisplayPort-\d+)(?=\sconnected)" | tail)
+    external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -n 1)
     if [[ -z $external ]]
     then
         xrandr --output ${inbuilt} --primary
