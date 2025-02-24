@@ -44,6 +44,8 @@ swp () {
     mv temp $2
 }
 
+alias sbrc='source ~/.bashrc'
+
 alias mv='mv -i'
 
 alias ls='eza'
