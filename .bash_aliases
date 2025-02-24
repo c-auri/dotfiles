@@ -23,9 +23,11 @@ alias gd='git diff'
 alias ga='git add'
 alias gA='git add -A'
 alias gc='git commit'
-alias gl='git pull'
+alias gca='git commit -a'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
+alias gl='git pull'
+
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
 alias v='nvim'
