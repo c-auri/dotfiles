@@ -48,6 +48,8 @@ alias sbrc='source ~/.bashrc'
 
 alias mv='mv -i'
 
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
 alias ls='eza'
 alias la='eza -a'
 alias ll='eza -l --git --no-user'
@@ -64,6 +66,7 @@ alias gf='git fetch'
 alias gd='git diff'
 alias ga='git add -A'
 alias gc='git commit'
+alias gl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
