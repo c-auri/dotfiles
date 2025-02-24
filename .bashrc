@@ -49,7 +49,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source ~/.bash_completion/alacritty
 
-function set_win_title(){
+function set_win_title {
     if [ $PWD = $HOME ]
     then
         title="~"

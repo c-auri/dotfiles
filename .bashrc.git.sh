@@ -21,10 +21,9 @@ alias gf='git fetch -p'
 alias gl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
+alias gcm='git checkout "$(gitDefaultBranch)"'
 
-gcm () { git checkout "$(gitDefaultBranch)"; }
-
-glm () {
+function glm {
     defaultBranch=$(gitDefaultBranch)
     if [[ $defaultBranch == $(gitCurrentBranch) ]]
     then
@@ -34,8 +33,7 @@ glm () {
     fi
 }
 
-
-cdr () {
+function cdr {
     root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
     if [[ $? ]]
     then

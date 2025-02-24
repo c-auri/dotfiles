@@ -10,7 +10,7 @@ alias ll='ls -l --git --no-user'
 alias lls='ll --total-size'
 alias lla='ll -a'
 
-lt () {
+function lt {
     if [[ $# > 1 ]]
     then
         echo "Too many arguments."
@@ -53,12 +53,12 @@ alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$
 alias dn='dotnet'
 alias dnr='dotnet run'
 
-mcd () {
+function mcd {
     mkdir -p $1
     cd $1
 }
 
-swp () {
+function swp {
     if [ $# != 2 ]
     then
         echo "Wrong number of arguments."
@@ -76,7 +76,7 @@ swp () {
     mv temp $2
 }
 
-scrn () {
+function scrn {
     if [[ $# > 1 ]]
     then
         echo "Too many arguments."
@@ -112,7 +112,7 @@ scrn () {
     xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} --pos ${pos}
 }
 
-wifi () {
+function wifi {
     if [ $# -gt 1 ]
     then
         echo "Too many arguments."
@@ -135,7 +135,7 @@ wifi () {
     [[ -n $returncode ]] && return $returncode || return $?
 }
 
-bt () {
+function bt {
     if [[ $# > 1 ]]
     then
         echo "Too many arguments."
