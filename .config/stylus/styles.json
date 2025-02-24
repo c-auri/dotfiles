@@ -4,10 +4,10 @@
       "openEditInWindow": true,
       "openEditInWindow.popup": false,
       "windowPosition": {
-        "left": 1930,
-        "top": 594,
-        "width": 1900,
-        "height": 1140
+        "left": 2885,
+        "top": 535,
+        "width": 943,
+        "height": 1138
       },
       "show-badge": true,
       "disableAll": false,
@@ -199,15 +199,15 @@
     "name": "wikipedia.org - Mar 2024",
     "sections": [
       {
-        "code": "body,\n.vector-header,\n.cdx-text-input__input,\n#left-navigation a,\n#right-navigation a,\n#right-navigation label,\n.box-Expand_language,\n.box-More_citations_needed,\n.mw-page-container,\n.mw-headline,\n.mp-box,\n.MainPageBG,\n.mp-h2,\n.vector-toc,\n.vector-pinned-container,\n.vector-pinnable-header-label,\n.vector-toc-text,\n.infobox, \n.infobox-above,\n.infobox-header,\n.infobox th,\n.fn,\nfigure,\nfigcaption,\nimg,\n.side-box,\n.wikitable,\n.wikitable th,\n.wikitable td,\n.navbox,\n.navbox-inner,\n.navbox-title,\n.catlinks,\n.navbox-group,\n.navbox-list-with-group,\n.portal-bar,\n.sister-bar,\n.mw-mmv-title-para,\n.mw-mmv-above-fold,\n.mw-mmv-image-metadata,\n\n#mw-head,\n.mw-body,\n.toc,\n.infobox tbody tr td,\n.tocnumber,\n.vector-search-box-input,\n.vector-menu-heading-label,\n.hintergrundfarbe1,\n.hintergrundfarbe5,\n.hintergrundfarbe6,\n.navbox-abovebelow,\n.navbox-list,\n.NavHead {\n    background-color: black !important;\n    color: #cccccc !important;\n    border-color: #888888 !important;\n}\n\n.navbox-container,\n.NavHead {\n    border: 0 !important;\n}\n\n#left-navigation a:visited,\n#right-navigation a:visited {\n    color: white !important;\n}\n\n.vector-sticky-pinned-container:after {\n    content: none !important;\n}\n\n.cdx-button,\n.vector-pinnable-header-toggle-button {\n    background-color: black !important;\n    color: #cccccc !important;\n}\n\n.vector-menu-heading ,\n.mw-portlet,\n.mw-list-item a {\n    background-image: none !important;\n}\n\n\n.wikitable tr:nth-child(odd) td {\n    background-color: #0d0d0d !important;\n}\n\nh1, h2, h3, h4, h5, h6 {\n    color: white !important;\n    font-family: sans-serif !important;\n    font-weight: bold;\n    \n}\n\na {\n    color: cornflowerblue !important;\n}",
+        "code": ":root {\n    --background-color-base: black !important;\n    --background-color-neutral: black !important;\n    --background-color-neutral-subtle: black !important;\n    --background-color-interactive-subtle: black !important;\n}",
         "domains": [
-          "wikipedia.org"
+          "en.wikipedia.org"
         ]
       }
     ],
-    "updateDate": 1720304104716,
+    "updateDate": 1722153041429,
     "_id": "19ac81a8-6eb1-480d-9e9b-f4205e8ab424",
-    "_rev": 1720304104716,
+    "_rev": 1722153041429,
     "id": 15
   },
   {
@@ -257,5 +257,29 @@
     "_id": "c33921ef-0245-4e29-92e3-2417b5666e0f",
     "_rev": 1721404229093,
     "id": 20
+  },
+  {
+    "enabled": true,
+    "installDate": 1721679144741,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           www.theodinproject.com/ - Jul 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document url-prefix(\"https://www.theodinproject.com/\") {\n    body,\n    body nav,\n    body > div,\n    .page-heading-title ~ div,\n    body footer {\n        background-color: black !important;\n    }\n    \n    \n    .page-container > div > div.shadow,\n    .lesson-content__panel {\n        background-color: black !important;\n        border: 1px solid #374151;\n    }\n}",
+    "usercssData": {
+      "name": "www.theodinproject.com/ - Jul 2024",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "www.theodinproject.com/ - Jul 2024",
+    "updateDate": 1721679934626,
+    "_id": "7fcc69f8-26b4-43c2-acd3-2ff0f416b544",
+    "_rev": 1721679934626,
+    "id": 21
   }
 ]
