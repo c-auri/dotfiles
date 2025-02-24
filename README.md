@@ -1,7 +1,31 @@
 # Config
-My dotfiles and other configurations, organized using the git bare repository method:
-- https://www.atlassian.com/git/tutorials/dotfiles
-- https://www.youtube.com/watch?v=tBoLDpTWVOM
+My dotfiles and other configurations.
+
+## How to use
+The files are organized using the git bare repository method. For explanations, see this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM) on YouTube or the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles).
+
+### Setup
+1. Clone into your home directory as a bare repository:
+    ```bash
+    git clone --bare <repo-url> $HOME/.config
+    ```
+1. Add a `cfg` alias to your `.bashrc`:
+    ```bash
+    echo "alias cfg='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'" >> $HOME/.bashrc
+    ```
+1. Source the `.bashrc` to load the alias into the current shell session:
+   ```bash
+   source ~/.bashrc
+   ```
+1. Checkout the content of the bare repository to your home directory:
+    ```bash
+    cfg checkout
+    ```
+    - If the checkout fails because some files would be overwritten, delete those files (create a backup if you care about them) and then try the checkout again.
+1. Hide untracked files:
+    ```bash
+    cfg config --local status.showUntrackedFiles no
+    ```
 
 ## Installations
 Install apt packages:
@@ -17,7 +41,7 @@ Install manually:
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 
 
-## Manually install Themes
+## Manual Theming 
 - Run `lxappearance` and select desired theme
 - Rofi:
   1. install [theme](https://github.com/adi1090x/rofi)
