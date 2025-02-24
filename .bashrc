@@ -22,7 +22,6 @@ fi
 source ~/.bash_completion/alacritty
 
 alias f='fzf'
-alias t='tmux'
 alias v='nvim'
 
 mcd () {
@@ -52,6 +51,10 @@ alias gc='git commit'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
+
+alias t='tmux'
+alias ta='tmux attach'
+alias tat='tmux attach -t'
 
 alias dnr='dotnet run'
 
