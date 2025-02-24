@@ -352,7 +352,7 @@ awful.rules.rules = {
 		},
 		properties = {
 			screen = awful.screen.primary,
-			tag = "5",
+			tag = "0",
 		},
 	},
 	{
