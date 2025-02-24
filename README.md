@@ -30,7 +30,7 @@ The files are organized using the git bare repository method. For explanations, 
 ## Installations
 Install apt packages:
 ```
-apt install arandr awesome bat fzf mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
+apt install arandr awesome bat fd-find fzf mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
 ```
 
 Install manually:
@@ -40,6 +40,7 @@ Install manually:
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
+- [fd](https://github.com/sharkdp/fd?tab=readme-ov-file#installation): run `ln -s $(which fdfind) ~/.local/bin/fd`
 
 
 ## Manual Theming 
