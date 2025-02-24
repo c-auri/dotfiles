@@ -1,6 +1,5 @@
 import = [
-  # uncomment the flavour you want below:
-  "~/.config/alacritty/midnight.toml"
+  "~/.config/alacritty/custom.toml"
 ]
 
 [window]

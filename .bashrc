@@ -49,7 +49,7 @@ branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="${CYAN}\u${neutral}: ${BLUE}\w${YELLOW}\$(branch)${neutral}\n\$ "
+PS1="${GREEN}\u${neutral}: ${BLUE}\w${YELLOW}\$(branch)${neutral}\n\$ "
 
 alias f='fzf'
 alias t='tmux'
