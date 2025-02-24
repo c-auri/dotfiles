@@ -1,6 +1,6 @@
 alias sb='source ~/.bashrc'
 alias vb='v ~/.bashrc'
-alias vbc='v ~/.bash_commands.sh'
+alias vbc='v ~/.bashrc.commands.sh'
 
 alias ls='eza --group-directories-first'
 alias la='ls -a'
@@ -89,7 +89,7 @@ scrn () {
         return 1
     fi
 
-    inbuilt=$(xrandr | grep -oP "(eDP-\d*)(?=\sconnected)" | tail)
+    inbuilt=$(xrandr | grep -oP "(eDP-?\d*)(?=\sconnected)" | tail)
     xrandr --output ${inbuilt} --mode ${INBUILT_SCREEN_RES}
 
     external=$(xrandr | grep -oP "(DisplayPort-\d+)(?=\sconnected)" | tail)
