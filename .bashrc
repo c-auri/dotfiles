@@ -22,6 +22,7 @@ fi
 source ~/.bash_completion/alacritty
 
 if [ -f ~/.bashrc.local.sh ]; then . ~/.bashrc.local.sh; fi
+if [ -f ~/.bashrc.git.sh ]; then . ~/.bashrc.git.sh; fi
 if [ -f ~/.bashrc.commands.sh ]; then . ~/.bashrc.commands.sh; fi
 
 eval "$(dircolors $HOME/.dircolors)"
