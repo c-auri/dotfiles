@@ -4,11 +4,9 @@ My dotfiles, organized using the git bare repository method:
 - https://www.youtube.com/watch?v=tBoLDpTWVOM
 
 ## Manual Installations and Setup
-### Ubuntu packages
-`apt install awesome rofi`
-
-### Alacritty
-- https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+- Ubuntu packages: `apt install awesome rofi`
+- [Alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+- [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 
 ### Firefox
 To apply the firefox theme
