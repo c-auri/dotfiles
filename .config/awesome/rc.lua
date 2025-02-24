@@ -246,14 +246,6 @@ local globalkeys = gears.table.join(
 		awful.spawn(terminal)
 	end, { description = "open terminal", group = "awesome: applications" }),
 
-	awful.key({ meta, ctrl }, "r", function()
-		awful.spawn("firefox")
-	end, { description = "open web browser", group = "awesome: applications" }),
-
-	awful.key({ meta, ctrl }, "e", function()
-		awful.spawn("pcmanfm")
-	end, { description = "open file manager", group = "awesome: applications" }),
-
 	awful.key({ meta, ctrl }, "c", function()
 		awful.spawn("flameshot gui")
 	end, { description = "take a screenshot", group = "awesome: applications" })
