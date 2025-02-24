@@ -34,7 +34,7 @@ git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 ## Installations
 Install apt packages:
 ```
-apt install arandr awesome bat fd-find fzf mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
+apt install arandr awesome bat fd-find flameshot fzf gimp mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
 ```
 
 Install manually:
