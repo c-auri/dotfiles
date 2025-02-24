@@ -65,6 +65,7 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 alias mv='mv -i'
 
 alias g='git'
+alias lg='lazygit'
 alias gs='git status'
 alias gb='git branch'
 alias gg='git graph'
