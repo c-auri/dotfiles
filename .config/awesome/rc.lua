@@ -207,21 +207,21 @@ local globalkeys = gears.table.join(
 	awful.key({ meta, shift }, "l", function() awful.tag.incmwfact(0.05) end,		{ description = "increase main column width", group = "awesome: layout" }),
 
 	-- Focus and Positioning
-	awful.key({ meta }, "e", function() awful.client.focus.byidx(-1) end,			{ description = "focus previous window", group = "awesome: focus" }),
-	awful.key({ meta }, "r", function() awful.client.focus.byidx(1) end,			{ description = "focus next window", group = "awesome: focus" }),
-	awful.key({ meta }, "t", function() awful.screen.focus_relative(1) end,			{ description = "focus next screen", group = "awesome: focus" }),
-	awful.key({ meta, shift }, "e", function() awful.client.swap.byidx(-1) end,		{ description = "swap with previous window", group = "awesome: positioning" }),
-	awful.key({ meta, shift }, "r", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
+	awful.key({ meta }, "d", function() awful.client.focus.byidx(-1) end,			{ description = "focus previous window", group = "awesome: focus" }),
+	awful.key({ meta }, "f", function() awful.client.focus.byidx(1) end,			{ description = "focus next window", group = "awesome: focus" }),
+	awful.key({ meta }, "g", function() awful.screen.focus_relative(1) end,			{ description = "focus next screen", group = "awesome: focus" }),
+	awful.key({ meta, shift }, "d", function() awful.client.swap.byidx(-1) end,		{ description = "swap with previous window", group = "awesome: positioning" }),
+	awful.key({ meta, shift }, "f", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
 
 	-- Applications
 	awful.key({ meta }, "Return", function() awful.util.spawn(launcher) end,		{ description = "application launcher", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "t", function() awful.spawn(terminal) end,			{ description = "open terminal", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "f", function() awful.spawn("pcmanfm") end,			{ description = "open file explorer", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "c", function() awful.spawn("flameshot gui") end,		{ description = "take a screenshot", group = "awesome: applications" })
+	awful.key({ meta, ctrl }, "s", function() awful.spawn("flameshot gui") end,		{ description = "take a screenshot", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(
-	awful.key({ meta, shift }, "t", function(c) c:move_to_screen() end,				{ description = "move to next screen", group = "awesome: active window" }),
+	awful.key({ meta, shift }, "g", function(c) c:move_to_screen() end,				{ description = "move to next screen", group = "awesome: active window" }),
 	awful.key({ meta }, "q", function(c) c:kill() end,								{ description = "close window", group = "awesome: active window" }),
 
 	awful.key({ meta }, "m", function(c)
