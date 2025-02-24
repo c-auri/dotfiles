@@ -1,15 +1,16 @@
+alias vbrc='v ~/.bashrc'
 alias sbrc='source ~/.bashrc'
-
-alias mv='mv -i'
 
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
-alias ls='eza'
-alias la='eza -a'
-alias ll='eza -l --git --no-user'
+alias mv='mv -i'
+
+alias ls='eza --group-directories-first'
+alias la='ls -a'
+alias ll='ls -l --git --no-user'
 alias lls='ll --total-size'
 alias lla='ll -a'
-alias lt='eza --tree'
+alias lt='ls --tree'
 
 alias bat='batcat'
 
@@ -31,8 +32,8 @@ alias v='nvim'
 alias t='tmux'
 alias tat='tmux attach -t'
 
-alias dnr='dotnet run'
-
 alias url='/usr/local/bin/gurl/gurl.sh'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|time|percentage"'
+alias btc='bluetoothctl'
 
+alias dnr='dotnet run'
