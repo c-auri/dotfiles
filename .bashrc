@@ -21,10 +21,9 @@ fi
 
 source ~/.bash_completion/alacritty
 
-if [ -f ~/.bash_commands.sh ]
-then
-    . ~/.bash_commands.sh
-fi
+if [ -f ~/.bash_config.priv ]; then . ~/.bash_config.priv; fi
+if [ -f ~/.bash_config.work ]; then . ~/.bash_config.work; fi
+if [ -f ~/.bash_commands.sh ]; then . ~/.bash_commands.sh; fi
 
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
