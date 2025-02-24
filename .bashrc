@@ -62,3 +62,5 @@ starship_precmd_user_func="set_win_title"
 
 eval "$(zoxide init --cmd cd bash)"
 eval "$(starship init bash)"
+
+alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'

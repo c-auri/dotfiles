@@ -45,5 +45,4 @@ function gg {
 function gitCurrentBranch { echo $(git symbolic-ref --short HEAD); }
 function gitDefaultBranch { echo "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"; }
 
-alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 alias lg='lazygit'
