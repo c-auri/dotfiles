@@ -7,7 +7,7 @@ The files are organized using the git bare repository method. For explanations, 
 ### Setup
 1. Clone into your home directory as a bare repository:
     ```bash
-    git clone --bare <repo-url> $HOME/.config
+    git clone --bare <repo-url> $HOME/.config/.git
     ```
 1. Add a `cfg` alias to your `.bashrc`:
     ```bash
