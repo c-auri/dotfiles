@@ -183,32 +183,35 @@ local alt = "Mod1"
 local shift = "Shift"
 
 local globalkeys = gears.table.join(
-	awful.key({ meta, ctrl }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ meta, ctrl }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome controls" }),
 
-	awful.key({ meta, ctrl }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
+	awful.key({ meta, ctrl }, "w", awesome.restart, { description = "reload awesome", group = "awesome controls" }),
 
-	awful.key({ meta, ctrl }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
+	awful.key({ meta, ctrl }, "q", awesome.quit, { description = "quit awesome", group = "awesome controls" }),
 
-	awful.key({ meta }, "f", function()
-		awful.client.focus.byidx(1)
-	end, { description = "focus next window", group = "awesome: focus" }),
+	awful.key({ meta }, "t", function()
+		awful.layout.inc(1)
+	end, { description = "cycle layout", group = "awesome: layout" }),
 
 	awful.key({ meta }, "d", function()
 		awful.client.focus.byidx(-1)
 	end, { description = "focus previous window", group = "awesome: focus" }),
 
-	awful.key({ meta }, "g", function()
+	awful.key({ meta }, "f", function()
+		awful.client.focus.byidx(1)
+	end, { description = "focus next window", group = "awesome: focus" }),
+
+	awful.key({ meta }, "r", function()
 		awful.screen.focus_relative(1)
 	end, { description = "focus next screen", group = "awesome: focus" }),
 
-	-- Layout manipulation
-	awful.key({ meta, ctrl }, "f", function()
-		awful.client.swap.byidx(1)
-	end, { description = "swap with next window", group = "awesome: focused window" }),
-
-	awful.key({ meta, ctrl }, "d", function()
+	awful.key({ meta, shift }, "d", function()
 		awful.client.swap.byidx(-1)
-	end, { description = "swap with previous window", group = "awesome: focused window" }),
+	end, { description = "swap with previous window", group = "awesome: move window" }),
+
+	awful.key({ meta, shift }, "f", function()
+		awful.client.swap.byidx(1)
+	end, { description = "swap with next window", group = "awesome: move window" }),
 
 	awful.key({ meta, shift }, "l", function()
 		awful.tag.incmwfact(0.05)
@@ -218,50 +221,46 @@ local globalkeys = gears.table.join(
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease main column width", group = "awesome: layout" }),
 
-	awful.key({ meta }, "k", function()
-		awful.tag.incnmaster(1, nil, true)
-	end, { description = "increase the number of main windows", group = "awesome: layout" }),
-
 	awful.key({ meta }, "j", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta }, "l", function()
-		awful.tag.incncol(1, nil, true)
-	end, { description = "increase the number of columns", group = "awesome: layout" }),
+	awful.key({ meta }, "k", function()
+		awful.tag.incnmaster(1, nil, true)
+	end, { description = "increase the number of main windows", group = "awesome: layout" }),
 
 	awful.key({ meta }, "h", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "awesome: layout" }),
 
-	awful.key({ meta }, "t", function()
-		awful.layout.inc(1)
-	end, { description = "select next layout", group = "awesome: layout" }),
+	awful.key({ meta }, "l", function()
+		awful.tag.incncol(1, nil, true)
+	end, { description = "increase the number of columns", group = "awesome: layout" }),
 
 	-- Applications
 	awful.key({ ctrl }, "Return", function()
 		awful.util.spawn(launcher)
 	end, { description = "application launcher", group = "awesome: applications" }),
 
-	awful.key({ meta, shift }, "t", function()
+	awful.key({ meta, ctrl }, "t", function()
 		awful.spawn(terminal)
 	end, { description = "open terminal", group = "awesome: applications" }),
 
-	awful.key({ meta, shift }, "s", function()
-		awful.spawn("flameshot gui")
-	end, { description = "take a screenshot", group = "awesome: applications" }),
-
-	awful.key({ meta, shift }, "r", function()
+	awful.key({ meta, ctrl }, "r", function()
 		awful.spawn("firefox")
-	end, { description = "open browser", group = "awesome: applications" }),
+	end, { description = "open web browser", group = "awesome: applications" }),
 
-	awful.key({ meta, shift }, "f", function()
+	awful.key({ meta, ctrl }, "e", function()
 		awful.spawn("pcmanfm")
-	end, { description = "open file manager", group = "awesome: applications" })
+	end, { description = "open file manager", group = "awesome: applications" }),
+
+	awful.key({ meta, ctrl }, "c", function()
+		awful.spawn("flameshot gui")
+	end, { description = "take a screenshot", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(
-	awful.key({ meta, ctrl }, "g", function(c)
+	awful.key({ meta, shift }, "r", function(c)
 		c:move_to_screen()
 	end, { description = "move to next screen", group = "awesome: focused window" }),
 
@@ -290,7 +289,7 @@ for i = 0, 5 do
 	globalkeys = gears.table.join(
 		globalkeys,
 
-		-- View tag only.
+		-- View workspace only
 		awful.key({ ctrl }, hotkey, function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i + 1]
@@ -299,12 +298,23 @@ for i = 0, 5 do
 			end
 		end, { description = "view workspace #" .. i, group = "awesome: workspaces" }),
 
-		-- Move client to tag.
-		awful.key({ ctrl, meta }, hotkey, function()
+		-- Move window to workspace
+		awful.key({ meta, shift }, hotkey, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i + 1]
 				if tag then
 					client.focus:move_to_tag(tag)
+				end
+			end
+		end, { description = "move focused window to workspace #" .. i, group = "awesome: workspaces" }),
+
+		-- Move window to workspace and focus that workspace
+		awful.key({ meta, ctrl }, hotkey, function()
+			if client.focus then
+				local tag = client.focus.screen.tags[i + 1]
+				if tag then
+					client.focus:move_to_tag(tag)
+					awful.tag.viewonly(tag)
 				end
 			end
 		end, { description = "move focused window to workspace #" .. i, group = "awesome: workspaces" })
@@ -352,6 +362,7 @@ awful.rules.rules = {
 		rule_any = {
 			class = {
 				"discord",
+				"outlook-for-linux",
 			},
 		},
 		properties = {
@@ -361,9 +372,7 @@ awful.rules.rules = {
 	},
 	{
 		rule_any = {
-			class = {
-				"outlook-for-linux",
-			},
+			class = {},
 		},
 		properties = {
 			screen = awful.screen.primary,
