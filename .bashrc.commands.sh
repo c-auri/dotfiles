@@ -57,7 +57,7 @@ alias gds='git diff --staged'
 
 alias gga='git graph --all'
 
-gg () { 
+gg () {
     num_commits=${1:-10};
     git graph --all -$num_commits
 }
@@ -206,9 +206,3 @@ bt () {
     bluetoothctl ${cmd}
     return $?
 }
-
-gg () {
-    num_commits=${1:-10};
-    git graph --all -$num_commits
-}
-
