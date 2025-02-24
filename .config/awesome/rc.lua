@@ -205,40 +205,40 @@ local globalkeys = gears.table.join(
 		awful.screen.focus_relative(1)
 	end, { description = "focus next screen", group = "awesome: focus" }),
 
-	awful.key({ meta, shift }, "d", function()
+	awful.key({ meta }, "j", function()
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous window", group = "awesome: move window" }),
 
-	awful.key({ meta, shift }, "f", function()
+	awful.key({ meta }, "k", function()
 		awful.client.swap.byidx(1)
 	end, { description = "swap with next window", group = "awesome: move window" }),
 
-	awful.key({ meta, shift }, "l", function()
+	awful.key({ meta }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase main column width", group = "awesome: layout" }),
 
-	awful.key({ meta, shift }, "h", function()
+	awful.key({ meta }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease main column width", group = "awesome: layout" }),
 
-	awful.key({ meta }, "j", function()
+	awful.key({ meta, ctrl }, "j", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta }, "k", function()
+	awful.key({ meta, ctrl }, "k", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta }, "h", function()
+	awful.key({ meta, ctrl }, "h", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "awesome: layout" }),
 
-	awful.key({ meta }, "l", function()
+	awful.key({ meta, ctrl }, "l", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "awesome: layout" }),
 
 	-- Applications
-	awful.key({ ctrl }, "Return", function()
+	awful.key({ meta }, "Return", function()
 		awful.util.spawn(launcher)
 	end, { description = "application launcher", group = "awesome: applications" }),
 
@@ -252,11 +252,11 @@ local globalkeys = gears.table.join(
 )
 
 local clientkeys = gears.table.join(
-	awful.key({ meta, shift }, "r", function(c)
+	awful.key({ meta, ctrl }, "r", function(c)
 		c:move_to_screen()
 	end, { description = "move to next screen", group = "awesome: focused window" }),
 
-	awful.key({ ctrl }, "q", function(c)
+	awful.key({ meta }, "q", function(c)
 		c:kill()
 	end, { description = "close window", group = "awesome: focused window" }),
 
@@ -270,19 +270,11 @@ local clientkeys = gears.table.join(
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, 5 do
-	local hotkey
-
-	if i == 0 then
-		hotkey = "Escape"
-	else
-		hotkey = i
-	end
-
 	globalkeys = gears.table.join(
 		globalkeys,
 
 		-- View workspace only
-		awful.key({ ctrl }, hotkey, function()
+		awful.key({ meta }, i, function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i]
 			if tag then
@@ -291,7 +283,7 @@ for i = 1, 5 do
 		end, { description = "view workspace #" .. i, group = "awesome: workspaces" }),
 
 		-- Move window to workspace
-		awful.key({ meta, shift }, hotkey, function()
+		awful.key({ meta, shift }, i, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
