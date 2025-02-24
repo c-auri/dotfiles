@@ -33,7 +33,17 @@ lt () {
 }
 
 alias cdf='cd $(fd -H -t d | fzf)'
-alias cdr='cd $(git rev-parse --show-toplevel)'
+
+cdr () {
+    root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
+    if [[ $? ]]
+    then
+        cd $root
+    else
+        echo "Not inside a git repository."
+        return 1
+    fi
+}
 
 alias mv='mv -i'
 alias cp='cp -i'
