@@ -71,7 +71,21 @@ alias gc='git commit'
 alias gC='git commit -a'
 
 alias gf='git fetch -p'
-alias gfm='git fetch origin main:main'
+
+gitCurrentBranch () { echo $(git symbolic-ref --short HEAD); }
+gitDefaultBranch () { echo "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"; }
+
+gcm () { git checkout "$(gitDefaultBranch)"; }
+gfm () {
+    defaultBranch=$(gitDefaultBranch)
+    if [[ $defaultBranch == $(gitCurrentBranch) ]]
+    then
+        git pull
+    else
+        git fetch origin "$defaultBranch:$defaultBranch"
+    fi
+}
+
 alias gl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
