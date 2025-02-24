@@ -214,12 +214,12 @@ local globalkeys = gears.table.join(
 	end, { description = "swap with next window", group = "awesome: move window" }),
 
 	awful.key({ meta, ctrl }, "h", function()
-		awful.tag.incmwfact(0.05)
-	end, { description = "increase main column width", group = "awesome: layout" }),
-
-	awful.key({ meta, ctrl }, "l", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease main column width", group = "awesome: layout" }),
+
+	awful.key({ meta, ctrl }, "l", function()
+		awful.tag.incmwfact(0.05)
+	end, { description = "increase main column width", group = "awesome: layout" }),
 
 	awful.key({ meta }, "j", function()
 		awful.tag.incnmaster(-1, nil, true)
