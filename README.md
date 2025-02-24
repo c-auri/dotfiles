@@ -11,7 +11,7 @@ apt install arandr awesome fzf mpv lxappearance lxsession lxpolkit ripgrep rofi 
 
 Install manually:
 - [Alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
-- [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+- [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
