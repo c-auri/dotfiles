@@ -214,8 +214,8 @@ local globalkeys = gears.table.join(
 	awful.key(sup, "d", function() awful.client.focus.byidx(-1) end,	{ description = "focus previous window", group = "awesome: focus" }),
 	awful.key(sup, "f", function() awful.client.focus.byidx(1) end,		{ description = "focus next window", group = "awesome: focus" }),
 	awful.key(sup, "g", function() awful.screen.focus_relative(1) end,	{ description = "focus next screen", group = "awesome: focus" }),
-	awful.key(hyp, "d", function() awful.client.swap.byidx(-1) end,		{ description = "swap with previous window", group = "awesome: positioning" }),
-	awful.key(hyp, "f", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
+	awful.key({ super, shift }, "d", function() awful.client.swap.byidx(-1) end,		{ description = "swap with previous window", group = "awesome: positioning" }),
+	awful.key({ super, shift }, "f", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
 
 	-- Applications
 	awful.key(sup, "Return", function() awful.util.spawn(launcher) end,	{ description = "application launcher", group = "awesome: applications" }),
@@ -225,7 +225,7 @@ local globalkeys = gears.table.join(
 )
 
 local clientkeys = gears.table.join(
-	awful.key(hyp, "g", function(c) c:move_to_screen() end,	{ description = "move to next screen", group = "awesome: active window" }),
+	awful.key({ super, shift }, "g", function(c) c:move_to_screen() end,	{ description = "move to next screen", group = "awesome: active window" }),
 	awful.key(sup, "c", function(c) c:kill() end,			{ description = "close window", group = "awesome: active window" }),
 
 	awful.key(sup, "m", function(c)
@@ -251,7 +251,7 @@ for i = 1, 5 do
 		end, { description = "view workspace #" .. i, group = "awesome: workspaces" }),
 
 		-- Move window to workspace
-		awful.key(hyp, i, function()
+		awful.key({ super , shift }, i, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
