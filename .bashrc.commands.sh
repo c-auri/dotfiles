@@ -90,12 +90,11 @@ scrn () {
     fi
 
     inbuilt=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -n 1)
-    xrandr --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
-
     external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -n 1)
+
     if [[ -z $external ]]
     then
-        xrandr --output ${inbuilt} --primary
+        xrandr --output ${inbuilt} --primary --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
         return $?
     fi
 
@@ -116,7 +115,7 @@ scrn () {
             ;;
     esac
 
-    xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --pos ${pos}
+    xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} --pos ${pos}
 }
 
 wifi () {
