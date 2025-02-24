@@ -5,11 +5,12 @@ format = '[$user]($style)'
 style_user = "bold dimmed cyan"
 style_root = "bold red"
 show_always = true
+aliases = { "christoph.aurich@energy2market.de" = "christoph.aurich" }
 
 [sudo]
 format = '[$symbol]($style)'
 symbol = '*'
-style = "bold red"
+style = "bold bright-black"
 disabled = false
 
 [directory]
