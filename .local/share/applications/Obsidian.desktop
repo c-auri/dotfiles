@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Obsidian
+Comment=Obsidian
+Icon=/home/cauri/.config/obsidian/obsidian-icon.svg
+Exec=/usr/local/bin/Obsidian-1.6.5.AppImage
+Terminal=false
+Catagories=Note
