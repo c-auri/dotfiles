@@ -197,7 +197,7 @@ local globalkeys = gears.table.join(
 		awful.client.focus.byidx(-1)
 	end, { description = "focus previous window", group = "awesome: focus" }),
 
-	awful.key({ ctrl }, "Tab", function()
+	awful.key({ meta }, "g", function()
 		awful.screen.focus_relative(1)
 	end, { description = "focus next screen", group = "awesome: focus" }),
 
@@ -210,27 +210,27 @@ local globalkeys = gears.table.join(
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous window", group = "awesome: focused window" }),
 
-	awful.key({ meta }, "g", function()
+	awful.key({ meta, shift }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase main column width", group = "awesome: layout" }),
 
-	awful.key({ meta }, "s", function()
+	awful.key({ meta, shift }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease main column width", group = "awesome: layout" }),
 
-	awful.key({ meta, shift }, "d", function()
+	awful.key({ meta }, "k", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta, shift }, "f", function()
+	awful.key({ meta }, "j", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta, shift }, "g", function()
+	awful.key({ meta }, "l", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "awesome: layout" }),
 
-	awful.key({ meta, shift }, "s", function()
+	awful.key({ meta }, "h", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "awesome: layout" }),
 
@@ -245,11 +245,19 @@ local globalkeys = gears.table.join(
 
 	awful.key({ meta, shift }, "t", function()
 		awful.spawn(terminal)
-	end, { description = "open terminal", group = "awesome: applications" })
+	end, { description = "open terminal", group = "awesome: applications" }),
+
+	awful.key({ meta, shift }, "r", function()
+		awful.spawn("firefox")
+	end, { description = "open browser", group = "awesome: applications" }),
+
+	awful.key({ meta, shift }, "f", function()
+		awful.spawn("pcmanfm")
+	end, { description = "open file manager", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(
-	awful.key({ ctrl, meta }, "Tab", function(c)
+	awful.key({ meta, ctrl }, "g", function(c)
 		c:move_to_screen()
 	end, { description = "move to next screen", group = "awesome: focused window" }),
 
@@ -335,9 +343,7 @@ awful.rules.rules = {
 		},
 	},
 
-	-- Set Firefox to always map on the tag named "2" on screen 1.
-	-- { rule = { class = "Firefox" },
-	--   properties = { screen = 1, tag = "2" } },
+	-- Set applications to always map on certain screens and tags
 	{
 		rule_any = {
 			class = {
