@@ -21,36 +21,6 @@ fi
 
 source ~/.bash_completion/alacritty
 
-# prompt
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-neutral='\[\e[0m\]'
-red='\[\e[0;31m\]'
-RED='\[\e[1;31m\]'
-blue='\[\e[0;34m\]'
-BLUE='\[\e[1;34m\]'
-cyan='\[\e[0;36m\]'
-CYAN='\[\e[1;36m\]'
-green='\[\e[0;32m\]'
-GREEN='\[\e[1;32m\]'
-yellow='\[\e[0;33m\]'
-YELLOW='\[\e[1;33m\]'
-PURPLE='\[\e[1;35m\]'
-purple='\[\e[0;35m\]'
-
-# commands & aliases
-
-branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-PS1="${GREEN}\u${neutral}: ${BLUE}\w${YELLOW}\$(branch)${neutral}\n\$ "
-
 alias f='fzf'
 alias t='tmux'
 alias v='nvim'
