@@ -33,14 +33,20 @@ wifi () {
         return 1
     fi
 
-    if [ ! -z "$1" ] && [ $1 != "on" -a $1 != "off" ]
+    if [[ -n $1 && $1 != "on" && $1 != "off" ]]
     then
-        echo "Invalid argument, should either be omitted or be 'on' or 'off'."
+        echo "Invalid argument, should either be 'on', 'off' or omitted."
         return 1
     fi
 
-    nmcli radio wifi ${1}
-    return $?
+    if [[ -n $1 ]]
+    then
+        nmcli radio wifi ${1}
+        returncode=$?
+    fi 
+
+    nmcli radio wifi
+    [[ -n $returncode ]] && return $returncode || return $?
 }
 
 bt () {
