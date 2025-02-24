@@ -29,6 +29,24 @@ mcd () {
     cd $1
 }
 
+swp () {
+    if [ $# != 2 ]
+    then
+        echo "Wrong number of arguments."
+        return 1
+    fi
+    
+    if [ -f temp ]
+    then
+        echo "Can not swap because temp file already exists."
+        return 1
+    fi
+
+    mv $1 temp
+    mv $2 $1
+    mv temp $2
+}
+
 alias ..='cd ..'
 alias mv='mv -i'
 
