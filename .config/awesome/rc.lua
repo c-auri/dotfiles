@@ -102,7 +102,7 @@ local tasklist_buttons = gears.table.join(
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Each screen has its own tag table.
-	awful.tag({ "0", "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+	awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
 
 	-- Create an imagebox widget which will contain an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
@@ -277,7 +277,7 @@ local clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 0, 5 do
+for i = 1, 5 do
 	local hotkey
 
 	if i == 0 then
@@ -292,7 +292,7 @@ for i = 0, 5 do
 		-- View workspace only
 		awful.key({ ctrl }, hotkey, function()
 			local screen = awful.screen.focused()
-			local tag = screen.tags[i + 1]
+			local tag = screen.tags[i]
 			if tag then
 				tag:view_only()
 			end
@@ -301,7 +301,7 @@ for i = 0, 5 do
 		-- Move window to workspace
 		awful.key({ meta, shift }, hotkey, function()
 			if client.focus then
-				local tag = client.focus.screen.tags[i + 1]
+				local tag = client.focus.screen.tags[i]
 				if tag then
 					client.focus:move_to_tag(tag)
 				end
@@ -364,15 +364,6 @@ awful.rules.rules = {
 				"discord",
 				"outlook-for-linux",
 			},
-		},
-		properties = {
-			screen = awful.screen.primary,
-			tag = "0",
-		},
-	},
-	{
-		rule_any = {
-			class = {},
 		},
 		properties = {
 			screen = awful.screen.primary,
