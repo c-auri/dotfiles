@@ -30,7 +30,7 @@ The files are organized using the git bare repository method. For explanations, 
 ## Installations
 Install apt packages:
 ```
-apt install arandr awesome fzf mpv lxappearance lxsession lxpolkit ripgrep rofi vlc xterm
+apt install arandr awesome fzf mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
 ```
 
 Install manually:
