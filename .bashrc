@@ -26,6 +26,22 @@ then
     . ~/.bash_aliases
 fi
 
+wifi () {
+    if [ $# -gt 1 ]
+    then
+        echo "Too many arguments."
+        return 1
+    fi
+
+    if [ ! -z "$1" ] && [ $1 != "on" -a $1 != "off" ]
+    then
+        echo "Invalid argument, should either be omitted or be 'on' or 'off'."
+        return 1
+    fi
+
+    nmcli radio wifi ${1}
+}
+
 mcd () {
     mkdir -p $1
     cd $1
