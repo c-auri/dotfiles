@@ -1,0 +1,23 @@
+[user]
+	email = 43008483+c-auri@users.noreply.github.com
+	name = c-auri
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[pull]
+	ff = only
+[alias]
+	graph = log --graph --oneline --all
+	unstage = restore --staged
+	amend = commit --amend
+	fixup = commit --fixup
+	co = checkout
+	sw = switch
+	cp = cherry-pick
+	ri = rebase --interactive --autosquash
+
+[includeIf "gitdir:~/projects/**/.git"]
+  path = ~/projects/config/.gitconfig
