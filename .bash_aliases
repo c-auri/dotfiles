@@ -1,11 +1,6 @@
 alias vbrc='v ~/.bashrc'
 alias sbrc='source ~/.bashrc'
 
-alias cdf='cd $(fd -H -t d | fzf)'
-alias cdr='cd $(git rev-parse --show-toplevel)'
-
-alias mv='mv -i'
-
 alias ls='eza --group-directories-first'
 alias la='ls -a'
 alias ll='ls -l --git --no-user'
@@ -13,7 +8,10 @@ alias lls='ll --total-size'
 alias lla='ll -a'
 alias lt='ls --tree --git-ignore'
 
-alias bat='batcat'
+alias cdf='cd $(fd -H -t d | fzf)'
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
+alias mv='mv -i'
 
 alias g='git'
 alias gs='git status'
@@ -32,6 +30,7 @@ alias gl='git pull'
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
 alias v='nvim'
+alias bat='batcat'
 
 alias t='tmux'
 alias tat='tmux attach -t'
