@@ -35,7 +35,7 @@ swp () {
         echo "Wrong number of arguments."
         return 1
     fi
-    
+
     if [ -f temp ]
     then
         echo "Can not swap because temp file already exists."
@@ -46,6 +46,12 @@ swp () {
     mv $2 $1
     mv temp $2
 }
+
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+
+starship_precmd_user_func="set_win_title"
 
 alias ..='cd ..'
 alias mv='mv -i'
