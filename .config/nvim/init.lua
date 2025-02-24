@@ -258,8 +258,7 @@ require('lazy').setup({
     },
   },
 
-  { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
-  { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000 },
+  { 'bluz71/vim--colors', name = 'moonfly', lazy = false, priority = 1000 },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
