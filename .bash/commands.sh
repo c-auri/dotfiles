@@ -45,7 +45,6 @@ alias bat='batcat'
 alias t='tmux'
 alias tat='tmux attach -t'
 
-alias url='/usr/local/bin/gurl/gurl.sh'
 alias pow='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|time|percentage"'
 alias btc='bluetoothctl'
 alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
