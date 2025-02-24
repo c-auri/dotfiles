@@ -63,11 +63,14 @@ alias cdf='cd $(fd -H -t d | fzf)'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias mv='mv -i'
+alias cp='cp -i'
+alias fd='fdfind'
 
 alias g='git'
 alias lg='lazygit'
 alias gs='git status'
 alias gb='git branch'
+alias gw='git switch'
 alias gg='git graph'
 alias gf='git fetch'
 alias gd='git diff'
@@ -78,6 +81,7 @@ alias gca='git commit -a'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gl='git pull'
+alias gpom='git pull origin main:main'
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
