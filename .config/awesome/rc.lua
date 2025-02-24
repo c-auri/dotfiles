@@ -302,8 +302,47 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
+				"firefox",
+			},
+		},
+		properties = {
+			screen = awful.screen.primary,
+			tag = "1",
+		},
+	},
+
+	{
+		rule_any = {
+			class = {
+				"jetbrains-rider",
+				"jetbrains-webstorm",
+				"jetbrains-pycharm",
+			},
+		},
+		properties = {
+			screen = awful.screen.primary,
+			tag = "3",
+		},
+	},
+
+	{
+		rule_any = {
+			class = {
+				"jetbrains-datagrip",
+			},
+		},
+		properties = {
+			screen = awful.screen.primary,
+			tag = "4",
+		},
+	},
+
+	{
+		rule_any = {
+			class = {
 				"discord",
 				"outlook-for-linux",
+				"teams-for-linux",
 			},
 		},
 		properties = {
