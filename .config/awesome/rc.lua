@@ -50,8 +50,8 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/cauri/.config/awesome/theme.lua")
+-- Themes define colours, icons, font and wallpape
+beautiful.init(gears.filesystem.get_xdg_config_home() .. "awesome/theme.lua")
 gears.wallpaper.set("#000000")
 
 -- This is used later as the default terminal and editor to run.
