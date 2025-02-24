@@ -68,20 +68,29 @@ alias fd='fdfind'
 
 alias g='git'
 alias lg='lazygit'
+
 alias gs='git status'
-alias gb='git branch'
-alias gw='git switch'
-alias gg='git graph'
-alias gf='git fetch'
 alias gd='git diff'
+alias gds='git diff --staged'
+
+gg () { 
+    num_commits=${1:-10};
+    git graph -$num_commits
+}
+
+alias gsw='git switch'
+alias gco='git checkout'
+
 alias ga='git add'
 alias gA='git add -A'
 alias gc='git commit'
-alias gca='git commit -a'
+alias gC='git commit -a'
+
+alias gf='git fetch -p'
+alias gfm='git fetch origin main:main'
+alias gl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
-alias gl='git pull'
-alias gpom='git pull origin main:main'
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
