@@ -32,5 +32,5 @@ bright_foreground = "#eeeeee"
 foreground = "#bdbdbd"
 
 [colors.selection]
-background = "#b2ceee"
-text = "#080808"
+background = "#323437"
+text = "#ababab"
