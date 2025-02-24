@@ -66,16 +66,17 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias fd='fdfind'
 
-alias g='git'
 alias lg='lazygit'
 
 alias gs='git status'
 alias gd='git diff'
 alias gds='git diff --staged'
 
+alias gga='git graph --all'
+
 gg () { 
     num_commits=${1:-10};
-    git graph -$num_commits
+    git graph --all -$num_commits
 }
 
 alias gsw='git switch'
