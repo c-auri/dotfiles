@@ -1,6 +1,7 @@
 alias vbrc='v ~/.bashrc'
 alias sbrc='source ~/.bashrc'
 
+alias cdf='cd $(fd -H -t d | fzf)'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias mv='mv -i'
