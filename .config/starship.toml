@@ -1,10 +1,16 @@
-format = '$username[:](bold white) $directory[(\[$git_branch$git_state\])](bold dimmed yellow)$line_break$character'
+format = '$username$sudo[:](bold white) $directory[(\[$git_branch$git_state\])](bold dimmed yellow)$line_break$character'
 
 [username]
 format = '[$user]($style)'
 style_user = "bold dimmed cyan"
 style_root = "bold red"
 show_always = true
+
+[sudo]
+format = '[$symbol]($style)'
+symbol = '*'
+style = "bold red"
+disabled = false
 
 [directory]
 format = '[$path]($style) [$read_only]($read_only_style)'
