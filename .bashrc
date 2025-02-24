@@ -24,6 +24,7 @@ source ~/.bash_completion/alacritty
 if [ -f ~/.bash/local.sh ]; then . ~/.bash/local.sh; fi
 if [ -f ~/.bash/git.sh ]; then . ~/.bash/git.sh; fi
 if [ -f ~/.bash/commands.sh ]; then . ~/.bash/commands.sh; fi
+if [ -f ~/.bash/dotnet.sh ]; then . ~/.bash/dotnet.sh; fi
 
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
@@ -39,9 +40,6 @@ echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 PATH=$PATH:$HOME/.local/bin
 
 # programming tools 
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_HTTPREPL_TELEMETRY_OPTOUT=1
-
 . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"

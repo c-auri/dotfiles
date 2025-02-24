@@ -49,9 +49,6 @@ alias pow='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "sta
 alias btc='bluetoothctl'
 alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
 
-alias dn='dotnet'
-alias dnr='dotnet run'
-
 function mcd {
     mkdir -p $1
     cd $1
