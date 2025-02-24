@@ -26,6 +26,40 @@ then
     . ~/.bash_aliases
 fi
 
+scrn () {
+    if [[ $# > 1 ]]
+    then
+        echo "Too many arguments."
+        return 1
+    fi
+
+    xrandr --output eDP --mode 1440x900
+
+    portnumber=$(xrandr | grep -oP "^DisplayPort-\K(\d+)(?=\sconnected)" | tail)
+    if [[ -z $portnumber ]]
+    then
+        xrandr --output eDP --primary
+        return $?
+    fi
+
+    case $1 in
+        "" | "left")
+            pos="1920x600"
+            ;;
+        "up")
+            pos="240x1080"
+            ;;
+        "off")
+            xrandr --output DisplayPort-${portnumber} --off
+            return $?
+        *)
+            echo "Invalid argument: ${1}"
+            return 1
+    esac
+
+    xrandr --output DisplayPort-${portnumber} --primary --mode 1920x1080 --pos 0x0 --output eDP --pos ${pos}
+}
+
 wifi () {
     if [ $# -gt 1 ]
     then
