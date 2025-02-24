@@ -1,8 +1,8 @@
 alias sb='source ~/.bashrc'
 alias vb='v ~/.bashrc'
-alias vbc='v ~/.bashrc.commands.sh'
-alias vbl='v ~/.bashrc.local.sh'
-alias vbg='v ~/.bashrc.git.sh'
+alias vbc='v ~/.bash/commands.sh'
+alias vbl='v ~/.bash/local.sh'
+alias vbg='v ~/.bash/git.sh'
 
 alias ls='eza --group-directories-first'
 alias la='ls -a'

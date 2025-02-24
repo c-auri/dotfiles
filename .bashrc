@@ -21,9 +21,9 @@ fi
 
 source ~/.bash_completion/alacritty
 
-if [ -f ~/.bashrc.local.sh ]; then . ~/.bashrc.local.sh; fi
-if [ -f ~/.bashrc.git.sh ]; then . ~/.bashrc.git.sh; fi
-if [ -f ~/.bashrc.commands.sh ]; then . ~/.bashrc.commands.sh; fi
+if [ -f ~/.bash/local.sh ]; then . ~/.bash/local.sh; fi
+if [ -f ~/.bash/git.sh ]; then . ~/.bash/git.sh; fi
+if [ -f ~/.bash/commands.sh ]; then . ~/.bash/commands.sh; fi
 
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
