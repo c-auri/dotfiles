@@ -346,7 +346,7 @@ awful.rules.rules = {
 		},
 		properties = {
 			screen = awful.screen.primary,
-			tag = "0",
+			tag = "5",
 		},
 	},
 }
