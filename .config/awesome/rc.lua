@@ -183,11 +183,11 @@ local alt = "Mod1"
 local shift = "Shift"
 
 local globalkeys = gears.table.join(
-	awful.key({ meta, ctrl }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome controls" }),
+	awful.key({ meta, alt }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome controls" }),
 
-	awful.key({ meta, ctrl }, "w", awesome.restart, { description = "reload awesome", group = "awesome controls" }),
+	awful.key({ meta, alt }, "w", awesome.restart, { description = "reload awesome", group = "awesome controls" }),
 
-	awful.key({ meta, ctrl }, "q", awesome.quit, { description = "quit awesome", group = "awesome controls" }),
+	awful.key({ meta, alt }, "q", awesome.quit, { description = "quit awesome", group = "awesome controls" }),
 
 	awful.key({ meta }, "t", function()
 		awful.layout.inc(1)
@@ -205,35 +205,35 @@ local globalkeys = gears.table.join(
 		awful.screen.focus_relative(1)
 	end, { description = "focus next screen", group = "awesome: focus" }),
 
-	awful.key({ meta }, "j", function()
+	awful.key({ meta, alt }, "d", function()
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous window", group = "awesome: move window" }),
 
-	awful.key({ meta }, "k", function()
+	awful.key({ meta, ctrl }, "f", function()
 		awful.client.swap.byidx(1)
 	end, { description = "swap with next window", group = "awesome: move window" }),
 
-	awful.key({ meta }, "l", function()
+	awful.key({ meta, ctrl }, "h", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase main column width", group = "awesome: layout" }),
 
-	awful.key({ meta }, "h", function()
+	awful.key({ meta, ctrl }, "l", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease main column width", group = "awesome: layout" }),
 
-	awful.key({ meta, ctrl }, "j", function()
+	awful.key({ meta }, "j", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta, ctrl }, "k", function()
+	awful.key({ meta }, "k", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of main windows", group = "awesome: layout" }),
 
-	awful.key({ meta, ctrl }, "h", function()
+	awful.key({ meta }, "h", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "awesome: layout" }),
 
-	awful.key({ meta, ctrl }, "l", function()
+	awful.key({ meta }, "l", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "awesome: layout" }),
 
@@ -283,7 +283,7 @@ for i = 1, 5 do
 		end, { description = "view workspace #" .. i, group = "awesome: workspaces" }),
 
 		-- Move window to workspace
-		awful.key({ meta, shift }, i, function()
+		awful.key({ meta, ctrl }, i, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
