@@ -93,7 +93,15 @@ end))
 
 local tasklist_buttons = gears.table.join(
 	awful.button({}, 1, function(c)
-		c:emit_signal("request::activate", "tasklist", { raise = true })
+		if c == client.focus then
+			c.minimized = true
+		else
+			c:emit_signal(
+				"request::activate",
+				"tasklist",
+				{raise = true}
+			)
+		end
 	end),
 	awful.button({}, 3, function(c)
 		c:kill()
