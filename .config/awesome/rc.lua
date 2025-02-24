@@ -198,8 +198,8 @@ local globalkeys = gears.table.join(
 
 	-- Awesome
 	awful.key(hyp, "h", hotkeys_popup.show_help,	{ description = "show help", group = "awesome" }),
-	awful.key(hyp, "b", awesome.restart,			{ description = "reload awesome", group = "awesome" }),
-	awful.key(hyp, "z", awesome.quit,				{ description = "quit awesome", group = "awesome" }),
+	awful.key(hyp, "v", awesome.restart,			{ description = "reload awesome", group = "awesome" }),
+	awful.key(hyp, "c", awesome.quit,				{ description = "quit awesome", group = "awesome" }),
 
 	-- Layout
 	awful.key(sup, "v", function() awful.layout.inc(1) end, { description = "cycle layout", group = "awesome: layout" }),
