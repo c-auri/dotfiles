@@ -25,4 +25,4 @@ Install manually:
   4. edit `~/.config/rofi/launchers/type-4/shared/fonts.rasi` and set 'Ubuntu Mono 13' font
 - Firefox 
   1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
-  2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAKGAQAAAAAAAABBKYhm849SCia6aSqEGccwS-xNKliFvrJIcAF6ENZLAc3GqWJ4cTCWcqYqLSjBwhbYEWAdmqwHvbYFhZr34Na49EadonypbMvhzVBrjdzM5iZh075P423qIDkuNGHkQkxYYKPsQsaE2gylOg5ymWTDNfbYvW1qyVfdus6ipCxXzB4fPqV1uux3x9WHPWk913oZojM-n0pSeKk9jTfoT6kaFrCMlX00fbK1RBEfUgYPtazDli3qcmrVbb_w2PGe3Gv6SKdZ8IbO3sTA17mf_rBl7g)
+  2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAI8AQAAAAAAAABBKYhm849SCia48_6EGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QclheASPKN1fJIx9PWthmsaa6HAbqbuA9Kv-Hq-RuPvtK5tJ0Z6mvqzslWZE2dmNfQBe83zmLh3aFYkM5rdXNIcpTLXKdUFkKWXxis7LXNgOrAKWkz4h8wdMUrmBiCHyhzDq1dfmn9o5Esa_8jxLCXIMhHbVAhdfmry02dxMIis_vsabUA)
