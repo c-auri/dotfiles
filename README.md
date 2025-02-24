@@ -53,4 +53,4 @@ Install manually:
   1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
   2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAI8AQAAAAAAAABBKYhm849SCia48_6EGccwS-xMDPrv2Sw6Caq-qy5QgqeHG4K15QclheASPKN1fJIx9PWthmsaa6HAbqbuA9Kv-Hq-RuPvtK5tJ0Z6mvqzslWZE2dmNfQBe83zmLh3aFYkM5rdXNIcpTLXKdUFkKWXxis7LXNgOrAKWkz4h8wdMUrmBiCHyhzDq1dfmn9o5Esa_8jxLCXIMhHbVAhdfmry02dxMIis_vsabUA)
   3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-  4. import `.config/stylus/stylus-YYYY-MM-DD.json` using Stylus plugin
+  4. import `.config/stylus/styles.json` using Stylus plugin
