@@ -44,7 +44,6 @@ PURPLE='\[\e[1;35m\]'
 purple='\[\e[0;35m\]'
 
 # commands & aliases
-eval "$(zoxide init --cmd cd bash)"
 
 branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -97,6 +96,8 @@ echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
 echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 
 PATH=$PATH:$HOME/.local/bin
+
+eval "$(zoxide init --cmd cd bash)"
 
 # programming tools 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
