@@ -103,7 +103,14 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.bash_completion/alacritty
 
 function set_win_title(){
-    echo -ne "\033]0; $(basename "$PWD") \007"
+    if [ $PWD = $HOME ]
+    then
+        title="~"
+    else
+        title=$PWD
+    fi
+
+    echo -ne "\033]0; $(basename "$title") \007"
 }
 
 starship_precmd_user_func="set_win_title"
