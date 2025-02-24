@@ -6,6 +6,7 @@ My dotfiles and other configurations, organized using the git bare repository me
 ## Installations 
 - Ubuntu packages: `apt install arandr awesome fzf lxsession lxpolkit rofi xterm`
 - [Alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+- [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 
