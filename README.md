@@ -14,6 +14,8 @@ Install manually:
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
+- [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
+
 
 ## Manually install Themes
 - Run `lxappearance` and select desired theme
