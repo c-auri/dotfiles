@@ -8,7 +8,29 @@ alias la='ls -a'
 alias ll='ls -l --git --no-user'
 alias lls='ll --total-size'
 alias lla='ll -a'
-alias lt='ls --tree --git-ignore'
+
+lt () {
+    if [[ $# > 1 ]]
+    then
+        echo "Too many arguments."
+        return 1
+    fi
+
+    case $1 in
+        '')
+            ls --tree --git-ignore
+            ;;
+        *[0-9]*)
+            ls --tree --git-ignore -L $1
+            ;;
+        *)
+            echo "Invalid argument. Expected an integer."
+            return 1
+            ;;
+    esac
+
+    return $?
+}
 
 alias cdf='cd $(fd -H -t d | fzf)'
 alias cdr='cd $(git rev-parse --show-toplevel)'
