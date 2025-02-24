@@ -179,7 +179,7 @@ awful.screen.connect_for_each_screen(function(s)
 end)
 
 for s in screen do
-	s.tags[2]:view_only()
+	s.tags[1]:view_only()
 end
 -- }}}
 
@@ -295,17 +295,6 @@ awful.rules.rules = {
 	},
 
 	-- Set applications to always map on certain screens and tags
-	{
-		rule_any = {
-			class = {
-				"firefox",
-			},
-		},
-		properties = {
-			screen = awful.screen.primary,
-			tag = "1",
-		},
-	},
 
 	{
 		rule_any = {
@@ -317,7 +306,7 @@ awful.rules.rules = {
 		},
 		properties = {
 			screen = awful.screen.primary,
-			tag = "3",
+			tag = "2",
 		},
 	},
 
@@ -329,9 +318,22 @@ awful.rules.rules = {
 		},
 		properties = {
 			screen = awful.screen.primary,
+			tag = "3",
+		},
+	},
+
+	{
+		rule_any = {
+			class = {
+				"firefox",
+			},
+		},
+		properties = {
+			screen = awful.screen.primary,
 			tag = "4",
 		},
 	},
+
 
 	{
 		rule_any = {
