@@ -19,12 +19,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-source ~/.bash_completion/alacritty
-
 if [ -f ~/.bash/local.sh ]; then . ~/.bash/local.sh; fi
 if [ -f ~/.bash/git.sh ]; then . ~/.bash/git.sh; fi
 if [ -f ~/.bash/commands.sh ]; then . ~/.bash/commands.sh; fi
 if [ -f ~/.bash/dotnet.sh ]; then . ~/.bash/dotnet.sh; fi
+if [ -f ~/.bash/completion/alacritty ]; then . ~/.bash/completion/alacritty; fi
 
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
@@ -45,7 +44,6 @@ PATH=$PATH:$HOME/.local/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/.bash_completion/alacritty
 
 function set_win_title {
     if [ $PWD = $HOME ]
