@@ -19,10 +19,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.bash/local.sh ]; then . ~/.bash/local.sh; fi
-if [ -f ~/.bash/git.sh ]; then . ~/.bash/git.sh; fi
-if [ -f ~/.bash/commands.sh ]; then . ~/.bash/commands.sh; fi
-if [ -f ~/.bash/dotnet.sh ]; then . ~/.bash/dotnet.sh; fi
+if [ -f ~/.bash/local ]; then . ~/.bash/local; fi
+if [ -f ~/.bash/git ]; then . ~/.bash/git; fi
+if [ -f ~/.bash/commands ]; then . ~/.bash/commands; fi
+if [ -f ~/.bash/dotnet ]; then . ~/.bash/dotnet; fi
 if [ -f ~/.bash/completion/alacritty ]; then . ~/.bash/completion/alacritty; fi
 
 eval "$(dircolors $HOME/.dircolors)"

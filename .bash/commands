@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias sb='source ~/.bashrc'
 alias vb='v ~/.bashrc'
 alias vbc='v ~/.bash/commands.sh'

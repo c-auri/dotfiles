@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # File management:
 alias gs='git status'
 alias gd='git diff'
