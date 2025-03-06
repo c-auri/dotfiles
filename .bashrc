@@ -19,11 +19,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.bash/local ]; then . ~/.bash/local; fi
-if [ -f ~/.bash/git ]; then . ~/.bash/git; fi
-if [ -f ~/.bash/commands ]; then . ~/.bash/commands; fi
-if [ -f ~/.bash/dotnet ]; then . ~/.bash/dotnet; fi
-if [ -f ~/.bash/completion/alacritty ]; then . ~/.bash/completion/alacritty; fi
+if [ -f ~/.config/bash/local ]; then . ~/.config/bash/local; fi
+if [ -f ~/.config/bash/git ]; then . ~/.config/bash/git; fi
+if [ -f ~/.config/bash/commands ]; then . ~/.config/bash/commands; fi
+if [ -f ~/.config/bash/dotnet ]; then . ~/.config/bash/dotnet; fi
+if [ -f ~/.config/bash/completion/alacritty ]; then . ~/.config/bash/completion/alacritty; fi
 
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
