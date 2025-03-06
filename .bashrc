@@ -10,40 +10,8 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+# check the window size after each command and update LINES and COLUMNS accordingly
 shopt -s checkwinsize
-
-# bash completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-if [ -f ~/.config/bash/local ]; then . ~/.config/bash/local; fi
-if [ -f ~/.config/bash/git ]; then . ~/.config/bash/git; fi
-if [ -f ~/.config/bash/commands ]; then . ~/.config/bash/commands; fi
-if [ -f ~/.config/bash/dotnet ]; then . ~/.config/bash/dotnet; fi
-if [ -f ~/.config/bash/completion/alacritty ]; then . ~/.config/bash/completion/alacritty; fi
-
-eval "$(dircolors $HOME/.dircolors)"
-export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;37"
-
-# Default parameter to send to the "less" command
-# -R: show ANSI colors correctly; -i: case insensitive search
-LESS="-R -i"
-
-# Add sbin directories to PATH.  This is useful on systems that have sudo
-echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
-echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
-
-PATH=$PATH:$HOME/.local/bin
-
-# programming tools 
-. "$HOME/.cargo/env"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 function set_win_title {
     if [ $PWD = $HOME ]
@@ -57,8 +25,23 @@ function set_win_title {
 }
 
 starship_precmd_user_func="set_win_title"
-
-eval "$(zoxide init --cmd cd bash)"
 eval "$(starship init bash)"
 
+if [ -f /etc/bash_completion ] && ! shopt -oq posix;    then . /etc/bash_completion; fi
+if [ -f ~/.config/bash/completion/alacritty ];          then . ~/.config/bash/completion/alacritty; fi
+if [ -f ~/.config/bash/local ];                         then . ~/.config/bash/local; fi
+if [ -f ~/.config/bash/os ];                            then . ~/.config/bash/os; fi
+if [ -f ~/.config/bash/dev ];                           then . ~/.config/bash/dev; fi
+
+alias sb='source ~/.bashrc'
+alias vb='v ~/.bashrc'
+alias vbl='v ~/.config/bash/local'
+alias vbos='v ~/.config/bash/os'
+alias vbdev='v ~/.config/bash/dev'
+
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
+
+echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
+echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
+PATH=$PATH:$HOME/.local/bin
+
