@@ -27,18 +27,14 @@ function set_win_title {
 starship_precmd_user_func="set_win_title"
 eval "$(starship init bash)"
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix;    then . /etc/bash_completion; fi
-if [ -f ~/.config/bash/completion/alacritty ];          then . ~/.config/bash/completion/alacritty; fi
-if [ -f ~/.config/bash/local ];                         then . ~/.config/bash/local; fi
-if [ -f ~/.config/bash/os ];                            then . ~/.config/bash/os; fi
-if [ -f ~/.config/bash/dev ];                           then . ~/.config/bash/dev; fi
+[ -f /etc/bash_completion ] && ! shopt -oq posix    && . /etc/bash_completion
+[ -f ~/.config/bash/completion/alacritty ]          && . ~/.config/bash/completion/alacritty
+[ -f ~/.config/bash/local ]                         && . ~/.config/bash/local
+[ -f ~/.config/bash/os ]                            && . ~/.config/bash/os
+[ -f ~/.config/bash/dev ]                           && . ~/.config/bash/dev
+[ -f ~/.fzf.bash ]                                  && source ~/.fzf.bash
 
 alias sb='source ~/.bashrc'
-alias vb='v ~/.bashrc'
-alias vbl='v ~/.config/bash/local'
-alias vbos='v ~/.config/bash/os'
-alias vbdev='v ~/.config/bash/dev'
-
 alias cfg='/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME'
 
 echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin

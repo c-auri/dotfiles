@@ -36,15 +36,17 @@ function lt {
     return $?
 }
 
-alias cdf='cd $(fd -H -t d | fzf)'
-eval "$(zoxide init --cmd cd bash)"
+export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
+alias fd='fdfind'
+alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
+alias cdf='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 
 alias mv='mv -i'
 alias cp='cp -i'
-alias fd='fdfind'
 
 alias v='nvim'
 alias bat='batcat'
+export BAT_THEME="ansi"
 
 alias t='tmux'
 alias tat='tmux attach -t'
