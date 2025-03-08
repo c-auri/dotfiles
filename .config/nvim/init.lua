@@ -9,10 +9,8 @@ vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- For more options, you can see `:help option-list`
 
--- line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
 
