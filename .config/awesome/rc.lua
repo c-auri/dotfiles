@@ -52,7 +52,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpaper
 beautiful.init(gears.filesystem.get_xdg_config_home() .. "awesome/theme.lua")
-gears.wallpaper.set("#0e1113")
+gears.wallpaper.set("#181616")
 
 -- This is used later as the default terminal and editor to run.
 local terminal = "alacritty"
