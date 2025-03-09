@@ -39,7 +39,7 @@ function lt {
 export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
 alias fd='fdfind'
 alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
-alias cdf='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
+alias cf='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 
 alias mv='mv -i'
 alias cp='cp -i'
