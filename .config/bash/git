@@ -8,6 +8,20 @@ alias gA='git add -A'
 alias gc='git commit'
 alias gC='git commit -a'
 
+function gsf
+{
+    git rev-parse 2>/dev/null
+    git_exit_code=$?
+    if [ $git_exit_code == 0 ]
+    then
+        git branch -a | grep -vP "\*|HEAD" | sed "s/remotes\/origin\///" | sort | uniq | fzf | xargs -r git switch
+    else
+        echo "Not a git repository."
+        return $git_exit_code
+    fi
+}
+
+
 function cdr {
     root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
     if [[ $? ]]
