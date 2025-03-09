@@ -10,4 +10,5 @@ bindings = [
   { key = "C", mods = "Control", action = "Copy" },
   { key = "V", mods = "Control", action = "Paste" },
   { key = "K", mods = "Control", chars = "\u0003" },
+  { key = "L", mods = "Control", chars = "clear\n" },
 ]
