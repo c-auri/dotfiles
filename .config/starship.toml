@@ -2,7 +2,7 @@ format = '$username$sudo[:](bold bright-black) $directory[(\[$git_branch$git_sta
 
 [username]
 format = '[$user]($style)'
-style_user = "bold bright-cyan"
+style_user = "bold bright-green"
 style_root = "bold red"
 show_always = true
 aliases = { "christoph.aurich@energy2market.de" = "christoph.aurich" }
