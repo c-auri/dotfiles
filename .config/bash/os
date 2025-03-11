@@ -17,7 +17,7 @@ alias lt='ls --tree --git-ignore'
 export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
 alias fd='fdfind'
 alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
-alias cf='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
+alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 
 alias mv='mv -i'
 alias cp='cp -i'
