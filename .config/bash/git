@@ -11,26 +11,25 @@ alias gC='git commit -a'
 function gsf
 {
     git rev-parse 2>/dev/null
-    git_exit_code=$?
-    if [ $git_exit_code == 0 ]
+    if [[ $? != 0 ]]
     then
-        git branch -a | grep -vP "\*|HEAD" | sed "s/remotes\/origin\///" | sort | uniq | fzf | xargs -r git switch
-    else
         echo "Not a git repository."
-        return $git_exit_code
+        return 1
     fi
+
+    git branch -a | grep -vP "\*|HEAD" | sed "s/remotes\/origin\///" | sort | uniq | fzf | xargs -r git switch
 }
 
-
-function cdr {
+function cdr
+{
     root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
-    if [[ $? ]]
+    if [[ $? != 0 ]]
     then
-        cd $root
-    else
         echo "Not inside a git repository."
         return 1
     fi
+
+    cd $root
 }
 
 alias gp='git push'
@@ -40,7 +39,8 @@ alias gsm='git switch "$(__default_branch)"'
 alias gf='git fetch -p'
 alias gl='git pull'
 
-function glm {
+function glm 
+{
     defaultBranch=$(__default_branch)
     if [[ $defaultBranch == $(git branch --show-current) ]]
     then
@@ -50,7 +50,8 @@ function glm {
     fi
 }
 
-function gg {
+function gg 
+{
     num_commits=${1:-10};
     git graph --all -$num_commits
 }
