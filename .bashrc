@@ -31,6 +31,7 @@ eval "$(starship init bash)"
 [ -f ~/.config/bash/completion/alacritty ]          && . ~/.config/bash/completion/alacritty
 [ -f ~/.config/bash/local ]                         && . ~/.config/bash/local
 [ -f ~/.config/bash/os ]                            && . ~/.config/bash/os
+[ -f ~/.config/bash/notes ]                         && . ~/.config/bash/notes
 [ -f ~/.config/bash/git ]                           && . ~/.config/bash/git
 [ -f ~/.config/bash/dev ]                           && . ~/.config/bash/dev
 [ -f ~/.fzf.bash ]                                  && source ~/.fzf.bash
