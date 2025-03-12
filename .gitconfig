@@ -20,4 +20,5 @@
 	ri = rebase --interactive --autosquash
 
 [includeIf "gitdir:~/projects/**/.git"]
-  path = ~/projects/config/.gitconfig
+	path = ~/projects/config/git/hookspath.ini
+	path = ~/projects/config/git/user.ini
