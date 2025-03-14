@@ -1,8 +1,5 @@
 # Config
-My dotfiles and other configurations.
-
-## How to use
-The files are organized using the git bare repository method. For explanations, see this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM) on YouTube or the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles).
+My dotfiles and other configurations. They are organized using the git bare repository method. For explanations, see the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles) or this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM).
 
 ### Setup
 1. Clone into your home directory as a bare repository:
@@ -27,14 +24,14 @@ The files are organized using the git bare repository method. For explanations, 
     cfg config --local status.showUntrackedFiles no
     ```
 1. Populate the `remote.origin.fetch` property
-```bash
-git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-```
+   ```bash
+   git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+   ```
 
 ## Installations
 Install apt packages:
 ```
-apt install arandr awesome bat fd-find flameshot fzf gawk gimp mpv ncal lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
+apt install arandr awesome bat fd-find flameshot fzf gawk gimp mpv lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
 ```
 
 Install manually:
@@ -46,8 +43,7 @@ Install manually:
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 - [fd](https://github.com/sharkdp/fd?tab=readme-ov-file#installation): run `ln -s $(which fdfind) ~/.local/bin/fd`
 
-
-## Manual Theming 
+## Manual Theming
 - Run `lxappearance` and select desired theme
 - Rofi:
   1. install [theme](https://github.com/adi1090x/rofi)
