@@ -36,7 +36,7 @@ BRIGHT_WHITE="\[$(tput setaf 15)\]"
 
 [ -f /etc/bash_completion ] && ! shopt -oq posix    && . /etc/bash_completion
 [ -f ~/.config/bash/completion/alacritty ]          && . ~/.config/bash/completion/alacritty
-[ -f ~/.config/bash/prompt ]                         && . ~/.config/bash/prompt
+[ -f ~/.config/bash/prompt ]                        && . ~/.config/bash/prompt
 [ -f ~/.config/bash/local ]                         && . ~/.config/bash/local
 [ -f ~/.config/bash/os ]                            && . ~/.config/bash/os
 [ -f ~/.config/bash/notes ]                         && . ~/.config/bash/notes

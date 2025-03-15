@@ -1,15 +1,47 @@
 #!/bin/bash
 
-function set_win_title {
-    if [ $PWD = $HOME ]
-    then
-        title="~"
-    else
-        title=$PWD
-    fi
-
-    echo -ne "\033]0; $(basename "$title") \007"
+function set_window_title
+{
+    echo -ne "\033]0;$1\007"
 }
 
-starship_precmd_user_func="set_win_title"
-eval "$(starship init bash)"
+function get_git_status
+{
+    echo $(git branch --show-current 2>/dev/null)
+}
+
+function generate_prompt
+{
+    if [[ $? == 0 ]]
+    then
+        SYM_COLOR=$BRIGHT_WHITE
+    else
+        SYM_COLOR=$BRIGHT_RED
+    fi
+
+    if [[ $PWD = $HOME ]]
+    then
+        dir="~"
+    else
+        dir=$(basename $PWD)
+    fi
+
+    set_window_title $dir
+
+    git=$(get_git_status)
+    if [[ -n $git ]]
+    then
+        GIT="$YELLOW[$git]"
+    else
+        GIT=""
+    fi
+
+    USER="$BRIGHT_CYAN\u"
+    COLON="$BRIGHT_BLACK: "
+    DIR="$BRIGHT_WHITE$dir"
+    SYM="$SYM_COLOR❯"
+
+    PS1="\n$BOLD$USER$COLON$DIR $GIT\n$SYM $RESET"
+}
+
+PROMPT_COMMAND=generate_prompt

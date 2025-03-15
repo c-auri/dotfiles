@@ -37,7 +37,6 @@ apt install arandr awesome bat fd-find flameshot fzf gawk gimp mpv lxappearance 
 Install manually:
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 - [zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
