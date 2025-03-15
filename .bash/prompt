@@ -1,34 +1,44 @@
 #!/bin/bash
 
-function set_window_title
-{
-    echo -ne "\033]0;$1\007"
-}
+RESET="\[$(tput sgr0)\]"
+BOLD="\[$(tput bold)\]"
 
-function get_git_status
-{
-    echo $(git branch --show-current 2>/dev/null)
-}
+BLACK="\[$(tput setaf 0)\]"
+RED="\[$(tput setaf 1)\]"
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+BLUE="\[$(tput setaf 4)\]"
+PURPLE="\[$(tput setaf 5)\]"
+CYAN="\[$(tput setaf 6)\]"
+WHITE="\[$(tput setaf 7)\]"
 
-function generate_prompt
-{
-    if [[ $? == 0 ]]
-    then
-        SYM_COLOR=$BRIGHT_WHITE
-    else
-        SYM_COLOR=$BRIGHT_RED
-    fi
+BRIGHT_BLACK="\[$(tput setaf 8)\]"
+BRIGHT_RED="\[$(tput setaf 9)\]"
+BRIGHT_GREEN="\[$(tput setaf 10)\]"
+BRIGHT_YELLOW="\[$(tput setaf 11)\]"
+BRIGHT_BLUE="\[$(tput setaf 12)\]"
+BRIGHT_PURPLE="\[$(tput setaf 13)\]"
+BRIGHT_CYAN="\[$(tput setaf 14)\]"
+BRIGHT_WHITE="\[$(tput setaf 15)\]"
 
-    if [[ $PWD = $HOME ]]
+PROMPT_COMMAND=__prepare_prompt
+
+function __prepare_prompt
+{
+    prev_cmd_exit_code=$?
+
+    if [[ $PWD == $HOME ]]
     then
         dir="~"
     else
         dir=$(basename $PWD)
     fi
 
-    set_window_title $dir
+    USER="$BRIGHT_CYAN\u$BRIGHT_BLACK: "
+    SET_WIN_TITLE="\[\e]2;$dir\a\]"
+    DIR="$BRIGHT_WHITE$dir"
 
-    git=$(get_git_status)
+    git=$(__get_git_status)
     if [[ -n $git ]]
     then
         GIT="$YELLOW[$git]"
@@ -36,12 +46,17 @@ function generate_prompt
         GIT=""
     fi
 
-    USER="$BRIGHT_CYAN\u"
-    COLON="$BRIGHT_BLACK: "
-    DIR="$BRIGHT_WHITE$dir"
-    SYM="$SYM_COLOR❯"
+    if [[ $prev_cmd_exit_code == 0 ]]
+    then
+        SYM="$BRIGHT_WHITE❯"
+    else
+        SYM="$BRIGHT_RED❯"
+    fi
 
-    PS1="\n$BOLD$USER$COLON$DIR $GIT\n$SYM $RESET"
+    PS1="$SET_WIN_TITLE\n$BOLD$USER$DIR $GIT\n$SYM $RESET"
 }
 
-PROMPT_COMMAND=generate_prompt
+function __get_git_status
+{
+    echo $(git branch --show-current 2>/dev/null)
+}

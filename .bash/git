@@ -25,7 +25,7 @@ function cdr
     root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
     if [[ $? != 0 ]]
     then
-        echo "Not inside a git repository."
+        echo "Not a git repository."
         return 1
     fi
 
