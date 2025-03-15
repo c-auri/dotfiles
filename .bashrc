@@ -35,13 +35,13 @@ BRIGHT_CYAN="\[$(tput setaf 14)\]"
 BRIGHT_WHITE="\[$(tput setaf 15)\]"
 
 [ -f /etc/bash_completion ] && ! shopt -oq posix    && . /etc/bash_completion
-[ -f ~/.config/bash/completion/alacritty ]          && . ~/.config/bash/completion/alacritty
-[ -f ~/.config/bash/prompt ]                        && . ~/.config/bash/prompt
-[ -f ~/.config/bash/local ]                         && . ~/.config/bash/local
-[ -f ~/.config/bash/os ]                            && . ~/.config/bash/os
-[ -f ~/.config/bash/notes ]                         && . ~/.config/bash/notes
-[ -f ~/.config/bash/git ]                           && . ~/.config/bash/git
-[ -f ~/.config/bash/dev ]                           && . ~/.config/bash/dev
+[ -f ~/.bash/completion/alacritty ]          && . ~/.bash/completion/alacritty
+[ -f ~/.bash/prompt ]                        && . ~/.bash/prompt
+[ -f ~/.bash/local ]                         && . ~/.bash/local
+[ -f ~/.bash/os ]                            && . ~/.bash/os
+[ -f ~/.bash/notes ]                         && . ~/.bash/notes
+[ -f ~/.bash/git ]                           && . ~/.bash/git
+[ -f ~/.bash/dev ]                           && . ~/.bash/dev
 [ -f ~/.fzf.bash ]                                  && source ~/.fzf.bash
 
 alias sb='source ~/.bashrc'
