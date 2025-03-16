@@ -38,7 +38,7 @@ function __prepare_prompt
     SET_WIN_TITLE="\[\e]2;$dir\a\]"
     DIR="$BRIGHT_WHITE$dir"
 
-    git=$(__get_git_status)
+    git=$(git status 2>/dev/null | awk -f ~/.bash/parse_git_status.awk)
     if [[ -n $git ]]
     then
         GIT="$YELLOW[$git]"
@@ -54,9 +54,4 @@ function __prepare_prompt
     fi
 
     PS1="$SET_WIN_TITLE\n$BOLD$USER$DIR $GIT\n$SYM $RESET"
-}
-
-function __get_git_status
-{
-    echo $(git branch --show-current 2>/dev/null)
 }
