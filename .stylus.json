@@ -1,0 +1,362 @@
+[
+  {
+    "settings": {
+      "disableAll": false,
+      "exposeIframes": false,
+      "exposeStyleName": false,
+      "keepAlive": 0,
+      "keepAliveIdle": false,
+      "newStyleAsUsercss": true,
+      "openEditInWindow": true,
+      "openEditInWindow.popup": false,
+      "patchCsp": false,
+      "show-badge": true,
+      "styleViaASS": false,
+      "styleViaXhr": false,
+      "urlInstaller": true,
+      "windowPosition": {
+        "left": 1930,
+        "top": 650,
+        "width": 1420,
+        "height": 840
+      },
+      "compactWidth": 850,
+      "config.autosave": true,
+      "schemeSwitcher.enabled": "system",
+      "schemeSwitcher.nightStart": "18:00",
+      "schemeSwitcher.nightEnd": "06:00",
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findSort": "w",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": false,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.links.expanded": true,
+      "manage.minColumnWidth": 750,
+      "manage.newUI": true,
+      "manage.newUI.favicons": true,
+      "manage.newUI.faviconsGray": false,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "manage.searchMode": "meta",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.options.style.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.publish.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "vim",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true,
+        "indent_mozdoc": true,
+        "space_around_combinator": true,
+        "space_around_cmp": false
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": false,
+      "editor.selectByTokens": true,
+      "editor.arrowKeysTraverse": true,
+      "editor.appliesToLineWidget": true,
+      "editor.autosaveDraft": 10,
+      "editor.livePreview": true,
+      "editor.livePreview.delay": 0.2,
+      "editor.targetsFirst": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": -1,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "headerWidth.edit": 280,
+      "headerWidth.install": 280,
+      "headerWidth.manage": 280,
+      "popup.search.globals": false,
+      "popupWidth": 246,
+      "popupWidthMax": 280,
+      "updateInterval": 24,
+      "updateOnlyEnabled": false
+    },
+    "order": {
+      "main": [],
+      "prio": []
+    }
+  },
+  {
+    "enabled": true,
+    "installDate": 1710019886516,
+    "name": "google",
+    "sections": [
+      {
+        "code": "html {\n    --dark-gray: #181616;\n    --dim-gray: #1f1d1d;\n    --medium-gray: #212020;\n    --light-gray: #2f2e2e;\n\n    --blue: #8ba7b0;\n    --cyan: #8ea4a2;\n    --green: #8a9a7b;\n\n    --bright-blue: #7fb4ca;\n    --bright-cyan: #7aa89f;\n    --bright-green: #87a987;\n    \n    --xhUGwc: var(--dark-gray) !important;\n    --XKMDxc: var(--dark-gray) !important;\n}\n\nbody,\n#gb\n{\n    background-color: var(--dark-gray) !important;\n}\n\n.RNNXgb\n{\n    background-color: var(--medium-gray);\n}\n\n.RNNXgb:hover\n{\n    background-color: var(--light-gray);\n}",
+        "domains": [
+          "google.com"
+        ]
+      }
+    ],
+    "updateDate": 1742140738770,
+    "_id": "f0e8afce-f92f-4aff-8a11-f8b58c7cb116",
+    "_rev": 1742140738771,
+    "id": 9
+  },
+  {
+    "enabled": true,
+    "installDate": 1710192040988,
+    "name": "dotasource",
+    "sections": [
+      {
+        "code": "body {\n    --dark-gray: #181616;\n    --gray: #555555;\n    --text-color: #c5c9c5;\n    --accent: #e44f24;\n}\n\n.messageText {\n    color: var(--text-color);\n}\n\n#content,\n.recentActivityList li,\n.sidebar,\nheader.boxHeadline,\n.navigationHeader,\nli.active a,\n.mainMenu li a:hover,\n.tabularBox header,\n.tabularBox td,\n.notificationItem,\n.dialogContainer,\n.dialogContent,\n.dialogTitlebar,\n.containerList li,\n.quoteBox,\n.wbbBoardNode1,\n.wbbBoardNode2,\n.navigationFooter,\n.wbbPost div,\n.messageContent div,\n.message,\n.redactor-toolbar,\n.messageTabMenuNavigation ul,\n.box32,\n.userPanel,\n.dropdownToggle,\n.mainNavigation,\n.container,\nbody {\n    background-color: var(--dark-gray) !important;\n}\n\n#latestPostsAndThreadsContainer  td {\n    border-color: var(--dark-gray) !important;\n}\n\n#editReason,\n#editReason:hover {\n    background-color: var(--dark-gray) !important;\n    border-color: var(--gray) !important;\n}\n\n#main {\n    margin-top: 0px !important;\n}\n\n.userPanelItems,\n#footerNavigation {\n    padding-left: 38px !important;\n}\n\n#topNavigation {\n    box-sizing: border-box;\n    margin-top: 100px !important;\n    padding-inline: 42px;\n}\n\n#main,\n#footerNavigation,\n#footerNavigation ul {\n    border: none !important;\n}\n\n.notificationItem,\n.dialogContainer,\n.wbbPost,\n.tabularBox,\n.sidebar {\n    border: solid 1px var(--gray);\n}\n\n.wbbPost {\n    padding-block: 10px;\n}\n\n.mainMenu li.active a,\n.mainMenu li a:hover,\n.navigationHeader a:hover {\n    border-top: 0 !important;\n    color: var(--accent) !important;\n    text-align: left !important;\n}\n\n.mainMenu {\n    padding-left: 8px;\n}\n\n.navigationHeader {\n    padding-inline: 36px;\n    border: none !important;\n}\n\n.navigationHeader a {\n    color: var(--gray) !important;\n}\n\naside.sidebar {\n    margin-top: 100px !important;\n}\n\n.dashboardBox {\n    border-bottom: 0 !important;\n}\n\n.collapsibleButton {\n    background-color: transparent !important;\n    color: var(--gray);\n}\n\n.body-bg,\n.mainMenu li,\n.likesSummary,\n.boxHeadline h1 {\n    background: none !important;\n}",
+        "domains": [
+          "dotasource.de"
+        ]
+      }
+    ],
+    "updateDate": 1742140799927,
+    "_id": "a0918ec3-b4b5-4c6b-a047-b4494f5ed41f",
+    "_rev": 1742140799927,
+    "id": 13
+  },
+  {
+    "enabled": true,
+    "installDate": 1710358296122,
+    "name": "wikipedia-en",
+    "sections": [
+      {
+        "code": ":root {\n    --dark-gray: #181616;\n    --medium-gray: #3f3d3d;\n    \n    --background-color-base: var(--dark-gray) !important;\n    --background-color-neutral: var(--dark-gray) !important;\n    --background-color-neutral-subtle: var(--dark-gray) !important;\n    --background-color-interactive-subtle: var(--dark-gray) !important;\n}\n\n.infobox {\n    border-color: var(--medium-gray);\n}",
+        "domains": [
+          "en.wikipedia.org"
+        ]
+      }
+    ],
+    "updateDate": 1742140776886,
+    "_id": "19ac81a8-6eb1-480d-9e9b-f4205e8ab424",
+    "_rev": 1742140776886,
+    "id": 15
+  },
+  {
+    "enabled": true,
+    "installDate": 1721679144741,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           the-odin-project\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document url-prefix(\"https://www.theodinproject.com/\") {\n    html {\n        --dark-gray: #181616;\n        --dim-gray: #1f1d1d;\n        --medium-gray: #212020;\n        --light-gray: #2f2e2e;\n        \n        --blue: #8ba7b0;\n        --cyan: #8ea4a2;\n        --green: #8a9a7b;\n        \n        --bright-blue: #7fb4ca;\n        --bright-cyan: #7aa89f;\n        --bright-green: #87a987;\n    }\n    \n    .dark\\:bg-gray-900,\n    .dark\\:bg-gray-800,\n    .lesson-content__panel {\n        background-color: var(--dark-gray) !important;\n    }\n    \n    .lesson-content__panel {\n        border: 1px solid var(--medium-gray);\n    }\n}",
+    "usercssData": {
+      "name": "the-odin-project",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "the-odin-project",
+    "updateDate": 1742140756918,
+    "_id": "7fcc69f8-26b4-43c2-acd3-2ff0f416b544",
+    "_rev": 1742140756918,
+    "id": 21
+  },
+  {
+    "enabled": true,
+    "installDate": 1723285979617,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           www.youtube.com - Aug 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"www.youtube.com\") {\n    html:not(.style-scope) {\n        --medium-gray: #1f1d1d;\n        --dark-gray: #181616;\n        \n        --blue: #8ba7b0;\n        --cyan: #8ea4a2;\n        --green: #8a9a7b;\n        \n        --bright-blue: #7fb4ca;\n        --bright-cyan: #7aa89f;\n        --bright-green: #87a987; \n    }\n\n    #container,\n    #columns,\n    #page-manager,\n    #channel-header,\n    .ytd-browse,\n    .ytd-c4-tabbed-header-renderer,\n    #sections,\n    #primary,\n    #chips-content,\n    #contentContainer,\n    #description,\n    #description-inner,\n    #page-header-container,\n    #page-header,\n    #tabs-inner-container,\n    ytd-app,\n    ytd-mini-guide-renderer,\n    .yt-simple-endpoint,\n    #frosted-glass,\n    .ytSearchboxComponentInputBox\n    {\n        background-color: var(--dark-gray) !important;\n    }\n}",
+    "usercssData": {
+      "name": "www.youtube.com - Aug 2024",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "www.youtube.com - Aug 2024",
+    "updateDate": 1742140816886,
+    "_id": "a1606adb-a557-460b-a3f4-e71a717a8f3c",
+    "_rev": 1742140816886,
+    "id": 23,
+    "customName": "youtube"
+  },
+  {
+    "enabled": true,
+    "installDate": 1738527748330,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           tagesschau\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"tagesschau.de\") {\n    html {\n        --dark-gray: #181616;\n        --light-gray: #2f2e2e;\n        --almost-white: #e1e3e6;\n        --accent: #4082b3;\n    }\n    \n    body,\n    footer,\n    .authorline,\n    .accordion__label-wrapper,\n    .arrow-controls__button--right,\n    .arrow-controls__button--left,\n    .buttongroup,\n    .boersenteaser,\n    .burger-button-animated,\n    .compact-list,\n    .container,\n    .content-wrapper__group,\n    .cf,\n    .eilmeldung,\n    .endline,\n    .header-fancy-v2,\n    .header__items,\n    .list_chartnavi,\n    .meldungsfooter,\n    .mover,\n    .promo-box,\n    .softener,\n    .teasergroup,\n    .teasergroup--docked,\n    .teaser,\n    .teaser__teaserinfo,\n    .teaser-mikro,\n    .teaser-nano,\n    .teaser-xs,\n    .trenner,\n    .textabsatz,\n    .teaser-absatz,\n    .VWDcomp,\n    .timeline,\n    .zitat {\n        background-color: var(--dark-gray) !important;\n        background-image: none !important;\n        border: none;\n    }\n    \n    .header-fancy-v2,\n    .teasergroup,\n    .teasergroup--docked,\n    .container,\n    footer,\n    .endline {\n        margin: 0 !important;\n        border-left: var(--light-gray) 1px solid !important;\n        border-right: var(--light-gray) 1px solid !important;\n    }\n    \n    .header-fancy-v2 {\n        border-top: 1px var(--light-gray) solid !important;\n    }\n    \n    .endline {\n        border-bottom: 1px var(--light-gray) solid !important;\n    }\n    \n    .header__logo__icon {\n        width: 0 !important;\n    }\n    \n    .divider,\n    .accordion,\n    .trenner__divider {\n        border-color: var(--light-gray) !important;\n    }\n    \n    .latthema__link {\n        background-color: var(--light-gray) !important;\n        color: var(--almost-white) !important;\n    }\n    \n    .btn,\n    .btn svg,\n    .swiper-pagination-bullet-active,\n    .swiper-button-next:hover,\n    .swiper-button-prev:hover,\n    .label {\n        background-color: var(--accent) !important;\n        color: var(--almost-white) !important;\n        fill: var(--almost-white) !important;\n    }\n    \n    .btn:hover,\n    .btn:hover svg {\n        background-color: var(--accent) !important;\n    }\n    \n    .simpletable th,\n    .simpletable .active {\n        background-color: var(--accent) !important;\n        color: var(--dark-gray) !important;\n    }\n    \n    .simpletable tr:nth-child(even) {\n        background-color: var(--light-gray) !important;\n    }\n    \n    .simpletable td,\n    .simpletable th {\n        border-color: transparent !important;\n    }\n}",
+    "usercssData": {
+      "name": "tagesschau",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "tagesschau",
+    "updateDate": 1742140745942,
+    "_id": "21fa373a-d733-4713-982a-8c66c88d4751",
+    "_rev": 1742140745942,
+    "id": 28
+  },
+  {
+    "enabled": true,
+    "installDate": 1741473124349,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           zeit-online\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"zeit.de\") {\n    html {\n        --dark-gray: #181616;\n        --medium-gray: #3f3d3d;\n        --white: #ffffff;\n    }\n    \n    .page,\n    .page__content,\n    .header,\n    .iqdcontainer,\n    .kpi-area,\n    footer {\n        background-color: var(--dark-gray) !important;\n    }\n    \n    .page__content {\n        border-left: var(--medium-gray) 1px solid;\n        border-right: var(--medium-gray) 1px solid;\n        border-top: var(--medium-gray) 1px solid;\n    }\n    \n    header.header {\n        border-top: var(--medium-gray) 1px solid;\n    }\n    \n    footer {\n        border-bottom: var(--medium-gray) 1px solid;\n    }\n    \n    img.zon-teaser__media-item,\n    img.article__media-item {\n        padding: 1rem !important;\n    }\n}",
+    "usercssData": {
+      "name": "zeit-online",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "zeit-online",
+    "updateDate": 1742140786012,
+    "_id": "7402234b-a2c8-4eb4-9e05-4bc4a24718fc",
+    "_rev": 1742140786012,
+    "id": 29
+  },
+  {
+    "enabled": true,
+    "installDate": 1741473956737,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           github\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"github.com\") {\n    html {\n        --dark-gray: #181616;\n        --dim-gray: #1f1d1d;\n        --medium-gray: #212020;\n        --light-gray: #2f2e2e;\n        \n        --blue: #8ba7b0;\n        --cyan: #8ea4a2;\n        --green: #8a9a7b;\n        \n        --bright-blue: #7fb4ca;\n        --bright-cyan: #7aa89f;\n        --bright-green: #87a987;\n        \n        --bgColor-default: var(--dark-gray) !important;\n        --bgColor-inset: var(--dark-gray) !important;\n        --bgColor-muted: var(--dim-gray) !important;\n        --bgColor-neutral-muted: var(--dim-gray) !important;\n        --display-blue-bgColor-muted: var(--dark-gray) !important;\n        \n        --fgColor-accent: var(--bright-blue) !important;\n        \n        --button-default-bgColor-rest: var(--medium-gray) !important;\n        --button-default-bgColor-hover: var(--light-gray) !important;\n        --button-default-bgColor-active: var(--light-gray) !important;\n        --button-primary-bgColor-rest: var(--button-default-bgColor-rest) !important;\n        --button-primary-bgColor-hover: var(--button-default-bgColor-hover) !important;\n        --button-primary-bgColor-active: var(--button-default-bgColor-active) !important;\n    }\n    \n    header.AppHeader {\n        background-color: var(--dark-gray) !important;\n    }\n}",
+    "usercssData": {
+      "name": "github",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "github",
+    "updateDate": 1742140705832,
+    "_id": "b80aac08-db85-417d-9a5b-02838a2169cc",
+    "_rev": 1742140705832,
+    "id": 30
+  },
+  {
+    "enabled": true,
+    "installDate": 1741516811860,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           google-mail\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"mail.google.com\") {\n    html {\n        --dark-gray: #181616;\n        --dim-gray: #1f1d1d;\n        --medium-gray: #212020;\n        --light-gray: #2f2e2e;\n\n        --blue: #8ba7b0;\n        --cyan: #8ea4a2;\n        --green: #8a9a7b;\n\n        --bright-blue: #7fb4ca;\n        --bright-cyan: #7aa89f;\n        --bright-green: #87a987;\n\n        --xhUGwc: var(--dark-gray) !important;\n        --XKMDxc: var(--dark-gray) !important;\n    }\n    \n    .nH.aqk.aql.bkL\n    {\n        background-color: var(--dark-gray) !important;\n    }\n}",
+    "usercssData": {
+      "name": "google-mail",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "google-mail",
+    "updateDate": 1742140713578,
+    "_id": "3b0d9165-dbc2-4ba4-abcf-ac0c7d26ec97",
+    "_rev": 1742140713578,
+    "id": 31
+  },
+  {
+    "enabled": true,
+    "installDate": 1741894323540,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           rateyourmusic.com\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"rateyourmusic.com\") {\n    /* Insert code here... */\n    html {\n        --dim-gray: #141212;\n        --dark-gray: #181616;\n        --medium-gray: #6b6969;\n        --light-gray: #9a9898;\n\n        --offwhite: #c8c093;\n        --dim-blue: #2d4f67;\n\n        --black: #0d0c0c;\n        --red: #c4746e;\n        --green: #8a9a7b;\n        --yellow: #c4b28a;\n        --blue: #8ba4b0 !important;\n        --magenta: #a292a3;\n        --cyan: #8ea4a2;\n        --white: #c5c9c5;\n\n        --bright-black: #a6a69c;\n        --bright-red: #e46876;\n        --bright-green: #87a987;\n        --bright-yellow: #e6c384;\n        --bright-blue: #7fb4ca;\n        --bright-magenta: #938aa9;\n        --bright-cyan: #7aa89f;\n        --bright-white: #ffffff;\n    }\n \n    body {\n        --background: var(--dark-gray);\n        --header-background: var(--dark-gray);\n\n        --surface-primary: var(--dark-gray);\n        --surface-secondary: var(--dim-gray);\n\n        --btn-expand-background-default: var(--dark-gray);\n        --btn-expand-background-hover: var(--dark-gray);\n        \n        --btn-primary-background-default: var(--medium-gray);\n        --btn-primary-background-hover: var(--blue);\n        \n        --btn-secondary-background-default: var(--mono-d8);\n        --btn-secondary-background-hover: var(--mono-db);\n        --btn-secondary-text: (--mono-3);;\n\n        --mono-e: var(--dark-gray);\n        --mono-ef: var(--dark-gray);\n        --mono-f: var(--dim-gray);\n        --mono-f0: var(--dark-gray);\n        --mono-f4: var(--dark-gray);\n        --mono-f7: var(--dark-gray);\n        --mono-f8: var(--dark-gray);\n        --mono-fb: var(--dark-gray);\n        --mono-fa: var(--dark-gray);\n    }\n \n    /****************************\n    ********* General ***********\n    ****************************/\n    \n    #page_header {\n        box-shadow: none;\n    }\n    \n    #ui_search_main_search {\n        background-color: var(--transparent);\n    }\n    \n    #content_cover {\n        background-color: #00000030;\n    }\n\n    footer {\n        border: 0;\n    }\n    \n    /****************************\n    ******** Front Page *********\n    ****************************/\n    \n    .page_home_section_featured_content_content .page_home_section_header h2 {\n        margin-left: 3.4rem;\n    }\n    \n    .ui_featured_content_comment {\n        margin-left: 2rem;\n        border: 0;\n        \n        h4 {\n            color: var(--offwhite) !important;\n        }\n    }\n\n    .page_home_section_featured_content_content_item_banner {\n        top: .5rem;\n        right: .5rem;\n        background-color: transparent;\n        box-shadow: none;\n    }\n    \n    .page_home_section_featured_content_item_inner {\n        padding: 1rem;\n        border: 1px solid var(--ui-divider-line);\n        border-radius: 6px;\n    }\n    \n    .page_feature_main {\n        background-color: transparent !important;    \n    }\n    \n    .page_section_dynamic_fade_expand_button {\n        color: var(--light-gray) !important;\n        border-radius: 0 !important;\n        \n        &:hover {\n            color: var(--bright-blue) !important;\n        }\n    }\n    \n    /****************************\n    ********* Search ************\n    ****************************/\n    \n    table:has(.infobox)[style=\"margin-bottom:0.5em;\"] {\n        border-collapse: separate;\n        border: 1px solid var(--ui-divider-line);\n        border-radius: 6px;\n    }\n    \n    .infobox {        \n        .mbgen {\n            tr {\n                background-color: transparent;\n            }\n\n            td {\n                border: 0;\n            }\n        }\n    }\n    \n\n    /****************************\n    ********** User *************\n    ****************************/\n\n    .bubble_content:has(.profilehii) {\n        padding-top: 2rem;\n        padding-inline: 2rem;\n\n        .btn.blue_btn {\n            background-color: var(--btn-secondary-background-default);\n            color: var(--btn-secondary-text);\n\n            &:hover {\n                background-color: var(--btn-secondary-background-hover);\n            }\n        }\n\n        table:has(.profilehii) {\n            td:nth-child(2),\n            td:nth-child(3) {\n                width: 33% !important;\n            }\n            \n            #profile_image {\n                vertical-align: middle !important;\n                background-size: contain !important;\n            }\n            \n            td:has(.profilehii) {\n                vertical-align: middle !important;\n            }\n            \n            td:has(#usermap) {\n                width: 100%;\n                height: 100%;\n                vertical-align: middle !important;\n                \n                div {\n                    margin: auto;\n                }\n                \n                div[style=\"width:256px;\"] {\n                    width: 80% !important;\n                }\n                \n                rect.overlay {\n                    width: 100%;\n                    height: 100%;\n                }\n            }\n        }\n    }\n\n    .profilehii {\n        table {\n            border: 1px solid var(--ui-divider-line) !important;\n            border-radius: 6px !important;\n            border-collapse: separate;\n        }\n\n        td {\n            border: 0 !important;\n        }\n\n        tr {\n            background-color: transparent !important;\n        }\n    }\n\n    #usermap {\n        background: transparent;\n    }\n\n    .bubble_content:has(.profilesearch) {\n        display: grid;\n        grid-template-columns: auto auto;\n        \n        .musictoolbar {\n            grid-row: 1;\n            grid-column: 1 / span 1;\n            align-self: center;\n        }\n\n        .profilesearch {\n            margin:0;\n            padding-right: 0.5rem;\n            grid-row: 1;\n            grid-column: 2 / span 1;\n            align-self: center;\n            justify-self: right;\n            background: transparent !important;\n\n            input,\n            select {\n                border-color: var(--ui-divider-line);\n            }\n\n            input[type=\"submit\"] {\n                line-height: 1.4em;\n            }\n        }\n\n        table {\n            grid-column: 1 / span 2;\n            padding-bottom: 1rem;\n\n            table {\n                border-collapse: separate;\n                border: 1px solid var(--ui-divider-line);\n                border-radius: 6px;\n            }\n\n            tr {\n                background-color: transparent;\n            }\n\n            td {\n                border: 0;\n            }\n        }\n    }\n\n    .bubble_content:has(.profilesearch) ~ .clear ~ .bubble_header ~ .bubble_content {\n        table {\n            padding: .5rem;\n            border: 1px solid var(--ui-divider-line) !important;\n            border-radius: 6px;\n            border-collapse: separate;\n        }\n\n        tr,\n        td {\n            background-color: transparent;\n            border: 0;\n        }\n\n        tr:hover {\n            background-color: var(--dim-gray);\n        }\n    }\n    \n    .profile_listening_container {\n        margin-inline: auto;\n        max-width: 900px;\n        border: 1px solid var(--ui-divider-line);\n        background-color: var(--dark-gray);\n    }\n\n    .musictoolbar a {\n        background-color: var(--btn-secondary-background-default) !important;\n        color: var(--btn-secondary-text) !important;\n\n        &:hover {\n            background-color: var(--btn-secondary-background-hover) !important;\n        }\n\n        &[style=\"background: var(--gen-blue-light);\"] {\n            background-color: var(--dim-blue) !important;\n        }\n    }\n    \n    .bubble_content:has(#ftabfriends) {\n        .musictoolbar {\n            padding: 0 !important;\n        }\n        \n        table {\n            border-radius: 6px;\n            border-collapse: separate;\n        }\n        \n        th,\n        tr,\n        td {\n            background-color: var(--dark-gray) !important;\n            border: 0;\n        }\n        \n        td td:hover {\n            background-color: var(--dim-gray) !important;\n        }\n        \n        table ~ table {\n            margin: 0 !important;\n            border: 0;\n            text-align: center;\n        }\n    }\n    \n    #ftabfriends,\n    #ftabfavd,\n    #ftabfavs {\n        margin-top: 2rem;\n    }\n\n    .clear {\n        display: none;\n    }\n    \n    #content > table + a {\n        margin-left: 2rem;\n    }\n \n    /*********************************\n    ***********  Album   *************\n    *********************************/\n\n    #page_body {\n        background-image: none !important;\n    }\n\n    #content_wrapper_outer {\n        background-color: var(--dark-gray) !important;\n    }\n\n    #content_wrapper {\n        background-color: transparent !important;\n    }\n    \n    .artist_left_col {\n        background-color: var(--dark-gray);\n    }\n\n    .row,\n    .page_release_art_frame,\n    #column_container_right {\n        background: var(--dark-gray);\n    }\n    \n    #tracks {\n        border-radius: 6px;\n    }\n    \n    .rating_info_tab.active {\n        background-color: var(--dim-blue) !important;\n    }\n\n    #chart_div,\n    #chart_div2 {\n        background: transparent !important;\n    }\n}",
+    "usercssData": {
+      "name": "rateyourmusic.com",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "rateyourmusic.com",
+    "updateDate": 1742140805897,
+    "_id": "b22b2275-8f58-4ca7-85c2-3f914a7988ac",
+    "_rev": 1742140805897,
+    "id": 33,
+    "customName": "rateyourmusic"
+  },
+  {
+    "enabled": true,
+    "installDate": 1742137886788,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           advent-of-code\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n\n@-moz-document domain(\"adventofcode.com\") {\n    html {\n        --dim-gray: #141212;\n        --dark-gray: #181616;\n        --medium-gray: #6b6969;\n        --light-gray: #9a9898;\n\n        --offwhite: #c8c093;\n        --dim-blue: #2d4f67;\n\n        --black: #0d0c0c;\n        --red: #c4746e;\n        --green: #8a9a7b;\n        --yellow: #c4b28a;\n        --blue: #8ba4b0 !important;\n        --magenta: #a292a3;\n        --cyan: #8ea4a2;\n        --white: #c5c9c5;\n\n        --bright-black: #a6a69c;\n        --bright-red: #e46876;\n        --bright-green: #87a987;\n        --bright-yellow: #e6c384;\n        --bright-blue: #7fb4ca;\n        --bright-magenta: #938aa9;\n        --bright-cyan: #7aa89f;\n        --bright-white: #ffffff;\n    }\n    \n    body {\n        background-color: var(--dark-gray);\n    }\n    \n    h1 a,\n    h1 span {\n        text-shadow: none !important;\n    }\n    \n    .title-event-wrap {\n        color: var(--green) !important;\n        opacity: .5 !important;\n    }\n    \n    code::before,\n    input[type=\"text\"] {\n        background-color: var(--dim-gray);\n    }\n    \n    a,\n    input[type=\"submit\"],\n    .share {\n        color: var(--bright-green) !important;\n        \n        &:hover {\n            color: var(--bright-green);\n            text-decoration: underline;\n        }\n    }\n    \n    .star-count,\n    .stats-both {\n        color: var(--bright-yellow);\n    }\n    \n    .stats-firstonly {\n        color: var(--bright-black);\n    }\n    \n    em {\n        color: var(--bright-white) !important;\n        text-shadow: none !important;\n        font-weight: bold;\n    }\n}",
+    "usercssData": {
+      "name": "advent-of-code",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "advent-of-code",
+    "updateDate": 1742140699398,
+    "_id": "3178d24d-b5a6-421a-ac65-d4ddf9f56f6a",
+    "_rev": 1742140699398,
+    "id": 34
+  }
+]
