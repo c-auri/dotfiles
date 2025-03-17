@@ -5,6 +5,7 @@ HISTCONTROL=ignoredups    # don't put duplicates in history
 
 [ -f /etc/bash_completion ] && ! shopt -oq posix    && . /etc/bash_completion
 [ -f ~/.bash/completion/alacritty ]                 && . ~/.bash/completion/alacritty
+[ -f ~/.bash/colors ]                               && . ~/.bash/colors
 [ -f ~/.bash/fs ]                                   && . ~/.bash/fs
 [ -f ~/.bash/prompt ]                               && . ~/.bash/prompt
 [ -f ~/.bash/local ]                                && . ~/.bash/local
