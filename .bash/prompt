@@ -13,24 +13,22 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    USER="${LOCAL_USERNAME_COLOR:-$BRIGHT_CYAN}${LOCAL_USERNAME:-$(whoami)}$BRIGHT_BLACK: "
-    SET_WIN_TITLE="\[\e]2;$dir\a\]"
-    DIR="$BRIGHT_WHITE$dir"
+    user="${PROMPT_USERNAME:-$BRIGHT_CYAN$(whoami)}$BRIGHT_BLACK: "
+    set_win_title="\[\e]2;$dir\a\]"
+    dir="$BRIGHT_WHITE$dir"
 
-    git=$(git status 2>/dev/null | awk -f ~/.bash/parse_git_status.awk)
+    git=$(git status 2>/dev/null | awk -f ~/.bash/distill_git_status.awk)
     if [[ -n $git ]]
     then
-        GIT="$YELLOW[$git]"
-    else
-        GIT=""
+        git="$YELLOW[$git]"
     fi
 
     if [[ $prev_cmd_exit_code == 0 ]]
     then
-        SYM="$BRIGHT_WHITE❯"
+        sym="$BRIGHT_WHITE❯"
     else
-        SYM="$BRIGHT_RED❯"
+        sym="$BRIGHT_RED❯"
     fi
 
-    PS1="$SET_WIN_TITLE\n$BOLD$USER$DIR $GIT\n$SYM $RESET"
+    PS1="$set_win_title\n$BOLD$user$dir $git\n$sym $RESET"
 }

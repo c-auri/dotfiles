@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Default parameter to send to the "less" command
 # -R: show ANSI colors correctly; -i: case insensitive search
 LESS="-R -i"
 
@@ -26,8 +25,8 @@ export BAT_THEME="base16-256"
 
 alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
 
-function mcd {
+function mcd
+{
     mkdir -p $1
     cd $1
 }
-

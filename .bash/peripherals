@@ -50,7 +50,7 @@ function scrn
 
     if [[ -z $external ]]
     then
-        xrandr --output ${inbuilt} --primary --mode ${LOCAL_SCREEN_RES:-"1920x1080"} --brightness ${LOCAL_SCREEN_BRIGHTNESS:-1}
+        xrandr --output ${inbuilt} --primary --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
         return $?
     fi
 
@@ -71,29 +71,29 @@ function scrn
             ;;
     esac
 
-    xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --mode ${LOCAL_SCREEN_RES:-"1920x1080"} --brightness ${LOCAL_SCREEN_BRIGHTNESS:-1} --pos ${pos}
+    xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} --pos ${pos}
 }
 
 function wifi
 {
-    if [ $# -gt 1 ]
+    if [[ $# > 1 ]]
     then
         echo "Too many arguments."
         return 1
     fi
 
-    if [[ -n $1 && $1 != "on" && $1 != "off" ]]
-    then
-        echo "Invalid argument, should either be 'on', 'off' or omitted."
-        return 1
-    fi
-
-    if [[ -n $1 ]]
-    then
-        nmcli radio wifi ${1}
-        returncode=$?
-    fi
-
-    nmcli radio wifi
-    [[ -n $returncode ]] && return $returncode || return $?
+    case $1 in
+        "on" | "off")
+            nmcli radio wifi ${1}
+            prev_exit_code=$?
+            ;&
+        "")
+            nmcli radio wifi
+            return ${prev_exit_code:-$?}
+            ;;
+        *)
+            echo "Invalid argument, should either be 'on', 'off' or omitted."
+            return 1
+            ;;
+    esac
 }
