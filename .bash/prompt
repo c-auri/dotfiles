@@ -34,7 +34,7 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    USER="$BRIGHT_CYAN\u$BRIGHT_BLACK: "
+    USER="$BRIGHT_CYAN${USERNAMEMAP[$(whoami)]:-$(whoami)}$BRIGHT_BLACK: "
     SET_WIN_TITLE="\[\e]2;$dir\a\]"
     DIR="$BRIGHT_WHITE$dir"
 
