@@ -17,7 +17,10 @@ function gsf # [g]it [s]witch [f]uzzy
         return 1
     fi
 
-    git branch -a | grep -vP "\*|HEAD" | sed "s/remotes\/origin\///" | sort | uniq | fzf | xargs -r git switch
+    git branch -a |
+        grep -vP "\*|HEAD" | sed "s/remotes\/$(__get_remote)\///" |
+        sort | uniq | fzf |
+        xargs -r git switch
 }
 
 function cdr # [c]hange [d]irectory to repository [r]oot
@@ -35,29 +38,40 @@ function cdr # [c]hange [d]irectory to repository [r]oot
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gsw='git switch'
-alias gsm='git switch "$(__default_branch)"'
+alias gsm='git switch "$(__get_default_branch)"'
 alias gf='git fetch -p'
 alias gl='git pull'
 
 function glm # [g]it pul[l] [m]ain - even if not currently on it
 {
-    defaultBranch=$(__default_branch)
-    if [[ $defaultBranch == $(git branch --show-current) ]]
+    default_branch=$(__get_default_branch)
+    if [[ $(git branch --show-current) == $default_branch ]]
     then
         git pull
     else
-        git fetch origin "$defaultBranch:$defaultBranch"
+        git fetch $(__get_remote) "$default_branch:$default_branch"
     fi
 }
 
 # "git graph" is a custom git alias, see .gitconfig
-function gg # [g]it [g]raph - only top commits
+function gg # [g]it [g]raph - show only top commits
 {
-    # take the number of commits from the first argument, or 10 if omitted:
     num_commits=${1:-10};
     git graph -$num_commits
 }
 
-alias gga='git graph' # [g]it [g]raph - [a]ll commits at once
+alias gga='git graph' # [g]it [g]raph - show [a]ll commits
 
-function __default_branch { echo "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"; }
+function __get_default_branch # get name of default branch, usually main or master
+{
+    remote_ref="refs/remotes/$(__get_remote)/"
+    remote_head=$(git symbolic-ref ${remote_ref}HEAD)
+    echo ${remote_head/$remote_ref/}
+}
+
+function __get_remote # get name of the remote, usually origin
+{
+    # if the repo has more than one remote, this is inaccurate
+    # I'll fix it if that ever happens to me ¯\_(ツ)_/¯
+    echo $(git remote | head -1)
+}

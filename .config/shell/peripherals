@@ -28,7 +28,7 @@ function bt
             cmd="disconnect"
             ;;
         *)
-            echo "Invalid argument. Options are: sw, wh, or or dc."
+            echo "Invalid argument: ${1}"
             return 1
             ;;
     esac
@@ -45,12 +45,16 @@ function scrn
         return 1
     fi
 
-    inbuilt=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -n 1)
-    external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -n 1)
+    inbuilt=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -1)
+    external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -1)
 
     if [[ -z $external ]]
     then
-        xrandr --output ${inbuilt} --primary --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
+        xrandr --output ${inbuilt} \
+            --primary \
+            --mode ${INBUILT_SCREEN_RES:-"1920x1080"} \
+            --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
+
         return $?
     fi
 
@@ -71,7 +75,15 @@ function scrn
             ;;
     esac
 
-    xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 --output ${inbuilt} --mode ${INBUILT_SCREEN_RES:-"1920x1080"} --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} --pos ${pos}
+    xrandr \
+        --output ${external} \
+            --primary \
+            --mode 1920x1080 \
+            --pos 0x0 \
+        --output ${inbuilt} \
+            --mode ${INBUILT_SCREEN_RES:-"1920x1080"} \
+            --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} \
+            --pos ${pos}
 }
 
 function wifi
@@ -92,7 +104,7 @@ function wifi
             return ${prev_exit_code:-$?}
             ;;
         *)
-            echo "Invalid argument, should either be 'on', 'off' or omitted."
+            echo "Invalid argument: ${1}"
             return 1
             ;;
     esac
