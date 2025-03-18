@@ -8,7 +8,7 @@ alias gA='git add -A'
 alias gc='git commit'
 alias gC='git commit -a'
 
-function gsf
+function gsf # [g]it [s]witch [f]uzzy
 {
     git rev-parse 2>/dev/null
     if [[ $? != 0 ]]
@@ -20,7 +20,7 @@ function gsf
     git branch -a | grep -vP "\*|HEAD" | sed "s/remotes\/origin\///" | sort | uniq | fzf | xargs -r git switch
 }
 
-function cdr
+function cdr # [c]hange [d]irectory to repository [r]oot
 {
     root=$(git rev-parse --absolute-git-dir 2>/dev/null | grep -oP '.*(?=/.git)')
     if [[ $? != 0 ]]
@@ -39,7 +39,7 @@ alias gsm='git switch "$(__default_branch)"'
 alias gf='git fetch -p'
 alias gl='git pull'
 
-function glm 
+function glm # [g]it pul[l] [m]ain - even if not currently on it
 {
     defaultBranch=$(__default_branch)
     if [[ $defaultBranch == $(git branch --show-current) ]]
@@ -50,12 +50,14 @@ function glm
     fi
 }
 
-function gg 
+# "git graph" is a custom git alias, see .gitconfig
+function gg # [g]it [g]raph - only top commits
 {
+    # take the number of commits from the first argument, or 10 if omitted:
     num_commits=${1:-10};
-    git graph --all -$num_commits
+    git graph -$num_commits
 }
 
-alias gga='git graph'
+alias gga='git graph' # [g]it [g]raph - [a]ll commits at once
 
 function __default_branch { echo "$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"; }
