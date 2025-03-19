@@ -1,3 +1,6 @@
+# Takes the output of `git status` and turns it into a more concise string
+# that can be displayed in the shell prompt.
+
 BEGIN {
     FS="[ (]"
 }

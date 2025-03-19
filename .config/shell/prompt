@@ -17,7 +17,7 @@ function __prepare_prompt
     set_win_title="\[\e]2;$dir\a\]"
     dir="$BRIGHT_WHITE$dir"
 
-    git=$(git status 2>/dev/null | awk -f ~/.config/shell/distill_git_status.awk)
+    git=$(git status 2>/dev/null | awk -f ~/.config/shell/shorten_git_status.awk)
     if [[ -n $git ]]
     then
         git="$YELLOW[$git]"

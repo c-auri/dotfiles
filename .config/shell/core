@@ -1,11 +1,18 @@
 #!/bin/bash
 
+[[ -f /etc/bash_completion ]] && ! shopt -oq posix    && source /etc/bash_completion
+[[ -f $XDG_CONFIG_HOME/shell/completion/alacritty ]]  && source $XDG_CONFIG_HOME/shell/completion/alacritty
+
+alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
+
 # -R: show ANSI colors correctly; -i: case insensitive search
 LESS="-R -i"
 
+export BAT_THEME="base16-256"
+alias bat='batcat'
+
 eval "$(dircolors $HOME/.dircolors)"
 export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;97"
-
 alias ls='eza --group-directories-first'
 alias la='ls -a'
 alias ll='ls -l --git --no-user'
@@ -13,6 +20,8 @@ alias lla='ll -a'
 alias lt='ls --tree --git-ignore'
 
 alias fd='fdfind'
+
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
 alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
 alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
@@ -20,13 +29,10 @@ alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 alias mv='mv -i'
 alias cp='cp -i'
 
-alias bat='batcat'
-export BAT_THEME="base16-256"
-
-alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
-
-function mcd
+function mcd # [m]ake and [c]hange [d]irectory
 {
     mkdir -p $1
     cd $1
 }
+
+alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
