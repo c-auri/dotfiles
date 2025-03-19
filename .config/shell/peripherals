@@ -52,7 +52,7 @@ function scrn
     then
         xrandr --output ${inbuilt} \
             --primary \
-            --mode ${INBUILT_SCREEN_RES:-"1920x1080"} \
+            --mode ${INBUILT_SCREEN_RESOLUTION:-"1920x1080"} \
             --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1}
 
         return $?
@@ -81,7 +81,7 @@ function scrn
             --mode 1920x1080 \
             --pos 0x0 \
         --output ${inbuilt} \
-            --mode ${INBUILT_SCREEN_RES:-"1920x1080"} \
+            --mode ${INBUILT_SCREEN_RESOLUTION:-"1920x1080"} \
             --brightness ${INBUILT_SCREEN_BRIGHTNESS:-1} \
             --pos ${pos}
 }
