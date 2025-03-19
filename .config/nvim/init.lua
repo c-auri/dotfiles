@@ -612,6 +612,12 @@ require("lazy").setup({
 		opts = { signs = false },
 	},
 
+	{
+		"0xAdk/full_visual_line.nvim",
+		keys = "V",
+		opts = {},
+	},
+
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
