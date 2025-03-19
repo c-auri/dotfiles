@@ -22,4 +22,4 @@ echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 PATH=$PATH:$HOME/.local/bin
 
 alias sb='source ~/.bashrc'
-alias cfg='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
+alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
