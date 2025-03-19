@@ -51,4 +51,4 @@ Install manually:
 - Firefox
   1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
   2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
-  3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) and import custom themes defined in `.stylus.json`
+  3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) and import custom themes defined in `.config/.stylus.json`
