@@ -6,30 +6,33 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
     ```bash
     git clone --bare <repo-url> $HOME/.config/.git
     ```
-1. Add a `cfg` alias to your `.bashrc`:
+1. Create a `con` alias:
     ```bash
-    echo "alias cfg='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'" >> $HOME/.bashrc
+    alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
     ```
-1. Source the `.bashrc` to load the alias into the current shell session:
-   ```bash
-   source ~/.bashrc
-   ```
+    - There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.
 1. Checkout the content of the bare repository to your home directory:
     ```bash
-    cfg checkout
+    con checkout
     ```
     - If the checkout fails because some files would be overwritten, delete those files (create backups if you care about them) and then try again.
-1. Hide untracked files and populate the `remote.origin.fetch` property:
+1. Hide untracked files:
     ```bash
-    cfg config --local status.showUntrackedFiles no
-    git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+    con config --local status.showUntrackedFiles no
     ```
+1. Restart your terminal.
 
 ## Installations
 Install apt packages:
+```bash
+sudo apt install \
+    awesome rofi xterm \
+    arandr lxappearance lxsession lxpolkit \
+    bat fd-find ripgrep tmux \
+    gimp flameshot mpv vlc
 ```
-apt install arandr awesome bat fd-find flameshot fzf gawk gimp mpv lxappearance lxsession lxpolkit ripgrep rofi tmux vlc xterm
-```
+> [!NOTE]
+> If all else fails, awesome defaults to xterm. So better make sure it's always there, even if you intend to use a different terminal.
 
 Install manually:
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
@@ -37,6 +40,7 @@ Install manually:
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 - [fd](https://github.com/sharkdp/fd?tab=readme-ov-file#installation): run `ln -s $(which fdfind) ~/.local/bin/fd`
+- [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 
 ## Manual Theming
 - Run `lxappearance` and select desired theme
