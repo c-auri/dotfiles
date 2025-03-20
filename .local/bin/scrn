@@ -1,23 +1,18 @@
 #!/bin/bash
 
+external_pos=$1
+external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -1)
 laptop=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -1)
+
 xrandr --output ${laptop} \
     --primary \
     --mode ${LAPTOP_SCREEN_RESOLUTION:-"1440x900"} \
     --brightness ${LAPTOP_SCREEN_BRIGHTNESS:-1}
 
-if [[ $? != 0 ]]
+if [[ $? != 0 || -z $external ]]
 then
     exit
 fi
-
-external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -1)
-if [[ -z $external ]]
-then
-    exit
-fi
-
-external_pos=$1
 
 case $external_pos in
     "" | "left")
