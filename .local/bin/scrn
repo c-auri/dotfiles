@@ -1,0 +1,40 @@
+#!/bin/bash
+
+laptop=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -1)
+xrandr --output ${laptop} \
+    --primary \
+    --mode ${LAPTOP_SCREEN_RESOLUTION:-"1920x1080"} \
+    --brightness ${LAPTOP_SCREEN_BRIGHTNESS:-1}
+
+if [[ $? != 0 ]]
+then
+    exit
+fi
+
+external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -1)
+if [[ -z $external ]]
+then
+    exit
+fi
+
+external_pos=$1
+
+case $external_pos in
+    "" | "left")
+        laptop_pos="1920x600"
+        ;;
+    "up")
+        laptop_pos="240x1080"
+        ;;
+    "off")
+        xrandr --output ${external} --off
+        exit
+        ;;
+    *)
+        echo "Invalid argument: ${1}"
+        exit 1
+        ;;
+esac
+
+xrandr --output ${external} --primary --mode 1920x1080 --pos 0x0 \
+       --output ${laptop} --pos ${laptop_pos}

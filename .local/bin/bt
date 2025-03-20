@@ -1,0 +1,25 @@
+#!/bin/bash
+
+case $1 in
+    "")
+        cmd="paired-devices"
+        ;;
+    "sw")
+        cmd="connect 6C:47:60:DD:F1:63"
+        ;;
+    "wh")
+        cmd="connect 14:3F:A6:F0:69:D7"
+        ;;
+    "or")
+        cmd="connect 20:74:CF:95:54:D2"
+        ;;
+    "dc")
+        cmd="disconnect"
+        ;;
+    *)
+        echo "Invalid argument: ${1}"
+        exit 1
+        ;;
+esac
+
+bluetoothctl ${cmd}

@@ -28,11 +28,3 @@ alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 
 alias mv='mv -i'
 alias cp='cp -i'
-
-function mcd # [m]ake and [c]hange [d]irectory
-{
-    mkdir -p $1
-    cd $1
-}
-
-alias convertwebp='for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done'
