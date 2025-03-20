@@ -20,6 +20,12 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
     ```bash
     con config --local status.showUntrackedFiles no
     ```
+1. Create `~/.config/git/local.ini` and add your user name and email:
+    ```ini
+    [user]
+        name = <git-user-name>
+        email = <git-user-email>
+    ```
 1. Restart your terminal.
 
 ## Installations

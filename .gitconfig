@@ -1,6 +1,3 @@
-[user]
-	email = 43008483+c-auri@users.noreply.github.com
-	name = c-auri
 [core]
 	editor = nvim
 [init]
@@ -19,5 +16,5 @@
 	cp = cherry-pick
 	ri = rebase --interactive --autosquash
 
-[includeIf "gitdir:~/projects/**/.git"]
-	path = ~/.config/work/git/config.ini
+[include]
+	path = ~/.config/git/local.ini
