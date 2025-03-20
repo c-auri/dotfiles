@@ -3,7 +3,7 @@
 laptop=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -1)
 xrandr --output ${laptop} \
     --primary \
-    --mode ${LAPTOP_SCREEN_RESOLUTION:-"1920x1080"} \
+    --mode ${LAPTOP_SCREEN_RESOLUTION:-"1440x900"} \
     --brightness ${LAPTOP_SCREEN_BRIGHTNESS:-1}
 
 if [[ $? != 0 ]]
