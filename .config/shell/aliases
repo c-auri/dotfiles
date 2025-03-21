@@ -1,0 +1,56 @@
+#!/bin/bash
+
+alias t='tmux'
+alias v='nvim'
+alias bat='batcat'
+
+##############################
+######## FILE SYSTEM #########
+##############################
+
+alias ls='eza --group-directories-first'
+alias la='ls -a'
+alias ll='ls -l --git --no-user'
+alias lla='ll -a'
+alias lt='ls --tree --git-ignore'
+
+alias mv='mv -i'
+alias cp='cp -i'
+
+alias fd='fdfind'
+
+alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
+alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
+
+alias notes='cd ~/notes'
+
+##############################
+############ GIT #############
+##############################
+
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias ga='git add'
+alias gA='git add -A'
+alias gc='git commit'
+alias gC='git commit -a'
+alias gf='git fetch -p'
+alias gl='git pull'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gsw='git switch'
+
+# these are custom git aliases, see .gitconfig and .local/bin/git-utils
+alias gg='git graph'
+alias gsf='git switch-fuzzy'
+alias gsm='git switch-to-main'
+alias gum='git update-main'
+alias cdr='cd $(git root)'
+
+##############################
+######### DEVELOPMENT ########
+##############################
+
+alias dn='dotnet'
+alias dnr='dotnet run'

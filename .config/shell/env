@@ -1,0 +1,16 @@
+#!/bin/bash
+
+eval "$(dircolors $HOME/.dircolors)"
+export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:sn=2;32:da=2;36:di=1;97"
+export LESS="-R -i"
+export BAT_THEME="base16-256"
+export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_HTTPREPL_TELEMETRY_OPTOUT=1
+
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]]          && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+
+source "$HOME/.cargo/env"
