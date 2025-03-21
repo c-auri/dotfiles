@@ -49,7 +49,6 @@ case $1 in
 	update_default_branch
 	;;
     *)
-	echo "Unknown command: $1"
-	exit 1
+	git $1
 	;;
 esac
