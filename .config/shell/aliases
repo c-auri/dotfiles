@@ -17,6 +17,12 @@ alias lt='ls --tree --git-ignore'
 alias mv='mv -i'
 alias cp='cp -i'
 
+function mcd
+{
+    mkdir -p $1
+    cd $1
+}
+
 alias fd='fdfind'
 
 alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
