@@ -16,7 +16,7 @@
 	cp = cherry-pick
 	ri = rebase --interactive --autosquash
 	graph = "!f() { git log --graph --oneline --all -${1:-10}; }; f"
-	get-repo-root = !git-utils get-repo-root
+	root = !git-utils root
 	update-main = !git-utils update-main
 	short-status = !git-utils short-status
 	switch-fuzzy = !git-utils switch-fuzzy

@@ -36,17 +36,17 @@ function update_default_branch
 git rev-parse || exit 1
 
 case $1 in
+    "root")
+	git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
+	;;
     "switch-fuzzy")
 	switch_fuzzy
 	;;
-    "get-repo-root")
-	git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
+    "switch-to-main")
+	git switch $(get_default_branch)
 	;;
     "update-main")
 	update_default_branch
-	;;
-    "switch-to-main")
-	git switch $(get_default_branch)
 	;;
     *)
 	echo "Unknown command: $1"
