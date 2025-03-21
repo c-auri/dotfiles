@@ -1,0 +1,61 @@
+#!/bin/bash
+
+case $1 in
+    "reset")
+	echo "\[$(tput sgr0)\]"
+	;;
+    "bold")
+	echo "\[$(tput bold)\]"
+	;;
+    "black")
+	echo "\[$(tput setaf 0)\]"
+	;;
+    "red")
+        echo "\[$(tput setaf 1)\]"
+	;;
+    "green")
+	echo "\[$(tput setaf 2)\]"
+	;;
+    "yellow")
+	echo "\[$(tput setaf 3)\]"
+	;;
+    "blue")
+	echo "\[$(tput setaf 4)\]"
+	;;
+    "purple")
+	echo "\[$(tput setaf 5)\]"
+	;;
+    "cyan")
+	echo "\[$(tput setaf 6)\]"
+	;;
+    "white")
+	echo "\[$(tput setaf 7)\]"
+	;;
+    "bright-black")
+	echo "\[$(tput setaf 8)\]"
+	;;
+    "bright-red")
+	echo "\[$(tput setaf 9)\]"
+	;;
+    "bright-green")
+	echo "\[$(tput setaf 10)\]"
+	;;
+    "bright-yellow")
+	echo "\[$(tput setaf 11)\]"
+	;;
+    "bright-blue")
+	echo "\[$(tput setaf 12)\]"
+	;;
+    "bright-purple")
+	echo "\[$(tput setaf 13)\]"
+	;;
+    "bright-cyan")
+	echo "\[$(tput setaf 14)\]"
+	;;
+    "bright-white")
+	echo "\[$(tput setaf 15)\]"
+	;;
+    *)
+	>&2 echo "Unknown font style: $1"
+	exit 1
+esac

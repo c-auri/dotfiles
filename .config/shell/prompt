@@ -13,22 +13,22 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    user="${PROMPT_USERNAME:-$BRIGHT_CYAN$(whoami)}$BRIGHT_BLACK: "
+    user="${PROMPT_USERNAME:-$(chfont bright-cyan)$(whoami)}$(chfont bright-black): "
     set_win_title="\[\e]2;$dir\a\]"
-    dir="$BRIGHT_WHITE$dir"
+    dir="$(chfont bright-white)$dir"
 
     git=$(git short-status 2>/dev/null)
     if [[ -n $git ]]
     then
-        git="$YELLOW[$git]"
+        git="$(chfont yellow)[$git]"
     fi
 
     if [[ $prev_cmd_exit_code == 0 ]]
     then
-        sym="$BRIGHT_WHITE❯"
+        sym="$(chfont bright-white)❯"
     else
-        sym="$BRIGHT_RED❯"
+        sym="$(chfont bright-red)❯"
     fi
 
-    PS1="$set_win_title\n$BOLD$user$dir $git\n$sym $RESET"
+    PS1="$set_win_title\n$(chfont bold)$user$dir $git\n$sym $(chfont reset)"
 }
