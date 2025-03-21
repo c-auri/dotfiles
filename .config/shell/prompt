@@ -17,7 +17,7 @@ function __prepare_prompt
     set_win_title="\[\e]2;$dir\a\]"
     dir="$(chfont bright-white)$dir"
 
-    git=$(git short-status 2>/dev/null)
+    git=$(git status 2>/dev/null | $HOME/.local/lib/shorten-git-status)
     if [[ -n $git ]]
     then
         git="$(chfont yellow)[$git]"

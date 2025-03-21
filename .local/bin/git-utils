@@ -45,9 +45,6 @@ case $1 in
     "update-main")
 	update_default_branch
 	;;
-    "short-status")
-	git status | __shorten_git_status
-	;;
     "switch-to-main")
 	git switch $(get_default_branch)
 	;;
