@@ -13,5 +13,3 @@ XDG_CONFIG_HOME="$HOME/.config"
 echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
 echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
 PATH=$PATH:$HOME/.local/bin
-
-alias sb='source ~/.bashrc'
