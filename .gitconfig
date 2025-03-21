@@ -12,6 +12,7 @@
 	fixup = commit --fixup
 	co = checkout
 	sw = switch
+	pf = push --force-with-lease
 	cp = cherry-pick
 	ri = rebase --interactive --autosquash
 	graph = "!f() { git log --graph --oneline --all -${1:-10}; }; f"
