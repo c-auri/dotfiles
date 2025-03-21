@@ -1,0 +1,58 @@
+#!/bin/bash
+
+function get_remote
+{
+    # if the repo has more than one remote, this is inaccurate
+    # I'll fix it if that ever happens to me ¯\_(ツ)_/¯
+    echo $(git remote | head -1)
+}
+
+function get_default_branch
+{
+    remote_ref="refs/remotes/$(get_remote)/"
+    remote_head=$(git symbolic-ref ${remote_ref}HEAD)
+    echo ${remote_head/$remote_ref/}
+}
+
+function switch_fuzzy
+{
+    git branch -a |
+        grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |
+        sort | uniq | fzf |
+        xargs -r git switch
+}
+
+function update_default_branch
+{
+    default_branch=$(get_default_branch)
+    if [[ $(git branch --show-current) == $default_branch ]]
+    then
+        git pull
+    else
+        git fetch $(get_remote) "$default_branch:$default_branch"
+    fi
+}
+
+git rev-parse || exit 1
+
+case $1 in
+    "switch-fuzzy")
+	switch_fuzzy
+	;;
+    "get-repo-root")
+	git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
+	;;
+    "update-main")
+	update_default_branch
+	;;
+    "short-status")
+	git status | __shorten_git_status
+	;;
+    "switch-to-main")
+	git switch $(get_default_branch)
+	;;
+    *)
+	echo "Unknown command: $1"
+	exit 1
+	;;
+esac

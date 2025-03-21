@@ -1,6 +1,32 @@
 #!/bin/bash
 
-# DOTNET
+##############################
+############# git ############
+##############################
+
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias ga='git add'
+alias gA='git add -A'
+alias gc='git commit'
+alias gC='git commit -a'
+alias gf='git fetch -p'
+alias gl='git pull'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gsw='git switch'
+
+# these are custom git aliases, see .gitconfig and .local/bin/git-utils
+alias gg='git graph'
+alias gsf='git switch-fuzzy'
+alias gsm='git switch-to-main'
+alias gum='git update-main'
+alias cdr='cd $(git get-repo-root)'
+
+##############################
+########### DOTNET ###########
+##############################
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_HTTPREPL_TELEMETRY_OPTOUT=1
@@ -8,12 +34,16 @@ export DOTNET_HTTPREPL_TELEMETRY_OPTOUT=1
 alias dn='dotnet'
 alias dnr='dotnet run'
 
-# JavaScript
+##############################
+######### JavaScript #########
+##############################
 
 export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]]          && source "$NVM_DIR/nvm.sh"
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 
-# Misc
+##############################
+############ Misc ############
+##############################
 
 source "$HOME/.cargo/env"

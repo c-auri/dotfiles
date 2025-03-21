@@ -7,7 +7,6 @@
 [pull]
 	ff = only
 [alias]
-	graph = log --graph --oneline --all
 	unstage = restore --staged
 	amend = commit --amend
 	fixup = commit --fixup
@@ -15,6 +14,12 @@
 	sw = switch
 	cp = cherry-pick
 	ri = rebase --interactive --autosquash
+	graph = "!f() { git log --graph --oneline --all -${1:-10}; }; f"
+	get-repo-root = !git-utils get-repo-root
+	update-main = !git-utils update-main
+	short-status = !git-utils short-status
+	switch-fuzzy = !git-utils switch-fuzzy
+	switch-to-main = !git-utils switch-to-main
 
 [include]
 	path = ~/.config/git/local.ini
