@@ -1,8 +1,5 @@
 #!/bin/bash
 
-alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
-alias sb='source ~/.bashrc'
-
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix    && source /etc/bash_completion
 [[ -f $XDG_CONFIG_HOME/shell/completion/alacritty ]]  && source $XDG_CONFIG_HOME/shell/completion/alacritty
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash

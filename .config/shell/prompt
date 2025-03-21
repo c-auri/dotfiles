@@ -13,7 +13,7 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    user="${PROMPT_USERNAME:-$(chfont bright-cyan)$(whoami)}$(chfont bright-black): "
+    user="${PROMPT_USERNAME:-$(chfont bright-cyan)$(whoami)}$(chfont bright-black):"
     set_win_title="\[\e]2;$dir\a\]"
     dir="$(chfont bright-white)$dir"
 
@@ -25,10 +25,10 @@ function __prepare_prompt
 
     if [[ $prev_cmd_exit_code == 0 ]]
     then
-        sym="$(chfont bright-white)❯"
+        sym_clr="$(chfont bright-white)"
     else
-        sym="$(chfont bright-red)❯"
+        sym_clr="$(chfont bright-red)"
     fi
 
-    PS1="$set_win_title\n$(chfont bold)$user$dir $git\n$sym $(chfont reset)"
+    PS1="$set_win_title\n$(chfont bold)$user $dir $git\n$sym_clr❯ $(chfont reset)"
 }

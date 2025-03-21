@@ -10,3 +10,6 @@ XDG_CONFIG_HOME="$HOME/.config"
 [[ -f $XDG_CONFIG_HOME/shell/git ]]     && source $XDG_CONFIG_HOME/shell/git
 [[ -f $XDG_CONFIG_HOME/shell/dev ]]     && source $XDG_CONFIG_HOME/shell/dev
 [[ -f $XDG_CONFIG_HOME/shell/work ]]    && source $XDG_CONFIG_HOME/shell/work
+
+alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
+alias sb='source ~/.bashrc'
