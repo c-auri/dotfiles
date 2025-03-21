@@ -4,14 +4,17 @@ case $1 in
     "")
         cmd="paired-devices"
         ;;
-    "sw")
-        cmd="connect 6C:47:60:DD:F1:63"
-        ;;
     "wh")
         cmd="connect 14:3F:A6:F0:69:D7"
         ;;
+    "qc")
+        cmd="connect E4:58:BC:3E:0D:E1"
+        ;;
     "or")
         cmd="connect 20:74:CF:95:54:D2"
+        ;;
+    "sw")
+        cmd="connect 6C:47:60:DD:F1:63"
         ;;
     "dc")
         cmd="disconnect"
