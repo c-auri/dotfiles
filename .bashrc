@@ -10,7 +10,3 @@ XDG_CONFIG_HOME="$HOME/.config"
 [[ -f $XDG_CONFIG_HOME/shell/git ]]     && source $XDG_CONFIG_HOME/shell/git
 [[ -f $XDG_CONFIG_HOME/shell/dev ]]     && source $XDG_CONFIG_HOME/shell/dev
 [[ -f $XDG_CONFIG_HOME/shell/work ]]    && source $XDG_CONFIG_HOME/shell/work
-
-echo $PATH | grep -Eq "(^|:)/sbin(:|)"     || PATH=$PATH:/sbin
-echo $PATH | grep -Eq "(^|:)/usr/sbin(:|)" || PATH=$PATH:/usr/sbin
-PATH=$PATH:$HOME/.local/bin
