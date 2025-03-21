@@ -7,6 +7,7 @@ XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f $XDG_CONFIG_HOME/shell/prompt ]]  && source $XDG_CONFIG_HOME/shell/prompt
 [[ -f $XDG_CONFIG_HOME/shell/core ]]    && source $XDG_CONFIG_HOME/shell/core
+[[ -f $XDG_CONFIG_HOME/shell/git ]]     && source $XDG_CONFIG_HOME/shell/git
 [[ -f $XDG_CONFIG_HOME/shell/dev ]]     && source $XDG_CONFIG_HOME/shell/dev
 [[ -f $XDG_CONFIG_HOME/shell/work ]]    && source $XDG_CONFIG_HOME/shell/work
 
