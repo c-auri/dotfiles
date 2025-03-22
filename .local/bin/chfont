@@ -56,6 +56,6 @@ case $1 in
 	echo "\[$(tput setaf 15)\]"
 	;;
     *)
-	>&2 echo "Unknown font style: $1"
+	echo "Unknown font style: $1" >&2
 	exit 1
 esac

@@ -10,7 +10,7 @@ case $1 in
         exit ${prev_exit_code:-$?}
         ;;
     *)
-        echo "Invalid argument: ${1}"
+        echo "Invalid argument: ${1}" >&2
         exit 1
         ;;
 esac

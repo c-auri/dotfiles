@@ -28,7 +28,7 @@ case $external_pos in
         exit
         ;;
     *)
-        echo "Invalid argument: ${1}"
+        echo "Invalid argument: ${1}" >&2
         exit 1
         ;;
 esac
