@@ -1,8 +1,10 @@
 #!/bin/bash
 
 external_pos=$1
-external=$(xrandr | grep -oP "(.*)(?=\sconnected)" | tail -1)
-laptop=$(xrandr | grep -oP "(eDP-?.*)(?=\sconnected)" | tail -1)
+
+screens=$(xrandr | awk '/ connected/ { print $1 }')
+laptop=$(grep 'eDP' <<<$screens)
+external=$(grep -v 'eDP' <<<$screens)
 
 xrandr --output ${laptop} \
     --primary \
