@@ -1,9 +1,5 @@
 #!/bin/bash
 
-alias t='tmux'
-alias v='nvim'
-alias bat='batcat'
-
 ##############################
 ######## FILE SYSTEM #########
 ##############################

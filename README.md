@@ -45,7 +45,6 @@ Install manually:
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
-- [fd](https://github.com/sharkdp/fd?tab=readme-ov-file#installation): run `ln -s $(which fdfind) ~/.local/bin/fd`
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 
 ## Manual Theming
