@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"
