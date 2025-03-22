@@ -23,8 +23,6 @@ function mcd
     cd $1
 }
 
-alias fd='fdfind'
-
 alias f='fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"'
 alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
 
