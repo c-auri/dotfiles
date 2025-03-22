@@ -1,10 +1,17 @@
 #!/bin/bash
 
-PROMPT_COMMAND=__prepare_prompt
+PROMPT_COMMAND=__assign_prompt
+
+function __assign_prompt
+{
+    PS1=$(__prepare_prompt)
+}
 
 function __prepare_prompt
-{
+(
     prev_cmd_exit_code=$?
+
+    source $HOME/.local/lib/chfont
 
     if [[ $PWD == $HOME ]]
     then
@@ -30,5 +37,5 @@ function __prepare_prompt
         sym_clr="$(chfont bright-red)"
     fi
 
-    PS1="$set_win_title\n$(chfont bold)$user $dir $git\n$sym_clr❯ $(chfont reset)"
-}
+    echo "$set_win_title\n$(chfont bold)$user $dir $git\n$sym_clr❯ $(chfont reset)"
+)
