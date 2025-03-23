@@ -14,6 +14,11 @@ function get_default_branch
     echo ${remote_head/$remote_ref/}
 }
 
+function add_fuzzy
+{
+    git diff --name-only | fzf --multi --preview 'git diff --color=always {}' | xargs -r git add
+}
+
 function switch_fuzzy
 {
     git branch -a |
@@ -36,6 +41,9 @@ function update_default_branch
 git rev-parse || exit 1
 
 case $1 in
+    "add-fuzzy")
+	add_fuzzy
+	;;
     "root")
 	git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
 	;;

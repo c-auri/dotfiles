@@ -7,6 +7,7 @@
 [pull]
 	ff = only
 [alias]
+	add-fuzzy = !git-utils add-fuzzy
 	unstage = restore --staged
 	amend = commit --amend
 	fixup = commit --fixup
