@@ -1,28 +1,37 @@
 #!/bin/bash
 
-case $1 in
-    "")
-        cmd="paired-devices"
-        ;;
-    "wh")
-        cmd="connect 14:3F:A6:F0:69:D7"
-        ;;
-    "qc")
-        cmd="connect E4:58:BC:3E:0D:E1"
-        ;;
-    "or")
-        cmd="connect 20:74:CF:95:54:D2"
-        ;;
-    "sw")
-        cmd="connect 6C:47:60:DD:F1:63"
-        ;;
-    "dc")
-        cmd="disconnect"
-        ;;
-    *)
-        echo "Invalid argument: ${1}" >&2
-        exit 1
-        ;;
-esac
+if [[ -z $1 ]]
+then
+    source $HOME/.local/lib/chfont
 
-bluetoothctl ${cmd}
+    connected=$(echo $(bluetoothctl info | grep "Name: " | cut -d" " -f2-))
+    bluetoothctl paired-devices |
+        cut -d" " -f2- |
+        awk -v con="$connected"  '{ printf (con && $0~con) ? "𐄂 " : "  "; print }' |
+        sed -e "s/𐄂/$(chfont bold)𐄂$(chfont reset)/"
+
+    exit
+fi
+
+if [[ $1 == "dc" ]]
+then
+    bluetoothctl disconnect
+    exit
+fi
+
+declare -A mac_address=(
+    [qc]=E4:58:BC:3E:0D:E1
+    [wh]=14:3F:A6:F0:69:D7
+    [qc]=E4:58:BC:3E:0D:E1
+    [or]=20:74:CF:95:54:D2
+    [sw]=6C:47:60:DD:F1:63
+)
+
+if [[ -n ${mac_address[$1]} ]]
+then
+    bluetoothctl connect ${mac_address[$1]}
+else
+    options="'$(echo ${!mac_address[@]} | sed "s/ /', '/g")'"
+    echo "'${1}' is not a valid device. Options are: $options." >&2
+    exit 1
+fi
