@@ -2,14 +2,10 @@
 
 if [[ -z $1 ]]
 then
-    source $HOME/.local/lib/chfont
-
     connected=$(echo $(bluetoothctl info | grep "Name: " | cut -d" " -f2-))
     bluetoothctl paired-devices |
         cut -d" " -f2- |
-        awk -v con="$connected"  '{ printf (con && $0~con) ? "𐄂 " : "  "; print }' |
-        sed -e "s/𐄂/$(chfont bold)𐄂$(chfont reset)/"
-
+        awk -v con="$connected"  '{ printf (con && $0~con) ? "𐄂 " : "  "; print }'
     exit
 fi
 
