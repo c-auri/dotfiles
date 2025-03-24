@@ -1,33 +1,39 @@
 #!/bin/bash
 
-if [[ -z $1 ]]
-then
-    connected=$(echo $(bluetoothctl info | grep "Name: " | cut -d" " -f2-))
-    bluetoothctl paired-devices |
-        cut -d" " -f2- |
-        awk -v con="$connected"  '{ printf (con && $0~con) ? "𐄂 " : "  "; print }'
-    exit
-fi
+cmd=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 
-if [[ $1 == "dc" ]]
-then
-    bluetoothctl disconnect
-    exit
-fi
-
-declare -A mac_address=(
-    [qc]=E4:58:BC:3E:0D:E1
-    [wh]=14:3F:A6:F0:69:D7
-    [qc]=E4:58:BC:3E:0D:E1
-    [or]=20:74:CF:95:54:D2
-    [sw]=6C:47:60:DD:F1:63
+declare -A id_to_mac=(
+    [QC]=E4:58:BC:3E:0D:E1
+    [WH]=14:3F:A6:F0:69:D7
+    [OR]=20:74:CF:95:54:D2
+    [SW]=6C:47:60:DD:F1:63
 )
 
-if [[ -n ${mac_address[$1]} ]]
+if [[ -z $1 ]]
 then
-    bluetoothctl connect ${mac_address[$1]}
+    devices="$(bluetoothctl paired-devices | cut -d" " -f2-)"
+    connected=$(echo $(bluetoothctl info | head -1 | cut -d" " -f2))
+    for id in $(sort <<<${!id_to_mac[@]})
+    do
+        [[ ${id_to_mac[$id]} == $connected ]] && mark="$(tput bold)𐄂$(tput sgr0)" || mark=" "
+        mac="$(tput setaf 8)$(grep ${id_to_mac[$id]} <<<$devices | cut -d" " -f1)"
+        name="$(tput setaf 15)$(grep ${id_to_mac[$id]} <<<$devices | cut -d" " -f2-)"
+        echo "$mark $(tput setaf 8)[$(tput sgr0)$id$(tput setaf 8)] $mac $name$(tput sgr0)"
+    done
+    exit
+fi
+
+if [[ $cmd == "DC" ]]
+then
+    bluetoothctl disconnect | tail -1
+    exit
+fi
+
+if [[ -n ${id_to_mac[$cmd]} ]]
+then
+    bluetoothctl connect ${id_to_mac[$cmd]} | tail -1
 else
-    options="'$(echo ${!mac_address[@]} | sed "s/ /', '/g")'"
-    echo "'${1}' is not a valid device. Options are: $options." >&2
+    options="'$(sed "s/ /', '/g" <<<${!id_to_mac[@]})'"
+    echo "'${1}' is not a valid device. Options are: $options or 'DC' for disconnect." >&2
     exit 1
 fi
