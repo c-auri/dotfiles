@@ -1,7 +1,7 @@
 [[ -z "$PS1" ]] && return
 
 export XDG_CONFIG_HOME="$HOME/.config"
-[[ -f $XDG_CONFIG_HOME/shell/work ]] && source $XDG_CONFIG_HOME/shell/work
+[[ -f $XDG_CONFIG_HOME/bashrc.work ]] && source $XDG_CONFIG_HOME/bashrc.work
 
 ################################################################################
 ################################### CORE #######################################
