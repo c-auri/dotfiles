@@ -1,24 +1,34 @@
 #!/bin/bash
 
-cmd=$(echo "$1" | tr '[:lower:]' '[:upper:]')
+cmd=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
-declare -A id_to_mac=(
-    [QC]=E4:58:BC:3E:0D:E1
-    [WH]=14:3F:A6:F0:69:D7
-    [OR]=20:74:CF:95:54:D2
-    [SW]=6C:47:60:DD:F1:63
-)
+declare -A id_to_mac
+id_to_mac[OR]=20:74:CF:95:54:D2
+id_to_mac[QC]=E4:58:BC:3E:0D:E1
+id_to_mac[SW]=6C:47:60:DD:F1:63
+id_to_mac[WH]=14:3F:A6:F0:69:D7
 
-if [[ -z $1 ]]
+ids=$(echo ${!id_to_mac[@]} | tr " " "\n" | sort | tr "\n" " " | sed "s/ $//")
+
+if [[ -n $cmd && -z ${id_to_mac[$cmd]} && $cmd != "DC" ]]
 then
-    devices="$(bluetoothctl paired-devices | cut -d" " -f2-)"
-    connected=$(echo $(bluetoothctl info | head -1 | cut -d" " -f2))
-    for id in $(sort <<<${!id_to_mac[@]})
+    options="'$(echo $ids | sed "s/ /', '/g")' or 'DC' to disconnect"
+    echo "'$cmd' is not a valid device ID. Options are: $options." >&2
+    exit 1
+fi
+
+if [[ -z $cmd ]]
+then
+    devices="$(bluetoothctl paired-devices | cut -d " " -f 2-)"
+    connected=$(bluetoothctl info | head -1 | cut -d " " -f 2)
+    for id in $ids
     do
-        [[ ${id_to_mac[$id]} == $connected ]] && mark="$(tput bold)𐄂$(tput sgr0)" || mark=" "
-        mac="$(tput setaf 8)$(grep ${id_to_mac[$id]} <<<$devices | cut -d" " -f1)"
-        name="$(tput setaf 15)$(grep ${id_to_mac[$id]} <<<$devices | cut -d" " -f2-)"
-        echo "$mark $(tput setaf 8)[$(tput sgr0)$id$(tput setaf 8)] $mac $name$(tput sgr0)"
+        mac=${id_to_mac[$id]}
+        [[ $mac == $connected ]] && mark="$(tput bold)𐄂$(tput sgr0)" || mark=" "
+        id="$(tput setaf 8)[$(tput sgr0)$id$(tput setaf 8)]$(tput sgr0)"
+        name="$(echo "$devices" | grep $mac | cut -d " " -f 2-)"
+        mac="$(tput setaf 8)$mac$(tput sgr0)"
+        echo "$mark $id $mac $name"
     done
     exit
 fi
@@ -29,11 +39,4 @@ then
     exit
 fi
 
-if [[ -n ${id_to_mac[$cmd]} ]]
-then
-    bluetoothctl connect ${id_to_mac[$cmd]} | tail -1
-else
-    options="'$(sed "s/ /', '/g" <<<${!id_to_mac[@]})'"
-    echo "'${1}' is not a valid device. Options are: $options or 'DC' for disconnect." >&2
-    exit 1
-fi
+bluetoothctl connect ${id_to_mac[$cmd]} | tail -1
