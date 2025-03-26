@@ -19,7 +19,6 @@
 	graph = "!f() { git log --graph --oneline --all -${1:-10}; }; f"
 	root = !git-utils root
 	update-main = !git-utils update-main
-	short-status = !git-utils short-status
 	switch-fuzzy = !git-utils switch-fuzzy
 	switch-to-main = !git-utils switch-to-main
 
