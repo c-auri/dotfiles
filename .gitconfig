@@ -7,20 +7,20 @@
 [pull]
 	ff = only
 [alias]
-	add-fuzzy = !git-utils add-fuzzy
-	unstage = restore --staged
+	af = !git-utils add-fuzzy
 	amend = commit --amend
-	fixup = commit --fixup
 	co = checkout
-	sw = switch
-	pf = push --force-with-lease
 	cp = cherry-pick
+	fixup = commit --fixup
+	graph = !git-utils graph
+	pf = push --force-with-lease
 	ri = rebase --interactive --autosquash
-	graph = "!f() { git log --graph --oneline --all -${1:-10}; }; f"
 	root = !git-utils root
+	sw = switch
+	swf = !git-utils switch-fuzzy
+	sw-main = !git-utils switch-to-main
+	unstage = restore --staged
 	update-main = !git-utils update-main
-	switch-fuzzy = !git-utils switch-fuzzy
-	switch-to-main = !git-utils switch-to-main
 
 [include]
 	path = ~/.config/git/local.ini

@@ -14,47 +14,37 @@ function get_default_branch
     echo ${remote_head/$remote_ref/}
 }
 
-function add_fuzzy
-{
-    git diff --name-only | fzf --multi --preview 'git diff --color=always {}' | xargs -r git add
-}
-
-function switch_fuzzy
-{
-    git branch -a |
-        grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |
-        sort | uniq | fzf |
-        xargs -r git switch
-}
-
-function update_default_branch
-{
-    default_branch=$(get_default_branch)
-    if [[ $(git branch --show-current) == $default_branch ]]
-    then
-        git pull
-    else
-        git fetch $(get_remote) "$default_branch:$default_branch"
-    fi
-}
-
 git rev-parse || exit 1
 
 case $1 in
     "add-fuzzy")
-	add_fuzzy
+	git diff --name-only |
+	    fzf --multi --preview 'git diff --color=always {}' |
+	    xargs -r git add
+	;;
+    "graph")
+	git log --graph --oneline --all -${2:-10}
 	;;
     "root")
 	git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
 	;;
     "switch-fuzzy")
-	switch_fuzzy
+	git branch -a |
+	    grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |
+	    sort | uniq | fzf |
+	    xargs -r git switch
 	;;
     "switch-to-main")
 	git switch $(get_default_branch)
 	;;
     "update-main")
-	update_default_branch
+	default_branch=$(get_default_branch)
+	if [[ $(git branch --show-current) == $default_branch ]]
+	then
+	    git pull
+	else
+	    git fetch $(get_remote) "$default_branch:$default_branch"
+	fi
 	;;
     *)
 	git $1

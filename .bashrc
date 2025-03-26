@@ -105,9 +105,9 @@ alias gsw='git switch'
 
 # these are custom git aliases, see .gitconfig and .local/bin/git-utils
 alias gg='git graph'
-alias gaf='git add-fuzzy'
-alias gsf='git switch-fuzzy'
-alias gsm='git switch-to-main'
+alias gaf='git af'
+alias gsf='git swf'
+alias gsm='git sw-main'
 alias gum='git update-main'
 alias cdr='cd $(git root)'
 
