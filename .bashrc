@@ -43,24 +43,24 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    user="${PROMPT_USERNAME:-$(chfont bright-cyan)$(whoami)}$(chfont bright-black):"
+    user="${PROMPT_USERNAME:-$(tput setaf 14)$(whoami)}$(tput setaf 8):"
     set_win_title="\[\e]2;$dir\a\]"
-    dir="$(chfont bright-white)$dir"
+    dir="$(tput setaf 15)$dir"
 
     git=$(git status 2>/dev/null | $HOME/.local/lib/shorten-git-status)
     if [[ -n $git ]]
     then
-        git="$(chfont yellow)[$git]"
+        git="$(tput setaf 3)[$git]"
     fi
 
     if [[ $prev_cmd_exit_code == 0 ]]
     then
-        sym_clr="$(chfont bright-white)"
+        sym_clr="$(tput setaf 15)"
     else
-        sym_clr="$(chfont bright-red)"
+        sym_clr="$(tput setaf 9)"
     fi
 
-    PS1="$set_win_title\n$(chfont bold)$user $dir $git\n$sym_clr❯ $(chfont reset)"
+    PS1="$set_win_title\n$(tput bold)$user $dir $git\n$sym_clr❯ $(tput sgr0)"
 }
 
 ################################################################################
