@@ -17,10 +17,10 @@
 	ri = rebase --interactive --autosquash
 	root = !git-utils root
 	sw = switch
-	swf = !git-utils switch-fuzzy
-	sw-main = !git-utils switch-to-main
+	sf = !git-utils switch-fuzzy
+	sm = !git-utils switch-to-main
+	um = !git-utils update-main
 	unstage = restore --staged
-	update-main = !git-utils update-main
 
 [include]
 	path = ~/.config/git/local.ini
