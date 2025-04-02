@@ -7,10 +7,13 @@ BEGIN {
 /interacti/ { rebase=1 }
 /Last comm/ { done=$5 }
 /Next comm/ { todo=$6 }
+/HEAD deta/ { detached=1 }
 END {
     if (branch) {
         print branch
     } else if (rebase) {
         printf "REBASE %s/%s",done,done+todo
+    } else if (detached) {
+        print "DETACHED HEAD"
     }
 }
