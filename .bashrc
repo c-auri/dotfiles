@@ -30,11 +30,10 @@ alias sb='source ~/.bashrc'
 ################################### PROMPT #####################################
 ################################################################################
 
-PROMPT_COMMAND=__prepare_prompt
-
 function __prepare_prompt
 {
     prev_cmd_exit_code=$?
+    fresh_terminal=${1:-false}
 
     user="${WORK_USERNAME:-$(tput setaf 14)$(whoami)}$(tput setaf 8):"
 
@@ -61,7 +60,35 @@ function __prepare_prompt
         sym_clr="$(tput setaf 9)"
     fi
 
-    PS1="$set_win_title\n$(tput bold)$user $dir $git\n$sym_clr❯ $(tput sgr0)"
+    if $fresh_terminal
+    then
+        PS1=""
+    else
+        PS1="\n"
+    fi
+
+    PS1="$PS1$set_win_title$(tput bold)$user $dir $git\n$sym_clr❯ $(tput sgr0)"
+}
+
+# The __prepare_prompt function should be called before each prompt is printed.
+# This is what the global PROMPT_COMMAND variable is designed to do.
+
+# But there is one caveat:
+# In a fresh terminal the prompt should be printed right onto the first line,
+# but all subsequent prompts should be preceeded by a newline.
+
+# To achieve this, delay assignment to PROMPT_COMMAND by one command cycle:
+PROMPT_COMMAND="export PROMPT_COMMAND=__prepare_prompt"
+
+# and call the preparation with fresh_terminal=true for the first command:
+__prepare_prompt true
+
+# Also, refresh the prompt preparation before calling clear:
+function clear
+{
+    PROMPT_COMMAND='export PROMPT_COMMAND=__prepare_prompt'
+    __prepare_prompt true
+    command clear
 }
 
 ################################################################################
