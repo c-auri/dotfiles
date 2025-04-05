@@ -1,18 +1,17 @@
-[[ -z "$PS1" ]] && return
-
-export XDG_CONFIG_HOME="$HOME/.config"
-[[ -f $XDG_CONFIG_HOME/bashrc.work ]] && source $XDG_CONFIG_HOME/bashrc.work
+[[ -z "$PS1" ]] && return # if not running interactively, do nothing
 
 ################################################################################
 ################################### CORE #######################################
 ################################################################################
 
-shopt -s checkwinsize
-shopt -s histappend
-HISTCONTROL=ignoredups
+export XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && source /etc/bash_completion
 [[ -f $XDG_CONFIG_HOME/alacritty/completion ]] && source $XDG_CONFIG_HOME/alacritty/completion
+
+shopt -s checkwinsize
+shopt -s histappend
+HISTCONTROL=ignoredups
 
 LESS="-R -i"
 
@@ -22,6 +21,7 @@ export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:s
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
 
+[[ -f $XDG_CONFIG_HOME/bashrc.work ]] && source $XDG_CONFIG_HOME/bashrc.work
 alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
 alias sb='source ~/.bashrc'
 
