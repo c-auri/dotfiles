@@ -170,7 +170,6 @@ awful.screen.connect_for_each_screen(function(s)
 			s.tasklist,
 			{
 				layout = wibox.layout.fixed.horizontal,
-				awful.widget.keyboardlayout(),
 				wibox.widget.systray(),
 				wibox.widget.textclock(),
 			},
