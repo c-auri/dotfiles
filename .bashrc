@@ -36,6 +36,8 @@ function __prepare_prompt
 {
     prev_cmd_exit_code=$?
 
+    user="${WORK_USERNAME:-$(tput setaf 14)$(whoami)}$(tput setaf 8):"
+
     if [[ $PWD == $HOME ]]
     then
         dir="~"
@@ -43,7 +45,6 @@ function __prepare_prompt
         dir=$(basename $PWD)
     fi
 
-    user="${PROMPT_USERNAME:-$(tput setaf 14)$(whoami)}$(tput setaf 8):"
     set_win_title="\[\e]2;$dir\a\]"
     dir="$(tput setaf 15)$dir"
 

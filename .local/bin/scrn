@@ -8,8 +8,8 @@ external=$(grep -v 'eDP' <<<$screens)
 
 xrandr --output ${laptop} \
     --primary \
-    --mode ${LAPTOP_SCREEN_RESOLUTION:-"1440x900"} \
-    --brightness ${LAPTOP_SCREEN_BRIGHTNESS:-1}
+    --mode ${WORK_LAPTOP_RESOLUTION:-"1440x900"} \
+    --brightness ${WORK_LAPTOP_BRIGHTNESS:-1}
 
 if [[ $? != 0 || -z $external ]]
 then
