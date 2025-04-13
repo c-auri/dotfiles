@@ -6,6 +6,8 @@
 	autoSetupRemote = true
 [pull]
 	ff = only
+[status]
+	showUntrackedFiles = all
 [alias]
 	af = !git-utils add-fuzzy
 	amend = commit --amend
