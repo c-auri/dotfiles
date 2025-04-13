@@ -21,6 +21,8 @@ export EZA_COLORS="ur=37:uw=37:ue=37:ux=37:gr=37:gw=37:gx=37:tr=37:tw=37:tx=37:s
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--layout reverse --style minimal'
 
+alias clip='xclip -selection clipboard'
+
 [[ -f $XDG_CONFIG_HOME/bashrc.work ]] && source $XDG_CONFIG_HOME/bashrc.work
 alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
 alias sb='source ~/.bashrc'

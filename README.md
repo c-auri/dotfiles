@@ -34,7 +34,7 @@ Install apt packages:
 sudo apt install \
     awesome rofi xterm \
     arandr lxappearance lxsession lxpolkit \
-    bat fd-find ripgrep tmux \
+    bat fd-find ripgrep tmux xclip \
     gimp flameshot mpv vlc
 ```
 > [!NOTE]
