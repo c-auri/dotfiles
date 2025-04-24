@@ -9,19 +9,19 @@
 [status]
 	showUntrackedFiles = all
 [alias]
-	af = !git-utils add-fuzzy
+	af = !git-add-fuzzy
 	amend = commit --amend
 	co = checkout
 	cp = cherry-pick
 	fixup = commit --fixup
-	graph = !git-utils graph
+	graph = !git-graph
 	pf = push --force-with-lease
 	ri = rebase --interactive --autosquash
-	root = !git-utils root
+	root = !git-root
 	sw = switch
-	sf = !git-utils switch-fuzzy
-	sm = !git-utils switch-to-main
-	um = !git-utils update-main
+	sf = !git-switch-fuzzy
+	sm = !git-switch-to-main
+	um = !git-update-main
 	unstage = restore --staged
 
 [include]

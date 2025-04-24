@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source ~/.local/lib/git-utils
+
+git branch -a |
+    grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |
+    sort | uniq | fzf |
+    xargs -r git switch

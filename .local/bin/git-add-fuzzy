@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git status --short |
+    grep -o '[^ ]*$' |
+    fzf --multi --preview 'git diff --color=always -- {}' |
+    xargs -r git add

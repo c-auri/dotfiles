@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source $HOME/.local/lib/git-utils
+
+git switch $(get_default_branch)
