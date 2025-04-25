@@ -111,7 +111,8 @@ function mcd
     cd $1
 }
 
-alias df='cd $(fd -H -t d | fzf --preview "tree -C {} | head -200")'
+alias f='fuzzy-open-file'
+alias df='cd $(fuzzy-find-dir)'
 
 alias notes='cd ~/notes'
 
