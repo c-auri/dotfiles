@@ -9,20 +9,20 @@
 [status]
 	showUntrackedFiles = all
 [alias]
-	af = !git-add-fuzzy
-	amend = commit --amend
 	co = checkout
-	cp = cherry-pick
-	fixup = commit --fixup
-	graph = !git-graph
-	pf = push --force-with-lease
-	ri = rebase --interactive --autosquash
-	root = !git-root
 	sw = switch
-	sf = !git-switch-fuzzy
+	cp = cherry-pick
+	ri = rebase --interactive --autosquash
+	unstage = restore --staged
+	amend = commit --amend
+	fixup = commit --fixup
+	pf = push --force-with-lease
+	graph = !git-graph
+	root = !git-root
 	sm = !git-switch-to-main
 	um = !git-update-main
-	unstage = restore --staged
+	sf = !git-switch-fuzzy
+	af = !git-add-fuzzy
 
 [include]
 	path = ~/.config/git/local.ini
