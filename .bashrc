@@ -112,7 +112,15 @@ function mcd
 }
 
 alias f='fuzzy-open-file'
-alias df='cd $(fuzzy-find-dir)'
+
+function df
+{
+    dir=$(fuzzy-find-dir)
+    if [[ -n $dir ]]
+    then
+        cd $dir
+    fi
+}
 
 alias notes='cd ~/notes'
 
