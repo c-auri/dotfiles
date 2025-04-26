@@ -6,26 +6,31 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
     ```bash
     git clone --bare <repo-url> $HOME/.config/.git
     ```
-1. Create a `con` alias:
+
+1. Create `con` alias:
     ```bash
     alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
     ```
     - There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.
+
 1. Checkout the content of the bare repository to your home directory:
     ```bash
     con checkout
     ```
-    - If the checkout fails because some files would be overwritten, delete those files (create backups if you care about them) and then try again.
+    - If the checkout fails because some files would be overwritten, create backups, delete the files and then try again.
+
 1. Hide untracked files:
     ```bash
     con config --local status.showUntrackedFiles no
     ```
+
 1. Create `~/.config/git/local.ini` and add your user name and email:
     ```ini
     [user]
         name = <git-user-name>
         email = <git-user-email>
     ```
+
 1. Restart your terminal.
 
 ## Installations
@@ -37,8 +42,9 @@ sudo apt install \
     bat fd-find ripgrep tmux xclip \
     gimp flameshot mpv vlc
 ```
-> [!NOTE]
-> If all else fails, awesome defaults to xterm. So better make sure it's always there, even if you intend to use a different terminal.
+> [!IMPORTANT]
+> If all else fails, awesome defaults to xterm.
+> So better make sure it's always there, even if you intend to use a different terminal.
 
 Install manually:
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
@@ -56,4 +62,4 @@ Install manually:
 - Firefox
   1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
   2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
-  3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) and import custom themes defined in `.config/.stylus.json`
+  3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) and import custom themes defined in `.config/.stylus.json`
