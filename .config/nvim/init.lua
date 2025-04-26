@@ -107,6 +107,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_set_hl(0, 'Heading1', { bg = '#181616', fg = '#e6c384', bold = true })
+vim.api.nvim_set_hl(0, 'Heading2', { bg = '#181616', fg = '#c9a86a', bold = true })
+vim.api.nvim_set_hl(0, 'Heading3', { bg = '#181616', fg = '#b8985b', bold = true })
+vim.api.nvim_set_hl(0, 'Heading4', { bg = '#181616', fg = '#8b6f34', bold = true })
+vim.api.nvim_set_hl(0, 'Heading5', { bg = '#181616', fg = '#8b6f34', bold = false })
+vim.api.nvim_set_hl(0, 'Heading6', { bg = '#181616', fg = '#765c22', bold = false })
+
+vim.api.nvim_set_hl(0, 'RenderMarkdownInfo', { fg = '#7fb4ca' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownSuccess', { fg = '#87a987' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownHint', { fg = '#c592b7' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownWarn', { fg = '#c47043' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownError', { fg = '#e46876' })
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -709,6 +722,8 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
