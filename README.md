@@ -4,31 +4,31 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
 ## Setting up the Repository
 1. Clone into your home directory as a bare repository:
     ```bash
-    git clone --bare <repo-url> $HOME/.config/.git
+   git clone --bare <repo-url> $HOME/.config/.git
     ```
 
 1. Create `con` alias:
     ```bash
-    alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
+   alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
     ```
     - There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.
 
 1. Checkout the content of the bare repository to your home directory:
     ```bash
-    con checkout
+   con checkout
     ```
     - If the checkout fails because some files would be overwritten, create backups, delete the files and then try again.
 
 1. Hide untracked files:
     ```bash
-    con config --local status.showUntrackedFiles no
+   con config --local status.showUntrackedFiles no
     ```
 
 1. Create `~/.config/git/local.ini` and add your user name and email:
     ```ini
-    [user]
-        name = <git-user-name>
-        email = <git-user-email>
+   [user]
+       name = <git-user-name>
+       email = <git-user-email>
     ```
 
 1. Restart your terminal.
