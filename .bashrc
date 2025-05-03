@@ -113,6 +113,11 @@ function mcd
 
 alias f='fuzzy-open-file'
 
+function up
+{
+    cd $(printf "%0.s../" $(seq 1 $1));
+}
+
 function df
 {
     dir=$(fuzzy-find-dir)
