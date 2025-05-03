@@ -148,6 +148,7 @@ alias gaf='git af'
 alias gsf='git sf'
 alias gsm='git sm'
 alias gum='git um'
+alias gri='git ri'
 alias cdr='cd $(git root)'
 
 ################################################################################

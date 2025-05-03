@@ -12,7 +12,6 @@
 	co = checkout
 	sw = switch
 	cp = cherry-pick
-	ri = rebase --interactive --autosquash
 	unstage = restore --staged
 	amend = commit --amend
 	fixup = commit --fixup
@@ -23,6 +22,7 @@
 	um = !git-update-main
 	sf = !git-switch-fuzzy
 	af = !git-add-fuzzy
+	ri = !git-rebase-interactive
 
 [include]
 	path = ~/.config/git/local.ini
