@@ -24,8 +24,7 @@ return {
         heading = {
           icons = { '', '', '', '', '', '' },
           position = 'inline',
-          border = true,
-          border_virtual = true,
+          border = false,
           sign = false,
           backgrounds = {
             'Heading1',
