@@ -52,6 +52,7 @@ Install manually:
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
+- [vivify](https://github.com/jannis-baum/vivify)
 
 ## Manual Theming
 - Run `lxappearance` and select desired theme
