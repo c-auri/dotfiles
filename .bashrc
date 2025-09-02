@@ -34,7 +34,7 @@ function __prepare_prompt
     prev_cmd_exit_code=$?
     fresh_terminal=${1:-false}
 
-    user="${WORK_USERNAME:-$(tput setaf 14)$(whoami)}$(tput setaf 8):"
+    user="${WORK_USERNAME:-\[$(tput setaf 14)\]$(whoami)}\[$(tput setaf 8)\]:"
 
     if [[ $PWD == $HOME ]]
     then
@@ -44,19 +44,19 @@ function __prepare_prompt
     fi
 
     set_win_title="\[\e]2;$dir\a\]"
-    dir="$(tput setaf 15)$dir"
+    dir="\[$(tput setaf 15)\]$dir"
 
     git=$(git status 2>/dev/null | $HOME/.local/lib/shorten-git-status)
     if [[ -n $git ]]
     then
-        git="$(tput setaf 3)[$git]"
+        git="\[$(tput setaf 3)\][$git]"
     fi
 
     if [[ $prev_cmd_exit_code == 0 ]]
     then
-        sym_clr="$(tput setaf 15)"
+        sym_clr="\[$(tput setaf 15)\]"
     else
-        sym_clr="$(tput setaf 9)"
+        sym_clr="\[$(tput setaf 9)\]"
     fi
 
     if $fresh_terminal
@@ -66,7 +66,7 @@ function __prepare_prompt
         PS1="\n"
     fi
 
-    PS1="$PS1$set_win_title$(tput bold)$user $dir $git\n$sym_clr❯ $(tput sgr0)"
+    PS1="$PS1$set_win_title\[$(tput bold)\]$user $dir $git\n$sym_clr❯ \[$(tput sgr0)\]"
 }
 
 # The __prepare_prompt function should be called before each prompt is printed.
