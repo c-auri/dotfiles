@@ -39,7 +39,7 @@ Install apt packages:
 sudo apt install \
     awesome rofi xterm \
     arandr lxappearance lxsession lxpolkit \
-    bat fd-find ripgrep tmux xclip \
+    bat fd-find ripgrep tmux xclip jq \
     gimp flameshot mpv vlc
 ```
 > [!IMPORTANT]
