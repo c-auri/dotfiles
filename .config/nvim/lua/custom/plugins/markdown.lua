@@ -38,6 +38,15 @@ return {
           icons = { '•' },
         },
 
+        checkbox = {
+          unchecked = {
+            icon = '□ ',
+          },
+          checked = {
+            icon = '✔ ',
+          },
+        },
+
         code = {
           style = 'normal',
           border = 'thin',
