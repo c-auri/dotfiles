@@ -9,7 +9,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 shopt -s checkwinsize
 shopt -s histappend
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoreboth
 
 LESS="-R -i"
 
