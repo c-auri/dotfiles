@@ -21,7 +21,7 @@ export FZF_DEFAULT_OPTS='--layout reverse --style minimal --bind page-up:preview
 
 alias clip='xclip -selection clipboard'
 
-[[ -f $XDG_CONFIG_HOME/bashrc.work ]] && source $XDG_CONFIG_HOME/bashrc.work
+[[ -f $XDG_CONFIG_HOME/workrc ]] && source $XDG_CONFIG_HOME/workrc
 alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
 alias sb='source ~/.bashrc'
 
