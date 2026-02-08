@@ -1,0 +1,12 @@
+/*
+ * uses the dragon color palatte from kanagawa.nvim,
+ * see https://github.com/rebelot/kanagawa.nvim/blob/master/lua/kanagawa/colors.lua
+ */
+* {
+    background:     #181616FF;
+    background-alt: #393836FF;
+    foreground:     #C5C9C5FF;
+    selected:       #717C7CFF;
+    active:         #00FF00FF;
+    urgent:         #E46876FF;
+}
