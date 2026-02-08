@@ -37,10 +37,11 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
 Install apt packages:
 ```bash
 sudo apt install \
-    awesome rofi xterm \
+    awesome xterm \
+    rofi dunst \
     arandr lxappearance lxsession lxpolkit \
     bat fd-find ripgrep tmux xclip jq \
-    gimp flameshot mpv vlc
+    gimp feh flameshot mpv vlc
 ```
 > [!IMPORTANT]
 > If all else fails, awesome defaults to xterm.
@@ -53,13 +54,16 @@ Install manually:
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 - [vivify](https://github.com/jannis-baum/vivify)
+- [ImageMagick](https://imagemagick.org/script/download.php#gsc.tab=0) (make AppImage executable and put in a place that is added to PATH)
+- [13lock-color](https://github.com/Raymo111/i3lock-color?tab=readme-ov-file#dependencies)
+- [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file#installation-script)
 
 ## Manual Theming
 - Run `lxappearance` and select desired theme
 - Rofi:
-  1. install [theme](https://github.com/adi1090x/rofi)
-  3. edit `~/.config/rofi/launchers/type-4/shared/colors.rasi` to `@import "~/.config/rofi/colors/black.rasi"`
-  4. edit `~/.config/rofi/launchers/type-4/shared/fonts.rasi` and set font to 'Ubuntu Mono 13'
+  1. install [themes](https://github.com/adi1090x/rofi)
+  2. edit `~/.config/rofi/launchers/type-4/shared/colors.rasi` to `@import "~/.config/rofi/colors/kanagawa-dragon.rasi"`
+  3. edit `~/.config/rofi/launchers/type-4/shared/fonts.rasi` and set font to 'Ubuntu Mono 13'
 - Firefox
   1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
   2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
