@@ -31,10 +31,10 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
        email = <git-user-email>
     ```
 
-1. Restart your terminal.
+1. Restart terminal
 
 ## Installations
-Install apt packages:
+### Package Manager
 ```bash
 sudo apt install \
     awesome xterm \
@@ -47,7 +47,7 @@ sudo apt install \
 > If all else fails, awesome defaults to xterm.
 > So better make sure it's always there, even if you intend to use a different terminal.
 
-Install manually:
+### Manual
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
@@ -58,13 +58,20 @@ Install manually:
 - [13lock-color](https://github.com/Raymo111/i3lock-color?tab=readme-ov-file#dependencies)
 - [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file#installation-script)
 
-## Manual Theming
-- Run `lxappearance` and select desired theme
-- Rofi:
-  1. install [themes](https://github.com/adi1090x/rofi)
-  2. edit `~/.config/rofi/launchers/type-4/shared/colors.rasi` to `@import "~/.config/rofi/colors/kanagawa-dragon.rasi"`
-  3. edit `~/.config/rofi/launchers/type-4/shared/fonts.rasi` and set font to 'Ubuntu Mono 13'
-- Firefox
-  1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
-  2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
-  3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) and import custom themes defined in `.config/.stylus.json`
+## Customization
+### GUI
+Run `lxappearance` and select desired theme
+
+### Rofi
+1. install [themes](https://github.com/adi1090x/rofi)
+2. set `@import "~/.config/rofi/colors/kanagawa-dragon.rasi"` in
+    - `~/.config/rofi/launchers/type-4/shared/colors.rasi`
+    - `~/.config/rofi/powermenu/type-3/shared/colors.rasi` 
+3. set font to 'Ubuntu Mono 13' in
+    - `~/.config/rofi/launchers/type-4/shared/fonts.rasi` 
+    - `~/.config/rofi/powermenu/type-3/shared/fonts.rasi` 
+
+### Firefox
+1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
+2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
+3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) and import custom themes defined in `.config/.stylus.json`
