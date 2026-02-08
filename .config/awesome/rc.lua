@@ -97,11 +97,7 @@ local tasklist_buttons = gears.table.join(
 		if c == client.focus then
 			c.minimized = true
 		else
-			c:emit_signal(
-				"request::activate",
-				"tasklist",
-				{raise = true}
-			)
+			c:emit_signal("request::activate", "tasklist", { raise = true })
 		end
 	end),
 	awful.button({}, 3, function(c)
@@ -193,36 +189,74 @@ local shift = "Shift"
 local globalkeys = gears.table.join(
 
 	-- Awesome
-	awful.key({ meta, ctrl }, "h", hotkeys_popup.show_help,	{ description = "show help", group = "awesome" }),
-	awful.key({ meta, ctrl }, "v", awesome.restart,			{ description = "reload awesome", group = "awesome" }),
+	awful.key({ meta, ctrl }, "h", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ meta, ctrl }, "v", awesome.restart, { description = "reload awesome", group = "awesome" }),
 
 	-- Layout
-	awful.key({ meta }, "v", function() awful.layout.inc(1) end,					{ description = "cycle layout", group = "awesome: layout" }),
-	awful.key({ meta }, "j", function() awful.tag.incnmaster(-1, nil, true) end,	{ description = "decrease the number of main windows", group = "awesome: layout" }),
-	awful.key({ meta }, "k", function() awful.tag.incnmaster(1, nil, true) end,		{ description = "increase the number of main windows", group = "awesome: layout" }),
-	awful.key({ meta }, "h", function() awful.tag.incncol(-1, nil, true) end,		{ description = "decrease the number of columns", group = "awesome: layout" }),
-	awful.key({ meta }, "l", function() awful.tag.incncol(1, nil, true) end,		{ description = "increase the number of columns", group = "awesome: layout" }),
-	awful.key({ meta, shift }, "h", function() awful.tag.incmwfact(-0.05) end,		{ description = "decrease main column width", group = "awesome: layout" }),
-	awful.key({ meta, shift }, "l", function() awful.tag.incmwfact(0.05) end,		{ description = "increase main column width", group = "awesome: layout" }),
+	awful.key({ meta }, "v", function()
+		awful.layout.inc(1)
+	end, { description = "cycle layout", group = "awesome: layout" }),
+	awful.key({ meta }, "j", function()
+		awful.tag.incnmaster(-1, nil, true)
+	end, { description = "decrease the number of main windows", group = "awesome: layout" }),
+	awful.key({ meta }, "k", function()
+		awful.tag.incnmaster(1, nil, true)
+	end, { description = "increase the number of main windows", group = "awesome: layout" }),
+	awful.key({ meta }, "h", function()
+		awful.tag.incncol(-1, nil, true)
+	end, { description = "decrease the number of columns", group = "awesome: layout" }),
+	awful.key({ meta }, "l", function()
+		awful.tag.incncol(1, nil, true)
+	end, { description = "increase the number of columns", group = "awesome: layout" }),
+	awful.key({ meta, shift }, "h", function()
+		awful.tag.incmwfact(-0.05)
+	end, { description = "decrease main column width", group = "awesome: layout" }),
+	awful.key({ meta, shift }, "l", function()
+		awful.tag.incmwfact(0.05)
+	end, { description = "increase main column width", group = "awesome: layout" }),
 
 	-- Focus and Positioning
-	awful.key({ meta }, "d", function() awful.client.focus.byidx(-1) end,			{ description = "focus previous window", group = "awesome: focus" }),
-	awful.key({ meta }, "f", function() awful.client.focus.byidx(1) end,			{ description = "focus next window", group = "awesome: focus" }),
-	awful.key({ meta }, "g", function() awful.screen.focus_relative(1) end,			{ description = "focus next screen", group = "awesome: focus" }),
-	awful.key({ meta, shift }, "d", function() awful.client.swap.byidx(-1) end,		{ description = "swap with previous window", group = "awesome: positioning" }),
-	awful.key({ meta, shift }, "f", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
+	awful.key({ meta }, "d", function()
+		awful.client.focus.byidx(-1)
+	end, { description = "focus previous window", group = "awesome: focus" }),
+	awful.key({ meta }, "f", function()
+		awful.client.focus.byidx(1)
+	end, { description = "focus next window", group = "awesome: focus" }),
+	awful.key({ meta }, "g", function()
+		awful.screen.focus_relative(1)
+	end, { description = "focus next screen", group = "awesome: focus" }),
+	awful.key({ meta, shift }, "d", function()
+		awful.client.swap.byidx(-1)
+	end, { description = "swap with previous window", group = "awesome: positioning" }),
+	awful.key({ meta, shift }, "f", function()
+		awful.client.swap.byidx(1)
+	end, { description = "swap with next window", group = "awesome: positioning" }),
 
 	-- Applications
-	awful.key({ meta }, "Return", function() awful.spawn(launcher) end,		{ description = "application launcher", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "q", function() awful.spawn(powermenu) end,		{ description = "power menu", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "t", function() awful.spawn(terminal) end,			{ description = "open terminal", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "f", function() awful.spawn("pcmanfm") end,			{ description = "open file explorer", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "s", function() awful.spawn("flameshot gui") end,		{ description = "take a screenshot", group = "awesome: applications" })
+	awful.key({ meta }, "Return", function()
+		awful.spawn(launcher)
+	end, { description = "application launcher", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "q", function()
+		awful.spawn(powermenu)
+	end, { description = "power menu", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "t", function()
+		awful.spawn(terminal)
+	end, { description = "open terminal", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "f", function()
+		awful.spawn("pcmanfm")
+	end, { description = "open file explorer", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "s", function()
+		awful.spawn("flameshot gui")
+	end, { description = "take a screenshot", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(
-	awful.key({ meta, shift }, "g", function(c) c:move_to_screen() end,				{ description = "move to next screen", group = "awesome: active window" }),
-	awful.key({ meta }, "q", function(c) c:kill() end,								{ description = "close window", group = "awesome: active window" }),
+	awful.key({ meta, shift }, "g", function(c)
+		c:move_to_screen()
+	end, { description = "move to next screen", group = "awesome: active window" }),
+	awful.key({ meta }, "q", function(c)
+		c:kill()
+	end, { description = "close window", group = "awesome: active window" }),
 
 	awful.key({ meta }, "m", function(c)
 		c.maximized = not c.maximized
@@ -333,7 +367,6 @@ awful.rules.rules = {
 			tag = "4",
 		},
 	},
-
 
 	{
 		rule_any = {
