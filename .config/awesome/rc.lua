@@ -57,6 +57,7 @@ gears.wallpaper.set("#181616")
 -- This is used later as the default terminal and editor to run.
 local terminal = "alacritty"
 local launcher = "sh -c '~/.config/rofi/scripts/launcher_t4'"
+local powermenu = "sh -c '~/.config/rofi/scripts/powermenu_t3'"
 local editor = os.getenv("nvim") or "editor"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -194,7 +195,6 @@ local globalkeys = gears.table.join(
 	-- Awesome
 	awful.key({ meta, ctrl }, "h", hotkeys_popup.show_help,	{ description = "show help", group = "awesome" }),
 	awful.key({ meta, ctrl }, "v", awesome.restart,			{ description = "reload awesome", group = "awesome" }),
-	awful.key({ meta, ctrl }, "q", awesome.quit,			{ description = "quit awesome", group = "awesome" }),
 
 	-- Layout
 	awful.key({ meta }, "v", function() awful.layout.inc(1) end,					{ description = "cycle layout", group = "awesome: layout" }),
@@ -214,6 +214,7 @@ local globalkeys = gears.table.join(
 
 	-- Applications
 	awful.key({ meta }, "Return", function() awful.spawn(launcher) end,		{ description = "application launcher", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "q", function() awful.spawn(powermenu) end,		{ description = "power menu", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "t", function() awful.spawn(terminal) end,			{ description = "open terminal", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "f", function() awful.spawn("pcmanfm") end,			{ description = "open file explorer", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "s", function() awful.spawn("flameshot gui") end,		{ description = "take a screenshot", group = "awesome: applications" })
