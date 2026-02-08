@@ -56,7 +56,7 @@ gears.wallpaper.set("#181616")
 
 -- This is used later as the default terminal and editor to run.
 local terminal = "alacritty"
-local launcher = "rofi -show drun -theme ~/.config/rofi/launchers/type-4/style-6.rasi"
+local launcher = "sh -c '~/.config/rofi/scripts/launcher_t4'"
 local editor = os.getenv("nvim") or "editor"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -213,7 +213,7 @@ local globalkeys = gears.table.join(
 	awful.key({ meta, shift }, "f", function() awful.client.swap.byidx(1) end,		{ description = "swap with next window", group = "awesome: positioning" }),
 
 	-- Applications
-	awful.key({ meta }, "Return", function() awful.util.spawn(launcher) end,		{ description = "application launcher", group = "awesome: applications" }),
+	awful.key({ meta }, "Return", function() awful.spawn(launcher) end,		{ description = "application launcher", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "t", function() awful.spawn(terminal) end,			{ description = "open terminal", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "f", function() awful.spawn("pcmanfm") end,			{ description = "open file explorer", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "s", function() awful.spawn("flameshot gui") end,		{ description = "take a screenshot", group = "awesome: applications" })
