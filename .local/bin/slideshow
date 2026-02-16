@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+DELAY_SEC=180
+
+if [[ "$#" -eq 0 ]]
+then
+    echo "Usage: $0 <image_or_directory> [more images or directories...]"
+    exit 1
+fi
+
+# ignore hangup signals (nohup), ensuring process keeps running after terminal is closed
+# run with systemd inhibition to prevent screen blanking/suspend
+# use feh to run slideshow with given delay in full screen (F), zoomed in (Z) and hidden mouse (Y)
+# redirect output (otherwise nohup would create an output file) and run in background
+nohup \
+    systemd-inhibit --what=idle:sleep \
+    feh -FZY -D "$DELAY_SEC" "$@" \
+    >/dev/null 2>&1 &
