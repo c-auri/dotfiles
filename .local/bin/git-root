@@ -1,3 +1,4 @@
 #!/bin/bash
 
+# write the current git directory's root path to stdout:
 git rev-parse --absolute-git-dir | grep -oP '.*(?=/.git)'
