@@ -11,6 +11,9 @@ shopt -s checkwinsize
 shopt -s histappend
 HISTCONTROL=ignoreboth
 
+export EDITOR=vim
+export VISUAL=vim
+
 LESS="-R -i"
 
 eval "$(dircolors $XDG_CONFIG_HOME/.dircolors)"
@@ -34,17 +37,49 @@ function __prepare_prompt
     prev_cmd_exit_code=$?
     fresh_terminal=${1:-false}
 
+    set_win_title=""
     user="${WORK_USERNAME:-\[$(tput setaf 14)\]$(whoami)}\[$(tput setaf 8)\]:"
+    git_root=$(git-root 2>/dev/null)
 
     if [[ $PWD == $HOME ]]
     then
         dir="~"
+    elif [[ -n $git_root && $git_root == $PROJECTS_DIR/* ]]
+    then
+        project=$(basename "$git_root")
+        rel="${PWD#$git_root}"
+        rel_stripped="${rel#/}"
+
+        if [[ -z $rel ]]
+        then
+            suffix=""
+        elif [[ $rel_stripped != */* ]]
+        then
+            suffix="/$rel_stripped"
+        else
+            suffix="/../$(basename "$PWD")"
+        fi
+
+        set_win_title="\[\e]2;$project$suffix\a\]"
+
+        if [[ -z $suffix ]]
+        then
+            dir="\[\e[1;97m\]$project"
+        elif [[ $suffix == /../* ]]
+        then
+            dir="\[\e[1;90m\]$project/../\[\e[1;97m\]$(basename "$PWD")"
+        else
+            dir="\[\e[1;90m\]$project/\[\e[1;97m\]$rel_stripped"
+        fi
     else
-        dir=$(basename $PWD)
+        dir=$(basename "$PWD")
     fi
 
-    set_win_title="\[\e]2;$dir\a\]"
-    dir="\[$(tput setaf 15)\]$dir"
+    if [[ -z $set_win_title ]]
+    then
+        set_win_title="\[\e]2;$dir\a\]"
+        dir="\[\e[1;97m\]$dir"
+    fi
 
     git=$(git status 2>/dev/null | $HOME/.local/lib/shorten-git-status)
     if [[ -n $git ]]
