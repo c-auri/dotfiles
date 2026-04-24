@@ -13,6 +13,14 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
     ```
     - There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.
 
+1. Fix the fetch refspec so remote tracking branches are created correctly, then fetch:
+    ```bash
+   con config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+   con remote set-head origin --auto
+   con fetch
+    ```
+    - `git clone --bare` maps remote branches to local refs instead of remote tracking refs, so without this `origin/main` won't appear in the log.
+
 1. Checkout the content of the bare repository to your home directory:
     ```bash
    con checkout
