@@ -4,10 +4,11 @@ function get_remote
 {
     # if the repo has more than one remote, this is inaccurate
     # I'll fix it if that ever happens to me ¯\_(ツ)_/¯
-    echo $(git remote | head -1)
+    git remote | head -1
 }
 
 function get_default_branch {
-    local ref=$(git symbolic-ref --short refs/remotes/$(get_remote)/HEAD)
+    local ref
+    ref=$(git symbolic-ref --short "refs/remotes/$(get_remote)/HEAD")
     [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }

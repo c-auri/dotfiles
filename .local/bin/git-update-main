@@ -3,9 +3,9 @@
 source $HOME/.local/lib/git-utils
 
 default_branch=$(get_default_branch)
-if [[ $(git branch --show-current) == $default_branch ]]
+if [[ "$(git branch --show-current)" == "$default_branch" ]]
 then
     git pull
 else
-    git fetch $(get_remote) "$default_branch:$default_branch"
+    git fetch "$(get_remote)" "$default_branch:$default_branch"
 fi
