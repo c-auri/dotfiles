@@ -1,3 +1,12 @@
 #!/bin/bash
 
-git rebase --interactive --autosquash HEAD~${1:-10}
+source $HOME/.local/lib/git-utils
+
+if [[ -n $1 ]]
+then
+    base="HEAD~$1"
+else
+    base="$(git merge-base HEAD "$(get_default_branch)")"
+fi
+
+git rebase --interactive --autosquash "$base"
