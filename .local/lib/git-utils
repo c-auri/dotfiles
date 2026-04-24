@@ -7,9 +7,7 @@ function get_remote
     echo $(git remote | head -1)
 }
 
-function get_default_branch
-{
-    remote_ref="refs/remotes/$(get_remote)/"
-    remote_head=$(git symbolic-ref ${remote_ref}HEAD)
-    echo ${remote_head/$remote_ref/}
+function get_default_branch {
+    local ref=$(git symbolic-ref --short refs/remotes/$(get_remote)/HEAD)
+    [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }
