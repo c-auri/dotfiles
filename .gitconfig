@@ -23,6 +23,7 @@
 	sf = !git-switch-fuzzy
 	af = !git-add-fuzzy
 	ri = !git-rebase-interactive
+	rom = !git-rebase-origin-main
 
 [include]
 	path = ~/.config/git/local.ini

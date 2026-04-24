@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $HOME/.local/lib/git-utils
+
+git fetch
+git rebase "$(get_default_branch upstream)"

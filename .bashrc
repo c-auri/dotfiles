@@ -187,6 +187,7 @@ alias gsf='git sf'
 alias gsm='git sm'
 alias gum='git um'
 alias gri='git ri'
+alias grom='git rom'
 
 alias cdp='cd ~/projects/'
 alias cdr='cd $(git root)'
