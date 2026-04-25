@@ -1,0 +1,13 @@
+@import "~/.config/rofi/shared-style.rasi"
+
+mainbox {
+    padding: 35% 35% 16px 35%;
+}
+
+prompt {
+    padding: 0px 23px 5px 3px;
+}
+
+listview {
+    lines: 20;
+}
