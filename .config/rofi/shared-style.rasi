@@ -1,0 +1,64 @@
+@import "~/.config/rofi/colors/kanagawa-dragon.rasi"
+
+* {
+    font: "Ubuntu Mono 13";
+}
+
+window {
+    fullscreen:       true;
+    background-color: @background;
+    border:           0px;
+}
+
+mainbox {
+    padding:          35%;
+    spacing:          20px;
+    children:         [inputbar, listview];
+    background-color: transparent;
+}
+
+inputbar {
+    children:         [prompt, entry];
+    background-color: @background-alt;
+    padding:          8px 12px;
+    spacing:          0px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color:       @selected;
+    padding:          0px 16px 5px 3px;
+}
+
+entry {
+    background-color: transparent;
+    text-color:       @foreground;
+    placeholder:      "";
+    padding:          4px 0px 0px 0px;
+}
+
+listview {
+    columns:          1;
+    lines: 12;
+    scrollbar:        false;
+    background-color: transparent;
+    spacing:          2px;
+}
+
+element {
+    border:           0px;
+    background-color: transparent;
+    text-color:       @foreground;
+    padding:          6px 12px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element selected {
+    background-color: @background-alt;
+    text-color:       @foreground;
+}

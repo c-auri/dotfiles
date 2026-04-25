@@ -56,8 +56,6 @@ gears.wallpaper.set("#181616")
 
 -- This is used later as the default terminal and editor to run.
 local terminal = "alacritty"
-local launcher = "sh -c '~/.config/rofi/scripts/launcher_t4'"
-local powermenu = "sh -c '~/.config/rofi/scripts/powermenu_t3'"
 local editor = os.getenv("nvim") or "editor"
 local editor_cmd = terminal .. " -e " .. editor
 
@@ -234,11 +232,8 @@ local globalkeys = gears.table.join(
 
 	-- Applications
 	awful.key({ meta }, "Return", function()
-		awful.spawn(launcher)
+		awful.spawn.with_shell("~/.config/rofi/launcher/launcher.sh")
 	end, { description = "application launcher", group = "awesome: applications" }),
-	awful.key({ meta, ctrl }, "q", function()
-		awful.spawn(powermenu)
-	end, { description = "power menu", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "t", function()
 		awful.spawn(terminal)
 	end, { description = "open terminal", group = "awesome: applications" }),
@@ -247,7 +242,10 @@ local globalkeys = gears.table.join(
 	end, { description = "open file explorer", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "s", function()
 		awful.spawn("flameshot gui")
-	end, { description = "take a screenshot", group = "awesome: applications" })
+	end, { description = "take a screenshot", group = "awesome: applications" }),
+	awful.key({ meta }, ".", function()
+		awful.spawn.with_shell("~/.config/rofi/emoji/picker.sh")
+	end, { description = "emoji picker", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(

@@ -46,7 +46,7 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
 ```bash
 sudo apt install \
     awesome xterm \
-    rofi dunst \
+    rofi dunst xdotool \
     arandr lxappearance lxsession lxpolkit \
     bat fd-find ripgrep tmux xclip jq \
     gimp feh flameshot mpv vlc
@@ -69,15 +69,6 @@ sudo apt install \
 ## Customization
 ### GUI
 Run `lxappearance` and select desired theme
-
-### Rofi
-1. install [themes](https://github.com/adi1090x/rofi)
-2. set `@import "~/.config/rofi/colors/kanagawa-dragon.rasi"` in
-    - `~/.config/rofi/launchers/type-4/shared/colors.rasi`
-    - `~/.config/rofi/powermenu/type-3/shared/colors.rasi` 
-3. set font to 'Ubuntu Mono 13' in
-    - `~/.config/rofi/launchers/type-4/shared/fonts.rasi` 
-    - `~/.config/rofi/powermenu/type-3/shared/fonts.rasi` 
 
 ### Firefox
 1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)

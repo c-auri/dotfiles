@@ -1,0 +1,2075 @@
+😀  grinning <span foreground="#727169">(grinning face)</span>
+😁  wide grin <span foreground="#727169">(grinning face with smiling eyes)</span>
+😂  joy <span foreground="#727169">(face with tears of joy)</span>
+😃  slight smile <span foreground="#727169">(smiling face with open mouth)</span>
+😄  laugh <span foreground="#727169">(smiling face with open mouth and smiling eyes)</span>
+😅  phew <span foreground="#727169">(smiling face with open mouth and cold sweat)</span>
+😆  rofl <span foreground="#727169">(smiling face with open mouth and tightly-closed eyes)</span>
+😇  innocent <span foreground="#727169">(smiling face with halo)</span>
+😉  winking <span foreground="#727169">(winking face)</span>
+😊  happy <span foreground="#727169">(smiling face with smiling eyes)</span>
+😋  yum <span foreground="#727169">(face savouring delicious food)</span>
+😌  relief <span foreground="#727169">(relieved face)</span>
+😍  heart-shaped eyes <span foreground="#727169">(smiling face with heart-shaped eyes)</span>
+😎  cool <span foreground="#727169">(smiling face with sunglasses)</span>
+😏  smirk <span foreground="#727169">(smirking face)</span>
+😐  neutral <span foreground="#727169">(neutral face)</span>
+😑  expressionless <span foreground="#727169">(expressionless face)</span>
+😒  unamused <span foreground="#727169">(unamused face)</span>
+😓  cold sweat <span foreground="#727169">(face with cold sweat)</span>
+😔  pensive <span foreground="#727169">(pensive face)</span>
+😕  puzzled <span foreground="#727169">(confused face)</span>
+😖  distressed <span foreground="#727169">(confounded face)</span>
+😗  kiss <span foreground="#727169">(kissing face)</span>
+😘  throwing a kiss <span foreground="#727169">(face throwing a kiss)</span>
+😙  smooch <span foreground="#727169">(kissing face with smiling eyes)</span>
+😚  blushing kiss <span foreground="#727169">(kissing face with closed eyes)</span>
+😛  tongue <span foreground="#727169">(face with stuck-out tongue)</span>
+😜  winking tongue <span foreground="#727169">(face with stuck-out tongue and winking eye)</span>
+😝  squinting tongue <span foreground="#727169">(face with stuck-out tongue and tightly-closed eyes)</span>
+😞  disappointed <span foreground="#727169">(disappointed face)</span>
+😟  worried <span foreground="#727169">(worried face)</span>
+😠  angry <span foreground="#727169">(angry face)</span>
+😡  rage <span foreground="#727169">(pouting face)</span>
+😢  crying <span foreground="#727169">(crying face)</span>
+😣  persevering <span foreground="#727169">(persevering face)</span>
+😤  steam <span foreground="#727169">(face with look of triumph)</span>
+😥  disappointed relief <span foreground="#727169">(disappointed but relieved face)</span>
+😦  frowning <span foreground="#727169">(frowning face with open mouth)</span>
+😧  anguished <span foreground="#727169">(anguished face)</span>
+😨  fearful <span foreground="#727169">(fearful face)</span>
+😩  weary <span foreground="#727169">(weary face)</span>
+😪  sleepy <span foreground="#727169">(sleepy face)</span>
+😫  tired <span foreground="#727169">(tired face)</span>
+😬  grimace <span foreground="#727169">(grimacing face)</span>
+😭  sobbing <span foreground="#727169">(loudly crying face)</span>
+😮  surprised <span foreground="#727169">(face with open mouth)</span>
+😯  hushed <span foreground="#727169">(hushed face)</span>
+😰  anxious sweat <span foreground="#727169">(face with open mouth and cold sweat)</span>
+😱  screaming <span foreground="#727169">(face screaming in fear)</span>
+😲  astonished <span foreground="#727169">(astonished face)</span>
+😳  flushed <span foreground="#727169">(flushed face)</span>
+😴  sleeping <span foreground="#727169">(sleeping face)</span>
+😵  dizzy <span foreground="#727169">(dizzy face)</span>
+😶  no mouth <span foreground="#727169">(face without mouth)</span>
+😷  mask <span foreground="#727169">(face with medical mask)</span>
+🙁  slightly frowning <span foreground="#727169">(slightly frowning face)</span>
+🙂  slightly smiling <span foreground="#727169">(slightly smiling face)</span>
+🙃  upside down <span foreground="#727169">(upside-down face)</span>
+🙄  eyeroll <span foreground="#727169">(face with rolling eyes)</span>
+😸  grinning cat <span foreground="#727169">(grinning cat face with smiling eyes)</span>
+😹  joyful cat <span foreground="#727169">(cat face with tears of joy)</span>
+😺  smiling cat <span foreground="#727169">(smiling cat face with open mouth)</span>
+😻  heart-eyed cat <span foreground="#727169">(smiling cat face with heart-shaped eyes)</span>
+😼  wry cat <span foreground="#727169">(cat face with wry smile)</span>
+😽  kissing cat <span foreground="#727169">(kissing cat face with closed eyes)</span>
+😾  grumpy cat <span foreground="#727169">(pouting cat face)</span>
+😿  sad cat <span foreground="#727169">(crying cat face)</span>
+🙀  shocked cat <span foreground="#727169">(weary cat face)</span>
+👿  imp
+😈  smiling imp <span foreground="#727169">(smiling face with horns)</span>
+🙅  no gesture <span foreground="#727169">(face with no good gesture)</span>
+🙆  ok gesture <span foreground="#727169">(face with ok gesture)</span>
+🙇  bow <span foreground="#727169">(person bowing deeply)</span>
+🙈  see no evil <span foreground="#727169">(see-no-evil monkey)</span>
+🙉  hear no evil <span foreground="#727169">(hear-no-evil monkey)</span>
+🙊  speak no evil <span foreground="#727169">(speak-no-evil monkey)</span>
+🙋  raising hand <span foreground="#727169">(happy person raising one hand)</span>
+🙌  celebration <span foreground="#727169">(person raising both hands in celebration)</span>
+🙍  frowning <span foreground="#727169">(person frowning)</span>
+🙎  pouting <span foreground="#727169">(person with pouting face)</span>
+🙏  pray <span foreground="#727169">(person with folded hands)</span>
+🌀  cyclone
+🌁  foggy
+🌂  closed umbrella
+🌃  night with stars
+🌄  sunrise over mountains
+🌅  sunrise
+🌆  cityscape at dusk
+🌇  sunset over buildings
+🌈  pride <span foreground="#727169">(rainbow)</span>
+🌉  bridge at night
+🌊  wave <span foreground="#727169">(water wave)</span>
+🌋  volcano <span foreground="#727169">(volcano)</span>
+🌌  milky way
+🌍  earth globe europe-africa
+🌎  earth globe americas
+🌏  earth globe asia-australia
+🌐  globe with meridians
+🌑  new moon symbol
+🌒  waxing crescent moon symbol
+🌓  first quarter moon symbol
+🌔  waxing gibbous moon symbol
+🌕  full moon symbol
+🌖  waning gibbous moon symbol
+🌗  last quarter moon symbol
+🌘  waning crescent moon symbol
+🌙  crescent <span foreground="#727169">(crescent moon)</span>
+🌚  dark moon <span foreground="#727169">(new moon with face)</span>
+🌛  first quarter moon with face
+🌜  last quarter moon with face
+🌝  night <span foreground="#727169">(full moon with face)</span>
+🌞  sun face <span foreground="#727169">(sun with face)</span>
+🌟  glowing star <span foreground="#727169">(glowing star)</span>
+🌠  shooting star <span foreground="#727169">(shooting star)</span>
+🌡  thermometer
+🌢  black droplet
+🌣  white sun
+🌤  white sun with small cloud
+🌥  white sun behind cloud
+🌦  white sun behind cloud with rain
+🌧  rain cloud <span foreground="#727169">(cloud with rain)</span>
+🌨  cloud with snow
+🌩  cloud with lightning
+🌪  tornado <span foreground="#727169">(cloud with tornado)</span>
+🌫  fog <span foreground="#727169">(fog)</span>
+🌬  wind face <span foreground="#727169">(wind blowing face)</span>
+🌭  hot dog
+🌮  mexican <span foreground="#727169">(taco)</span>
+🌯  burrito <span foreground="#727169">(burrito)</span>
+🌰  chestnut
+🌱  seedling <span foreground="#727169">(seedling)</span>
+🌲  evergreen <span foreground="#727169">(evergreen tree)</span>
+🌳  deciduous tree <span foreground="#727169">(deciduous tree)</span>
+🌴  palm tree <span foreground="#727169">(palm tree)</span>
+🌵  cactus <span foreground="#727169">(cactus)</span>
+🌶  hot pepper
+🌷  tulip <span foreground="#727169">(tulip)</span>
+🌸  cherry blossom <span foreground="#727169">(cherry blossom)</span>
+🌹  rose <span foreground="#727169">(rose)</span>
+🌺  hibiscus <span foreground="#727169">(hibiscus)</span>
+🌻  summer <span foreground="#727169">(sunflower)</span>
+🌼  blossom <span foreground="#727169">(blossom)</span>
+🌽  ear of maize
+🌾  ear of rice
+🌿  herb
+🍀  four leaf clover <span foreground="#727169">(four leaf clover)</span>
+🍁  maple leaf <span foreground="#727169">(maple leaf)</span>
+🍂  fallen leaf <span foreground="#727169">(fallen leaf)</span>
+🍃  leaf <span foreground="#727169">(leaf fluttering in wind)</span>
+🍄  mushroom <span foreground="#727169">(mushroom)</span>
+🍅  tomato
+🍆  aubergine
+🍇  grapes <span foreground="#727169">(grapes)</span>
+🍈  melon
+🍉  watermelon <span foreground="#727169">(watermelon)</span>
+🍊  tangerine <span foreground="#727169">(tangerine)</span>
+🍋  lemon <span foreground="#727169">(lemon)</span>
+🍌  banana <span foreground="#727169">(banana)</span>
+🍍  pineapple <span foreground="#727169">(pineapple)</span>
+🍎  fruit <span foreground="#727169">(red apple)</span>
+🍏  green apple
+🍐  pear
+🍑  peach <span foreground="#727169">(peach)</span>
+🍒  cherries <span foreground="#727169">(cherries)</span>
+🍓  strawberry <span foreground="#727169">(strawberry)</span>
+🍔  burger <span foreground="#727169">(hamburger)</span>
+🍕  pizza <span foreground="#727169">(slice of pizza)</span>
+🍖  meat on bone
+🍗  poultry leg
+🍘  rice cracker
+🍙  rice ball
+🍚  cooked rice
+🍛  curry and rice
+🍜  ramen <span foreground="#727169">(steaming bowl)</span>
+🍝  spaghetti
+🍞  bread
+🍟  fast food <span foreground="#727169">(french fries)</span>
+🍠  roasted sweet potato
+🍡  dango
+🍢  oden
+🍣  sushi <span foreground="#727169">(sushi)</span>
+🍤  fried shrimp
+🍥  fish cake with swirl design
+🍦  soft serve <span foreground="#727169">(soft ice cream)</span>
+🍧  shaved ice
+🍨  ice cream
+🍩  donut <span foreground="#727169">(doughnut)</span>
+🍪  cookie <span foreground="#727169">(cookie)</span>
+🍫  chocolate <span foreground="#727169">(chocolate bar)</span>
+🍬  candy <span foreground="#727169">(candy)</span>
+🍭  lollipop <span foreground="#727169">(lollipop)</span>
+🍮  custard
+🍯  honey pot <span foreground="#727169">(honey pot)</span>
+🍰  cake slice <span foreground="#727169">(shortcake)</span>
+🍱  bento box
+🍲  pot of food
+🍳  cooking
+🍴  fork and knife
+🍵  tea <span foreground="#727169">(teacup without handle)</span>
+🍶  sake bottle and cup
+🍷  wine <span foreground="#727169">(wine glass)</span>
+🍸  cocktail glass
+🍹  tropical drink
+🍺  beer <span foreground="#727169">(beer mug)</span>
+🍻  cheers <span foreground="#727169">(clinking beer mugs)</span>
+🍼  baby bottle
+🍽  fork and knife with plate
+🍾  champagne <span foreground="#727169">(bottle with popping cork)</span>
+🍿  popcorn
+🎀  ribbon
+🎁  gift <span foreground="#727169">(wrapped present)</span>
+🎂  birthday cake <span foreground="#727169">(birthday cake)</span>
+🎃  jack-o-lantern <span foreground="#727169">(jack-o-lantern)</span>
+🎄  christmas tree <span foreground="#727169">(christmas tree)</span>
+🎅  santa <span foreground="#727169">(father christmas)</span>
+🎆  fireworks <span foreground="#727169">(fireworks)</span>
+🎇  sparkler <span foreground="#727169">(firework sparkler)</span>
+🎈  balloon <span foreground="#727169">(balloon)</span>
+🎉  party popper <span foreground="#727169">(party popper)</span>
+🎊  confetti <span foreground="#727169">(confetti ball)</span>
+🎋  tanabata tree
+🎌  crossed flags
+🎍  pine decoration
+🎎  japanese dolls
+🎏  carp streamer
+🎐  wind chime
+🎑  moon viewing ceremony
+🎒  school satchel
+🎓  graduation cap
+🎔  heart with tip on the left
+🎕  bouquet of flowers
+🎖  military medal
+🎗  reminder ribbon
+🎘  musical keyboard with jacks
+🎙  studio microphone
+🎚  level slider
+🎛  control knobs
+🎜  beamed ascending musical notes
+🎝  beamed descending musical notes
+🎞  film frames
+🎟  admission tickets
+🎠  carousel horse
+🎡  ferris wheel
+🎢  roller coaster
+🎣  fishing pole and fish
+🎤  microphone <span foreground="#727169">(microphone)</span>
+🎥  movie camera
+🎦  cinema
+🎧  headphones <span foreground="#727169">(headphone)</span>
+🎨  artist palette
+🎩  top hat
+🎪  circus tent
+🎫  ticket
+🎬  clapper board
+🎭  performing arts
+🎮  controller <span foreground="#727169">(video game)</span>
+🎯  darts <span foreground="#727169">(direct hit)</span>
+🎰  slot machine
+🎱  billiards
+🎲  dice <span foreground="#727169">(game die)</span>
+🎳  bowling <span foreground="#727169">(bowling)</span>
+🎴  flower playing cards
+🎵  music note <span foreground="#727169">(musical note)</span>
+🎶  music notes <span foreground="#727169">(multiple musical notes)</span>
+🎷  saxophone
+🎸  guitar <span foreground="#727169">(guitar)</span>
+🎹  piano <span foreground="#727169">(musical keyboard)</span>
+🎺  trumpet
+🎻  violin
+🎼  musical score
+🎽  running shirt with sash
+🎾  sport <span foreground="#727169">(tennis racquet and ball)</span>
+🎿  ski and ski boot
+🏀  basketball <span foreground="#727169">(basketball and hoop)</span>
+🏁  chequered flag
+🏂  snowboarder
+🏃  running <span foreground="#727169">(runner)</span>
+🏄  surfer
+🏅  sports medal
+🏆  trophy <span foreground="#727169">(trophy)</span>
+🏇  horse racing
+🏈  football <span foreground="#727169">(american football)</span>
+🏉  rugby football
+🏊  swimmer <span foreground="#727169">(swimmer)</span>
+🏋  weightlifter <span foreground="#727169">(weight lifter)</span>
+🏌  golfer
+🏍  racing motorcycle
+🏎  racing car
+🏏  cricket bat and ball
+🏐  sport <span foreground="#727169">(volleyball)</span>
+🏑  field hockey stick and ball
+🏒  ice hockey stick and puck
+🏓  ping pong <span foreground="#727169">(table tennis paddle and ball)</span>
+🏔  snow mountain <span foreground="#727169">(snow capped mountain)</span>
+🏕  camping
+🏖  beach <span foreground="#727169">(beach with umbrella)</span>
+🏗  building construction
+🏘  house buildings
+🏙  cityscape
+🏚  derelict house building
+🏛  classical building
+🏜  desert
+🏝  desert island
+🏞  national park
+🏟  stadium
+🏠  home <span foreground="#727169">(house building)</span>
+🏡  home <span foreground="#727169">(house with garden)</span>
+🏢  office building
+🏣  japanese post office
+🏤  european post office
+🏥  hospital
+🏦  bank
+🏧  automated teller machine
+🏨  hotel
+🏩  love hotel
+🏪  convenience store
+🏫  school
+🏬  department store
+🏭  factory
+🏮  izakaya lantern
+🏯  japanese castle
+🏰  european castle
+🏱  white pennant
+🏲  black pennant
+🏳  waving white flag
+🏴  waving black flag
+🏵  rosette
+🏶  black rosette
+🏷  label
+🏸  badminton racquet and shuttlecock
+🏹  bow and arrow
+🏺  amphora
+🏻  emoji modifier fitzpatrick type-1-2
+🏼  emoji modifier fitzpatrick type-3
+🏽  emoji modifier fitzpatrick type-4
+🏾  emoji modifier fitzpatrick type-5
+🏿  emoji modifier fitzpatrick type-6
+🐀  rat
+🐁  mouse
+🐂  ox
+🐃  water buffalo
+🐄  cow <span foreground="#727169">(cow)</span>
+🐅  tiger
+🐆  leopard
+🐇  rabbit
+🐈  cat
+🐉  dragon <span foreground="#727169">(dragon)</span>
+🐊  crocodile <span foreground="#727169">(crocodile)</span>
+🐋  whale
+🐌  snail <span foreground="#727169">(snail)</span>
+🐍  snake <span foreground="#727169">(snake)</span>
+🐎  horse <span foreground="#727169">(horse)</span>
+🐏  ram
+🐐  goat
+🐑  sheep <span foreground="#727169">(sheep)</span>
+🐒  monkey
+🐓  rooster
+🐔  chicken <span foreground="#727169">(chicken)</span>
+🐕  dog <span foreground="#727169">(dog)</span>
+🐖  pig
+🐗  boar
+🐘  elephant <span foreground="#727169">(elephant)</span>
+🐙  octopus <span foreground="#727169">(octopus)</span>
+🐚  spiral shell
+🐛  bug
+🐜  ant <span foreground="#727169">(ant)</span>
+🐝  bee <span foreground="#727169">(honeybee)</span>
+🐞  ladybug <span foreground="#727169">(lady beetle)</span>
+🐟  fish <span foreground="#727169">(fish)</span>
+🐠  colorful <span foreground="#727169">(tropical fish)</span>
+🐡  blowfish
+🐢  turtle <span foreground="#727169">(turtle)</span>
+🐣  hatching chick
+🐤  baby chick <span foreground="#727169">(baby chick)</span>
+🐥  front-facing baby chick
+🐦  fly <span foreground="#727169">(bird)</span>
+🐧  penguin <span foreground="#727169">(penguin)</span>
+🐨  koala <span foreground="#727169">(koala)</span>
+🐩  poodle
+🐪  camel <span foreground="#727169">(dromedary camel)</span>
+🐫  two-hump camel <span foreground="#727169">(bactrian camel)</span>
+🐬  dolphin <span foreground="#727169">(dolphin)</span>
+🐭  mouse face <span foreground="#727169">(mouse face)</span>
+🐮  cow face <span foreground="#727169">(cow face)</span>
+🐯  tiger <span foreground="#727169">(tiger face)</span>
+🐰  rabbit <span foreground="#727169">(rabbit face)</span>
+🐱  cat face
+🐲  dragon face <span foreground="#727169">(dragon face)</span>
+🐳  whale <span foreground="#727169">(spouting whale)</span>
+🐴  horse face <span foreground="#727169">(horse face)</span>
+🐵  banana <span foreground="#727169">(monkey face)</span>
+🐶  puppy <span foreground="#727169">(dog face)</span>
+🐷  pig face <span foreground="#727169">(pig face)</span>
+🐸  frog <span foreground="#727169">(frog face)</span>
+🐹  hamster <span foreground="#727169">(hamster face)</span>
+🐺  wolf <span foreground="#727169">(wolf face)</span>
+🐻  bear <span foreground="#727169">(bear face)</span>
+🐼  panda <span foreground="#727169">(panda face)</span>
+🐽  pig nose
+🐾  paw prints
+🐿  chipmunk <span foreground="#727169">(chipmunk)</span>
+👀  eyes <span foreground="#727169">(eyes)</span>
+👁  eye <span foreground="#727169">(eye)</span>
+👂  ear <span foreground="#727169">(ear)</span>
+👃  nose <span foreground="#727169">(nose)</span>
+👄  lips <span foreground="#727169">(mouth)</span>
+👅  tongue <span foreground="#727169">(tongue)</span>
+👆  pointing up <span foreground="#727169">(white up pointing backhand index)</span>
+👇  pointing down <span foreground="#727169">(white down pointing backhand index)</span>
+👈  pointing left <span foreground="#727169">(white left pointing backhand index)</span>
+👉  pointing right <span foreground="#727169">(white right pointing backhand index)</span>
+👊  punch <span foreground="#727169">(fisted hand sign)</span>
+👋  wave <span foreground="#727169">(waving hand sign)</span>
+👌  ok <span foreground="#727169">(ok hand sign)</span>
+👍  thumbs up <span foreground="#727169">(thumbs up sign)</span>
+👎  thumbs down <span foreground="#727169">(thumbs down sign)</span>
+👏  clapping <span foreground="#727169">(clapping hands sign)</span>
+👐  open hands <span foreground="#727169">(open hands sign)</span>
+👑  crown
+👒  womans hat
+👓  eyeglasses
+👔  necktie
+👕  t-shirt
+👖  jeans
+👗  dress
+👘  kimono
+👙  bikini
+👚  womans clothes
+👛  purse
+👜  handbag
+👝  pouch
+👞  mans shoe
+👟  athletic shoe
+👠  high-heeled shoe
+👡  womans sandal
+👢  womans boots
+👣  footprints
+👤  bust in silhouette
+👥  busts in silhouette
+👦  boy <span foreground="#727169">(boy)</span>
+👧  girl <span foreground="#727169">(girl)</span>
+👨  man <span foreground="#727169">(man)</span>
+👩  woman <span foreground="#727169">(woman)</span>
+👪  family
+👫  man and woman holding hands
+👬  two men holding hands
+👭  two women holding hands
+👮  police <span foreground="#727169">(police officer)</span>
+👯  woman with bunny ears
+👰  bride with veil
+👱  person with blond hair
+👲  man with gua pi mao
+👳  man with turban
+👴  old man <span foreground="#727169">(older man)</span>
+👵  old woman <span foreground="#727169">(older woman)</span>
+👶  baby <span foreground="#727169">(baby)</span>
+👷  construction worker <span foreground="#727169">(construction worker)</span>
+👸  princess <span foreground="#727169">(princess)</span>
+👹  japanese ogre
+👺  japanese goblin
+👻  ghost
+👼  angel <span foreground="#727169">(baby angel)</span>
+👽  extraterrestrial alien
+👾  alien monster
+💀  skull <span foreground="#727169">(skull)</span>
+💁  information desk person
+💂  guardsman <span foreground="#727169">(guardsman)</span>
+💃  dancer <span foreground="#727169">(dancer)</span>
+💄  lipstick
+💅  nail polish
+💆  massage <span foreground="#727169">(face massage)</span>
+💇  haircut <span foreground="#727169">(haircut)</span>
+💈  barber pole
+💉  syringe
+💊  pill
+💋  kiss mark
+💌  love letter
+💍  ring
+💎  gem <span foreground="#727169">(gem stone)</span>
+💏  kiss
+💐  bouquet
+💑  couple with heart
+💒  wedding
+💓  beating heart
+💔  broken heart <span foreground="#727169">(broken heart)</span>
+💕  love <span foreground="#727169">(two hearts)</span>
+💖  sparkling heart <span foreground="#727169">(sparkling heart)</span>
+💗  growing heart <span foreground="#727169">(growing heart)</span>
+💘  heart with arrow <span foreground="#727169">(heart with arrow)</span>
+💙  love <span foreground="#727169">(blue heart)</span>
+💚  love <span foreground="#727169">(green heart)</span>
+💛  love <span foreground="#727169">(yellow heart)</span>
+💜  love <span foreground="#727169">(purple heart)</span>
+💝  heart with ribbon <span foreground="#727169">(heart with ribbon)</span>
+💞  revolving hearts <span foreground="#727169">(revolving hearts)</span>
+💟  love <span foreground="#727169">(heart decoration)</span>
+💠  diamond shape with a dot inside
+💡  lightbulb <span foreground="#727169">(electric light bulb)</span>
+💢  anger <span foreground="#727169">(anger symbol)</span>
+💣  bomb
+💤  zzz <span foreground="#727169">(sleeping symbol)</span>
+💥  explosion <span foreground="#727169">(collision symbol)</span>
+💦  sweat drops <span foreground="#727169">(splashing sweat symbol)</span>
+💧  droplet <span foreground="#727169">(droplet)</span>
+💨  dash <span foreground="#727169">(dash symbol)</span>
+💩  poop <span foreground="#727169">(pile of poo)</span>
+💪  muscle <span foreground="#727169">(flexed biceps)</span>
+💫  shooting star <span foreground="#727169">(dizzy symbol)</span>
+💬  speech bubble <span foreground="#727169">(speech balloon)</span>
+💭  thought bubble <span foreground="#727169">(thought balloon)</span>
+💮  white flower
+💯  100 <span foreground="#727169">(hundred points symbol)</span>
+💰  money bag <span foreground="#727169">(money bag)</span>
+💱  currency exchange
+💲  heavy dollar sign
+💳  credit card
+💴  banknote with yen sign
+💵  dollar <span foreground="#727169">(banknote with dollar sign)</span>
+💶  banknote with euro sign
+💷  banknote with pound sign
+💸  money with wings
+💹  chart with upwards trend and yen sign
+💺  seat
+💻  laptop <span foreground="#727169">(personal computer)</span>
+💼  briefcase
+💽  minidisc
+💾  floppy disk
+💿  optical disc
+📀  dvd
+📁  file folder
+📂  open file folder
+📃  page with curl
+📄  page facing up
+📅  calendar <span foreground="#727169">(calendar)</span>
+📆  tear-off calendar
+📇  card index
+📈  chart with upwards trend
+📉  chart with downwards trend
+📊  bar chart
+📋  clipboard
+📌  pushpin <span foreground="#727169">(pushpin)</span>
+📍  round pushpin <span foreground="#727169">(round pushpin)</span>
+📎  paperclip
+📏  straight ruler
+📐  triangular ruler
+📑  bookmark tabs
+📒  ledger
+📓  notebook
+📔  notebook with decorative cover
+📕  closed book
+📖  open book <span foreground="#727169">(open book)</span>
+📗  green book
+📘  blue book
+📙  orange book
+📚  books <span foreground="#727169">(books)</span>
+📛  name badge
+📜  scroll
+📝  memo <span foreground="#727169">(memo)</span>
+📞  telephone receiver
+📟  pager
+📠  fax machine
+📡  satellite antenna
+📢  megaphone <span foreground="#727169">(public address loudspeaker)</span>
+📣  cheering megaphone
+📤  outbox tray
+📥  inbox tray
+📦  package
+📧  e-mail symbol
+📨  incoming envelope
+📩  envelope with downwards arrow above
+📪  closed mailbox with lowered flag
+📫  closed mailbox with raised flag
+📬  open mailbox with raised flag
+📭  open mailbox with lowered flag
+📮  postbox
+📯  postal horn
+📰  newspaper
+📱  phone <span foreground="#727169">(mobile phone)</span>
+📲  mobile phone with rightwards arrow at left
+📳  vibration mode
+📴  mobile phone off
+📵  no mobile phones
+📶  antenna with bars
+📷  camera <span foreground="#727169">(camera)</span>
+📸  camera flash <span foreground="#727169">(camera with flash)</span>
+📹  video camera
+📺  television
+📻  radio
+📼  videocassette
+📽  film projector
+📾  portable stereo
+📿  prayer beads
+🔀  twisted rightwards arrows
+🔁  clockwise rightwards and leftwards open circle arrows
+🔂  clockwise rightwards and leftwards open circle arrows with circled one overlay
+🔃  clockwise downwards and upwards open circle arrows
+🔄  anticlockwise downwards and upwards open circle arrows
+🔅  low brightness symbol
+🔆  high brightness symbol
+🔇  muted <span foreground="#727169">(speaker with cancellation stroke)</span>
+🔈  speaker
+🔉  speaker with one sound wave
+🔊  loud <span foreground="#727169">(speaker with three sound waves)</span>
+🔋  battery
+🔌  electric plug
+🔍  magnifying glass <span foreground="#727169">(left-pointing magnifying glass)</span>
+🔎  search <span foreground="#727169">(right-pointing magnifying glass)</span>
+🔏  lock with ink pen
+🔐  closed lock with key
+🔑  key <span foreground="#727169">(key)</span>
+🔒  locked <span foreground="#727169">(lock)</span>
+🔓  unlocked <span foreground="#727169">(open lock)</span>
+🔔  bell <span foreground="#727169">(bell)</span>
+🔕  muted bell <span foreground="#727169">(bell with cancellation stroke)</span>
+🔖  bookmark
+🔗  link symbol
+🔘  radio button
+🔙  back with leftwards arrow above
+🔚  end with leftwards arrow above
+🔛  on with exclamation mark with left right arrow above
+🔜  soon with rightwards arrow above
+🔝  top with upwards arrow above
+🔞  no one under eighteen symbol
+🔟  keycap ten
+🔠  input symbol for latin capital letters
+🔡  input symbol for latin small letters
+🔢  input symbol for numbers
+🔣  input symbol for symbols
+🔤  input symbol for latin letters
+🔥  fire <span foreground="#727169">(fire)</span>
+🔦  electric torch
+🔧  wrench
+🔨  hammer
+🔩  nut and bolt
+🔪  hocho
+🔫  pistol
+🔬  microscope
+🔭  telescope
+🔮  crystal ball
+🔯  six pointed star with middle dot
+🔰  japanese symbol for beginner
+🔱  trident emblem
+🔲  black square button
+🔳  white square button
+🔴  red circle <span foreground="#727169">(large red circle)</span>
+🔵  large blue circle
+🔶  large orange diamond
+🔷  large blue diamond
+🔸  small orange diamond
+🔹  small blue diamond
+🔺  up-pointing red triangle
+🔻  down-pointing red triangle
+🔼  up-pointing small red triangle
+🔽  down-pointing small red triangle
+🔾  lower right shadowed white circle
+🔿  upper right shadowed white circle
+🕀  circled cross pommee
+🕁  cross pommee with half-circle below
+🕂  cross pommee
+🕃  notched left semicircle with three dots
+🕄  notched right semicircle with three dots
+🕅  symbol for marks chapter
+🕆  white latin cross
+🕇  heavy latin cross
+🕈  celtic cross
+🕉  om symbol
+🕊  dove <span foreground="#727169">(dove of peace)</span>
+🕋  kaaba
+🕌  mosque
+🕍  synagogue
+🕎  menorah with nine branches
+🕏  bowl of hygieia
+🕐  clock face one oclock
+🕑  clock face two oclock
+🕒  clock face three oclock
+🕓  clock face four oclock
+🕔  clock face five oclock
+🕕  clock face six oclock
+🕖  clock face seven oclock
+🕗  clock face eight oclock
+🕘  clock face nine oclock
+🕙  clock face ten oclock
+🕚  clock face eleven oclock
+🕛  clock face twelve oclock
+🕜  clock face one-thirty
+🕝  clock face two-thirty
+🕞  clock face three-thirty
+🕟  clock face four-thirty
+🕠  clock face five-thirty
+🕡  clock face six-thirty
+🕢  clock face seven-thirty
+🕣  clock face eight-thirty
+🕤  clock face nine-thirty
+🕥  clock face ten-thirty
+🕦  clock face eleven-thirty
+🕧  clock face twelve-thirty
+🕨  right speaker
+🕩  right speaker with one sound wave
+🕪  right speaker with three sound waves
+🕫  bullhorn
+🕬  bullhorn with sound waves
+🕭  ringing bell
+🕮  book
+🕯  candle
+🕰  mantelpiece clock
+🕱  black skull and crossbones
+🕲  no piracy
+🕳  hole
+🕴  man in business suit levitating
+🕵  sleuth or spy
+🕶  dark sunglasses
+🕷  spider <span foreground="#727169">(spider)</span>
+🕸  spider web
+🕹  joystick <span foreground="#727169">(joystick)</span>
+🕺  dancing man <span foreground="#727169">(man dancing)</span>
+🕻  left hand telephone receiver
+🕼  telephone receiver with page
+🕽  right hand telephone receiver
+🕾  white touchtone telephone
+🕿  black touchtone telephone
+🖀  telephone on top of modem
+🖁  clamshell mobile phone
+🖂  back of envelope
+🖃  stamped envelope
+🖄  envelope with lightning
+🖅  flying envelope
+🖆  pen over stamped envelope
+🖇  linked paperclips
+🖈  black pushpin
+🖉  lower left pencil
+🖊  lower left ballpoint pen
+🖋  lower left fountain pen
+🖌  lower left paintbrush
+🖍  lower left crayon
+🖎  left writing hand
+🖏  turned ok hand sign
+🖐  splayed hand <span foreground="#727169">(raised hand with fingers splayed)</span>
+🖑  reversed raised hand with fingers splayed
+🖒  reversed thumbs up sign
+🖓  reversed thumbs down sign
+🖔  reversed victory hand
+🖕  middle finger <span foreground="#727169">(reversed hand with middle finger extended)</span>
+🖖  vulcan <span foreground="#727169">(raised hand with part between middle and ring fingers)</span>
+🖗  white down pointing left hand index
+🖘  sideways white left pointing index
+🖙  sideways white right pointing index
+🖚  sideways black left pointing index
+🖛  sideways black right pointing index
+🖜  black left pointing backhand index
+🖝  black right pointing backhand index
+🖞  sideways white up pointing index
+🖟  sideways white down pointing index
+🖠  sideways black up pointing index
+🖡  sideways black down pointing index
+🖢  black up pointing backhand index
+🖣  black down pointing backhand index
+🖤  black heart <span foreground="#727169">(black heart)</span>
+🖥  desktop <span foreground="#727169">(desktop computer)</span>
+🖦  keyboard and mouse
+🖧  three networked computers
+🖨  printer
+🖩  pocket calculator
+🖪  black hard shell floppy disk
+🖫  white hard shell floppy disk
+🖬  soft shell floppy disk
+🖭  tape cartridge
+🖮  wired keyboard
+🖯  one button mouse
+🖰  two button mouse
+🖱  three button mouse
+🖲  trackball
+🖳  old personal computer
+🖴  hard disk
+🖵  screen
+🖶  printer icon
+🖷  fax icon
+🖸  optical disc icon
+🖹  document with text
+🖺  document with text and picture
+🖻  document with picture
+🖼  frame with picture
+🖽  frame with tiles
+🖾  frame with an x
+🖿  black folder
+🗀  folder
+🗁  open folder
+🗂  card index dividers
+🗃  card file box
+🗄  file cabinet
+🗅  empty note
+🗆  empty note page
+🗇  empty note pad
+🗈  note
+🗉  note page
+🗊  note pad
+🗋  empty document
+🗌  empty page
+🗍  empty pages
+🗎  document
+🗏  page
+🗐  pages
+🗑  wastebasket
+🗒  spiral note pad
+🗓  spiral calendar pad
+🗔  desktop window
+🗕  minimize
+🗖  maximize
+🗗  overlap
+🗘  clockwise right and left semicircle arrows
+🗙  cancellation x
+🗚  increase font size symbol
+🗛  decrease font size symbol
+🗜  compression
+🗝  old key
+🗞  rolled-up newspaper
+🗟  page with circled text
+🗠  stock chart
+🗡  dagger knife
+🗢  lips
+🗣  speaking head in silhouette
+🗤  three rays above
+🗥  three rays below
+🗦  three rays left
+🗧  three rays right
+🗨  left speech bubble
+🗩  right speech bubble
+🗪  two speech bubbles
+🗫  three speech bubbles
+🗬  left thought bubble
+🗭  right thought bubble
+🗮  left anger bubble
+🗯  right anger bubble
+🗰  mood bubble
+🗱  lightning mood bubble
+🗲  lightning mood
+🗳  ballot box with ballot
+🗴  ballot script x
+🗵  ballot box with script x
+🗶  ballot bold script x
+🗷  ballot box with bold script x
+🗸  light check mark
+🗹  ballot box with bold check
+🗺  world map <span foreground="#727169">(world map)</span>
+🗻  mount fuji
+🗼  eiffel tower <span foreground="#727169">(tokyo tower)</span>
+🗽  statue of liberty <span foreground="#727169">(statue of liberty)</span>
+🗾  silhouette of japan
+🗿  moyai
+🚀  rocket <span foreground="#727169">(rocket)</span>
+🚁  helicopter
+🚂  train <span foreground="#727169">(steam locomotive)</span>
+🚃  railway car
+🚄  high-speed train
+🚅  high-speed train with bullet nose
+🚆  train
+🚇  metro
+🚈  light rail
+🚉  station
+🚊  tram
+🚋  tram car
+🚌  bus <span foreground="#727169">(bus)</span>
+🚍  oncoming bus
+🚎  trolleybus
+🚏  bus stop
+🚐  minibus
+🚑  ambulance
+🚒  fire engine
+🚓  police car
+🚔  oncoming police car
+🚕  taxi <span foreground="#727169">(taxi)</span>
+🚖  oncoming taxi
+🚗  car <span foreground="#727169">(automobile)</span>
+🚘  oncoming automobile
+🚙  recreational vehicle
+🚚  delivery truck
+🚛  articulated lorry
+🚜  tractor
+🚝  monorail
+🚞  mountain railway
+🚟  suspension railway
+🚠  mountain cableway
+🚡  aerial tramway
+🚢  ship
+🚣  rowboat
+🚤  speedboat
+🚥  horizontal traffic light
+🚦  vertical traffic light
+🚧  construction sign
+🚨  police cars revolving light
+🚩  triangular flag on post
+🚪  door
+🚫  no entry <span foreground="#727169">(no entry sign)</span>
+🚬  smoking symbol
+🚭  no smoking symbol
+🚮  put litter in its place symbol
+🚯  do not litter symbol
+🚰  potable water symbol
+🚱  non-potable water symbol
+🚲  bike <span foreground="#727169">(bicycle)</span>
+🚳  no bicycles
+🚴  cyclist <span foreground="#727169">(bicyclist)</span>
+🚵  mountain bicyclist
+🚶  walking <span foreground="#727169">(pedestrian)</span>
+🚷  no pedestrians
+🚸  children crossing
+🚹  mens symbol
+🚺  womens symbol
+🚻  restroom
+🚼  baby symbol
+🚽  toilet
+🚾  water closet
+🚿  shower
+🛀  bath
+🛁  bathtub
+🛂  passport control
+🛃  customs
+🛄  baggage claim
+🛅  left luggage
+🛆  triangle with rounded corners
+🛇  prohibited sign
+🛈  circled information source
+🛉  boys symbol
+🛊  girls symbol
+🛋  couch and lamp
+🛌  sleeping accommodation
+🛍  shopping bags
+🛎  bellhop bell
+🛏  bed
+🛐  place of worship
+🛑  octagonal sign
+🛒  shopping trolley
+🛓  stupa
+🛔  pagoda
+🛕  hindu temple
+🛖  hut
+🛗  elevator
+🛠  hammer and wrench
+🛡  shield
+🛢  oil drum
+🛣  motorway
+🛤  railway track
+🛥  motor boat
+🛦  up-pointing military airplane
+🛧  up-pointing airplane
+🛨  up-pointing small airplane
+🛩  small airplane
+🛪  northeast-pointing airplane
+🛫  airplane departure
+🛬  airplane arriving
+🛰  satellite
+🛱  oncoming fire engine
+🛲  diesel locomotive
+🛳  passenger ship
+🛴  scooter
+🛵  motor scooter
+🛶  canoe
+🛷  sled
+🛸  UFO <span foreground="#727169">(flying saucer)</span>
+🛹  skateboard
+🛺  auto rickshaw
+🛻  pickup truck
+🛼  roller skate
+🤀  circled cross formee with four dots
+🤁  circled cross formee with two dots
+🤂  circled cross formee
+🤃  left half circle with four dots
+🤄  left half circle with three dots
+🤅  left half circle with two dots
+🤆  left half circle with dot
+🤇  left half circle
+🤈  downward facing hook
+🤉  downward facing notched hook
+🤊  downward facing hook with dot
+🤋  downward facing notched hook with dot
+🤌  pinched fingers <span foreground="#727169">(pinched fingers)</span>
+🤍  white heart <span foreground="#727169">(white heart)</span>
+🤎  brown heart <span foreground="#727169">(brown heart)</span>
+🤏  pinch <span foreground="#727169">(pinching hand)</span>
+🤐  zipper mouth <span foreground="#727169">(zipper-mouth face)</span>
+🤑  money mouth <span foreground="#727169">(money-mouth face)</span>
+🤒  sick <span foreground="#727169">(face with thermometer)</span>
+🤓  nerd <span foreground="#727169">(nerd face)</span>
+🤔  thinking <span foreground="#727169">(thinking face)</span>
+🤕  injured <span foreground="#727169">(face with head-bandage)</span>
+🤖  robot face
+🤗  hugging <span foreground="#727169">(hugging face)</span>
+🤘  rock on <span foreground="#727169">(sign of the horns)</span>
+🤙  call me <span foreground="#727169">(call me hand)</span>
+🤚  stop <span foreground="#727169">(raised back of hand)</span>
+🤛  left fist <span foreground="#727169">(left-facing fist)</span>
+🤜  right fist <span foreground="#727169">(right-facing fist)</span>
+🤝  handshake <span foreground="#727169">(handshake)</span>
+🤞  crossed fingers <span foreground="#727169">(hand with index and middle fingers crossed)</span>
+🤟  ILY <span foreground="#727169">(i love you hand sign)</span>
+🤠  cowboy <span foreground="#727169">(face with cowboy hat)</span>
+🤡  clown <span foreground="#727169">(clown face)</span>
+🤢  nauseous <span foreground="#727169">(nauseated face)</span>
+🤣  rofl <span foreground="#727169">(rolling on the floor laughing)</span>
+🤤  drooling <span foreground="#727169">(drooling face)</span>
+🤥  liar <span foreground="#727169">(lying face)</span>
+🤦  face palm
+🤧  sneezing <span foreground="#727169">(sneezing face)</span>
+🤨  raised eyebrow <span foreground="#727169">(face with one eyebrow raised)</span>
+🤩  starstruck <span foreground="#727169">(grinning face with star eyes)</span>
+🤪  zany <span foreground="#727169">(grinning face with one large and one small eye)</span>
+🤫  shushing <span foreground="#727169">(face with finger covering closed lips)</span>
+🤬  cursing <span foreground="#727169">(serious face with symbols covering mouth)</span>
+🤭  hand over mouth <span foreground="#727169">(smiling face with smiling eyes and hand covering mouth)</span>
+🤮  face with open mouth vomiting
+🤯  mindblown <span foreground="#727169">(shocked face with exploding head)</span>
+🤰  pregnant woman
+🤱  breast-feeding
+🤲  cupped hands <span foreground="#727169">(palms up together)</span>
+🤳  selfie
+🤴  prince <span foreground="#727169">(prince)</span>
+🤵  man in tuxedo
+🤶  mrs claus <span foreground="#727169">(mother christmas)</span>
+🤷  shrug
+🤸  cartwheel <span foreground="#727169">(person doing cartwheel)</span>
+🤹  juggling
+🤺  fencer
+🤻  modern pentathlon
+🤼  wrestlers
+🤽  water polo
+🤾  handball <span foreground="#727169">(handball)</span>
+🤿  diving mask
+🥀  wilted flower
+🥁  drum with drumsticks
+🥂  cheers <span foreground="#727169">(clinking glasses)</span>
+🥃  whiskey <span foreground="#727169">(tumbler glass)</span>
+🥄  spoon
+🥅  goal net
+🥆  rifle
+🥇  gold medal <span foreground="#727169">(first place medal)</span>
+🥈  silver medal <span foreground="#727169">(second place medal)</span>
+🥉  bronze medal <span foreground="#727169">(third place medal)</span>
+🥊  boxing glove
+🥋  martial arts uniform
+🥌  curling stone
+🥍  lacrosse stick and ball
+🥎  softball
+🥏  flying disc
+🥐  croissant
+🥑  avocado <span foreground="#727169">(avocado)</span>
+🥒  cucumber
+🥓  bacon
+🥔  potato
+🥕  carrot
+🥖  baguette bread
+🥗  green salad
+🥘  shallow pan of food
+🥙  stuffed flatbread
+🥚  egg
+🥛  glass of milk
+🥜  peanuts
+🥝  kiwifruit
+🥞  pancakes
+🥟  dumpling
+🥠  fortune cookie
+🥡  takeout box
+🥢  chopsticks
+🥣  bowl with spoon
+🥤  cup with straw <span foreground="#727169">(cup with straw)</span>
+🥥  coconut
+🥦  broccoli
+🥧  pie
+🥨  pretzel
+🥩  cut of meat
+🥪  sandwich
+🥫  canned food
+🥬  leafy green
+🥭  mango
+🥮  moon cake
+🥯  bagel
+🥰  smiling face with smiling eyes and three hearts
+🥱  yawning face
+🥲  smiling with tear <span foreground="#727169">(smiling face with tear)</span>
+🥳  face with party horn and party hat
+🥴  woozy <span foreground="#727169">(face with uneven eyes and wavy mouth)</span>
+🥵  hot face <span foreground="#727169">(overheated face)</span>
+🥶  cold face <span foreground="#727169">(freezing face)</span>
+🥷  ninja <span foreground="#727169">(ninja)</span>
+🥸  disguised <span foreground="#727169">(disguised face)</span>
+🥺  pleading <span foreground="#727169">(face with pleading eyes)</span>
+🥻  sari
+🥼  lab coat
+🥽  goggles
+🥾  hiking boot
+🥿  flat shoe
+🦀  crab <span foreground="#727169">(crab)</span>
+🦁  lion <span foreground="#727169">(lion face)</span>
+🦂  scorpion <span foreground="#727169">(scorpion)</span>
+🦃  turkey <span foreground="#727169">(turkey)</span>
+🦄  unicorn <span foreground="#727169">(unicorn face)</span>
+🦅  eagle <span foreground="#727169">(eagle)</span>
+🦆  quack <span foreground="#727169">(duck)</span>
+🦇  bat <span foreground="#727169">(bat)</span>
+🦈  shark <span foreground="#727169">(shark)</span>
+🦉  owl <span foreground="#727169">(owl)</span>
+🦊  fox <span foreground="#727169">(fox face)</span>
+🦋  butterfly <span foreground="#727169">(butterfly)</span>
+🦌  deer <span foreground="#727169">(deer)</span>
+🦍  gorilla <span foreground="#727169">(gorilla)</span>
+🦎  lizard <span foreground="#727169">(lizard)</span>
+🦏  rhinoceros
+🦐  shrimp
+🦑  squid <span foreground="#727169">(squid)</span>
+🦒  giraffe <span foreground="#727169">(giraffe face)</span>
+🦓  zebra <span foreground="#727169">(zebra face)</span>
+🦔  hedgehog <span foreground="#727169">(hedgehog)</span>
+🦕  sauropod
+🦖  t-rex
+🦗  cricket
+🦘  kangaroo <span foreground="#727169">(kangaroo)</span>
+🦙  llama <span foreground="#727169">(llama)</span>
+🦚  peacock <span foreground="#727169">(peacock)</span>
+🦛  hippopotamus
+🦜  parrot <span foreground="#727169">(parrot)</span>
+🦝  raccoon <span foreground="#727169">(raccoon)</span>
+🦞  lobster
+🦟  mosquito
+🦠  microbe
+🦡  badger
+🦢  swan <span foreground="#727169">(swan)</span>
+🦣  mammoth
+🦤  dodo
+🦥  sloth <span foreground="#727169">(sloth)</span>
+🦦  otter <span foreground="#727169">(otter)</span>
+🦧  orangutan
+🦨  skunk <span foreground="#727169">(skunk)</span>
+🦩  flamingo <span foreground="#727169">(flamingo)</span>
+🦪  oyster
+🦫  beaver
+🦬  bison
+🦭  seal
+🦮  guide dog
+🦯  probing cane
+🦰  emoji component red hair
+🦱  emoji component curly hair
+🦲  emoji component bald
+🦳  emoji component white hair
+🦴  bone
+🦵  leg
+🦶  foot
+🦷  tooth
+🦸  superhero <span foreground="#727169">(superhero)</span>
+🦹  supervillain <span foreground="#727169">(supervillain)</span>
+🦺  safety vest
+🦻  ear with hearing aid
+🦼  motorized wheelchair
+🦽  manual wheelchair
+🦾  mechanical arm
+🦿  mechanical leg
+🧀  cheese wedge
+🧁  cupcake
+🧂  salt shaker
+🧃  juice box <span foreground="#727169">(beverage box)</span>
+🧄  garlic
+🧅  onion
+🧆  falafel
+🧇  waffle
+🧈  butter
+🧉  mate drink
+🧊  ice <span foreground="#727169">(ice cube)</span>
+🧋  bubble tea
+🧍  standing person
+🧎  kneeling person
+🧏  deaf person
+🧐  face with monocle
+🧑  adult
+🧒  child
+🧓  older adult
+🧔  bearded person
+🧕  person with headscarf
+🧖  sauna <span foreground="#727169">(person in steamy room)</span>
+🧗  climbing <span foreground="#727169">(person climbing)</span>
+🧘  person in lotus position
+🧙  wizard <span foreground="#727169">(mage)</span>
+🧚  fairy
+🧛  vampire <span foreground="#727169">(vampire)</span>
+🧜  merperson
+🧝  elf <span foreground="#727169">(elf)</span>
+🧞  genie <span foreground="#727169">(genie)</span>
+🧟  zombie <span foreground="#727169">(zombie)</span>
+🧠  brain <span foreground="#727169">(brain)</span>
+🧡  orange heart
+🧢  billed cap
+🧣  scarf
+🧤  gloves
+🧥  coat
+🧦  socks
+🧧  red gift envelope
+🧨  firecracker
+🧩  jigsaw puzzle piece
+🧪  test tube
+🧫  petri dish
+🧬  dna double helix
+🧭  compass
+🧮  abacus
+🧯  fire extinguisher
+🧰  toolbox
+🧱  brick
+🧲  magnet
+🧳  luggage
+🧴  lotion bottle
+🧵  spool of thread
+🧶  ball of yarn
+🧷  safety pin
+🧸  teddy bear
+🧹  broom
+🧺  basket
+🧻  roll of paper
+🧼  bar of soap
+🧽  sponge
+🧾  receipt
+🧿  nazar amulet
+🨀  neutral chess king
+🨁  neutral chess queen
+🨂  neutral chess rook
+🨃  neutral chess bishop
+🨄  neutral chess knight
+🨅  neutral chess pawn
+🨆  white chess knight rotated forty-five degrees
+🨇  black chess knight rotated forty-five degrees
+🨈  neutral chess knight rotated forty-five degrees
+🨉  white chess king rotated ninety degrees
+🨊  white chess queen rotated ninety degrees
+🨋  white chess rook rotated ninety degrees
+🨌  white chess bishop rotated ninety degrees
+🨍  white chess knight rotated ninety degrees
+🨎  white chess pawn rotated ninety degrees
+🨏  black chess king rotated ninety degrees
+🨐  black chess queen rotated ninety degrees
+🨑  black chess rook rotated ninety degrees
+🨒  black chess bishop rotated ninety degrees
+🨓  black chess knight rotated ninety degrees
+🨔  black chess pawn rotated ninety degrees
+🨕  neutral chess king rotated ninety degrees
+🨖  neutral chess queen rotated ninety degrees
+🨗  neutral chess rook rotated ninety degrees
+🨘  neutral chess bishop rotated ninety degrees
+🨙  neutral chess knight rotated ninety degrees
+🨚  neutral chess pawn rotated ninety degrees
+🨛  white chess knight rotated one hundred thirty-five degrees
+🨜  black chess knight rotated one hundred thirty-five degrees
+🨝  neutral chess knight rotated one hundred thirty-five degrees
+🨞  white chess turned king
+🨟  white chess turned queen
+🨠  white chess turned rook
+🨡  white chess turned bishop
+🨢  white chess turned knight
+🨣  white chess turned pawn
+🨤  black chess turned king
+🨥  black chess turned queen
+🨦  black chess turned rook
+🨧  black chess turned bishop
+🨨  black chess turned knight
+🨩  black chess turned pawn
+🨪  neutral chess turned king
+🨫  neutral chess turned queen
+🨬  neutral chess turned rook
+🨭  neutral chess turned bishop
+🨮  neutral chess turned knight
+🨯  neutral chess turned pawn
+🨰  white chess knight rotated two hundred twenty-five degrees
+🨱  black chess knight rotated two hundred twenty-five degrees
+🨲  neutral chess knight rotated two hundred twenty-five degrees
+🨳  white chess king rotated two hundred seventy degrees
+🨴  white chess queen rotated two hundred seventy degrees
+🨵  white chess rook rotated two hundred seventy degrees
+🨶  white chess bishop rotated two hundred seventy degrees
+🨷  white chess knight rotated two hundred seventy degrees
+🨸  white chess pawn rotated two hundred seventy degrees
+🨹  black chess king rotated two hundred seventy degrees
+🨺  black chess queen rotated two hundred seventy degrees
+🨻  black chess rook rotated two hundred seventy degrees
+🨼  black chess bishop rotated two hundred seventy degrees
+🨽  black chess knight rotated two hundred seventy degrees
+🨾  black chess pawn rotated two hundred seventy degrees
+🨿  neutral chess king rotated two hundred seventy degrees
+🩀  neutral chess queen rotated two hundred seventy degrees
+🩁  neutral chess rook rotated two hundred seventy degrees
+🩂  neutral chess bishop rotated two hundred seventy degrees
+🩃  neutral chess knight rotated two hundred seventy degrees
+🩄  neutral chess pawn rotated two hundred seventy degrees
+🩅  white chess knight rotated three hundred fifteen degrees
+🩆  black chess knight rotated three hundred fifteen degrees
+🩇  neutral chess knight rotated three hundred fifteen degrees
+🩈  white chess equihopper
+🩉  black chess equihopper
+🩊  neutral chess equihopper
+🩋  white chess equihopper rotated ninety degrees
+🩌  black chess equihopper rotated ninety degrees
+🩍  neutral chess equihopper rotated ninety degrees
+🩎  white chess knight-queen
+🩏  white chess knight-rook
+🩐  white chess knight-bishop
+🩑  black chess knight-queen
+🩒  black chess knight-rook
+🩓  black chess knight-bishop
+🩠  xiangqi red general
+🩡  xiangqi red mandarin
+🩢  xiangqi red elephant
+🩣  xiangqi red horse
+🩤  xiangqi red chariot
+🩥  xiangqi red cannon
+🩦  xiangqi red soldier
+🩧  xiangqi black general
+🩨  xiangqi black mandarin
+🩩  xiangqi black elephant
+🩪  xiangqi black horse
+🩫  xiangqi black chariot
+🩬  xiangqi black cannon
+🩭  xiangqi black soldier
+🩰  ballet shoes
+🩱  one-piece swimsuit
+🩲  briefs
+🩳  shorts
+🩴  thong sandal
+🩸  drop of blood
+🩹  adhesive bandage
+🩺  stethoscope
+🪀  yo-yo
+🪁  kite
+🪂  parachute
+🪃  boomerang
+🪄  magic wand
+🪅  pinata
+🪆  nesting dolls
+🪐  ringed planet
+🪑  chair
+🪒  razor
+🪓  axe
+🪔  diya lamp
+🪕  banjo
+🪖  military helmet
+🪗  accordion
+🪘  long drum
+🪙  coin
+🪚  carpentry saw
+🪛  screwdriver
+🪜  ladder
+🪝  hook
+🪞  mirror
+🪟  window
+🪠  plunger
+🪡  sewing needle
+🪢  knot
+🪣  bucket
+🪤  mouse trap
+🪥  toothbrush
+🪦  headstone
+🪧  placard
+🪨  rock
+🪰  fly
+🪱  worm
+🪲  beetle
+🪳  cockroach
+🪴  potted plant
+🪵  wood
+🪶  feather
+🫀  anatomical heart
+🫁  lungs
+🫂  people hugging
+🫐  blueberries
+🫑  bell pepper
+🫒  olive
+🫓  flatbread
+🫔  tamale
+🫕  fondue
+🫖  teapot
+☀  sunny <span foreground="#727169">(black sun with rays)</span>
+☁  cloud
+☂  umbrella
+☃  snowman <span foreground="#727169">(snowman)</span>
+☄  comet
+★  black star
+☆  white star
+☇  lightning
+☈  thunderstorm
+☉  sun
+☊  ascending node
+☋  descending node
+☌  conjunction
+☍  opposition
+☎  black telephone
+☏  white telephone
+☐  ballot box
+☑  ballot box with check
+☒  ballot box with x
+☓  saltire
+☔  umbrella with rain drops
+☕  coffee <span foreground="#727169">(hot beverage)</span>
+☖  white shogi piece
+☗  black shogi piece
+☘  shamrock
+☙  reversed rotated floral heart bullet
+☚  black left pointing index
+☛  black right pointing index
+☜  white left pointing index
+☝  pointing up <span foreground="#727169">(white up pointing index)</span>
+☞  white right pointing index
+☟  white down pointing index
+☠  skull and crossbones
+☡  caution sign
+☢  radioactive sign
+☣  biohazard sign
+☤  caduceus
+☥  ankh
+☦  orthodox cross
+☧  chi rho
+☨  cross of lorraine
+☩  cross of jerusalem
+☪  star and crescent
+☫  farsi symbol
+☬  adi shakti
+☭  hammer and sickle
+☮  peace symbol
+☯  yin yang
+☰  trigram for heaven
+☱  trigram for lake
+☲  trigram for fire
+☳  trigram for thunder
+☴  trigram for wind
+☵  trigram for water
+☶  trigram for mountain
+☷  trigram for earth
+☸  wheel of dharma
+☹  white frowning face
+☺  white smiling face
+☻  black smiling face
+☼  white sun with rays
+☽  first quarter moon
+☾  last quarter moon
+☿  mercury
+♀  female sign
+♁  earth
+♂  male sign
+♃  jupiter
+♄  saturn
+♅  uranus
+♆  neptune
+♇  pluto
+♈  aries
+♉  taurus
+♊  gemini
+♋  cancer
+♌  leo
+♍  virgo
+♎  libra
+♏  scorpius
+♐  sagittarius
+♑  capricorn
+♒  aquarius
+♓  pisces
+♔  white chess king
+♕  white chess queen
+♖  white chess rook
+♗  white chess bishop
+♘  white chess knight
+♙  white chess pawn
+♚  black chess king
+♛  black chess queen
+♜  black chess rook
+♝  black chess bishop
+♞  black chess knight
+♟  chess pawn <span foreground="#727169">(black chess pawn)</span>
+♠  black spade suit
+♡  white heart suit
+♢  white diamond suit
+♣  black club suit
+♤  white spade suit
+♥  black heart suit
+♦  black diamond suit
+♧  white club suit
+♨  hot springs
+♩  quarter note
+♪  eighth note
+♫  beamed eighth notes
+♬  beamed sixteenth notes
+♭  music flat sign
+♮  music natural sign
+♯  music sharp sign
+♰  west syriac cross
+♱  east syriac cross
+♲  universal recycling symbol
+♳  recycling symbol for type-1 plastics
+♴  recycling symbol for type-2 plastics
+♵  recycling symbol for type-3 plastics
+♶  recycling symbol for type-4 plastics
+♷  recycling symbol for type-5 plastics
+♸  recycling symbol for type-6 plastics
+♹  recycling symbol for type-7 plastics
+♺  recycling symbol for generic materials
+♻  black universal recycling symbol
+♼  recycled paper symbol
+♽  partially-recycled paper symbol
+♾  permanent paper sign
+♿  wheelchair symbol
+⚀  die face-1
+⚁  die face-2
+⚂  die face-3
+⚃  die face-4
+⚄  die face-5
+⚅  die face-6
+⚆  white circle with dot right
+⚇  white circle with two dots
+⚈  black circle with white dot right
+⚉  black circle with two white dots
+⚊  monogram for yang
+⚋  monogram for yin
+⚌  digram for greater yang
+⚍  digram for lesser yin
+⚎  digram for lesser yang
+⚏  digram for greater yin
+⚐  white flag
+⚑  black flag
+⚒  hammer and pick
+⚓  anchor
+⚔  crossed swords
+⚕  staff of aesculapius
+⚖  scales
+⚗  alembic
+⚘  flower
+⚙  gear
+⚚  staff of hermes
+⚛  atom symbol
+⚜  fleur-de-lis
+⚝  outlined white star
+⚞  three lines converging right
+⚟  three lines converging left
+⚠  warning <span foreground="#727169">(warning sign)</span>
+⚡  lightning <span foreground="#727169">(high voltage sign)</span>
+⚢  doubled female sign
+⚣  doubled male sign
+⚤  interlocked female and male sign
+⚥  male and female sign
+⚦  male with stroke sign
+⚧  male with stroke and male and female sign
+⚨  vertical male with stroke sign
+⚩  horizontal male with stroke sign
+⚪  medium white circle
+⚫  medium black circle
+⚬  medium small white circle
+⚭  marriage symbol
+⚮  divorce symbol
+⚯  unmarried partnership symbol
+⚰  coffin
+⚱  funeral urn
+⚲  neuter
+⚳  ceres
+⚴  pallas
+⚵  juno
+⚶  vesta
+⚷  chiron
+⚸  black moon lilith
+⚹  sextile
+⚺  semisextile
+⚻  quincunx
+⚼  sesquiquadrate
+⚽  soccer <span foreground="#727169">(soccer ball)</span>
+⚾  baseball <span foreground="#727169">(baseball)</span>
+⚿  squared key
+⛀  white draughts man
+⛁  white draughts king
+⛂  black draughts man
+⛃  black draughts king
+⛄  snowman <span foreground="#727169">(snowman without snow)</span>
+⛅  partly cloudy <span foreground="#727169">(sun behind cloud)</span>
+⛆  rain
+⛇  black snowman
+⛈  thunderstorm <span foreground="#727169">(thunder cloud and rain)</span>
+⛉  turned white shogi piece
+⛊  turned black shogi piece
+⛋  white diamond in square
+⛌  crossing lanes
+⛍  disabled car
+⛎  ophiuchus
+⛏  pick
+⛐  car sliding
+⛑  helmet with white cross
+⛒  circled crossing lanes
+⛓  chains
+⛔  no entry
+⛕  alternate one-way left way traffic
+⛖  black two-way left way traffic
+⛗  white two-way left way traffic
+⛘  black left lane merge
+⛙  white left lane merge
+⛚  drive slow sign
+⛛  heavy white down-pointing triangle
+⛜  left closed entry
+⛝  squared saltire
+⛞  falling diagonal in white circle in black square
+⛟  black truck
+⛠  restricted left entry-1
+⛡  restricted left entry-2
+⛢  astronomical symbol for uranus
+⛣  heavy circle with stroke and two dots above
+⛤  pentagram
+⛥  right-handed interlaced pentagram
+⛦  left-handed interlaced pentagram
+⛧  inverted pentagram
+⛨  black cross on shield
+⛩  shinto shrine
+⛪  church
+⛫  castle
+⛬  historic site
+⛭  gear without hub
+⛮  gear with handles
+⛯  map symbol for lighthouse
+⛰  mountain
+⛱  umbrella on ground
+⛲  fountain
+⛳  golf <span foreground="#727169">(flag in hole)</span>
+⛴  ferry
+⛵  sailboat
+⛶  square four corners
+⛷  skier
+⛸  ice skate
+⛹  person with ball
+⛺  tent
+⛻  japanese bank symbol
+⛼  headstone graveyard symbol
+⛽  fuel pump
+⛾  cup on black square
+⛿  white flag with horizontal middle black stripe
+✀  black safety scissors
+✁  upper blade scissors
+✂  black scissors
+✃  lower blade scissors
+✄  white scissors
+✅  check <span foreground="#727169">(white heavy check mark)</span>
+✆  telephone location sign
+✇  tape drive
+✈  airplane <span foreground="#727169">(airplane)</span>
+✉  envelope
+✊  raised fist
+✋  raised hand <span foreground="#727169">(raised hand)</span>
+✌  peace <span foreground="#727169">(victory hand)</span>
+✍  writing <span foreground="#727169">(writing hand)</span>
+✎  lower right pencil
+✏  pencil <span foreground="#727169">(pencil)</span>
+✐  upper right pencil
+✑  white nib
+✒  black nib
+✓  check mark
+✔  heavy check mark
+✕  multiplication x
+✖  heavy multiplication x
+✗  ballot x
+✘  heavy ballot x
+✙  outlined greek cross
+✚  heavy greek cross
+✛  open centre cross
+✜  heavy open centre cross
+✝  latin cross
+✞  shadowed white latin cross
+✟  outlined latin cross
+✠  maltese cross
+✡  star of david
+✢  four teardrop-spoked asterisk
+✣  four balloon-spoked asterisk
+✤  heavy four balloon-spoked asterisk
+✥  four club-spoked asterisk
+✦  black four pointed star
+✧  white four pointed star
+✨  sparkles <span foreground="#727169">(sparkles)</span>
+✩  stress outlined white star
+✪  circled white star
+✫  open centre black star
+✬  black centre white star
+✭  outlined black star
+✮  heavy outlined black star
+✯  pinwheel star
+✰  shadowed white star
+✱  heavy asterisk
+✲  open centre asterisk
+✳  eight spoked asterisk
+✴  eight pointed black star
+✵  eight pointed pinwheel star
+✶  six pointed black star
+✷  eight pointed rectilinear black star
+✸  heavy eight pointed rectilinear black star
+✹  twelve pointed black star
+✺  sixteen pointed asterisk
+✻  teardrop-spoked asterisk
+✼  open centre teardrop-spoked asterisk
+✽  heavy teardrop-spoked asterisk
+✾  six petalled black and white florette
+✿  black florette
+❀  white florette
+❁  eight petalled outlined black florette
+❂  circled open centre eight pointed star
+❃  heavy teardrop-spoked pinwheel asterisk
+❄  snowflake <span foreground="#727169">(snowflake)</span>
+❅  tight trifoliate snowflake
+❆  heavy chevron snowflake
+❇  sparkle
+❈  heavy sparkle
+❉  balloon-spoked asterisk
+❊  eight teardrop-spoked propeller asterisk
+❋  heavy eight teardrop-spoked propeller asterisk
+❌  X <span foreground="#727169">(cross mark)</span>
+❍  shadowed white circle
+❎  negative squared cross mark
+❏  lower right drop-shadowed white square
+❐  upper right drop-shadowed white square
+❑  lower right shadowed white square
+❒  upper right shadowed white square
+❓  question <span foreground="#727169">(black question mark ornament)</span>
+❔  white question mark ornament
+❕  white exclamation mark ornament
+❖  black diamond minus white x
+❗  exclamation <span foreground="#727169">(heavy exclamation mark symbol)</span>
+❘  light vertical bar
+❙  medium vertical bar
+❚  heavy vertical bar
+❛  heavy single turned comma quotation mark ornament
+❜  heavy single comma quotation mark ornament
+❝  heavy double turned comma quotation mark ornament
+❞  heavy double comma quotation mark ornament
+❟  heavy low single comma quotation mark ornament
+❠  heavy low double comma quotation mark ornament
+❡  curved stem paragraph sign ornament
+❢  heavy exclamation mark ornament
+❣  heavy heart exclamation mark ornament
+❤  red heart <span foreground="#727169">(heavy black heart)</span>
+❥  rotated heavy black heart bullet
+❦  floral heart
+❧  rotated floral heart bullet
+❨  medium left parenthesis ornament
+❩  medium right parenthesis ornament
+❪  medium flattened left parenthesis ornament
+❫  medium flattened right parenthesis ornament
+❬  medium left-pointing angle bracket ornament
+❭  medium right-pointing angle bracket ornament
+❮  heavy left-pointing angle quotation mark ornament
+❯  heavy right-pointing angle quotation mark ornament
+❰  heavy left-pointing angle bracket ornament
+❱  heavy right-pointing angle bracket ornament
+❲  light left tortoise shell bracket ornament
+❳  light right tortoise shell bracket ornament
+❴  medium left curly bracket ornament
+❵  medium right curly bracket ornament
+❶  dingbat negative circled digit one
+❷  dingbat negative circled digit two
+❸  dingbat negative circled digit three
+❹  dingbat negative circled digit four
+❺  dingbat negative circled digit five
+❻  dingbat negative circled digit six
+❼  dingbat negative circled digit seven
+❽  dingbat negative circled digit eight
+❾  dingbat negative circled digit nine
+❿  dingbat negative circled number ten
+➀  dingbat circled sans-serif digit one
+➁  dingbat circled sans-serif digit two
+➂  dingbat circled sans-serif digit three
+➃  dingbat circled sans-serif digit four
+➄  dingbat circled sans-serif digit five
+➅  dingbat circled sans-serif digit six
+➆  dingbat circled sans-serif digit seven
+➇  dingbat circled sans-serif digit eight
+➈  dingbat circled sans-serif digit nine
+➉  dingbat circled sans-serif number ten
+➊  dingbat negative circled sans-serif digit one
+➋  dingbat negative circled sans-serif digit two
+➌  dingbat negative circled sans-serif digit three
+➍  dingbat negative circled sans-serif digit four
+➎  dingbat negative circled sans-serif digit five
+➏  dingbat negative circled sans-serif digit six
+➐  dingbat negative circled sans-serif digit seven
+➑  dingbat negative circled sans-serif digit eight
+➒  dingbat negative circled sans-serif digit nine
+➓  dingbat negative circled sans-serif number ten
+➔  heavy wide-headed rightwards arrow
+➕  heavy plus sign
+➖  heavy minus sign
+➗  heavy division sign
+➘  heavy south east arrow
+➙  heavy rightwards arrow
+➚  heavy north east arrow
+➛  drafting point rightwards arrow
+➜  heavy round-tipped rightwards arrow
+➝  triangle-headed rightwards arrow
+➞  heavy triangle-headed rightwards arrow
+➟  dashed triangle-headed rightwards arrow
+➠  heavy dashed triangle-headed rightwards arrow
+➡  black rightwards arrow
+➢  three-d top-lighted rightwards arrowhead
+➣  three-d bottom-lighted rightwards arrowhead
+➤  black rightwards arrowhead
+➥  heavy black curved downwards and rightwards arrow
+➦  heavy black curved upwards and rightwards arrow
+➧  squat black rightwards arrow
+➨  heavy concave-pointed black rightwards arrow
+➩  right-shaded white rightwards arrow
+➪  left-shaded white rightwards arrow
+➫  back-tilted shadowed white rightwards arrow
+➬  front-tilted shadowed white rightwards arrow
+➭  heavy lower right-shadowed white rightwards arrow
+➮  heavy upper right-shadowed white rightwards arrow
+➯  notched lower right-shadowed white rightwards arrow
+➰  curly loop
+➱  notched upper right-shadowed white rightwards arrow
+➲  circled heavy white rightwards arrow
+➳  white-feathered rightwards arrow
+➴  black-feathered south east arrow
+➵  black-feathered rightwards arrow
+➶  black-feathered north east arrow
+➷  heavy black-feathered south east arrow
+➸  heavy black-feathered rightwards arrow
+➹  heavy black-feathered north east arrow
+➺  teardrop-barbed rightwards arrow
+➻  heavy teardrop-shanked rightwards arrow
+➼  wedge-tailed rightwards arrow
+➽  heavy wedge-tailed rightwards arrow
+➾  open-outlined rightwards arrow
+➿  double curly loop
+⌀  diameter sign
+⌁  electric arrow
+⌂  house
+⌃  up arrowhead
+⌄  down arrowhead
+⌅  projective
+⌆  perspective
+⌇  wavy line
+⌈  left ceiling
+⌉  right ceiling
+⌊  left floor
+⌋  right floor
+⌌  bottom right crop
+⌍  bottom left crop
+⌎  top right crop
+⌏  top left crop
+⌐  reversed not sign
+⌑  square lozenge
+⌒  arc
+⌓  segment
+⌔  sector
+⌕  telephone recorder
+⌖  position indicator
+⌗  viewdata square
+⌘  place of interest sign
+⌙  turned not sign
+⌚  watch <span foreground="#727169">(watch)</span>
+⌛  hourglass
+⌜  top left corner
+⌝  top right corner
+⌞  bottom left corner
+⌟  bottom right corner
+⌠  top half integral
+⌡  bottom half integral
+⌢  frown
+⌣  smile
+⌤  up arrowhead between two horizontal bars
+⌥  option key
+⌦  erase to the right
+⌧  x in a rectangle box
+⌨  keyboard
+〈  left-pointing angle bracket
+〉  right-pointing angle bracket
+⌫  erase to the left
+⌬  benzene ring
+⌭  cylindricity
+⌮  all around-profile
+⌯  symmetry
+⌰  total runout
+⌱  dimension origin
+⌲  conical taper
+⌳  slope
+⌴  counterbore
+⌵  countersink
+⌶  apl functional symbol i-beam
+⌷  apl functional symbol squish quad
+⌸  apl functional symbol quad equal
+⌹  apl functional symbol quad divide
+⌺  apl functional symbol quad diamond
+⌻  apl functional symbol quad jot
+⌼  apl functional symbol quad circle
+⌽  apl functional symbol circle stile
+⌾  apl functional symbol circle jot
+⌿  apl functional symbol slash bar
+⍀  apl functional symbol backslash bar
+⍁  apl functional symbol quad slash
+⍂  apl functional symbol quad backslash
+⍃  apl functional symbol quad less-than
+⍄  apl functional symbol quad greater-than
+⍅  apl functional symbol leftwards vane
+⍆  apl functional symbol rightwards vane
+⍇  apl functional symbol quad leftwards arrow
+⍈  apl functional symbol quad rightwards arrow
+⍉  apl functional symbol circle backslash
+⍊  apl functional symbol down tack underbar
+⍋  apl functional symbol delta stile
+⍌  apl functional symbol quad down caret
+⍍  apl functional symbol quad delta
+⍎  apl functional symbol down tack jot
+⍏  apl functional symbol upwards vane
+⍐  apl functional symbol quad upwards arrow
+⍑  apl functional symbol up tack overbar
+⍒  apl functional symbol del stile
+⍓  apl functional symbol quad up caret
+⍔  apl functional symbol quad del
+⍕  apl functional symbol up tack jot
+⍖  apl functional symbol downwards vane
+⍗  apl functional symbol quad downwards arrow
+⍘  apl functional symbol quote underbar
+⍙  apl functional symbol delta underbar
+⍚  apl functional symbol diamond underbar
+⍛  apl functional symbol jot underbar
+⍜  apl functional symbol circle underbar
+⍝  apl functional symbol up shoe jot
+⍞  apl functional symbol quote quad
+⍟  apl functional symbol circle star
+⍠  apl functional symbol quad colon
+⍡  apl functional symbol up tack diaeresis
+⍢  apl functional symbol del diaeresis
+⍣  apl functional symbol star diaeresis
+⍤  apl functional symbol jot diaeresis
+⍥  apl functional symbol circle diaeresis
+⍦  apl functional symbol down shoe stile
+⍧  apl functional symbol left shoe stile
+⍨  apl functional symbol tilde diaeresis
+⍩  apl functional symbol greater-than diaeresis
+⍪  apl functional symbol comma bar
+⍫  apl functional symbol del tilde
+⍬  apl functional symbol zilde
+⍭  apl functional symbol stile tilde
+⍮  apl functional symbol semicolon underbar
+⍯  apl functional symbol quad not equal
+⍰  apl functional symbol quad question
+⍱  apl functional symbol down caret tilde
+⍲  apl functional symbol up caret tilde
+⍳  apl functional symbol iota
+⍴  apl functional symbol rho
+⍵  apl functional symbol omega
+⍶  apl functional symbol alpha underbar
+⍷  apl functional symbol epsilon underbar
+⍸  apl functional symbol iota underbar
+⍹  apl functional symbol omega underbar
+⍺  apl functional symbol alpha
+⍻  not check mark
+⍼  right angle with downwards zigzag arrow
+⍽  shouldered open box
+⍾  bell symbol
+⍿  vertical line with middle dot
+⎀  insertion symbol
+⎁  continuous underline symbol
+⎂  discontinuous underline symbol
+⎃  emphasis symbol
+⎄  composition symbol
+⎅  white square with centre vertical line
+⎆  enter symbol
+⎇  alternative key symbol
+⎈  helm symbol
+⎉  circled horizontal bar with notch
+⎊  circled triangle down
+⎋  broken circle with northwest arrow
+⎌  undo symbol
+⎍  monostable symbol
+⎎  hysteresis symbol
+⎏  open-circuit-output h-type symbol
+⎐  open-circuit-output l-type symbol
+⎑  passive-pull-down-output symbol
+⎒  passive-pull-up-output symbol
+⎓  direct current symbol form two
+⎔  software-function symbol
+⎕  apl functional symbol quad
+⎖  decimal separator key symbol
+⎗  previous page
+⎘  next page
+⎙  print screen symbol
+⎚  clear screen symbol
+⎛  left parenthesis upper hook
+⎜  left parenthesis extension
+⎝  left parenthesis lower hook
+⎞  right parenthesis upper hook
+⎟  right parenthesis extension
+⎠  right parenthesis lower hook
+⎡  left square bracket upper corner
+⎢  left square bracket extension
+⎣  left square bracket lower corner
+⎤  right square bracket upper corner
+⎥  right square bracket extension
+⎦  right square bracket lower corner
+⎧  left curly bracket upper hook
+⎨  left curly bracket middle piece
+⎩  left curly bracket lower hook
+⎪  curly bracket extension
+⎫  right curly bracket upper hook
+⎬  right curly bracket middle piece
+⎭  right curly bracket lower hook
+⎮  integral extension
+⎯  horizontal line extension
+⎰  upper left or lower right curly bracket section
+⎱  upper right or lower left curly bracket section
+⎲  summation top
+⎳  summation bottom
+⎴  top square bracket
+⎵  bottom square bracket
+⎶  bottom square bracket over top square bracket
+⎷  radical symbol bottom
+⎸  left vertical box line
+⎹  right vertical box line
+⎺  horizontal scan line-1
+⎻  horizontal scan line-3
+⎼  horizontal scan line-7
+⎽  horizontal scan line-9
+⎾  dentistry symbol light vertical and top right
+⎿  dentistry symbol light vertical and bottom right
+⏀  dentistry symbol light vertical with circle
+⏁  dentistry symbol light down and horizontal with circle
+⏂  dentistry symbol light up and horizontal with circle
+⏃  dentistry symbol light vertical with triangle
+⏄  dentistry symbol light down and horizontal with triangle
+⏅  dentistry symbol light up and horizontal with triangle
+⏆  dentistry symbol light vertical and wave
+⏇  dentistry symbol light down and horizontal with wave
+⏈  dentistry symbol light up and horizontal with wave
+⏉  dentistry symbol light down and horizontal
+⏊  dentistry symbol light up and horizontal
+⏋  dentistry symbol light vertical and top left
+⏌  dentistry symbol light vertical and bottom left
+⏍  square foot
+⏎  return symbol
+⏏  eject symbol
+⏐  vertical line extension
+⏑  metrical breve
+⏒  metrical long over short
+⏓  metrical short over long
+⏔  metrical long over two shorts
+⏕  metrical two shorts over long
+⏖  metrical two shorts joined
+⏗  metrical triseme
+⏘  metrical tetraseme
+⏙  metrical pentaseme
+⏚  earth ground
+⏛  fuse
+⏜  top parenthesis
+⏝  bottom parenthesis
+⏞  top curly bracket
+⏟  bottom curly bracket
+⏠  top tortoise shell bracket
+⏡  bottom tortoise shell bracket
+⏢  white trapezium
+⏣  benzene ring with circle
+⏤  straightness
+⏥  flatness
+⏦  ac current
+⏧  electrical intersection
+⏨  decimal exponent symbol
+⏩  black right-pointing double triangle
+⏪  black left-pointing double triangle
+⏫  black up-pointing double triangle
+⏬  black down-pointing double triangle
+⏭  black right-pointing double triangle with vertical bar
+⏮  black left-pointing double triangle with vertical bar
+⏯  black right-pointing triangle with double vertical bar
+⏰  alarm <span foreground="#727169">(alarm clock)</span>
+⏱  stopwatch
+⏲  timer clock
+⏳  hourglass with flowing sand
+⏴  black medium left-pointing triangle
+⏵  black medium right-pointing triangle
+⏶  black medium up-pointing triangle
+⏷  black medium down-pointing triangle
+⏸  double vertical bar
+⏹  black square for stop
+⏺  black circle for record
+⏻  power symbol
+⏼  power on-off symbol
+⏽  power on symbol
+⏾  power sleep symbol
+⏿  observer eye symbol
