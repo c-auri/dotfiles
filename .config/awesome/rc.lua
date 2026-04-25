@@ -359,18 +359,6 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				"firefox",
-			},
-		},
-		properties = {
-			screen = awful.screen.primary,
-			tag = "4",
-		},
-	},
-
-	{
-		rule_any = {
-			class = {
 				"discord",
 				"outlook-for-linux",
 				"teams-for-linux",
