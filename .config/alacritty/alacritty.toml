@@ -2,6 +2,12 @@ import = [
   "~/.config/alacritty/kanagawa/dragon.toml"
 ]
 
+[colors.normal]
+white = '#c5c9c5'
+
+[colors.bright]
+black = '#181616'
+
 [window]
 padding = { x = 8, y = 8 }
 
