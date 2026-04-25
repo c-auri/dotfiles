@@ -11,7 +11,7 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
     ```bash
    alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
     ```
-    - There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.
+    (There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.)
 
 1. Fix the fetch refspec so remote tracking branches are created correctly, then fetch:
     ```bash
@@ -19,13 +19,13 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
    con remote set-head origin --auto
    con fetch
     ```
-    - `git clone --bare` maps remote branches to local refs instead of remote tracking refs, so without this `origin/main` won't appear in the log.
+    (`git clone --bare` maps remote branches to local refs instead of remote tracking refs, so without this `origin/main` won't appear in the log.)
 
 1. Checkout the content of the bare repository to your home directory:
     ```bash
    con checkout
     ```
-    - If the checkout fails because some files would be overwritten, create backups, delete the files and then try again.
+    (If the checkout fails because some files would be overwritten, create backups, delete the files and then try again.)
 
 1. Hide untracked files:
     ```bash
