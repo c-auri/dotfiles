@@ -1,0 +1,5 @@
+#!/bin/sh
+XSECURELOCK_FONT="monospace" \
+XSECURELOCK_AUTH_BACKGROUND_COLOR=black \
+XSECURELOCK_AUTH_FOREGROUND_COLOR=white \
+exec xsecurelock
