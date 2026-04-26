@@ -27,6 +27,15 @@ case $external_pos in
         xrandr --output ${external} --off
         exit
         ;;
+    "tv")
+        if ! xrandr | grep -q "^HDMI-A-0 connected"; then
+            echo "TV not connected at HDMI-A-0" >&2
+            exit 1
+        fi
+        xrandr --output HDMI-A-0 --mode 3840x2160 --pos 0x0 \
+               --output "${laptop}" --primary --pos 1200x2160
+        exit
+        ;;
     *)
         echo "Invalid argument: ${1}" >&2
         exit 1
