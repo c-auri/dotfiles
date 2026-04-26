@@ -46,7 +46,7 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
 ```bash
 sudo apt install \
     awesome xterm \
-    rofi dunst xdotool \
+    rofi dunst xdotool xsecurelock \
     arandr lxappearance lxsession lxpolkit \
     bat fd-find ripgrep tmux xclip jq \
     gimp feh flameshot mpv vlc
@@ -63,8 +63,7 @@ sudo apt install \
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 - [vivify](https://github.com/jannis-baum/vivify)
 - [ImageMagick](https://imagemagick.org/script/download.php#gsc.tab=0) (make AppImage executable and put in a place that is added to PATH)
-- [13lock-color](https://github.com/Raymo111/i3lock-color?tab=readme-ov-file#dependencies)
-- [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen?tab=readme-ov-file#installation-script)
+- [xidlehook](https://github.com/jD91mZM2/xidlehook)
 
 ## Customization
 ### GUI
