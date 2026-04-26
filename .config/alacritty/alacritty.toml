@@ -6,7 +6,7 @@ import = [
 white = '#c5c9c5'
 
 [colors.bright]
-black = '#181616'
+black = '#282727'
 
 [window]
 padding = { x = 8, y = 8 }
