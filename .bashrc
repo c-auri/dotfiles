@@ -64,12 +64,12 @@ function __prepare_prompt
 
         if [[ -z $suffix ]]
         then
-            dir="\[\e[1;97m\]$project"
+            dir="\[$(tput setaf 15)\]$project"
         elif [[ $suffix == /../* ]]
         then
-            dir="\[\e[1;90m\]$project/../\[\e[1;97m\]$(basename "$PWD")"
+            dir="\[$(tput setaf 8)\]$project/../\[$(tput setaf 15)\]$(basename "$PWD")"
         else
-            dir="\[\e[1;90m\]$project/\[\e[1;97m\]$rel_stripped"
+            dir="\[$(tput setaf 8)\]$project/\[$(tput setaf 15)\]$rel_stripped"
         fi
     else
         dir=$(basename "$PWD")
@@ -78,7 +78,7 @@ function __prepare_prompt
     if [[ -z $set_win_title ]]
     then
         set_win_title="\[\e]2;$dir\a\]"
-        dir="\[\e[1;97m\]$dir"
+        dir="\[$(tput setaf 15)\]$dir"
     fi
 
     git=$(git status 2>/dev/null | $HOME/.local/bin/git-utils/shorten-status)
