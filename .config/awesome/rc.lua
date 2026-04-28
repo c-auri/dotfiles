@@ -249,7 +249,10 @@ local globalkeys = gears.table.join(
 
 	awful.key({ meta, ctrl }, "l", function()
 		awful.spawn.with_shell("~/.config/awesome/lockscreen/lock.sh")
-	end, { description = "lock screen", group = "awesome: applications" })
+	end, { description = "lock screen", group = "awesome: applications" }),
+	awful.key({ meta, ctrl }, "Return", function()
+		awful.spawn.with_shell("~/.config/rofi/powermenu/powermenu.sh")
+	end, { description = "power menu", group = "awesome: applications" })
 )
 
 local clientkeys = gears.table.join(

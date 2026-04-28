@@ -1,0 +1,21 @@
+@import "~/.config/rofi/shared-style.rasi"
+
+mainbox {
+    padding: 35% 35% 16px 35%;
+}
+
+inputbar {
+    enabled: false;
+}
+
+element {
+    margin: 0px 110px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+}
+
+listview {
+    lines: 8;
+}
