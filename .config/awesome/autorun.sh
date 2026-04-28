@@ -11,9 +11,9 @@ if [ "${LOCK_IDLE_DISABLE}" != "1" ]; then
     run xidlehook \
         --not-when-fullscreen \
         --timer 180 \
-            "$HOME/.config/awesome/lockscreen/dim.sh" \
-            "$HOME/.config/awesome/lockscreen/undim.sh" \
+            "$HOME/.config/lockscreen/dim.sh" \
+            "$HOME/.config/lockscreen/undim.sh" \
         --timer 120 \
-            "$HOME/.config/awesome/lockscreen/undim.sh && $HOME/.config/awesome/lockscreen/lock.sh" \
+            "$HOME/.config/lockscreen/undim.sh && $HOME/.config/lockscreen/lock.sh" \
             ""
 fi

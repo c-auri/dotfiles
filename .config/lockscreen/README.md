@@ -6,7 +6,7 @@ Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 
 | File | Purpose |
 |---|---|
-| `lock.sh` | Invokes xsecurelock with the desired appearance (font, colors). Called directly by the AwesomeWM keybinding and by xidlehook on idle timeout. |
+| `lock.sh` | Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout. |
 | `dim.sh` | Gradually dims all connected displays to 20% brightness. Called by xidlehook at the first idle timer. |
 | `undim.sh` | Restores all connected displays to full brightness. Called by xidlehook as the canceller when activity resumes before the lock triggers. |
 
@@ -29,7 +29,7 @@ Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 
 ### Manual lock
 
-A keybinding in AwesomeWM (`Meta + Ctrl + L`) calls `lock.sh` directly.
+The rofi power menu (`~/.config/rofi/powermenu/`) calls `lock.sh` directly when the user picks `Lock`. It also calls `lock.sh` before issuing `systemctl suspend` / `hibernate` so the display is locked across a sleep cycle.
 
 ### Auto-lock on idle
 
@@ -66,10 +66,10 @@ xsecurelock renders a plain dark background with a minimal text prompt. No anima
 
 ## Testing
 
-1. **Manual lock** — press `Meta + Ctrl + L`. xsecurelock should appear immediately. Enter the wrong password: error text is shown. Enter the correct password: screen unlocks.
+1. **Manual lock** — open the power menu and select `Lock`. xsecurelock should appear immediately. Enter the wrong password: error text is shown. Enter the correct password: screen unlocks.
 2. **Idle dim** — leave the machine idle for 3 minutes. The screen should fade to 20% brightness. Move the mouse: brightness restores and the timer resets.
 3. **Idle lock** — leave the machine idle for 5 minutes without interrupting the dim. xsecurelock should appear at the 5-minute mark.
 4. **Fullscreen exemption** — open a fullscreen video and leave it idle for 10+ minutes. The screen should not dim or lock.
 5. **Audio-only** — play music with no fullscreen window. Leave idle for 5 minutes. The screen should still lock.
-6. **Per-machine disable** — set `LOCK_IDLE_DISABLE=1` in `~/.xprofile` and restart the session. Leave idle indefinitely: no auto-lock. The manual keybinding should still work.
+6. **Per-machine disable** — set `LOCK_IDLE_DISABLE=1` in `~/.xprofile` and restart the session. Leave idle indefinitely: no auto-lock. Manual lock via the power menu should still work.
 7. **Crash resilience** — while the screen is locked, restart AwesomeWM (`Meta + Ctrl + V`). The screen should remain locked.
