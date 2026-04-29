@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+# Rofi powermenu with a confirmation step for destructive actions
+
 dir="$HOME/.config/rofi/powermenu"
 lock="$HOME/.config/lockscreen/lock.sh"
 
@@ -37,7 +40,8 @@ run_action() {
 # share one rofi window (no flicker on transition). Rofi script mode has
 # no programmatic close, so the handler writes the chosen action to a
 # tempfile and SIGTERMs rofi (its own $PPID); the wrapper then runs it.
-if [ -z "$ROFI_RETV" ]; then
+if [ -z "$ROFI_RETV" ]
+then
     out=$(mktemp)
     trap 'rm -f "$out"' EXIT
 
@@ -66,7 +70,8 @@ case "$ROFI_RETV" in
                 kill "$PPID"
                 ;;
             *)
-                if [ "$1" = "Lock" ]; then
+                if [ "$1" = "Lock" ]
+                then
                     printf 'Lock' > "$POWERMENU_OUT"
                     kill "$PPID"
                 else
