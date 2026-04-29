@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Runs a fullscreen image slideshow in the background, preventing screen blanking
+
 DELAY_SEC=180
 
 if [[ "$#" -eq 0 ]]

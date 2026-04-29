@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Converts all .webp files in the current directory to .jpg
+
 for i in *.webp
 do
     name=`echo "$i" | cut -d'.' -f1`

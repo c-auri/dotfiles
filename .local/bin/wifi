@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Shows or toggles Wi-Fi radio state via nmcli
+
 case $1 in
     "on" | "off")
         nmcli radio wifi ${1}

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source ~/.local/lib/git-utils
+# Switches to a branch selected interactively with fzf
+
+source "$HOME/.local/bin/git-utils/git-lib"
 
 git branch -a |
     grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source $HOME/.local/lib/git-utils
+# Updates the default branch from remote without switching to it
+
+source "$HOME/.local/bin/git-utils/git-lib"
 
 default_branch=$(get_default_branch)
 if [[ "$(git branch --show-current)" == "$default_branch" ]]

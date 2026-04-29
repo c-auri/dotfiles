@@ -1,3 +1,5 @@
 #!/bin/bash
 
+# Fuzzy-searches files and opens the selected one in nvim
+
 fd --type f -H . | fzf --bind "enter:become(nvim {})" --preview "batcat --color always {} --style header,grid"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Switches to the default branch
+
+source "$HOME/.local/bin/git-utils/git-lib"
+
+git switch "$(get_default_branch)"

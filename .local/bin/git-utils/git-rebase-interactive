@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source $HOME/.local/lib/git-utils
+# Interactively rebases commits back to a given depth or the merge-base with the default branch
+
+source "$HOME/.local/bin/git-utils/git-lib"
 
 if [[ -n $1 ]]
 then

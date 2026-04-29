@@ -81,7 +81,7 @@ function __prepare_prompt
         dir="\[\e[1;97m\]$dir"
     fi
 
-    git=$(git status 2>/dev/null | $HOME/.local/lib/shorten-git-status)
+    git=$(git status 2>/dev/null | $HOME/.local/bin/git-utils/shorten-status)
     if [[ -n $git ]]
     then
         git="\[$(tput setaf 3)\][$git]"

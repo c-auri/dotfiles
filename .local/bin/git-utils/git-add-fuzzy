@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Stages files selected interactively from the working tree diff
+
 git status --short |
     grep -o '[^ ]*$' |
     fzf --multi --preview 'git diff --color=always -- {}' |

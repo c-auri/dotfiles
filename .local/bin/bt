@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Connects, disconnects, or lists known Bluetooth devices by short ID
+
 cmd=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
 declare -A id_to_mac

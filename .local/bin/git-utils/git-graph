@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Shows a compact graph of recent commits across all branches
+
+git log --graph --oneline --all -${1:-10}
