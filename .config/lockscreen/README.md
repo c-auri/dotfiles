@@ -9,6 +9,7 @@ Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 | `lock.sh` | Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout. |
 | `dim.sh` | Gradually dims all connected displays to 20% brightness. Called by xidlehook at the first idle timer. |
 | `undim.sh` | Restores all connected displays to full brightness. Called by xidlehook as the canceller when activity resumes before the lock triggers. |
+| `saver_solid` | Tiny xsecurelock saver module that paints its window a single solid color (`$SAVER_SOLID_COLOR`). Lets the area behind the auth dialog match the auth dialog's own background, since the bundled `saver_blank` is hardcoded to pure black. Python script using `ctypes` against `libX11.so.6` — no install or compile step. |
 
 
 ## Dependencies
@@ -62,7 +63,7 @@ The Gnome Display Manager (GDM) sources `~/.xprofile` before the session. If the
 
 ## Appearance
 
-xsecurelock renders a plain dark background with a minimal text prompt. No animations or ring indicator. Appearance is controlled via environment variables in `lock.sh`.
+xsecurelock renders a plain dark background with a minimal text prompt. No animations or ring indicator. Colors and font are set in `lock.sh` and follow the Kanagawa Dragon palette (see `~/.config/alacritty/kanagawa/dragon.toml`). The area behind the auth dialog is painted by `saver_solid` so it matches the dialog's own background — without it, the bundled saver leaves a pure-black surround that contrasts visibly with Dragon's `#181616`.
 
 ## Testing
 
