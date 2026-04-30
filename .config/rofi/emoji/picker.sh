@@ -12,6 +12,8 @@ selected=$(cat "$dir/recent.txt" "$dir/emojis.txt" 2>/dev/null | rofi -dmenu \
     -no-custom \
     -markup-rows \
     -scroll-method 1 \
+    -sort \
+    -sorting-method fzf \
     -theme "$dir/style.rasi")
 
 [ -z "$selected" ] && exit 0
