@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# shared library sourced by custom git commands, not meant to be invoked directly
+
 function get_remote
 {
     # if the repo has more than one remote, this is inaccurate
