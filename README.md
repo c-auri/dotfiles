@@ -48,7 +48,7 @@ sudo apt install \
     awesome xterm \
     rofi dunst xdotool xsecurelock \
     arandr lxappearance lxsession lxpolkit \
-    bat fd-find ripgrep tmux xclip jq \
+    fd-find ripgrep tmux xclip jq \
     gimp feh flameshot mpv vlc
 ```
 > [!IMPORTANT]
@@ -59,6 +59,8 @@ sudo apt install \
 - [alacritty](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
 - [neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) and [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
+- [delta](https://dandavison.github.io/delta/installation.html)
+- [bat](https://github.com/sharkdp/bat) (make sure version matches with delta instructions)
 - [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) (running the install script should be enough)
 - [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 - [vivify](https://github.com/jannis-baum/vivify)
