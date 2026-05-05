@@ -51,6 +51,9 @@ sudo apt install \
     fd-find ripgrep tmux xclip jq \
     gimp feh flameshot mpv vlc
 ```
+```bash
+sudo snap install yq
+```
 > [!IMPORTANT]
 > If all else fails, awesome defaults to xterm.
 > So better make sure it's always there, even if you intend to use a different terminal.
