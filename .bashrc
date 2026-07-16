@@ -190,8 +190,8 @@ alias gri='git ri'
 alias grc='git rc'
 alias grom='git rom'
 
-alias cdp='cd ~/projects/'
-alias cdr='cd $(git root)'
+cdp() { cd ~/projects/; }
+cdr() { cd $(git root); }
 
 ################################################################################
 ################################# DEVELOPMENT ##################################
