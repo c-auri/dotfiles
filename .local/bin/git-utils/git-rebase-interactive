@@ -8,7 +8,7 @@ if [[ -n $1 ]]
 then
     base="HEAD~$1"
 else
-    base="$(git merge-base HEAD "$(get_default_branch)")"
+    base="$(git merge-base HEAD "$(get_default_branch upstream)")"
 fi
 
 git rebase --interactive --autosquash "$base"
