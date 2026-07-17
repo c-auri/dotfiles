@@ -11,7 +11,7 @@ shopt -s checkwinsize
 shopt -s histappend
 HISTCONTROL=ignoreboth
 
-export EDITOR=vim
+export EDITOR=nvim
 export VISUAL=vim
 
 LESS="-R -i"
