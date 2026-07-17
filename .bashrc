@@ -179,16 +179,16 @@ alias gl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gsw='git switch'
+alias grc='git rebase --continue'
 
 # these are custom git aliases, see .gitconfig and .local/bin/git-utils
 alias gg='git graph'
-alias gaf='git af'
-alias gsf='git sf'
-alias gsm='git sm'
-alias gum='git um'
-alias gri='git ri'
-alias grc='git rc'
-alias grom='git rom'
+alias gaf='git add-fuzzy'
+alias gsf='git switch-fuzzy'
+alias gsm='git switch-to-main'
+alias gum='git update-main'
+alias gri='git rebase-interactive'
+alias grom='git rebase-origin-main'
 
 cdp() { cd ~/projects/; }
 cdr() { cd $(git root); }

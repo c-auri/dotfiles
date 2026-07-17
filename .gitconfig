@@ -12,12 +12,10 @@
 	co = checkout
 	sw = switch
 	cp = cherry-pick
+	pf = push --force-with-lease
 	unstage = restore --staged
 	amend = commit --amend
 	fixup = commit --fixup
-	pf = push --force-with-lease
-	graph = !git-graph
-	root = !git-root
 	sm = !git-switch-to-main
 	um = !git-update-main
 	sf = !git-switch-fuzzy
