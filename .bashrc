@@ -184,6 +184,7 @@ alias grc='git rebase --continue'
 # these are custom git aliases, see .gitconfig and .local/bin/git-utils
 alias gg='git graph'
 alias gaf='git add-fuzzy'
+alias gff='git fixup-fuzzy'
 alias gsf='git switch-fuzzy'
 alias gsm='git switch-to-main'
 alias gum='git update-main'

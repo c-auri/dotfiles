@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Creates a fixup commit targeting a commit selected interactively from the current branch
+
+source "$HOME/.local/bin/git-utils/git-lib"
+
+if git diff --cached --quiet
+then
+    echo "error: nothing staged" >&2
+    exit 1
+fi
+
+if [[ -n $1 ]]
+then
+    base="HEAD~$1"
+else
+    # compare against the remote tracking branch, not the local one; using the local branch
+    # name would make merge-base equal HEAD whenever we're on the default branch, even when
+    # there are unpushed commits worth targeting
+    merge_base="$(git merge-base HEAD "$(get_default_branch upstream 2>/dev/null)" 2>/dev/null)"
+    if [[ -z "$merge_base" || "$merge_base" == "$(git rev-parse HEAD)" ]]
+    then
+        base="HEAD~10"
+    else
+        base="$merge_base"
+    fi
+fi
+
+git log --oneline "$base"..HEAD |
+    fzf |
+    awk '{print $1}' |
+    xargs -r git commit --fixup  # -r: skip if fzf was cancelled (empty input)
