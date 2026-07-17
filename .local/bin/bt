@@ -42,3 +42,7 @@ then
 fi
 
 bluetoothctl connect ${id_to_mac[$cmd]} | tail -1
+if [[ $cmd == 'QC' ]]
+then
+    pactl set-card-profile bluez_card.E4_58_BC_3E_0D_E1 a2dp_sink
+fi
