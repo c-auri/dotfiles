@@ -3,7 +3,7 @@
 😂  joy <span foreground="#727169">(face with tears of joy)</span>
 😃  slight smile <span foreground="#727169">(smiling face with open mouth)</span>
 😄  laugh <span foreground="#727169">(smiling face with open mouth and smiling eyes)</span>
-😅  phew <span foreground="#727169">(smiling face with open mouth and cold sweat)</span>
+😅  phew, sweat smile <span foreground="#727169">(smiling face with open mouth and cold sweat)</span>
 😆  rofl <span foreground="#727169">(smiling face with open mouth and tightly-closed eyes)</span>
 😇  innocent <span foreground="#727169">(smiling face with halo)</span>
 😉  winking <span foreground="#727169">(winking face)</span>
