@@ -1,8 +1,9 @@
+# Aliases, functions, prompt, completions, shell options, third-party configs.
+# See Shell Startup Files in ~/.config/overview.md for context.
+
 ################################################################################
 ################################### CORE #######################################
 ################################################################################
-
-export XDG_CONFIG_HOME="$HOME/.config"
 
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && source /etc/bash_completion
 [[ -f $XDG_CONFIG_HOME/alacritty/completion ]] && source $XDG_CONFIG_HOME/alacritty/completion
@@ -24,7 +25,6 @@ export FZF_DEFAULT_OPTS='--layout reverse --style minimal --bind page-up:preview
 
 alias clip='xclip -selection clipboard'
 
-[[ -f $XDG_CONFIG_HOME/workrc ]] && source $XDG_CONFIG_HOME/workrc
 alias con='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/.git --work-tree=$HOME'
 alias sb='source ~/.bashrc'
 
@@ -38,7 +38,7 @@ function __prepare_prompt
     fresh_terminal=${1:-false}
 
     set_win_title=""
-    user="${WORK_USERNAME:-\[$(tput setaf 14)\]$(whoami)}\[$(tput setaf 8)\]:"
+    user="\[$(tput setaf ${USER_COLOR:-14})\]${USER_ALIAS:-$(whoami)}\[$(tput setaf 8)\]:"
     git_root=$(git-root 2>/dev/null)
 
     if [[ $PWD == $HOME ]]

@@ -1,5 +1,6 @@
 # dotfiles
-The configuration files for my operating system, currently Ubuntu 22.04. Managed using a bare git repository, for explanations see the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles) or this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM).
+The configuration files for my operating system, currently Ubuntu 22.04. Managed using a bare git repository, for explanations see the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles) or this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM). For a reference of what configs exist and why, see [`.config/overview.md`](.config/overview.md).
+
 
 ## Setting up the Repository
 1. Clone into your home directory as a bare repository:
@@ -37,6 +38,16 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
    [user]
        name = <git-user-name>
        email = <git-user-email>
+    ```
+
+1. Create `~/.config/profile.local` from the template and fill in your values:
+    ```bash
+   cp ~/.config/profile.local.template ~/.config/profile.local
+    ```
+
+1. Create `~/.config/profile.secrets` with your tokens/passwords:
+    ```bash
+   touch ~/.config/profile.secrets
     ```
 
 1. Restart terminal
@@ -78,3 +89,4 @@ Run `lxappearance` and select desired theme
 1. install [Firefox Color Extension](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)
 2. visit link to [custom theme](https://color.firefox.com/?theme=XQAAAAJ_AQAAAAAAAABBKYhm849SCia73laEGccwS-xMDPr1qJSHhuu4s9wMJLlJ9dAdxyHeE6nQeWdDnNzjA3gavA2wvQ_m7_lBdxtETuZvw3ss445xH-D8Zlnwg0tilN8DkBUCna7nTysJS7LuwKod9QJT53ou5ZBZ1kDi3K3mllfzIuqhNf8tVEKttOdqlEsXTBa_Db9C3ZKwkj-yAPH7x8-8UX7vdJgz90ODpINQ3fv_iufTf38dgIRa0hoxgo5E1hSb9bOM8_tWTSdIL8CY0ar9ZBsE)
 3. install [Stylus Extension](https://addons.mozilla.org/en-US/firefox/addon/styl-us/) and import custom themes defined in `.config/.stylus.json`
+
