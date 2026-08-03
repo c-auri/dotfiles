@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-git log --oneline "$(get_branch_base "$1")"..HEAD |
+git log --oneline "$(get_branch_range "$1")" |
     fzf |
     awk '{print $1}' |
     xargs -r git commit --fixup  # -r: skip if fzf was cancelled (empty input)

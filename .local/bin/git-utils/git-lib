@@ -15,16 +15,20 @@ function get_default_branch {
     [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }
 
-function get_branch_base
+function get_branch_range
 {
-    # start of the commit range that belongs to the current branch,
+    # revision range covering the commits that belong to the current branch,
     # for commands that operate on "my commits" rather than all history.
     # $1: optional commit count, overrides the merge-base default
-    local merge_base
+    local merge_base count
 
+    count=$(git rev-list --count HEAD)
+
+    # a base..HEAD range excludes the base, so reaching back to or past the root
+    # commit has to be expressed as plain HEAD, or the initial commit is dropped
     if [[ -n $1 ]]
     then
-        echo "HEAD~$1"
+        (( $1 >= count )) && echo HEAD || echo "HEAD~$1..HEAD"
         return
     fi
 
@@ -35,8 +39,8 @@ function get_branch_base
 
     if [[ -z "$merge_base" || "$merge_base" == "$(git rev-parse HEAD)" ]]
     then
-        echo "HEAD~10"
+        (( count <= 10 )) && echo HEAD || echo "HEAD~10..HEAD"
     else
-        echo "$merge_base"
+        echo "$merge_base..HEAD"
     fi
 }
