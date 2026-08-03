@@ -14,3 +14,29 @@ function get_default_branch {
     ref=$(git symbolic-ref --short "refs/remotes/$(get_remote)/HEAD")
     [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }
+
+function get_branch_base
+{
+    # start of the commit range that belongs to the current branch,
+    # for commands that operate on "my commits" rather than all history.
+    # $1: optional commit count, overrides the merge-base default
+    local merge_base
+
+    if [[ -n $1 ]]
+    then
+        echo "HEAD~$1"
+        return
+    fi
+
+    # compare against the remote tracking branch, not the local one; using the local branch
+    # name would make merge-base equal HEAD whenever we're on the default branch, even when
+    # there are unpushed commits worth targeting
+    merge_base="$(git merge-base HEAD "$(get_default_branch upstream 2>/dev/null)" 2>/dev/null)"
+
+    if [[ -z "$merge_base" || "$merge_base" == "$(git rev-parse HEAD)" ]]
+    then
+        echo "HEAD~10"
+    else
+        echo "$merge_base"
+    fi
+}
