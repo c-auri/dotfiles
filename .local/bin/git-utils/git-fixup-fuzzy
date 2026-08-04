@@ -11,6 +11,6 @@ then
 fi
 
 git log --oneline "$(get_branch_range "$1")" |
-    fzf |
+    fzf --preview 'git show --color=always {1}' |
     awk '{print $1}' |
     xargs -r git commit --fixup  # -r: skip if fzf was cancelled (empty input)
