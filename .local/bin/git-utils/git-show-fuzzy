@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Shows a commit selected interactively from the current branch
+
+source "$HOME/.local/bin/git-utils/git-lib"
+
+all=false
+count=
+
+for arg in "$@"
+do
+    if [[ "$arg" == "-a" ]]
+    then
+        all=true
+    else
+        count="$arg"
+    fi
+done
+
+if [[ -n $count ]]
+then
+    range="$(get_branch_range "$count")"
+elif [[ "$all" == true ]]
+then
+    range="HEAD"
+else
+    range="$(get_branch_range)"
+fi
+
+git log --oneline "$range" |
+    fzf --multi --preview 'git show --color=always {1}' |
+    awk '{print $1}' |
+    xargs -r git show

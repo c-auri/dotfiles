@@ -20,6 +20,7 @@
 	um = !git-update-main
 	sf = !git-switch-fuzzy
 	af = !git-add-fuzzy
+	wf = !git-show-fuzzy
 	ri = !git-rebase-interactive
 	rc = rebase --continue
 	rom = !git-rebase-origin-main
