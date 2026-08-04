@@ -28,6 +28,20 @@ function get_default_branch {
     [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }
 
+function get_changed_files
+{
+    # NUL-terminated paths from `git status`, one per changed file.
+    # Safe for filenames containing spaces or quotes,
+    # unlike parsing plain `git status` output with text tools.
+    # For a rename/copy, only the new path is listed.
+    git status --porcelain=v1 -z |
+        while IFS= read -r -d '' entry
+        do
+            printf '%s\0' "${entry:3}"
+            [[ "${entry:0:2}" == *[RC]* ]] && read -r -d '' _  # discard old path
+        done
+}
+
 function get_branch_range
 {
     # revision range covering the commits that belong to the current branch,
