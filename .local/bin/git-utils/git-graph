@@ -2,4 +2,19 @@
 
 # Shows a compact graph of recent commits across all branches
 
-git log --graph --oneline --all -${1:-10}
+
+if [[ "$1" == "-a" ]]
+then
+    git log --graph --oneline --all
+    exit 0
+fi
+
+count="${1:-10}"
+
+if ! [[ "$count" =~ ^[1-9][0-9]*$ ]]
+then
+    echo "error: expected a positive integer or -a, got '$count'" >&2
+    exit 1
+fi
+
+git log --graph --oneline --all -"$count"
