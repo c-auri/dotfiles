@@ -4,7 +4,41 @@
 
 source "$HOME/.local/bin/git-utils/git-lib"
 
-git branch -a |
-    grep -vP "\*|HEAD" | sed "s/remotes\/$(get_remote)\///" |
-    sort | uniq | fzf |
+# fzf's --preview subshell can't see functions sourced here, so this script
+# re-invokes itself to render the preview for a single branch.
+if [[ "$1" == "--preview" ]]
+then
+    branch="$2"
+    default="$(get_default_branch)"
+
+    # the list also holds remote-only branches with their remote prefix stripped,
+    # which don't resolve as-is
+    git rev-parse --verify --quiet "$branch" >/dev/null || branch="$(get_remote)/$branch"
+
+    behind=$(git rev-list --count "$branch".."$default" 2>/dev/null)
+
+    if [[ -z $behind || $behind -eq 0 ]]
+    then
+        git log --oneline --graph --decorate --color=always -15 "$branch"
+    elif (( behind <= 15 ))
+    then
+        git log --oneline --graph --decorate --color=always -15 "$branch" "$default"
+    elif git merge-base --is-ancestor "$branch" "$default"
+    then
+        echo "merged into $default, $default is $behind commits ahead"
+        echo "---"
+        git log --oneline --color=always -8 "$branch"
+        echo "..."
+        git log --oneline --color=always -4 "$default"
+    else
+        echo "diverged from $default, $default is $behind commits ahead"
+        echo "---"
+        git log --oneline --color=always -15 "$branch"
+    fi
+    exit 0
+fi
+
+git branch -a --format='%(refname:short)' |
+    sed "s/^$(get_remote)\///" |
+    sort | uniq | fzf --preview "$0 --preview {}" |
     xargs -r git switch
