@@ -3,6 +3,7 @@
 # Interactively rebases commits back to a given depth or the merge-base with the default branch
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 if [[ -n $1 ]]
 then

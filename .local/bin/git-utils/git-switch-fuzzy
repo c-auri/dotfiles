@@ -3,6 +3,7 @@
 # Switches to a branch selected interactively with fzf
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 # fzf's --preview subshell can't see functions sourced here, so this script
 # re-invokes itself to render the preview for a single branch.

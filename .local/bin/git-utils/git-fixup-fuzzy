@@ -3,6 +3,7 @@
 # Creates a fixup commit targeting a commit selected interactively from the current branch
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 if git diff --cached --quiet
 then

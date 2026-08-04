@@ -3,6 +3,7 @@
 # Updates the default branch from remote without switching to it
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 default_branch=$(get_default_branch)
 if [[ "$(git branch --show-current)" == "$default_branch" ]]

@@ -2,6 +2,9 @@
 
 # Stages files selected interactively from the working tree diff
 
+source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
+
 git status --short |
     grep -o '[^ ]*$' |
     fzf --multi --preview 'git diff --color=always -- {}' |

@@ -2,6 +2,19 @@
 
 # shared library sourced by custom git commands, not meant to be invoked directly
 
+function require_git_repo
+{
+    # fail fast and once, rather than letting every subsequent git call in
+    # the caller fail separately with its own copy of the same error
+    local err
+    err=$(git rev-parse --git-dir 2>&1 >/dev/null)
+    if [[ -n $err ]]
+    then
+        echo "$err" >&2
+        exit 1
+    fi
+}
+
 function get_remote
 {
     # if the repo has more than one remote, this is inaccurate

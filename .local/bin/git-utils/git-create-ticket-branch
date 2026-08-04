@@ -2,6 +2,9 @@
 
 # Create a new branch following the VPPGERMAB ticket naming convention
 
+source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
+
 prefix="feature"
 if [[ "$1" == "-b" || "$1" == "--bugfix" ]]
 then

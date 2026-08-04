@@ -3,6 +3,7 @@
 # Shows a commit selected interactively from the current branch
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 all=false
 count=

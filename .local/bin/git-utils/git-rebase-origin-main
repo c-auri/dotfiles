@@ -3,6 +3,7 @@
 # Fetches and rebases the current branch onto the upstream default branch
 
 source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
 
 git fetch
 git rebase "$(get_default_branch upstream)"
