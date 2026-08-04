@@ -5,6 +5,16 @@
 source "$HOME/.local/bin/git-utils/git-lib"
 require_git_repo
 
-get_changed_files |
-    fzf --read0 --print0 --multi --preview 'git diff --color=always -- {}' |
+files=$(mktemp)
+trap 'rm -f "$files"' EXIT
+
+get_changed_files > "$files"
+
+if [[ ! -s "$files" ]]
+then
+    echo "error: nothing to add" >&2
+    exit 1
+fi
+
+fzf --read0 --print0 --multi --preview 'git diff --color=always -- {}' < "$files" |
     xargs -0 -r git add

@@ -5,6 +5,12 @@
 source "$HOME/.local/bin/git-utils/git-lib"
 require_git_repo
 
+if ! git rev-parse --verify --quiet HEAD > /dev/null
+then
+    echo "error: no commits yet" >&2
+    exit 1
+fi
+
 all=false
 count=
 

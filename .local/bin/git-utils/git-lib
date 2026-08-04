@@ -38,8 +38,12 @@ function get_changed_files
         while IFS= read -r -d '' entry
         do
             printf '%s\0' "${entry:3}"
-            [[ "${entry:0:2}" == *[RC]* ]] && read -r -d '' _  # discard old path
+            if [[ "${entry:0:2}" == *[RC]* ]]
+            then
+                read -r -d '' _  # discard old path
+            fi
         done
+    true  # the loop's own exit status reflects its last entry, not success
 }
 
 function get_branch_range

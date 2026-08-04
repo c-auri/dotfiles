@@ -39,7 +39,13 @@ then
     exit 0
 fi
 
-git branch -a --format='%(refname:short)' |
-    sed "s/^$(get_remote)\///" |
-    sort | uniq | fzf --preview "$0 --preview {}" |
+branches=$(git branch -a --format='%(refname:short)' | sed "s/^$(get_remote)\///" | sort | uniq)
+
+if [[ -z $branches ]]
+then
+    echo "error: no branches exist yet" >&2
+    exit 1
+fi
+
+echo "$branches" | fzf --preview "$0 --preview {}" |
     xargs -r git switch
