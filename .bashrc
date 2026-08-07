@@ -135,8 +135,10 @@ alias ll='ls -l --git --no-user'
 alias lla='ll -a'
 alias lt='ls --tree --git-ignore'
 
+alias mkdir='mkdir -p'
 alias mv='mv -i'
 alias cp='cp -i'
+alias rm='rm -I --preserve-root'
 
 function mcd
 {
