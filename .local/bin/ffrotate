@@ -1,0 +1,251 @@
+#!/bin/bash
+
+# Rotate a video 90 degrees clockwise or counter-clockwise with ffmpeg.
+# Preview mode writes one still frame per direction, so you can see which way
+# is upright before committing to a full re-encode.
+#
+# Flags follow ffmpeg's own convention (single dash, multi-character names),
+# which means they cannot be bundled the way GNU short options can.
+
+set -euo pipefail
+
+prog=${0##*/}
+
+input=""
+direction=""
+preview=false
+output=""
+crf=18
+preset="slow"
+seek=5
+seek_given=false
+force=false
+
+# encode-only flags that were passed explicitly, so they can be rejected with -preview
+encode_opts=()
+
+function die
+{
+  echo "$prog: $1" >&2
+  exit "${2:-1}"
+}
+
+function usage
+{
+  cat <<EOF
+Usage:
+  $prog <input> -preview
+  $prog <input> (-cw | -ccw) [options]
+
+Preview writes <stem>-cw.png and <stem>-ccw.png so you can pick a direction by
+looking at them. The encode then writes <stem>-cw.<ext> or <stem>-ccw.<ext>
+next to the input, so the preview and its video share a name.
+
+Options:
+  -preview, -p   write both direction previews as PNG, then exit
+  -cw            rotate 90 degrees clockwise (transpose=1)
+  -ccw           rotate 90 degrees counter-clockwise (transpose=2)
+  -o FILE        output path (default <stem>-<cw|ccw>.<ext>)
+  -crf N         quality, lower is bigger and better (default $crf)
+  -preset NAME   x264 speed/size tradeoff (default $preset)
+  -ss SECONDS    timestamp to take the preview frames from (default $seek)
+  -force         overwrite an existing output file
+  -h, -help      show this help
+  --             end of options, the next argument is the input path
+
+Audio is copied rather than re-encoded. If the source audio codec is not legal
+in the target container (Vorbis going into MP4, say) ffmpeg will refuse: pass
+-o something.mkv, since Matroska accepts essentially any codec.
+EOF
+}
+
+function need_value
+{
+  # $1 = flag name, $2 = number of arguments still unparsed
+  [[ $2 -ge 2 ]] || die "$1 requires a value"
+}
+
+function run
+{
+  echo "+ $*" >&2
+  "$@"
+}
+
+while [[ $# -gt 0 ]]
+do
+  case "$1" in
+    -preview|-p)
+      preview=true
+      shift
+      ;;
+    -cw|-ccw)
+      # ${1#-} turns the flag itself into the direction name
+      [[ -z "$direction" || "$direction" == "${1#-}" ]] || die "-cw and -ccw are mutually exclusive"
+      direction="${1#-}"
+      shift
+      ;;
+    -o)
+      need_value "$1" $#
+      output="$2"
+      encode_opts+=("-o")
+      shift 2
+      ;;
+    -crf)
+      need_value "$1" $#
+      [[ "$2" =~ ^[0-9]+$ ]] || die "-crf needs a whole number, got '$2'"
+      crf="$2"
+      encode_opts+=("-crf")
+      shift 2
+      ;;
+    -preset)
+      need_value "$1" $#
+      preset="$2"
+      encode_opts+=("-preset")
+      shift 2
+      ;;
+    -ss)
+      need_value "$1" $#
+      [[ "$2" =~ ^[0-9]+([.][0-9]+)?$ ]] || die "-ss needs a number of seconds, got '$2'"
+      seek="$2"
+      seek_given=true
+      shift 2
+      ;;
+    -force)
+      force=true
+      encode_opts+=("-force")
+      shift
+      ;;
+    -h|-help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      [[ $# -eq 1 ]] || die "expected exactly one input path after --"
+      [[ -z "$input" ]] || die "only one input path is allowed"
+      input="$1"
+      shift
+      ;;
+    -*)
+      die "unknown option '$1' (see $prog -h)"
+      ;;
+    *)
+      [[ -z "$input" ]] || die "only one input path is allowed (got '$input' and '$1')"
+      input="$1"
+      shift
+      ;;
+  esac
+done
+
+command -v ffmpeg >/dev/null || die "ffmpeg not found on PATH" 2
+
+if [[ -z "$input" ]]
+then
+  usage >&2
+  exit 1
+fi
+
+[[ -e "$input" ]] || die "input not found: $input" 2
+[[ -f "$input" ]] || die "input is not a regular file: $input" 2
+[[ -r "$input" ]] || die "input is not readable: $input" 2
+
+if $preview
+then
+  [[ -z "$direction" ]] || die "-preview covers both directions, drop -$direction"
+  [[ ${#encode_opts[@]} -eq 0 ]] || die "${encode_opts[0]} has no effect with -preview"
+else
+  [[ -n "$direction" ]] || die "give -cw or -ccw to encode, or -preview to see both (see $prog -h)"
+  ! $seek_given || die "-ss only applies to -preview"
+fi
+
+dir_name=$(dirname -- "$input")
+base=$(basename -- "$input")
+stem="${base%.*}"
+ext="${base##*.}"
+
+# a name with no dot leaves stem and ext both equal to the whole basename
+if [[ "$stem" == "$base" ]]
+then
+  ext=""
+fi
+
+function sibling
+{
+  # $1 = direction suffix, $2 = extension; builds a path next to the input
+  if [[ "$dir_name" == "." ]]
+  then
+    echo "$stem-$1.$2"
+  else
+    echo "$dir_name/$stem-$1.$2"
+  fi
+}
+
+if $preview
+then
+  function grab_frame
+  {
+    # $1 = transpose value, $2 = output path
+    #
+    # Seeking past the end makes ffmpeg exit 0 having written nothing at all, so
+    # clear the target first: otherwise a stale PNG from an earlier run passes
+    # the check below and the failure goes unnoticed.
+    rm -f "$2"
+    run ffmpeg -hide_banner -loglevel error -ss "$seek" -i "$input" \
+      -vf "transpose=$1" -frames:v 1 -y "$2"
+    [[ -s "$2" ]] || die "no frame at -ss $seek, is that past the end of the video?" 2
+  }
+
+  cw_png=$(sibling cw png)
+  ccw_png=$(sibling ccw png)
+
+  grab_frame 1 "$cw_png"
+  grab_frame 2 "$ccw_png"
+
+  echo
+  echo "clockwise:         $cw_png"
+  echo "counter-clockwise: $ccw_png"
+  exit 0
+fi
+
+if [[ "$direction" == "cw" ]]
+then
+  transpose=1
+else
+  transpose=2
+fi
+
+if [[ -z "$output" ]]
+then
+  # libx264 has to land in a container that accepts it, so anything exotic becomes mp4
+  case "${ext,,}" in
+    mp4|mov|mkv) out_ext="$ext" ;;
+    *)           out_ext="mp4" ;;
+  esac
+  output=$(sibling "$direction" "$out_ext")
+fi
+
+[[ "$output" != "$input" ]] || die "output would overwrite the input"
+
+if [[ -e "$output" ]] && ! $force
+then
+  die "output already exists: $output (use -force to overwrite)"
+fi
+
+if $force
+then
+  clobber="-y"
+else
+  clobber="-n"
+fi
+
+run ffmpeg -hide_banner "$clobber" -i "$input" -vf "transpose=$transpose" \
+  -c:v libx264 -crf "$crf" -preset "$preset" -c:a copy "$output"
+
+echo
+if command -v ffprobe >/dev/null
+then
+  size=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$output")
+  echo "wrote $output (${size/,/x})"
+else
+  echo "wrote $output"
+fi
