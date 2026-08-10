@@ -28,6 +28,52 @@ function get_default_branch {
     [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
 }
 
+function print_graph_window
+{
+    # prints a fixed-size window of the combined graph for $1 and $2,
+    # centered on $1's line, with an up/down indicator when $2 falls
+    # outside the window
+    # $1: primary ref, the window centers on this ref's line
+    # $2: secondary ref, reported via the indicator if out of view
+    #     (pass "" to omit the indicator/secondary ref entirely)
+    # $3: window half-size -- lines shown above and below the primary ref
+    local primary="$1" secondary="$2" n="$3"
+    local primary_hash secondary_hash secondary_msg ref_display ahead behind script_dir
+
+    primary_hash="$(git rev-parse --short "$primary" 2>/dev/null)"
+
+    secondary_hash=""
+    if [[ -n "$secondary" ]]
+    then
+        secondary_hash="$(git rev-parse --short "$secondary" 2>/dev/null)"
+    fi
+
+    secondary_msg=""
+    if [[ -n "$secondary_hash" && "$secondary_hash" != "$primary_hash" ]]
+    then
+        read -r ahead behind < <(git rev-list --left-right --count "$primary...$secondary")
+
+        # bold red, matching git log --decorate's color.decorate.remoteBranch default
+        ref_display=$'\033[1;31m'"$secondary"$'\033[m'
+
+        if (( behind == 0 ))
+        then
+            secondary_msg="$ref_display [ahead $ahead]"
+        elif (( ahead == 0 ))
+        then
+            secondary_msg="$ref_display [behind $behind]"
+        else
+            secondary_msg="$ref_display [ahead $ahead, behind $behind]"
+        fi
+    fi
+
+    script_dir="$(dirname "${BASH_SOURCE[0]}")"
+
+    git log --graph --oneline --decorate --color=always "$primary" "$secondary" |
+        awk -f "$script_dir/extract-graph-window.awk" \
+            -v hash="$primary_hash" -v dhash="$secondary_hash" -v msg="$secondary_msg" -v n="$n"
+}
+
 function get_changed_files
 {
     # NUL-terminated paths from `git status`, one per changed file.

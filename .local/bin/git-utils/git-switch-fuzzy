@@ -10,32 +10,13 @@ require_git_repo
 if [[ "$1" == "--preview" ]]
 then
     branch="$2"
-    default="$(get_default_branch)"
+    default="$(get_default_branch upstream)"
 
     # the list also holds remote-only branches with their remote prefix stripped,
     # which don't resolve as-is
     git rev-parse --verify --quiet "$branch" >/dev/null || branch="$(get_remote)/$branch"
 
-    behind=$(git rev-list --count "$branch".."$default" 2>/dev/null)
-
-    if [[ -z $behind || $behind -eq 0 ]]
-    then
-        git log --oneline --graph --decorate --color=always -15 "$branch"
-    elif (( behind <= 15 ))
-    then
-        git log --oneline --graph --decorate --color=always -15 "$branch" "$default"
-    elif git merge-base --is-ancestor "$branch" "$default"
-    then
-        echo "merged into $default, $default is $behind commits ahead"
-        echo "---"
-        git log --oneline --color=always -8 "$branch"
-        echo "..."
-        git log --oneline --color=always -4 "$default"
-    else
-        echo "diverged from $default, $default is $behind commits ahead"
-        echo "---"
-        git log --oneline --color=always -15 "$branch"
-    fi
+    print_graph_window "$branch" "$default" 15
     exit 0
 fi
 
