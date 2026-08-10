@@ -2,6 +2,14 @@
 
 # Shows a compact graph of recent commits across all branches
 
+source "$HOME/.local/bin/git-utils/git-lib"
+require_git_repo
+
+if ! git rev-parse --verify --quiet HEAD > /dev/null
+then
+    echo "No commits yet."
+    exit 0
+fi
 
 if [[ "$1" == "-a" ]]
 then
