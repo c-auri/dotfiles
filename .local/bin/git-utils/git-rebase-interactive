@@ -9,7 +9,18 @@ if [[ -n $1 ]]
 then
     base="HEAD~$1"
 else
-    base="$(git merge-base HEAD "$(get_default_branch upstream)")"
+    # prefer the remote tracking ref; without a remote the local default branch
+    # is the only truth available, though that makes this a no-op while on it
+    default="$(get_default_branch upstream)"
+    default="${default:-$(get_default_branch)}"
+
+    if [[ -z "$default" ]]
+    then
+        echo "error: could not determine the default branch" >&2
+        exit 1
+    fi
+
+    base="$(git merge-base HEAD "$default")"
 fi
 
 git rebase --interactive --autosquash "$base"

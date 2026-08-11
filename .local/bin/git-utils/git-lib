@@ -22,10 +22,56 @@ function get_remote
     git remote | head -1
 }
 
-function get_default_branch {
-    local ref
-    ref=$(git symbolic-ref --short "refs/remotes/$(get_remote)/HEAD")
-    [[ "$1" == "upstream" ]] && echo $ref || echo ${ref##*/}
+function require_remote
+{
+    # fail fast and once with an actionable message, rather than letting the
+    # caller pass an empty ref into git and get a confusing error back.
+    # verifies the <remote>/HEAD symref too, since that's what identifies
+    # which branch is the default one
+    local remote
+    remote="$(get_remote)"
+
+    if [[ -z "$remote" ]]
+    then
+        echo "error: no remote configured" >&2
+        exit 1
+    fi
+
+    if ! git symbolic-ref --quiet "refs/remotes/$remote/HEAD" >/dev/null
+    then
+        echo "error: $remote/HEAD is not set, run: git remote set-head $remote -a" >&2
+        exit 1
+    fi
+}
+
+function get_default_branch
+{
+    # quiet, with a non-zero status when there's no answer -- callers that talk
+    # to the remote should call require_remote first, those that only need the
+    # name can rely on the local fallback, those that can do without should
+    # test the result for emptiness
+    # $1: "upstream" for the remote tracking ref, otherwise the short name
+    local remote ref name
+
+    remote="$(get_remote)"
+    [[ -n "$remote" ]] && ref=$(git symbolic-ref --short "refs/remotes/$remote/HEAD" 2>/dev/null)
+
+    if [[ -n "$ref" ]]
+    then
+        [[ "$1" == "upstream" ]] && echo "$ref" || echo "${ref##*/}"
+        return
+    fi
+
+    # no remote, or no <remote>/HEAD symref: there's no upstream ref to name,
+    # but the local default branch is still discoverable by convention
+    [[ "$1" == "upstream" ]] && return 1
+
+    for name in main master
+    do
+        git rev-parse --verify --quiet "refs/heads/$name" >/dev/null && echo "$name" && return
+    done
+
+    return 1
 }
 
 function print_graph_window
@@ -39,6 +85,7 @@ function print_graph_window
     # $3: window half-size -- lines shown above and below the primary ref
     local primary="$1" secondary="$2" n="$3"
     local primary_hash secondary_hash secondary_msg ref_display ahead behind script_dir
+    local refs=("$primary")
 
     primary_hash="$(git rev-parse --short "$primary" 2>/dev/null)"
 
@@ -46,6 +93,7 @@ function print_graph_window
     if [[ -n "$secondary" ]]
     then
         secondary_hash="$(git rev-parse --short "$secondary" 2>/dev/null)"
+        refs+=("$secondary")
     fi
 
     secondary_msg=""
@@ -69,7 +117,7 @@ function print_graph_window
 
     script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
-    git log --graph --oneline --decorate --color=always "$primary" "$secondary" |
+    git log --graph --oneline --decorate --color=always "${refs[@]}" |
         awk -f "$script_dir/extract-graph-window.awk" \
             -v hash="$primary_hash" -v dhash="$secondary_hash" -v msg="$secondary_msg" -v n="$n"
 }
@@ -112,7 +160,7 @@ function get_branch_range
     # compare against the remote tracking branch, not the local one; using the local branch
     # name would make merge-base equal HEAD whenever we're on the default branch, even when
     # there are unpushed commits worth targeting
-    merge_base="$(git merge-base HEAD "$(get_default_branch upstream 2>/dev/null)" 2>/dev/null)"
+    merge_base="$(git merge-base HEAD "$(get_default_branch upstream)" 2>/dev/null)"
 
     if [[ -z "$merge_base" || "$merge_base" == "$(git rev-parse HEAD)" ]]
     then

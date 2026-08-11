@@ -4,6 +4,7 @@
 
 source "$HOME/.local/bin/git-utils/git-lib"
 require_git_repo
+require_remote
 
 default_branch=$(get_default_branch)
 if [[ "$(git branch --show-current)" == "$default_branch" ]]

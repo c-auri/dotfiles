@@ -4,6 +4,7 @@
 
 source "$HOME/.local/bin/git-utils/git-lib"
 require_git_repo
+require_remote
 
 git fetch
 git rebase "$(get_default_branch upstream)"
