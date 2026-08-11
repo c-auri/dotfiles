@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Opens a file in mpv with a GUI fallback, no playlist looping, and keeps open after playback
+
+mpv --player-operation-mode=pseudo-gui --loop-playlist=no --keep-open $1
