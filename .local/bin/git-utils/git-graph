@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shows a compact graph of recent commits across all branches
+# Shows a window of the commit graph centered on the current branch
 
 source "$HOME/.local/bin/git-utils/git-lib"
 require_git_repo
@@ -17,12 +17,45 @@ then
     exit 0
 fi
 
-count="${1:-10}"
+n="${1:-10}"
 
-if ! [[ "$count" =~ ^[1-9][0-9]*$ ]]
+if ! [[ "$n" =~ ^[1-9][0-9]*$ ]]
 then
-    echo "error: expected a positive integer or -a, got '$count'" >&2
+    echo "error: expected a positive integer or -a, got '$n'" >&2
     exit 1
 fi
 
-git log --graph --oneline --all -"$count"
+default_ref="$(get_default_branch upstream)"
+head_hash="$(git rev-parse --short HEAD)"
+
+default_hash=""
+if [[ -n "$default_ref" ]]
+then
+    default_hash="$(git rev-parse --short "$default_ref" 2>/dev/null)"
+fi
+
+# report the relationship when default_ref falls outside the window
+default_msg=""
+if [[ -n "$default_hash" && "$default_hash" != "$head_hash" ]]
+then
+    read -r ahead behind < <(git rev-list --left-right --count "HEAD...$default_ref")
+
+    # bold red, matching git log --decorate's color.decorate.remoteBranch default
+    ref_display=$'\033[1;31m'"$default_ref"$'\033[m'
+
+    if (( behind == 0 ))
+    then
+        default_msg="$ref_display [ahead $ahead]"
+    elif (( ahead == 0 ))
+    then
+        default_msg="$ref_display [behind $behind]"
+    else
+        default_msg="$ref_display [ahead $ahead, behind $behind]"
+    fi
+fi
+
+script_dir="$(dirname "${BASH_SOURCE[0]}")"
+
+git log --graph --oneline --decorate --color=always HEAD "$default_ref" |
+    awk -f "$script_dir/extract-graph-window.awk" \
+        -v hash="$head_hash" -v dhash="$default_hash" -v msg="$default_msg" -v n="$n"
