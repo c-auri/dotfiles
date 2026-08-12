@@ -232,7 +232,7 @@ local globalkeys = gears.table.join(
 
 	-- Applications
 	awful.key({ meta }, "Return", function()
-		awful.spawn.with_shell("~/.config/rofi/launcher/launcher.sh")
+		awful.spawn.with_shell("rofi-launcher")
 	end, { description = "application launcher", group = "awesome: applications" }),
 	awful.key({ meta, ctrl }, "t", function()
 		awful.spawn(terminal .. " -e tmux-open-scratch")
@@ -244,11 +244,11 @@ local globalkeys = gears.table.join(
 		awful.spawn("flameshot gui")
 	end, { description = "take a screenshot", group = "awesome: applications" }),
 	awful.key({ meta }, ".", function()
-		awful.spawn.with_shell("~/.config/rofi/emoji/picker.sh")
+		awful.spawn.with_shell("rofi-emoji")
 	end, { description = "emoji picker", group = "awesome: applications" }),
 
 	awful.key({ meta, ctrl }, "Return", function()
-		awful.spawn.with_shell("~/.config/rofi/powermenu/powermenu.sh")
+		awful.spawn.with_shell("rofi-powermenu")
 	end, { description = "power menu", group = "awesome: applications" })
 )
 

@@ -1,4 +1,4 @@
-@import "~/.config/rofi/shared-style.rasi"
+@import "../shared-style.rasi"
 
 mainbox {
     padding: 35% 35% 16px 35%;

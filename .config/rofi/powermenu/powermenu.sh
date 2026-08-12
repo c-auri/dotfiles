@@ -2,7 +2,9 @@
 
 # Rofi powermenu with a confirmation step for destructive actions
 
-dir="$HOME/.config/rofi/powermenu"
+# Resolved through any symlink because rofi re-execs this file as a modi below.
+self="$(readlink -f "$0")"
+dir="$(dirname "$self")"
 lock="$HOME/.config/lockscreen/lock.sh"
 
 # No group separators: rofi 1.7.1's listview ignores per-row vertical
@@ -45,7 +47,7 @@ then
     out=$(mktemp)
     trap 'rm -f "$out"' EXIT
 
-    POWERMENU_OUT="$out" rofi -modi "powermenu:$0" -show powermenu \
+    POWERMENU_OUT="$out" rofi -modi "powermenu:$self" -show powermenu \
         -theme "$dir/style.rasi" \
         -p "❯" \
         -i \

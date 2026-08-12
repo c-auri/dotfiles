@@ -1,4 +1,4 @@
-@import "~/.config/rofi/colors/kanagawa-dragon.rasi"
+@import "colors/kanagawa-dragon.rasi"
 
 * {
     font: "Ubuntu Mono 13";

@@ -2,4 +2,6 @@
 
 # Opens a rofi application launcher
 
-rofi -show drun -theme "$HOME/.config/rofi/launcher/style.rasi"
+dir="$(dirname "$(readlink -f "$0")")"
+
+rofi -show drun -theme "$dir/style.rasi"

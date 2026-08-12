@@ -4,9 +4,20 @@
 
 ### Background
 
-The parenthetical name in each entry - the dimmed text shown in the picker and searchable by rofi - comes from the official Unicode character name, lowercased (e.g. via Python's `unicodedata.name()`). These names are frozen at the Unicode version when the character was standardized and use a verbose, mechanical naming convention from the early emoji era.
+The parenthetical name in each entry - searchable but no longer displayed, see the ranking design decision in README.md - comes from the official Unicode character name, lowercased (e.g. via Python's `unicodedata.name()`). These names are frozen at the Unicode version when the character was standardized and use a verbose, mechanical naming convention from the early emoji era.
 
-The Unicode Consortium also maintains CLDR annotations: a separate, editable set of names and keywords that are updated with each Unicode release and used by Emojipedia, iOS, Android, and most emoji keyboards. CLDR names are kept as short as natural language allows and revised when the Unicode name ages poorly.
+The Unicode Consortium also maintains CLDR, the Common Locale Data Repository. CLDR is the standard database of locale-specific data - date and number formats, translations, collation and pluralization rules - that most operating systems, browsers, and programming language standard libraries draw on. Unlike the Unicode character names, which are frozen forever once assigned, CLDR is revised with every release.
+
+The emoji portion of CLDR is its *annotations*: for each emoji, a short name plus a set of search keywords, in each supported language. This is the data behind the emoji pickers in iOS and Android and behind Emojipedia, which is why the names those show differ from the ones in this file.
+
+Two annotation fields matter here, both keyed by the emoji character itself. The one with `type="tts"` is the CLDR name, kept as short as natural language allows and rewritten when the Unicode name ages poorly. The untyped one is the keyword list:
+
+```xml
+<annotation cp="😂">crying | face | feels | funny | haha | happy | hehe | hilarious | joy | laugh | lmao | lol | rofl | roflmao | tear</annotation>
+<annotation cp="😂" type="tts">face with tears of joy</annotation>
+```
+
+The question below concerns only the name. The keywords are a larger change and are taken up separately in `cldr-upgrade.md`.
 
 Divergence is concentrated in the original Unicode 6.0 face block (U+1F600-U+1F64F). Examples:
 
@@ -21,12 +32,14 @@ Divergence is concentrated in the original Unicode 6.0 face block (U+1F600-U+1F6
 
 For emoji added after ~Unicode 10 the names are usually identical or close. Animals, food, objects, and symbols are largely unaffected.
 
-The source for CLDR names is `emoji-test.txt`, published by Unicode alongside each release. The name appears in the comment field:
+One source for CLDR names is `emoji-test.txt`, published by Unicode alongside each release. The name appears in the comment field:
 
 ```
 1F605  ; fully-qualified  # 😅 E0.6 grinning face with sweat
 1FAE0  ; fully-qualified  # 🫠 E14.0 melting face
 ```
+
+The CLDR annotations file (`common/annotations/en.xml`) is the richer source: it carries the same names in its `tts` field plus the keywords. If `cldr-upgrade.md` is implemented, that file is already being fetched and this question can be answered from it rather than from `emoji-test.txt`.
 
 ### Options
 

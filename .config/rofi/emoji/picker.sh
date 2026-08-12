@@ -2,7 +2,7 @@
 
 # Picks an emoji via rofi, copies it to clipboard, and types it into the focused window
 
-dir="$HOME/.config/rofi/emoji"
+dir="$(dirname "$(readlink -f "$0")")"
 
 focused=$(xdotool getactivewindow 2>/dev/null)
 

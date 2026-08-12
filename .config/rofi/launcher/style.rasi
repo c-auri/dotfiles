@@ -7,7 +7,7 @@ configuration {
     disable-history:     false;
 }
 
-@import "~/.config/rofi/shared-style.rasi"
+@import "../shared-style.rasi"
 
 entry {
     placeholder-color: @selected;
