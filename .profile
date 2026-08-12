@@ -4,7 +4,6 @@
 # See Shell Startup Files in ~/.config/overview.md for context.
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export LOCKSCREEN_CMD=lockscreen
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"

@@ -3,4 +3,5 @@
 # Profile drop-ins are machine-local by default, so that a stray `add -A`
 # cannot commit secrets. Context drop-ins that belong in a repo opt in below.
 .profiles/*.sh
+!.profiles/wm.sh
 !.profiles/work.sh
