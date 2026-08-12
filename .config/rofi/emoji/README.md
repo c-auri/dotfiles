@@ -8,7 +8,6 @@
 ~/.config/rofi/emoji/
 ├── picker.sh      # entry point
 ├── emojis.txt     # static hand-curated emoji list; edit directly to add or remove entries
-├── recent.txt     # auto-managed; up to 10 most recently used entries
 └── style.rasi     # emoji-specific overrides atop shared-style.rasi
 ```
 
@@ -19,9 +18,6 @@
 - Only listed entries can be selected (`-no-custom`); freeform text is not accepted
 - Selected emoji is copied to the X clipboard (`xclip -selection clipboard`)
 - Selected emoji is auto-typed into the window focused before the picker opened (`xdotool type --clearmodifiers`)
-- Recently used entries (up to 10) appear at the top of the list on subsequent opens
-- Picking an already-recent emoji moves it to position 1; no duplicates accumulate
-- `recent.txt` is updated atomically (write to `.tmp`, then `mv`)
 - Escape or selecting nothing exits cleanly with no clipboard or focus side-effects
 
 ## Visual
@@ -32,7 +28,7 @@
 
 ## Emoji List Format
 
-Each line in `emojis.txt` and `recent.txt` follows this pattern:
+Each line in `emojis.txt` follows this pattern:
 
 ```
 <emoji>  <short-name> <span foreground="#727169">(<full unicode name>)</span>
@@ -51,12 +47,11 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 ## picker.sh Logic
 
 1. Capture the currently focused window ID via xdotool (before rofi steals focus)
-2. Feed `recent.txt` then `emojis.txt` into rofi -dmenu
+2. Feed `emojis.txt` into rofi -dmenu
 3. If nothing selected → exit 0
 4. Extract emoji character (first whitespace-delimited field of the selected line)
-5. Prepend selected line to `recent.txt`; deduplicate; keep top 10; write atomically
-6. Copy emoji to clipboard via xclip
-7. Refocus the previously focused window and type the emoji via xdotool
+5. Copy emoji to clipboard via xclip
+6. Refocus the previously focused window and type the emoji via xdotool
 
 ## Theme Overrides
 
@@ -80,8 +75,6 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 
 **Clipboard copy as fallback.** `xclip -selection clipboard` runs before `xdotool type`, so even if `xdotool` fails (e.g. the target window closed), the emoji is still in the clipboard for a manual paste.
 
-**Atomic `recent.txt` update.** Writing to `recent.tmp` then `mv`-ing prevents a partial write from corrupting the recent list.
-
 ## Testing
 
 - Press `Meta + .`: rofi opens fullscreen showing the emoji list
@@ -92,10 +85,6 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 - Check clipboard after selection: emoji is present (`xclip -o -selection clipboard`)
 - Press `Escape`: rofi closes; nothing is typed; clipboard unchanged
 - Type a string that matches nothing, press Enter: not possible — Enter on an empty list does nothing
-- Pick any emoji, reopen picker: that emoji appears at the top of the list
-- Pick the same emoji again: it stays at position 1; `recent.txt` has no duplicates
-- Pick 11 distinct emojis: `wc -l ~/.config/rofi/emoji/recent.txt` outputs `10`
-- Inspect `recent.txt`: lines follow the full `emoji  short-name <span...>` format
 - Window fills entire screen
 - 20 rows visible
 - Each row shows emoji glyph + short name in light text + full name in muted gray

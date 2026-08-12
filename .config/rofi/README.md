@@ -19,7 +19,6 @@ Both tools share a palette file and a base theme:
 └── emoji/
     ├── picker.sh
     ├── emojis.txt
-    ├── recent.txt
     └── style.rasi
 ```
 

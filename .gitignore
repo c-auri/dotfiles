@@ -4,5 +4,3 @@
 # cannot commit secrets. Context drop-ins that belong in a repo opt in below.
 .profiles/*.sh
 !.profiles/work.sh
-
-.config/rofi/emoji/recent.txt

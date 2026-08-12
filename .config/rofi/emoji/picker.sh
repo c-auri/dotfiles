@@ -6,7 +6,7 @@ dir="$HOME/.config/rofi/emoji"
 
 focused=$(xdotool getactivewindow 2>/dev/null)
 
-selected=$(cat "$dir/recent.txt" "$dir/emojis.txt" 2>/dev/null | rofi -dmenu \
+selected=$(rofi -dmenu \
     -p "❯" \
     -i \
     -no-custom \
@@ -14,14 +14,11 @@ selected=$(cat "$dir/recent.txt" "$dir/emojis.txt" 2>/dev/null | rofi -dmenu \
     -scroll-method 1 \
     -sort \
     -sorting-method fzf \
-    -theme "$dir/style.rasi")
+    -theme "$dir/style.rasi" < "$dir/emojis.txt")
 
 [ -z "$selected" ] && exit 0
 
 emoji=$(printf '%s' "$selected" | awk '{print $1}')
-
-{ echo "$selected"; grep -vxF "$selected" "$dir/recent.txt" 2>/dev/null; } | head -10 > "$dir/recent.tmp"
-mv "$dir/recent.tmp" "$dir/recent.txt"
 
 printf '%s' "$emoji" | xclip -selection clipboard
 
