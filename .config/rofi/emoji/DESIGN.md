@@ -32,7 +32,7 @@ The source for CLDR names is `emoji-test.txt`, published by Unicode alongside ea
 
 **Option A - replace parenthetical with CLDR name**
 
-Swap the Unicode char name in the `<span>` for the CLDR name. Short aliases (manually curated) are untouched. Entries that currently have no span and use the Unicode name directly would be updated in place.
+Swap the Unicode char name in the parenthetical for the CLDR name. Short aliases (manually curated) are untouched. Entries that currently have no parenthetical and use the Unicode name directly would be updated in place.
 
 Pros: parentheticals match Emojipedia; searching "steam", "melt", "sweat" starts working.
 Cons: a handful of Unicode names contain keywords the CLDR name dropped (e.g. "triumph" in 😤, "tightly-closed" in 😆). These search terms would be silently lost unless the short alias is updated to compensate.
@@ -46,10 +46,10 @@ Cons: visually noisy; many entries would show nearly identical duplicated text.
 
 **Option C - replace short alias with CLDR name, leave parenthetical alone**
 
-Set the short alias to the CLDR name for all entries that currently have no separate alias (i.e. those without a `<span>`). Leave manually curated aliases and existing spans untouched.
+Set the short alias to the CLDR name for all entries that currently have no separate alias (i.e. those without a parenthetical). Leave manually curated aliases and existing parentheticals untouched.
 
 Pros: purely additive; touches only entries without a custom alias.
-Cons: for the face block, the CLDR names are not shorter than the Unicode names, so the "alias" provides no real shortening. Also doesn't fix the already-spanned entries.
+Cons: for the face block, the CLDR names are not shorter than the Unicode names, so the "alias" provides no real shortening. Also doesn't fix the entries that already have a parenthetical.
 
 ### Recommendation
 
@@ -124,9 +124,9 @@ Steps:
    ```
    🫠  melting face
    ```
-   No `<span>`, no separate short alias - the CLDR name is used directly as the only label. The user can later promote an entry to the alias form if desired:
+   No parenthetical, no separate short alias - the CLDR name is used directly as the only label. The user can later promote an entry to the alias form if desired:
    ```
-   🫠  melt <span foreground="#727169">(melting face)</span>
+   🫠  melt (melting face)
    ```
 1. **Insert** into `emojis.txt`: new entries go at the end of the block that corresponds to their `subgroup` from `emoji-test.txt`. The script matches subgroups to existing runs of emoji in `emojis.txt` by scanning for nearby codepoints in the same Unicode range. If no match is found, the entry is appended at the end of the file.
 1. **Report** what was added: print a list of new entries so the user can review them and decide whether any short aliases are worth setting.

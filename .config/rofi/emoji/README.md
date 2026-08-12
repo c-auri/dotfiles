@@ -15,6 +15,7 @@
 
 - Opens rofi in `-dmenu` mode — searchable list, not an app launcher
 - Case-insensitive fuzzy search across both the short name and the full Unicode name
+- Short-name matches always rank above full-name matches; see the ranking design decision below
 - Only listed entries can be selected (`-no-custom`); freeform text is not accepted
 - Selected emoji is copied to the X clipboard (`xclip -selection clipboard`)
 - Selected emoji is auto-typed into the window focused before the picker opened (`xdotool type --clearmodifiers`)
@@ -24,30 +25,32 @@
 
 - Single column, 20 visible rows, continuous scroll (`-scroll-method 1`)
 - Mainbox padding `35% 35% 16px 35%` — less bottom space than the default to allow for a longer content list
-- Rows use Pango markup (`-markup-rows`): short name in foreground color, full Unicode name dimmed in `#727169`
+- Each row shows the emoji glyph and one name; the full Unicode name is searchable but not displayed
 
 ## Emoji List Format
 
 Each line in `emojis.txt` follows this pattern:
 
 ```
-<emoji>  <short-name> <span foreground="#727169">(<full unicode name>)</span>
+<emoji>  <short-name> (<full unicode name>)
 ```
 
 Example:
 ```
-😀  grinning <span foreground="#727169">(grinning face)</span>
-😂  joy <span foreground="#727169">(face with tears of joy)</span>
+😀  grinning (grinning face)
+😂  joy (face with tears of joy)
 ```
 
-Two spaces separate the emoji character from the name fields. The short name is a concise, searchable keyword (e.g. `joy`, `cool`, `winking`). The full Unicode name is parenthesized and rendered in muted gray (`#727169`, kanagawa `fujiGray`). Both names are searched by rofi's fuzzy filter. `emojis.txt` is static — edit it manually to add or remove entries; do not regenerate it from `unicodedata`, which would overwrite the hand-chosen short names.
+Two spaces separate the emoji character from the name fields. The short name is a concise, searchable keyword (e.g. `joy`, `cool`, `winking`). The parenthesized full Unicode name is optional and only present where a curated short name replaces it: 437 of 2075 entries have one, the rest display their Unicode name directly. Both names are searched. `emojis.txt` is static — edit it manually to add or remove entries; do not regenerate it from `unicodedata`, which would overwrite the hand-chosen short names.
 
-The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by taking the first whitespace-delimited field; the markup in the remaining fields is ignored.
+`picker.sh` rewrites the trailing `(full unicode name)` into rofi's dmenu meta field before piping the list in, so the parenthetical is never displayed. Write it plainly in `emojis.txt`; the encoding is the script's job.
+
+The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by taking the first whitespace-delimited field. rofi echoes back the displayed text, not the meta field, so the extraction is unaffected.
 
 ## picker.sh Logic
 
 1. Capture the currently focused window ID via xdotool (before rofi steals focus)
-2. Feed `emojis.txt` into rofi -dmenu
+2. Rewrite each trailing `(full unicode name)` into a dmenu meta field, then feed the result into rofi -dmenu
 3. If nothing selected → exit 0
 4. Extract emoji character (first whitespace-delimited field of the selected line)
 5. Copy emoji to clipboard via xclip
@@ -63,7 +66,17 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 
 ## Key Design Decisions
 
-**`-markup-rows` + Pango `<span>` in `emojis.txt`.** Allows the full Unicode name to be rendered in a dimmed color without a second UI column. Both names remain in the same string rofi searches, so fuzzy matching covers both. The emoji extraction still works because `awk '{print $1}'` only cares about the first whitespace field.
+**Full Unicode name lives in rofi's meta field, not in the row text.** This is what makes short-name matches win, and it is why the parenthetical is no longer displayed.
+
+rofi's fzf scorer (`rofi_scorer_fuzzy_evaluate` in `source/helper.c`) charges `GAP_SCORE` (5 points) for every character *after* the match but only `LEADING_GAP_SCORE` (4 points) for every character before it. A match late in a row therefore scores better than a match early in it, and a shorter row beats a longer one. Because rofi scores the exact string it renders, a visible full Unicode name dragged its own short name down: searching `happy` returned 🙋 raising hand before 😊 happy, and `bat` returned 🛀 bath before 🦇 bat.
+
+Measured over all 2049 distinct short names, the row whose short name equals the query failed to rank first in 97 cases. Only 5 were a parenthetical outranking a short name; the other 92 were one short name outranking another, both driven by the same trailing penalty.
+
+Every layout that keeps the parenthetical visible was measured and rejected: `-no-sort` (166 failures), no-op Pango tags woven through the parenthetical to inflate its gap cost (98-101, backfires because the tags lengthen the row and the trailing penalty outweighs the gap penalty), parenthetical first with the short name last (96), and a hypothetical rofi patched to drop the trailing penalty (79). Moving the full name to meta gives 0.
+
+Meta works because rofi consults it only when the visible row text fails to match (`dmenu_token_match`) and never scores it (scoring goes through `mode_get_completion`). Full-name-only matches are therefore scored as non-matches and sort below every short-name match. Upstream rofi does not help: it adds a per-row `display` field, but `dmenu_get_completion_data` prefers that field for scoring too, and the scorer constants are unchanged.
+
+**No `-markup-rows`.** With the full name out of the row text there is nothing left to dim, so rows are plain text. This also removes a `pango_parse_markup` call per row per keystroke, and makes `&` and `<` in a name safe rather than a parse error that would silently drop the row.
 
 **`-scroll-method 1` (continuous scroll).** Replaces the default page-jump scroll. With 20 lines visible and a potentially long list, this gives smoother navigation.
 
@@ -81,12 +94,14 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 - Type `joy`: list filters to entries containing "joy"
 - Type `JOY`: same results (case-insensitive)
 - Type part of a full Unicode name (e.g. `tears`): entries whose full name contains "tears" appear
+- Type `happy`: 😊 happy ranks first, 🙋 raising hand second
+- Type `bat`: 🦇 bat ranks first, 🛀 bath second
 - Select an emoji with Enter: rofi closes; emoji appears in the previously focused window
 - Check clipboard after selection: emoji is present (`xclip -o -selection clipboard`)
 - Press `Escape`: rofi closes; nothing is typed; clipboard unchanged
 - Type a string that matches nothing, press Enter: not possible — Enter on an empty list does nothing
 - Window fills entire screen
 - 20 rows visible
-- Each row shows emoji glyph + short name in light text + full name in muted gray
+- Each row shows emoji glyph + one name, with no parenthetical and no dimmed text
 - Scrolling is continuous, not page-jumping
 - Colors match the launcher exactly
