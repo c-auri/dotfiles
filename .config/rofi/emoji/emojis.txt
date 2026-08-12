@@ -1005,7 +1005,7 @@
 🤪  zany <span foreground="#727169">(grinning face with one large and one small eye)</span>
 🤫  shushing <span foreground="#727169">(face with finger covering closed lips)</span>
 🤬  cursing <span foreground="#727169">(serious face with symbols covering mouth)</span>
-🤭  hand over mouth <span foreground="#727169">(smiling face with smiling eyes and hand covering mouth)</span>
+🤭  giggle <span foreground="#727169">(smiling face with smiling eyes and hand covering mouth)</span>
 🤮  face with open mouth vomiting
 🤯  mindblown <span foreground="#727169">(shocked face with exploding head)</span>
 🤰  pregnant woman
