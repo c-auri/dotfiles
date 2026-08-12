@@ -5,20 +5,30 @@
 # Resolved through any symlink because rofi re-execs this file as a modi below.
 self="$(readlink -f "$0")"
 dir="$(dirname "$self")"
-lock="$HOME/.config/lockscreen/lock.sh"
+
+# The locker is named by $LOCKSCREEN_CMD, with no default: this menu makes no
+# guess about where a lock script lives. command -v accepts both an absolute
+# path and a bare name on PATH.
+lock_available() {
+    [ -n "$LOCKSCREEN_CMD" ] && command -v -- "$LOCKSCREEN_CMD" >/dev/null 2>&1
+}
 
 # No group separators: rofi 1.7.1's listview ignores per-row vertical
 # margin/padding/border (verified with `fixed-height: false` and a debug bg
 # color via `element normal.urgent`), and `nonselectable` rows are still
 # walked by arrow navigation. Flat list is the available trade-off.
+#
+# The three actions that lock are omitted entirely when no locker is
+# configured, rather than offered and then refused.
 main_menu() {
     printf '\0prompt\x1f❯\n'
-    printf 'Lock\n'
+    lock_available && printf 'Lock\n'
     printf 'Shut down\n'
     printf 'Reboot\n'
     printf 'Log out\n'
-    printf 'Suspend\n'
-    printf 'Hibernate\n'
+    lock_available && printf 'Suspend\nHibernate\n'
+
+    return 0
 }
 
 confirm_menu() {
@@ -26,12 +36,15 @@ confirm_menu() {
     printf '%s\0info\x1fconfirm:%s\n' "$1" "$1"
 }
 
+# The guards are unreachable through the menu, which never offers these
+# actions without a locker. They cover the locker disappearing mid-session,
+# where the alternative is sleeping an unlocked display.
 run_action() {
     case "$1" in
-        "Lock")       "$lock" ;;
+        "Lock")       lock_available || return; "$LOCKSCREEN_CMD" ;;
         # Sleep gives the locker time to grab the display before suspending.
-        "Suspend")    "$lock" & sleep 0.5; systemctl suspend ;;
-        "Hibernate")  "$lock" & sleep 0.5; systemctl hibernate ;;
+        "Suspend")    lock_available || return; "$LOCKSCREEN_CMD" & sleep 0.5; systemctl suspend ;;
+        "Hibernate")  lock_available || return; "$LOCKSCREEN_CMD" & sleep 0.5; systemctl hibernate ;;
         "Shut down")  systemctl poweroff ;;
         "Reboot")     systemctl reboot ;;
         "Log out")    awesome-client 'awesome.quit()' ;;

@@ -14,7 +14,7 @@ ln -sf <dir>/powermenu/powermenu.sh ~/.local/bin/rofi-powermenu
 
 Callers invoke the bare names, so nothing outside this repo hardcodes its location.
 
-Requires `rofi` (developed against 1.7.1). The emoji picker additionally needs `xdotool` and `xclip`; the power menu needs `systemctl`, `awesome-client`, and a lock script at `~/.config/lockscreen/lock.sh`.
+Requires `rofi` (developed against 1.7.1). The emoji picker additionally needs `xdotool` and `xclip`. The power menu needs `systemctl`, `awesome-client`, and a lock script named by the `LOCKSCREEN_CMD` environment variable; see `powermenu/README.md` for how to set it.
 
 ## Shared Design
 
