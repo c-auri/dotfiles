@@ -15,9 +15,9 @@ then
     run xidlehook \
         --not-when-fullscreen \
         --timer 180 \
-            "$HOME/.config/lockscreen/dim.sh" \
-            "$HOME/.config/lockscreen/undim.sh" \
+            "lockscreen-dim" \
+            "lockscreen-undim" \
         --timer 120 \
-            "$HOME/.config/lockscreen/undim.sh && $HOME/.config/lockscreen/lock.sh" \
+            "lockscreen-undim && lockscreen" \
             ""
 fi

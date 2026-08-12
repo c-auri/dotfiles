@@ -2,6 +2,18 @@
 
 Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 
+## Layout
+
+The scripts live in `~/.local/share/lockscreen/` as one unit, because `lock.sh` needs `saver_solid` sitting next to it. The three entry points are reachable as commands through symlinks in `~/.local/bin`, which are tracked in this repo and therefore created by the checkout; no install step:
+
+```
+lockscreen        -> ~/.local/share/lockscreen/lock.sh
+lockscreen-dim    -> ~/.local/share/lockscreen/dim.sh
+lockscreen-undim  -> ~/.local/share/lockscreen/undim.sh
+```
+
+`lock.sh` resolves its own directory with `readlink -f`, so `saver_solid` is found through the symlink as well as by direct call. Callers use the bare names and hold no paths.
+
 ## Files
 
 - `lock.sh`: Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout.
@@ -27,7 +39,14 @@ Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 
 ### Manual lock
 
-The rofi power menu (`~/.config/rofi/powermenu/`) calls `lock.sh` directly when the user picks `Lock`. It also calls `lock.sh` before issuing `systemctl suspend` / `hibernate` so the display is locked across a sleep cycle.
+The rofi power menu runs whatever `LOCKSCREEN_CMD` names when the user picks `Lock`, and runs it again before issuing `systemctl suspend` / `hibernate` so the display is locked across a sleep cycle. It ships no default, and hides those three actions when the variable is unset, so it has to be exported where the graphical session sees it:
+
+```sh
+# ~/.profile
+export LOCKSCREEN_CMD="lockscreen"
+```
+
+The change takes effect at the next login, not on an AwesomeWM restart.
 
 ### Auto-lock on idle
 

@@ -2,7 +2,9 @@
 
 # Colors below are from the Kanagawa Dragon theme
 # (see ~/.config/alacritty/kanagawa/dragon.toml).
-DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
+# Resolved through any symlink: the entry point is symlinked onto PATH, while
+# saver_solid sits next to this file rather than next to the symlink.
+DIR="$(dirname -- "$(readlink -f -- "$0")")"
 SAVER_SOLID_COLOR='#181616' \
 XSECURELOCK_SAVER="$DIR/saver_solid" \
 XSECURELOCK_FONT="Ubuntu Mono" \
