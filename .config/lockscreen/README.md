@@ -4,13 +4,10 @@ Scripts that implement screen locking and idle-based auto-lock for AwesomeWM.
 
 ## Files
 
-| File | Purpose |
-|---|---|
-| `lock.sh` | Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout. |
-| `dim.sh` | Gradually dims all connected displays to 20% brightness. Called by xidlehook at the first idle timer. |
-| `undim.sh` | Restores all connected displays to full brightness. Called by xidlehook as the canceller when activity resumes before the lock triggers. |
-| `saver_solid` | Tiny xsecurelock saver module that paints its window a single solid color (`$SAVER_SOLID_COLOR`). Lets the area behind the auth dialog match the auth dialog's own background, since the bundled `saver_blank` is hardcoded to pure black. Python script using `ctypes` against `libX11.so.6` — no install or compile step. |
-
+- `lock.sh`: Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout.
+- `dim.sh`: Gradually dims all connected displays to 20% brightness. Called by xidlehook at the first idle timer.
+- `undim.sh`: Restores all connected displays to full brightness. Called by xidlehook as the canceller when activity resumes before the lock triggers.
+- `saver_solid`: Tiny xsecurelock saver module that paints its window a single solid color (`$SAVER_SOLID_COLOR`). Lets the area behind the auth dialog match the auth dialog's own background, since the bundled `saver_blank` is hardcoded to pure black. Python script using `ctypes` against `libX11.so.6` — no install or compile step.
 
 ## Dependencies
 
