@@ -1,6 +1,4 @@
-# Scripting Conventions
-
-## Philosophy
+# Code Conventions
 
 Prioritize portability and simplicity over raw performance, scripts should generally run without a build step. Rewrite for performance when it becomes a bottleneck, not before. The primary target are recent Ubuntu systems, compatibility with other Unix-like systems is nice to have but not a must.
 
@@ -43,21 +41,15 @@ if [[ $? -eq 0 ]]; then
 fi
 ```
 
-### Comments
-
-- Explain the *why* behind important decisions
-- Explain non-obvious *what*: if terse shell syntax isn't immediately clear to someone unfamiliar with it, explain it
-  - For complex regexes: include explanation and examples
-  - For abbreviation-heavy arguments: clarify what they do
-
 ### Error Handling
 
 - Fail fast; don't continue after a fatal error
 - No exit code specification yet; add as needed
 
 
-## README Style
+## Documentation
 
+### READMEs
 - Individual components should have a README close to the relevant code
 - Short and focused
 - Include: 
@@ -73,3 +65,8 @@ fi
 - Leave no open decisions; document what you've decided
 - Explanations for implementation details go in code comments, not the README
 
+### Comments
+- Explain the *why* behind important decisions
+- Explain non-obvious *what*: if terse shell syntax isn't immediately clear to someone unfamiliar with it, explain it
+  - For complex regexes: include explanation and examples
+  - For abbreviation-heavy arguments: clarify what they do

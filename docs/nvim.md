@@ -12,24 +12,20 @@ Markdown should read like a document rather than like code: a comfortable measur
 
 ### Division of labor
 
-No single plugin provides that; four pieces each contribute one part, which is easy to misattribute later.
+No single plugin provides that; four pieces each contribute one part:
 
-- **[zen-mode.nvim](../.config/nvim/lua/custom/plugins/prose.lua)** in `prose.lua` gives the measure and the centering, and nothing else. It opens the buffer in a centered floating window of `width = 100`, and touches neither `wrap`, `textwidth`, `linebreak`, nor any mapping.
+- **[zen-mode.nvim](../.config/nvim/lua/custom/plugins/prose.lua)** in `prose.lua` gives the measure and the centering, and nothing else. It opens the buffer in a centered floating fixed-width window, and touches neither `wrap`, `textwidth`, `linebreak`, nor any mapping.
 - **[vim-pencil](../.config/nvim/lua/custom/plugins/prose.lua)** in `prose.lua` gives soft wrap (`wrap` + `linebreak`, `textwidth = 0`) and the display-line cursor movement, remapping `j`→`gj` and `k`→`gk` gated on `b:pencil_wrap_mode` (`pencil.vim:414-424`). A `FileType` autocmd enables it for markdown.
 - **`breakindent`** in [`init.lua:21`](../.config/nvim/init.lua) keeps the indentation of wrapped lines, which is what keeps wrapped list items and block quotes readable.
 - **[render-markdown.nvim](../.config/nvim/lua/custom/plugins/markdown.lua)** in `markdown.lua` does in-buffer prettifying only: heading icons and per-level backgrounds, `•` bullets, `□`/`✔` checkboxes, thin code-block borders, GitHub callouts.
 
-The practical consequence: **the cursor behaviour is pencil's, not zen-mode's**, so it is already active in a plain markdown buffer and does not change when toggling zen mode off. Only the width and the centering come and go.
-
 [vivify.vim](../.config/nvim/lua/custom/plugins/markdown.lua) handles browser preview, and replaced markdown-preview.nvim. Its config lives in [`.config/vivify/`](../.config/vivify).
-
-Effective state measured in a markdown buffer: `wrap=true linebreak=true textwidth=0 breakindent=true conceallevel=3 pencil_wrap_mode=2`.
 
 ### Deliberate decisions
 
-**Soft wrap, never hard breaks.** Pencil runs in soft mode (`pencil#wrapModeDefault = 'soft'`), so nothing is ever written into the file to achieve wrapping and `textwidth` stays `0`. A paragraph remains one long line on disk. This is the same reason prose in this repository is not hand-wrapped: wrapping is a property of how text is displayed, not of the text.
+**Soft wrap, never hard breaks.** Pencil runs in soft mode (`pencil#wrapModeDefault = 'soft'`), so nothing is ever written into the file to achieve wrapping and `textwidth` stays `0`. A paragraph remains one long line on disk. Wrapping is a property of how text is displayed, not of the text.
 
-**The measure comes from the window, not the file.** 100 columns is a zen-mode window width, so the file is untouched and reads identically in any other tool. Setting `textwidth` instead would bake one editor's preference into the content.
+**The measure comes from the window, not the file.** ZenMode changes the window width, so the file is untouched and reads identically in any other tool. Setting `textwidth` instead would bake one editor's preference into the content.
 
 **Link syntax stays visible.** `link.enabled = false` in `markdown.lua`, because concealed links hide the URL exactly when it needs editing.
 

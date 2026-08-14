@@ -12,11 +12,10 @@ Documentation about the configs themselves can be found:
    git clone --bare <repo-url> $HOME/.config/.git
     ```
 
-1. Create `con` alias:
+1. Create `con` alias for the running terminal session:
     ```bash
    alias con="/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME"
     ```
-    (There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.)
 
 1. Fix the fetch refspec so remote tracking branches are created correctly, then fetch:
     ```bash
@@ -30,7 +29,7 @@ Documentation about the configs themselves can be found:
     ```bash
    con checkout
     ```
-    (If the checkout fails because some files would be overwritten, create backups, delete the files and then try again.)
+    If the checkout fails because some files would be overwritten, move them to a backup location and try again.
 
 1. Hide untracked files:
     ```bash
@@ -44,16 +43,12 @@ Documentation about the configs themselves can be found:
        email = <git-user-email>
     ```
 
-1. Create `~/.profiles/local.sh` from the template and fill in your values:
+1. Create the drop-in profiles from their templates and fill in your values:
     ```bash
    cp ~/.profiles/.templates/local.sh ~/.profiles/local.sh
+   cp ~/.profiles/.templates/secrets.sh ~/.profiles/secrets.sh
     ```
-
-1. Create `~/.profiles/secrets.sh` with your tokens/passwords:
-    ```bash
-   touch ~/.profiles/secrets.sh
-    ```
-    (`.profile` sources every `~/.profiles/*.sh`, so both files are picked up automatically. Neither is committed.)
+    (Both these files are gitignored)
 
 1. Restart terminal
 
