@@ -1,6 +1,10 @@
-# dotfiles
-The configuration files for my operating system, currently Ubuntu 22.04. Managed using a bare git repository, for explanations see the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles) or this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM). For a reference of what configs exist and why, see [`.config/overview.md`](.config/overview.md).
+# System Config
+The configuration files for my operating system, currently Ubuntu 22.04. Managed using a bare git repository. For explanations on how that works see the [Atlassian Guide](https://www.atlassian.com/git/tutorials/dotfiles) or this [DistroTube video](https://www.youtube.com/watch?v=tBoLDpTWVOM).
 
+Documentation about the configs themselves can be found:
+
+- Either in dedicated files in [`docs/`](./) for central documentation that spans multiple components or plugins.
+- Or in a `README.md` next to the code for a self-contained component, the way [`lockscreen`](../.local/share/lockscreen/) does.
 
 ## Setting up the Repository
 1. Clone into your home directory as a bare repository:

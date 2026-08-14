@@ -1,5 +1,5 @@
 # Aliases, functions, prompt, completions, shell options, third-party configs.
-# See Shell Startup Files in ~/.config/overview.md for context.
+# See ~/docs/shell-startup.md for context.
 
 ################################################################################
 ################################### CORE #######################################

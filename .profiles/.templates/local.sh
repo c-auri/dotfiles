@@ -1,5 +1,5 @@
 # Machine-specific env vars, aliases, and functions.
-# See Shell Startup Files in ~/.config/overview.md for context.
+# See ~/docs/shell-startup.md for context.
 
 export PROJECTS_DIR=
 export LAPTOP_RESOLUTION=

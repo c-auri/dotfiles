@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PATH and env variables belong here, keep sh-compatible.
-# See Shell Startup Files in ~/.config/overview.md for context.
+# See ~/docs/shell-startup.md for context.
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 

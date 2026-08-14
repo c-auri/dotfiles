@@ -2,8 +2,7 @@
 
 ## Philosophy
 
-- Prioritize portability and simplicity over raw performance, scripts should generally run without a build step
-- Rewrite for performance when it becomes a bottleneck, not before
+Prioritize portability and simplicity over raw performance, scripts should generally run without a build step. Rewrite for performance when it becomes a bottleneck, not before. The primary target are recent Ubuntu systems, compatibility with other Unix-like systems is nice to have but not a must.
 
 ## Shell Scripts
 
@@ -15,7 +14,7 @@
 ### Naming
 
 - Use kebab-case (e.g., `sync-db-snapshots`, `validate-schema`)
-- Keep short but readable
+- Keep it short but readable
 - Names should hint at purpose
 
 ### Structure and Formatting
@@ -53,13 +52,9 @@ fi
 
 ### Error Handling
 
-- Fail fast — don't continue after a fatal error
+- Fail fast; don't continue after a fatal error
 - No exit code specification yet; add as needed
 
-### System Compatibility
-
-- Primary target: recent Ubuntu systems
-- Keep in mind compatibility with other Unix-like systems
 
 ## README Style
 
@@ -75,6 +70,6 @@ fi
   - UI walkthroughs
   - visual minutiae
   - file or feature tables when prose covers them
-- Leave no open decisions — document what you've decided
+- Leave no open decisions; document what you've decided
 - Explanations for implementation details go in code comments, not the README
 
