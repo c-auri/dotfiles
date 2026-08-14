@@ -183,11 +183,19 @@ require('lazy').setup {
   },
 
   { -- LSP Configuration & Plugins
+    -- Pinned to 2.5.*: 2.6.0 added a deprecation warning for Neovim 0.10 that
+    -- blocks the screen on every startup. Unpin when Neovim is upgraded.
     'neovim/nvim-lspconfig',
+    version = '2.5.*',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
-      'williamboman/mason-lspconfig.nvim',
+      -- The mason stack is pinned to 1.x as a set, and the versions are coupled:
+      -- mason-lspconfig 2.x needs vim.lsp.enable (Neovim 0.11+) and drops the
+      -- handlers API used below, while mason-tool-installer picks its v1/v2
+      -- codepath from mason.nvim's MAJOR_VERSION. Mixing majors makes it read
+      -- mason-lspconfig's mapping table under the wrong field name and error.
+      -- Unpin all three together when Neovim is upgraded.
+      { 'williamboman/mason.nvim', version = '1.*', config = true }, -- NOTE: Must be loaded before dependants
+      { 'williamboman/mason-lspconfig.nvim', version = '1.*' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
