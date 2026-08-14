@@ -16,6 +16,7 @@
 	unstage = restore --staged
 	amend = commit --amend
 	fixup = commit --fixup
+	ff = !git-fixup-fuzzy
 	sm = !git-switch-to-main
 	um = !git-update-main
 	sf = !git-switch-fuzzy
