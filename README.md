@@ -10,7 +10,7 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
 
 1. Create `con` alias:
     ```bash
-   alias con="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
+   alias con="/usr/bin/git --git-dir=$HOME/.config/.git --work-tree=$HOME"
     ```
     (There's no need to put this in your `.bashrc` since that's going to be overwritten in the next step anyways. Just paste the command into your terminal.)
 
@@ -40,15 +40,16 @@ The configuration files for my operating system, currently Ubuntu 22.04. Managed
        email = <git-user-email>
     ```
 
-1. Create `~/.config/profile.local` from the template and fill in your values:
+1. Create `~/.profiles/local.sh` from the template and fill in your values:
     ```bash
-   cp ~/.config/profile.local.template ~/.config/profile.local
+   cp ~/.profiles/.templates/local.sh ~/.profiles/local.sh
     ```
 
-1. Create `~/.config/profile.secrets` with your tokens/passwords:
+1. Create `~/.profiles/secrets.sh` with your tokens/passwords:
     ```bash
-   touch ~/.config/profile.secrets
+   touch ~/.profiles/secrets.sh
     ```
+    (`.profile` sources every `~/.profiles/*.sh`, so both files are picked up automatically. Neither is committed.)
 
 1. Restart terminal
 
