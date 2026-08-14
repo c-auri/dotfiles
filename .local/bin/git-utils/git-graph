@@ -26,5 +26,6 @@ then
 fi
 
 default_ref="$(get_default_branch upstream)"
+upstream_ref="$(get_upstream_ref)"
 
-print_graph_window HEAD "$default_ref" "$n"
+print_graph_window "$n" HEAD "$default_ref" "$upstream_ref"

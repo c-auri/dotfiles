@@ -22,9 +22,11 @@ Naively, each git call in the script fails separately with its own copy of the s
 
 Naively, passing the bare name straight to `git log`/`git show`/etc. fails to resolve. Instead, fall back to `<remote>/<name>` when the bare name doesn't resolve as a ref, as `git-switch-fuzzy`'s preview does.
 
-### A command needs to show a ref's position relative to another ref
+### A command needs to show a ref's position relative to other refs
 
-(e.g. how a branch compares to the default branch). Naively, each command reimplements its own ahead/behind decision tree and windowing/truncation logic, as `git-switch-fuzzy`'s preview originally did — drifting out of sync as one copy gets tuned and the other doesn't. Instead, use `print_graph_window` (`git-lib`), which centers a fixed-size window on a primary ref and reports an `↑`/`↓` indicator when a secondary ref falls outside it, as `git-graph` and `git-switch-fuzzy`'s preview both do.
+(e.g. how a branch compares to the default branch, and to its own remote counterpart). Naively, each command reimplements its own ahead/behind decision tree and windowing/truncation logic, as `git-switch-fuzzy`'s preview originally did — drifting out of sync as one copy gets tuned and the other doesn't. Instead, use `print_graph_window` (`git-lib`), which centers a fixed-size window on a primary ref and reports an `↑`/`↓` indicator for each secondary ref that falls outside it, as `git-graph` and `git-switch-fuzzy`'s preview both do. It takes any number of secondary refs and skips empty or unresolvable ones, so an optional ref can be passed straight through without a guard at the call site. Note that a ref only appears in the graph at all if it's passed in — a branch whose commits aren't reachable from the primary is invisible otherwise, no matter how large the window.
+
+To name a branch's remote counterpart, use `get_upstream_ref` (`git-lib`) rather than assembling `<remote>/<branch>` by hand: it respects the branch's actual tracking configuration and returns empty for every shape that has no upstream (never pushed, no tracking, detached HEAD, or a remote ref passed in), which the empty-argument contract above then absorbs.
 
 ### fzf is cancelled (empty selection).
 
@@ -59,6 +61,10 @@ Naively, a noun-phrase name like `changed_paths` reads like a variable or a fixe
 ### Local default branch discovery is a guess, but only in a repo with no remote at all
 
 When a remote exists, `<remote>/HEAD` is authoritative and names whatever the default actually is (`deploy`, `develop`, `master`, …), so nothing is guessed and no branch names are hardcoded. Only a remote-less repo falls through to probing `main`, then `master`, and giving up if neither exists. Two alternatives are deliberately not used: `init.defaultBranch`, because it's the default for *newly created* repos and can disagree with what an existing repo uses; and `git ls-remote --symref <remote> HEAD`, which does answer the question authoritatively even when the local symref is missing, but is a network round-trip in a path `git-graph` hits on every invocation — slow at best, hanging or failing when the remote is unreachable — and can't help the remote-less case anyway. For the one shape it would help (remote configured, `<remote>/HEAD` absent), `require_remote` instead points at `git remote set-head <remote> -a`, which writes the symref once so every later call stays local.
+
+### A dangling `<remote>/HEAD` symref is not detected
+
+`require_remote` checks that `<remote>/HEAD` resolves *as a symref*, but never that the branch it names still exists, and `get_default_branch` returns that name unconditionally. So a repo whose `origin/HEAD` points at a deleted branch reports a default branch that can't be resolved, and every command built on it fails downstream instead of at the check. Found live in a real repo whose `origin/HEAD` still pointed at `origin/main` after the default became `deploy`: `git graph` there prints a three-line `fatal: ambiguous argument 'origin/main'` and exits 0 with no graph (the pipeline-masking issue below, firing for real), while `git-rebase-origin-main` and `git-rebase-interactive` fail their own ways. Two independent fixes, neither applied yet: per repo, `git remote set-head <remote> -a` rewrites the symref; in code, verifying the symref target inside `get_default_branch` would let a dead default fall through to the local fallback, or produce one clear error from `require_remote`.
 
 ### `print_graph_window` can exit 0 on a failed `git log`
 

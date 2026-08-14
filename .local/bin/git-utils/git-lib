@@ -74,31 +74,48 @@ function get_default_branch
     return 1
 }
 
+function get_upstream_ref
+{
+    # the remote-tracking counterpart of a branch, empty when there is none:
+    # never pushed, no tracking configured, detached HEAD, or already a remote ref
+    # $1: branch, defaults to HEAD
+    git rev-parse --abbrev-ref "${1:-HEAD}@{upstream}" 2>/dev/null
+}
+
 function print_graph_window
 {
-    # prints a fixed-size window of the combined graph for $1 and $2,
-    # centered on $1's line, with an up/down indicator when $2 falls
-    # outside the window
-    # $1: primary ref, the window centers on this ref's line
-    # $2: secondary ref, reported via the indicator if out of view
-    #     (pass "" to omit the indicator/secondary ref entirely)
-    # $3: window half-size -- lines shown above and below the primary ref
-    local primary="$1" secondary="$2" n="$3"
-    local primary_hash secondary_hash secondary_msg ref_display ahead behind script_dir
-    local refs=("$primary")
+    # prints a fixed-size window of the combined graph for the primary and any
+    # secondary refs, centered on the primary's line, with an up/down indicator
+    # for each secondary that falls outside the window
+    # $1: window half-size -- lines shown above and below the primary ref
+    # $2: primary ref, the window centers on this ref's line
+    # $3...: secondary refs, each reported via an indicator when out of view.
+    #        empty or unresolvable arguments are skipped, so a caller can pass
+    #        an optional ref straight through without special-casing it
+    local n="$1" primary="$2"
+    shift 2
+
+    local secondary hash ahead behind ref_display script_dir specs_arg
+    local primary_hash refs=("$primary") specs=()
 
     primary_hash="$(git rev-parse --short "$primary" 2>/dev/null)"
 
-    secondary_hash=""
-    if [[ -n "$secondary" ]]
-    then
-        secondary_hash="$(git rev-parse --short "$secondary" 2>/dev/null)"
-        refs+=("$secondary")
-    fi
+    for secondary in "$@"
+    do
+        [[ -z "$secondary" ]] && continue
 
-    secondary_msg=""
-    if [[ -n "$secondary_hash" && "$secondary_hash" != "$primary_hash" ]]
-    then
+        # a ref already collected needs no second indicator -- on the default
+        # branch the upstream ref and the default ref are the same name
+        [[ " ${refs[*]} " == *" $secondary "* ]] && continue
+
+        hash="$(git rev-parse --short "$secondary" 2>/dev/null)"
+        [[ -z "$hash" ]] && continue
+
+        refs+=("$secondary")
+
+        # the same commit as the primary is in view by definition
+        [[ "$hash" == "$primary_hash" ]] && continue
+
         read -r ahead behind < <(git rev-list --left-right --count "$primary...$secondary")
 
         # bold red, matching git log --decorate's color.decorate.remoteBranch default
@@ -106,20 +123,24 @@ function print_graph_window
 
         if (( behind == 0 ))
         then
-            secondary_msg="$ref_display [ahead $ahead]"
+            specs+=("$hash" "$ref_display [ahead $ahead]")
         elif (( ahead == 0 ))
         then
-            secondary_msg="$ref_display [behind $behind]"
+            specs+=("$hash" "$ref_display [behind $behind]")
         else
-            secondary_msg="$ref_display [ahead $ahead, behind $behind]"
+            specs+=("$hash" "$ref_display [ahead $ahead, behind $behind]")
         fi
-    fi
+    done
 
     script_dir="$(dirname "${BASH_SOURCE[0]}")"
 
+    # flat hash/message pairs joined on ASCII 31 -- neither a short hash nor a
+    # ref name can contain it, so awk can split the list back apart safely
+    specs_arg="$(IFS=$'\037'; printf '%s' "${specs[*]}")"
+
     git log --graph --oneline --decorate --color=always "${refs[@]}" |
         awk -f "$script_dir/extract-graph-window.awk" \
-            -v hash="$primary_hash" -v dhash="$secondary_hash" -v msg="$secondary_msg" -v n="$n"
+            -v hash="$primary_hash" -v specs="$specs_arg" -v n="$n"
 }
 
 function get_changed_files

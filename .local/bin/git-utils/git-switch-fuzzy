@@ -16,7 +16,9 @@ then
     # which don't resolve as-is
     git rev-parse --verify --quiet "$branch" >/dev/null || branch="$(get_remote)/$branch"
 
-    print_graph_window "$branch" "$default" 15
+    # after the fallback above, so the upstream is looked up for the resolved
+    # branch -- a bare remote-prefixed name has none
+    print_graph_window 15 "$branch" "$default" "$(get_upstream_ref "$branch")"
     exit 0
 fi
 
