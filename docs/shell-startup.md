@@ -10,7 +10,7 @@ The shell config is split across three files in the home directory, plus a direc
 └── .profiles/
     ├── local.sh            # Machine-specific env vars, aliases, functions (not committed).
     ├── secrets.sh          # Exported secrets (not committed).
-    ├── wm.sh               # Commands the window manager and the rofi menus delegate to.
+    ├── wm.sh               # Commands the window manager and the desktop menus delegate to.
     └── .templates/         # Expected shape of the uncommitted files. Copy out and fill in.
         ├── local.sh
         └── secrets.sh
