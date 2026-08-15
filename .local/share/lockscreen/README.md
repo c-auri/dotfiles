@@ -17,8 +17,8 @@ lockscreen-undim  -> ~/.local/share/lockscreen/undim.sh
 ## Files
 
 - `lock.sh`: Invokes xsecurelock with the desired appearance (font, colors). Called by the rofi power menu and by xidlehook on idle timeout.
-- `dim.sh`: Gradually dims all connected displays to 20% brightness. Called by xidlehook at the first idle timer.
-- `undim.sh`: Restores all connected displays to full brightness. Called by xidlehook as the canceller when activity resumes before the lock triggers.
+- `dim.sh`: Gradually dims all connected displays to 20% brightness over about four seconds. Records its PID in `$XDG_RUNTIME_DIR` so the fade can be stopped while it is still stepping. Called by xidlehook at the first idle timer.
+- `undim.sh`: Kills an in-progress fade, then restores all connected displays to full brightness. The kill is what makes the restore stick: the fade sets brightness every half second, so a reset issued while it is still running is overwritten by its next step. Called by xidlehook as the canceller when activity resumes before the lock triggers.
 - `saver_solid`: Tiny xsecurelock saver module that paints its window a single solid color (`$SAVER_SOLID_COLOR`). Lets the area behind the auth dialog match the auth dialog's own background, since the bundled `saver_blank` is hardcoded to pure black. Python script using `ctypes` against `libX11.so.6` — no install or compile step.
 
 ## Dependencies
@@ -33,7 +33,7 @@ lockscreen-undim  -> ~/.local/share/lockscreen/undim.sh
   # Install Rust first if needed: https://rustup.rs
   cargo install xidlehook --bins
   ```
-  The binary lands in `~/.cargo/bin/`. Make sure that directory is in `$PATH`.
+  The binary lands in `~/.cargo/bin/`, which `.profile` puts on `PATH` so the graphical session can resolve it. `autorun.sh` invokes it by bare name and its failure is silent, so a missing binary means no auto-lock rather than an error anyone sees.
 
 ## How it works
 

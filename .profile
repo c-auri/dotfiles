@@ -6,6 +6,7 @@
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export LOGOUT_CMD="awesome-client 'awesome.quit()'"
 
+[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.local/bin/git-utils" ] && PATH="$HOME/.local/bin/git-utils:$PATH"
