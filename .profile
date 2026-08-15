@@ -4,6 +4,7 @@
 # See ~/docs/shell-startup.md for context.
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export LOGOUT_CMD="awesome-client 'awesome.quit()'"
 
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"

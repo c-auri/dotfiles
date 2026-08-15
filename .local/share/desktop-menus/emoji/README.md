@@ -37,7 +37,7 @@ The `awk '{print $1}'` extraction in `picker.sh` isolates the emoji character by
 
 ## Key Design Decisions
 
-**Full Unicode name lives in rofi's meta field, not in the row text.** This is what makes short-name matches win, and it is why the parenthetical is no longer displayed.
+**Full Unicode name lives in rofi's meta field, not in the row text.** This is what makes short-name matches win, and why the parenthetical is not displayed.
 
 rofi's fzf scorer (`rofi_scorer_fuzzy_evaluate` in `source/helper.c`) charges `GAP_SCORE` (5 points) for every character *after* the match but only `LEADING_GAP_SCORE` (4 points) for every character before it. A match late in a row therefore scores better than a match early in it, and a shorter row beats a longer one. Because rofi scores the exact string it renders, a visible full Unicode name dragged its own short name down: searching `happy` returned 🙋 raising hand before 😊 happy, and `bat` returned 🛀 bath before 🦇 bat.
 
@@ -47,7 +47,7 @@ Every layout that keeps the parenthetical visible was measured and rejected: `-n
 
 Meta works because rofi consults it only when the visible row text fails to match (`dmenu_token_match`) and never scores it (scoring goes through `mode_get_completion`). Full-name-only matches are therefore scored as non-matches and sort below every short-name match. Upstream rofi does not help: it adds a per-row `display` field, but `dmenu_get_completion_data` prefers that field for scoring too, and the scorer constants are unchanged.
 
-**No `-markup-rows`.** With the full name out of the row text there is nothing left to dim, so rows are plain text. This also removes a `pango_parse_markup` call per row per keystroke, and makes `&` and `<` in a name safe rather than a parse error that would silently drop the row.
+**No `-markup-rows`.** With no full name in the row text there is nothing to dim, so rows are plain text. This also removes a `pango_parse_markup` call per row per keystroke, and makes `&` and `<` in a name safe rather than a parse error that would silently drop the row.
 
 **`-scroll-method 1` (continuous scroll).** Replaces the default page-jump scroll. With 20 lines visible and a potentially long list, this gives smoother navigation.
 
@@ -76,6 +76,6 @@ Meta works because rofi consults it only when the visible row text fails to matc
 
 ## Attribution
 
-The full names in `emojis.txt`, the ones moved into rofi's meta field, are Unicode character names taken from the Unicode Character Database, published by Unicode, Inc. under the [Unicode License](https://www.unicode.org/license.txt). The short names are hand-curated.
+The full names in `emojis.txt`, the ones that go into rofi's meta field, are Unicode character names taken from the Unicode Character Database, published by Unicode, Inc. under the [Unicode License](https://www.unicode.org/license.txt). The short names are hand-curated.
 
 If CLDR annotation data is ever vendored in here to widen the search corpus, it is published under the same license and this section needs to name it too.

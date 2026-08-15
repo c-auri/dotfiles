@@ -8,7 +8,7 @@
 
 They are bound to global keyboard shortcuts in [`rc.lua`](../../../.config/awesome/rc.lua), which spawns them by the bare names `rofi-launcher`, `rofi-emoji`, and `rofi-powermenu`.
 
-## Setup
+## Wiring
 
 The three entry points are symlinked into `~/.local/bin`, which `.profile` puts on `PATH`:
 
@@ -20,7 +20,7 @@ The three entry points are symlinked into `~/.local/bin`, which `.profile` puts 
 
 The symlinks are tracked and their targets are relative, so a checkout puts them in place with no manual step. Callers invoke the bare names, so nothing outside this directory hardcodes its location.
 
-The power menu additionally needs `LOCKSCREEN_CMD` to name a script that locks the display. It is exported from [`.profiles/wm.sh`](../../../.profiles/wm.sh) next to `LOGOUT_CMD`, because the graphical session reads the profile chain rather than a shell rc file. Without it the power menu leaves out Lock, Suspend, and Hibernate rather than offering actions that would fail. See [`powermenu/README.md`](powermenu/README.md), which also covers overriding the log-out command for a given window manager.
+The power menu reaches outside this directory twice: its locking actions run [`lockscreen`](../lockscreen/README.md), and Log out runs `$LOGOUT_CMD` from [`.profile`](../../../.profile), where the graphical session can see it. Both are covered in [`powermenu/README.md`](powermenu/README.md).
 
 Requires, all covered by the apt list in [`docs/README.md`](../../../docs/README.md):
 

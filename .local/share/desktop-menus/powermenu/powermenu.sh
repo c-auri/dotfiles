@@ -6,11 +6,12 @@
 self="$(readlink -f "$0")"
 dir="$(dirname "$self")"
 
-# The locker is named by $LOCKSCREEN_CMD, with no default: this menu makes no
-# guess about where a lock script lives. command -v accepts both an absolute
-# path and a bare name on PATH.
+# The locker is `lockscreen`, a sibling component symlinked onto PATH, so it is
+# called by name rather than through a variable. It is still checked rather
+# than assumed: a machine that has not finished its setup loses the locking
+# actions instead of being offered ones that would fail.
 lock_available() {
-    [ -n "$LOCKSCREEN_CMD" ] && command -v -- "$LOCKSCREEN_CMD" >/dev/null 2>&1
+    command -v -- lockscreen >/dev/null 2>&1
 }
 
 # Logging out does get a default, because ending the session through systemd
@@ -61,10 +62,10 @@ confirm_menu() {
 # Suspend the alternative is sleeping an unlocked display.
 run_action() {
     case "$1" in
-        "Lock")       lock_available || return; "$LOCKSCREEN_CMD" ;;
+        "Lock")       lock_available || return; lockscreen ;;
         # Sleep gives the locker time to grab the display before suspending.
-        "Suspend")    lock_available || return; "$LOCKSCREEN_CMD" & sleep 0.5; systemctl suspend ;;
-        "Hibernate")  lock_available || return; "$LOCKSCREEN_CMD" & sleep 0.5; systemctl hibernate ;;
+        "Suspend")    lock_available || return; lockscreen & sleep 0.5; systemctl suspend ;;
+        "Hibernate")  lock_available || return; lockscreen & sleep 0.5; systemctl hibernate ;;
         "Shut down")  systemctl poweroff ;;
         "Reboot")     systemctl reboot ;;
         "Log out")    logout_available || return; sh -c "$logout" ;;

@@ -9,19 +9,19 @@ Rofi-based menu for session and system actions:
 - suspend
 - hibernate 
 
-## Configuration
+Lock executes immediately. Every other action prompts for confirmation in the same rofi window; the action name itself is the confirm choice, and cancel returns to the main menu. Suspend and Hibernate run the lockscreen first so the display is locked before the system sleeps.
 
-Lock, Suspend, and Hibernate need a lock script. There is no default: point `LOCKSCREEN_CMD` at an executable that locks the display and blocks until unlocked. Either an absolute path or the name of a command on `PATH` works.
+## Delegation
 
-```bash
-export LOCKSCREEN_CMD="$HOME/path/to/lock.sh"
+Lock, Suspend, and Hibernate run [`lockscreen`](../../lockscreen/README.md), which `.local/bin` symlinks onto `PATH`. If that name does not resolve, those three actions are left out of the menu entirely. Nothing is offered that would then fail, and the machine cannot sleep with an unlocked display because the locker is missing.
+
+Log out runs `$LOGOUT_CMD`, exported from [`.profile`](../../../../.profile) as AwesomeWM's own quit:
+
+```sh
+awesome-client 'awesome.quit()'
 ```
 
-Set it somewhere the graphical session sources, such as `~/.profile`, rather than `~/.bashrc`; the menu inherits its environment from the session, not from a terminal. A change takes effect on the next login, not on a window manager restart.
-
-If `LOCKSCREEN_CMD` is unset or does not resolve to an executable, Lock, Suspend, and Hibernate are left out of the menu entirely. Nothing is offered that would then fail, and the machine can never sleep with an unlocked display because of a missing setting.
-
-Log out needs no configuration. It defaults to ending the session through systemd, which the menu already depends on for Shut down and Reboot:
+It holds a shell command rather than a bare executable, because every window manager's quit takes arguments. With the variable unset the menu ends the session through systemd instead, which it already depends on for Shut down and Reboot:
 
 ```sh
 loginctl terminate-session "$(loginctl show-user "$USER" -p Display --value)"
@@ -29,15 +29,9 @@ loginctl terminate-session "$(loginctl show-user "$USER" -p Display --value)"
 
 The session is looked up when the action runs rather than taken from `$XDG_SESSION_ID`, because that variable goes stale across a session restart and would then name a closed session while the live one keeps running.
 
-Set `LOGOUT_CMD` to override it with the window manager's own quit. Unlike `LOCKSCREEN_CMD`, it is a shell command rather than a single executable, since these all take arguments:
-
-```bash
-export LOGOUT_CMD="awesome-client 'awesome.quit()'"   # or: i3-msg exit, swaymsg exit, bspc quit
-```
-
 Log out drops out of the menu only if the command's first word cannot be resolved, which on a systemd machine means never.
 
-Lock executes immediately. Every other action prompts for confirmation in the same rofi window — the action name itself is the confirm choice; cancel returns to the main menu. Suspend and Hibernate run the lockscreen first so the display is locked before the system sleeps.
+Shut down and Reboot call `systemctl` directly.
 
 ## Design notes
 

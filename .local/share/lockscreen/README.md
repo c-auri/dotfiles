@@ -39,14 +39,7 @@ lockscreen-undim  -> ~/.local/share/lockscreen/undim.sh
 
 ### Manual lock
 
-The rofi power menu runs whatever `LOCKSCREEN_CMD` names when the user picks `Lock`, and runs it again before issuing `systemctl suspend` / `hibernate` so the display is locked across a sleep cycle. It ships no default, and hides those three actions when the variable is unset, so it has to be exported where the graphical session sees it:
-
-```sh
-# ~/.profile
-export LOCKSCREEN_CMD="lockscreen"
-```
-
-The change takes effect at the next login, not on an AwesomeWM restart.
+The [power menu](../desktop-menus/powermenu/README.md) runs `lockscreen` when the user picks `Lock`, and runs it again before issuing `systemctl suspend` / `hibernate` so the display is locked across a sleep cycle. It calls the command by name off `PATH`, and hides those three actions when the name does not resolve, so nothing is offered that would then fail.
 
 ### Auto-lock on idle
 
