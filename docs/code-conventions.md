@@ -2,18 +2,26 @@
 
 Prioritize portability and simplicity over raw performance, scripts should generally run without a build step. Rewrite for performance when it becomes a bottleneck, not before. The primary target are recent Ubuntu systems, compatibility with other Unix-like systems is nice to have but not a must.
 
+## Naming
+
+### Scripts
+
+- Use kebab-case (e.g., `sync-db-snapshots`, `validate-schema`)
+- Keep it short but readable
+- Names should hint at purpose
+
+### Variables
+
+- Put the unit in the name: `IDLE_DIM_AFTER_SECONDS`, not `IDLE_DIM_AFTER`
+  - Matters most for config a user sets, where the name is the whole interface
+  - Place the unit where the name reads naturally, not always at the end
+
 ## Shell Scripts
 
 ### Language Choice
 
 - Default options: sh, bash, awk, Python
 - Other languages need good reason + approval in the planning process
-
-### Naming
-
-- Use kebab-case (e.g., `sync-db-snapshots`, `validate-schema`)
-- Keep it short but readable
-- Names should hint at purpose
 
 ### Structure and Formatting
 

@@ -21,15 +21,37 @@ run() {
     fi
 }
 
-# Auto-lock on idle (skip if LOCK_IDLE_DISABLE=1)
-if [ "${LOCK_IDLE_DISABLE}" != "1" ]
+# Auto-lock on idle.
+
+dim_after="$IDLE_DIM_AFTER_SECONDS"
+lock_after_dim="$IDLE_LOCK_SECONDS_AFTER_DIM"
+
+# The case guards cover unset, empty, and non-numeric alike.
+# xidlehook refuses to start on a bad duration,
+# so a typo would otherwise cost the lock entirely.
+case "$dim_after" in ''|*[!0-9]*) dim_after=180 ;; esac
+case "$lock_after_dim" in ''|*[!0-9]*) lock_after_dim=10 ;; esac
+
+# Lower bounds that catch values that are numeric but nonsensical. Locking within
+# a few seconds of going idle is far harder to back out of than a mistimed lock,
+# because every attempt to fix it races the timer that keeps re-locking.
+[ "$dim_after" -ge 10 ] || dim_after=180
+[ "$lock_after_dim" -ge 1 ] || lock_after_dim=10
+
+set -- --not-when-fullscreen \
+    --timer "$dim_after" \
+        "lockscreen-dim" \
+        "lockscreen-undim"
+
+if [ "$IDLE_LOCK_DISABLE" != "1" ]
 then
-    run xidlehook \
-        --not-when-fullscreen \
-        --timer 180 \
-            "lockscreen-dim" \
-            "lockscreen-undim" \
-        --timer 120 \
+    set -- "$@" \
+        --timer "$lock_after_dim" \
             "lockscreen-undim && lockscreen" \
             ""
+fi
+
+if [ "$IDLE_DIM_DISABLE" != "1" ]
+then
+    run xidlehook "$@"
 fi

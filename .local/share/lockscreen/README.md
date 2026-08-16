@@ -43,32 +43,42 @@ The [power menu](../desktop-menus/powermenu/README.md) runs `lockscreen` when th
 
 ### Auto-lock on idle
 
-`xidlehook` is started by `autorun.sh` when the session begins, using two sequential timers:
+`xidlehook` is started by `autorun.sh` when the session begins, using two sequential timers. At the default timings:
 
 ```
-0 min        3 min               5 min
-|            |                   |
-| ... idle   | dim screen slowly | lock screen
-|            |                   |
+0:00         3:00          3:10
+|            |             |
+| ... idle   | dim screen  | lock screen
+|            |             |
              ^ move mouse/type → screen un-dims, timer resets
 ```
 
 - After **3 minutes idle**: `dim.sh` runs (slow fade to 20%)
 - If activity resumes: `undim.sh` runs and the timer resets to zero
-- After **5 minutes idle** (2 min after dimming, if undisturbed): `undim.sh` then `lock.sh` run
+- **10 seconds later**, if undisturbed: `undim.sh` then `lock.sh` run
 
 The `--not-when-fullscreen` flag is passed to xidlehook, so all timers are paused while a fullscreen window is active (e.g. video playback, image slideshow). Audio-only playback does not exempt the machine.
 
-### Per-machine opt-out
+### Per-machine configuration
 
-Auto-lock is on by default so a misconfigured or new machine fails toward the more secure outcome. To disable it on a specific machine, set this variable before the session starts:
+Four environment variables control the hook. They share an `IDLE_` prefix so they sort together in an alphabetical environment dump:
+
+- `IDLE_DIM_AFTER_SECONDS`: seconds of idle before the screen dims. Defaults to `180`. Values below `10` are treated as mistakes and replaced by the default.
+- `IDLE_DIM_DISABLE`: set to `1` to turn the whole hook off, dimming and locking both.
+- `IDLE_LOCK_DISABLE`: set to `1` to keep the dim but never lock.
+- `IDLE_LOCK_SECONDS_AFTER_DIM`: further seconds before the screen locks. Defaults to `10`. It counts from the dim rather than from the start of the idle period, so the lock happens at `IDLE_DIM_AFTER_SECONDS + IDLE_LOCK_SECONDS_AFTER_DIM` seconds idle.
+
+The two switches are deliberately asymmetric. The lock timer is chained behind the dim timer, so there is nothing for it to follow once the dim is gone: disabling the dim disables the hook outright, while disabling the lock leaves the fade in place as an idle indicator.
+
+`autorun.sh` reads all four when the session starts, so they have to be in the environment by then. GDM sources `~/.profile`, which in turn sources every `*.sh` in `~/.profiles/`, so a drop-in there is where machine-specific values belong (see `~/docs/shell-startup.md`):
 
 ```sh
-# ~/.xprofile
-export LOCK_IDLE_DISABLE=1
+# ~/.profiles/local.sh
+export IDLE_DIM_AFTER_SECONDS=600
+export IDLE_LOCK_SECONDS_AFTER_DIM=30
 ```
 
-The Gnome Display Manager (GDM) sources `~/.xprofile` before the session. If the file does not exist, create it. 
+Auto-lock is on unless it is explicitly disabled, so a machine with no drop-in at all still locks itself. A duration that is not a whole number of seconds, or is implausibly short, is replaced by its default rather than handed to xidlehook, which would refuse the argument and leave the session with no auto-lock at all. Only the exact value `1` disables anything; `0`, `false`, and `no` all leave the hook running.
 
 ## Appearance
 
@@ -78,8 +88,10 @@ xsecurelock renders a plain dark background with a minimal text prompt. No anima
 
 1. **Manual lock** — open the power menu and select `Lock`. xsecurelock should appear immediately. Enter the wrong password: error text is shown. Enter the correct password: screen unlocks.
 2. **Idle dim** — leave the machine idle for 3 minutes. The screen should fade to 20% brightness. Move the mouse: brightness restores and the timer resets.
-3. **Idle lock** — leave the machine idle for 5 minutes without interrupting the dim. xsecurelock should appear at the 5-minute mark.
+3. **Idle lock** — leave the machine idle for 3 minutes 10 seconds without interrupting the dim. xsecurelock should appear about ten seconds after the fade finishes.
 4. **Fullscreen exemption** — open a fullscreen video and leave it idle for 10+ minutes. The screen should not dim or lock.
-5. **Audio-only** — play music with no fullscreen window. Leave idle for 5 minutes. The screen should still lock.
-6. **Per-machine disable** — set `LOCK_IDLE_DISABLE=1` in `~/.xprofile` and restart the session. Leave idle indefinitely: no auto-lock. Manual lock via the power menu should still work.
-7. **Crash resilience** — while the screen is locked, restart AwesomeWM (`Meta + Ctrl + V`). The screen should remain locked.
+5. **Audio-only** — play music with no fullscreen window. Leave idle past the lock delay. The screen should still lock.
+6. **Custom timings** — set `IDLE_DIM_AFTER_SECONDS=20` and `IDLE_LOCK_SECONDS_AFTER_DIM=10` in a `~/.profiles` drop-in and restart the session. The screen should dim at 20 seconds and lock at 30. Then set `IDLE_DIM_AFTER_SECONDS=abc` and restart: the defaults apply again and auto-lock still works. Same for `IDLE_DIM_AFTER_SECONDS=5`, which is below the floor.
+7. **Dim without lock** — set `IDLE_LOCK_DISABLE=1` and restart the session. The screen should dim on schedule and then stay dim indefinitely without locking. Input should still restore brightness.
+8. **Full disable** — set `IDLE_DIM_DISABLE=1` and restart the session. Leave idle indefinitely: no dim, no lock. Manual lock via the power menu should still work.
+9. **Crash resilience** — while the screen is locked, restart AwesomeWM (`Meta + Ctrl + V`). The screen should remain locked.
