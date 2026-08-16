@@ -81,13 +81,39 @@ then
     out=$(mktemp)
     trap 'rm -f "$out"' EXIT
 
+    # Every key that would otherwise type into the hidden input, parked on
+    # kb-clear-line, which does nothing when the input is already empty. Rofi
+    # 1.7.1 has no switch to turn matching off, so neutralising the keys one by
+    # one is the only way to stop the menu filtering itself out of view.
+    #
+    # German layout, all three levels. Uppercase letters need no entry because
+    # binding the lowercase keysym catches the shifted one too; the other levels
+    # do not work that way and are listed in full.
+    #
+    # dead_grave is deliberately absent. Rofi already binds it to
+    # kb-toggle-case-sensitivity, and rather than rejecting the duplicate it
+    # drops the whole keymap, Return included.
+    inert="Control+w"
+    inert="$inert,a,b,c,d,e,f,g,h,i,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"
+    inert="$inert,1,2,3,4,5,6,7,8,9,0"
+    inert="$inert,minus,equal,bracketleft,bracketright,semicolon,apostrophe"
+    inert="$inert,comma,period,slash,backslash,numbersign,less,plus,space"
+    inert="$inert,adiaeresis,odiaeresis,udiaeresis,ssharp"
+    inert="$inert,dead_acute,dead_circumflex"
+    inert="$inert,degree,exclam,quotedbl,section,dollar,percent,ampersand"
+    inert="$inert,parenleft,parenright,question,asterisk,greater,colon,underscore"
+    inert="$inert,Adiaeresis,Odiaeresis,Udiaeresis"
+    inert="$inert,twosuperior,threesuperior,braceleft,braceright"
+    inert="$inert,at,EuroSign,asciitilde,bar,mu"
+
     POWERMENU_OUT="$out" rofi -modi "powermenu:$self" -show powermenu \
         -theme "$dir/style.rasi" \
         -p "❯" \
         -i \
         -no-custom \
         -kb-row-down "j,Down,Control+n" \
-        -kb-row-up "k,Up,Control+p,ISO_Left_Tab"
+        -kb-row-up "k,Up,Control+p,ISO_Left_Tab" \
+        -kb-clear-line "$inert"
 
     [ -s "$out" ] && run_action "$(cat "$out")"
     exit 0
