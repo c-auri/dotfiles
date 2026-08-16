@@ -21,6 +21,12 @@ run() {
     fi
 }
 
+# Both of X's idle blanking mechanisms are off: the screen saver blanks the
+# framebuffer, DPMS powers the panel down, and both default to 600 seconds, so
+# disabling one alone changes nothing visible. Neither ever locked anything.
+xset s off
+xset -dpms
+
 # Auto-lock on idle.
 
 dim_after="$IDLE_DIM_AFTER_SECONDS"
