@@ -85,7 +85,9 @@ then
         -theme "$dir/style.rasi" \
         -p "❯" \
         -i \
-        -no-custom
+        -no-custom \
+        -kb-row-down "j,Down,Control+n" \
+        -kb-row-up "k,Up,Control+p,ISO_Left_Tab"
 
     [ -s "$out" ] && run_action "$(cat "$out")"
     exit 0
