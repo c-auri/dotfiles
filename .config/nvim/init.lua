@@ -524,22 +524,61 @@ require('lazy').setup {
       require('mini.surround').setup()
 
       -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
 
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
+      -- Position is split into two boxes at the right end:
+      -- [current/total line] then [current/total column].
+      local col_hl, last_mode_hl = 'MiniStatuslineLocationCol', nil
+      local function sync_col_hl(mode_hl)
+        if mode_hl == last_mode_hl then
+          return
+        end
+        last_mode_hl = mode_hl
+        local base = vim.api.nvim_get_hl(0, { name = mode_hl, link = false })
+        vim.api.nvim_set_hl(0, col_hl, { fg = base.bg or '#c8c093', bg = '#393836', bold = true })
       end
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = function()
+          last_mode_hl = nil
+        end,
+      })
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      statusline.setup {
+        content = {
+          active = function()
+            local mode, mode_hl = statusline.section_mode { trunc_width = 120 }
+            local git = statusline.section_git { trunc_width = 40 }
+            local diff = statusline.section_diff { trunc_width = 75 }
+            local diagnostics = statusline.section_diagnostics { trunc_width = 75 }
+            local lsp = statusline.section_lsp { trunc_width = 75 }
+            local filename = statusline.section_filename { trunc_width = 140 }
+            local fileinfo = statusline.section_fileinfo { trunc_width = 120 }
+            local search = statusline.section_searchcount { trunc_width = 75 }
+
+            sync_col_hl(mode_hl)
+
+            -- Right-align the current values so the boxes keep a fixed width as
+            -- the cursor moves: lines to however many digits the total needs,
+            -- columns to a flat 3.
+            local line_width = #tostring(vim.fn.line '$')
+            -- Drop the totals when the window is too narrow
+            local truncated = statusline.is_truncated(75)
+            local line = ('%%%dl'):format(line_width) .. (truncated and '' or '/%L')
+            local column = '%3v' .. (truncated and '' or '/%-3{virtcol("$") - 1}')
+
+            return statusline.combine_groups {
+              { hl = mode_hl, strings = { mode } },
+              { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics, lsp } },
+              '%<', -- Mark general truncate point
+              { hl = 'MiniStatuslineFilename', strings = { filename } },
+              '%=', -- End left alignment
+              { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
+              { hl = mode_hl, strings = { search, line } },
+              { hl = col_hl, strings = { column } },
+            }
+          end,
+        },
+      }
     end,
   },
   { -- Highlight, edit, and navigate code

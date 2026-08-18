@@ -27,6 +27,11 @@ return {
         backdrop = 1,
         width = 100,
       },
+      -- Global statusline, so the position boxes stay visible in zen: the float
+      -- would otherwise cover the per-window statusline row. zen shrinks its
+      -- height by one row when laststatus is 3, and restores the old value on
+      -- close.
+      plugins = { options = { laststatus = 3 } },
     },
     config = function(_, opts)
       require('zen-mode').setup(opts)
